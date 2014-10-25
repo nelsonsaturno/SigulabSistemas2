@@ -1,5 +1,5 @@
 #NUEVAS REGLAS
-
+========
 Como todos saben, los profesores solicitaron un sistema unico en el cual todos deben estar integrados. Para mantener cierto orden en las cosas trabajaremos de la siguiente manera:
 
 1) Consulten el archivo database.yml en donde encontraran los parametros que deben tener las bases de datos sobre psql: username, password del username y database name (development y test por lo menos).
@@ -22,6 +22,6 @@ Como todos saben, los profesores solicitaron un sistema unico en el cual todos d
 8) El no asistir a las prepas y no consultar con mi persona sobre el desarrollo del sistema en caso de tener dudas, sera tomado en cuenta sobre la correccion de codigo en caso de existir errores. Esto lo digo porque hay quienes confian en su nivel como programadores (que me parece muy bien) pero bajo la perspectiva de que tenemos que trabajar como grupo es necesario que haya comunicacion entre todos. Los 3 grupos han de comunicarse y todos pueden realizar consultas conmigo. No se tiren de cabeza a echar codigo de una sin antes pensar e investigar un poco de lo que haran.
 
 En cuanto a la base de datos. Luego les dire sobre que servidor remoto han de poder presentar sus sistemas la proxima vez. Por ahora, realicen de nuevo los scaffold tomando en cuenta que ahora deben trabajar en conjunto, agreguen sus assets y sus funciones sobre este repo. Dado a que estan unificando y migrando a este proyecto, ahora mas que nunca escribanme si tienen alguna duda o problema.
-
+========
 Jose Delgado.
 [va sin acentos]
