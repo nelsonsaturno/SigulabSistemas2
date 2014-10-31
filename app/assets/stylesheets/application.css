@@ -108,7 +108,7 @@ a:hover {
 }
 
 /* Listas del menu */
-li {
+#BannerIzquierda li {
     list-style              : none;
     text-align              : right;
 }
@@ -116,4 +116,10 @@ li {
 /* Linea de separacion */
 hr {
     opacity                 : 0.4;
+}
+
+/* TEST */
+.first.leaf.menuTitle {
+	font-size: 15px;
+	line-height: normal;
 }

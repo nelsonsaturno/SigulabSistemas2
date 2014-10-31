@@ -16,6 +16,24 @@ ActiveRecord::Schema.define(version: 20141024232834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "labs", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "lab_id"
+    t.float    "income"
+    t.float    "outcome"
+    t.integer  "outcome_type"
+    t.string   "outcome_code"
+    t.datetime "date"
+    t.string   "recipient"
+    t.text     "description"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

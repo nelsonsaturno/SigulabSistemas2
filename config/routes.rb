@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'statics#index'
 
+  # Rutas del Subsistema de Administracion
+  get 'statics/administration', to: 'statics#administracion'
+  resources :transactions
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
