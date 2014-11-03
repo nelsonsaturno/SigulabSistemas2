@@ -8,6 +8,9 @@
 
 ## MONTO ASIGNADO SEED
 
+
+## OLD TRANSACTION SEED
+=begin
 montoAsignado = [
   ['Reformulacion 2013 al 2014', 274290.37 ],
   ['Presupuesto 2014', 130000 ],
@@ -32,3 +35,4 @@ end
 gastos.each do |date, outcome_code, recipient, outcome|
   Transaction.create( date: Date.strptime(date, "%d/%m/%Y"), outcome_code: outcome_code, recipient: recipient, outcome: outcome)
 end
+=end
