@@ -1,0 +1,93 @@
+<%= form_for(@equipment) do |f| %>
+  <% if @equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+      <% @equipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :serial %><br>
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :national_good %><br>
+    <%= f.number_field :national_good %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :last_calibration %><br>
+    <%= f.date_select :last_calibration %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br>
+    <%= f.text_area :use %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :adquisition_date %><br>
+    <%= f.date_select :adquisition_date %>
+  </div>
+  <div class="field">
+    <%= f.label :buy_order %><br>
+    <%= f.text_field :buy_order %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :bill %><br>
+    <%= f.text_field :bill %>
+  </div>
+  <div class="field">
+    <%= f.label :investigation %><br>
+    <%= f.check_box :investigation %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %><br>
+    <%= f.check_box :teaching %>
+  </div>
+  <div class="field">
+    <%= f.label :extention %><br>
+    <%= f.check_box :extention %>
+  </div>
+  <div class="field">
+    <%= f.label :management %><br>
+    <%= f.check_box :management %>
+  </div>
+  <div class="field">
+    <%= f.label :calibrated %><br>
+    <%= f.text_field :calibrated %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

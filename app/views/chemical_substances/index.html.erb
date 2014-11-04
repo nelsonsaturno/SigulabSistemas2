@@ -1,0 +1,75 @@
+<h1>Listing chemical_substances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Purity</th>
+      <th>Matter states</th>
+      <th>Controlled</th>
+      <th>Legal regime</th>
+      <th>Quantity</th>
+      <th>Cas</th>
+      <th>Use</th>
+      <th>Status</th>
+      <th>Responsible</th>
+      <th>Location</th>
+      <th>Expiration date</th>
+      <th>Dangerous</th>
+      <th>Ri7</th>
+      <th>Ri4</th>
+      <th>Toxic</th>
+      <th>Oxidant</th>
+      <th>Explosive</th>
+      <th>Irritating</th>
+      <th>Inflamable</th>
+      <th>Corrosive</th>
+      <th>Nocive</th>
+      <th>Investigation</th>
+      <th>Teaching</th>
+      <th>Extention</th>
+      <th>Management</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chemical_substances.each do |chemical_substance| %>
+      <tr>
+        <td><%= chemical_substance.name %></td>
+        <td><%= chemical_substance.purity %></td>
+        <td><%= chemical_substance.matter_states %></td>
+        <td><%= chemical_substance.controlled %></td>
+        <td><%= chemical_substance.legal_regime %></td>
+        <td><%= chemical_substance.quantity %></td>
+        <td><%= chemical_substance.cas %></td>
+        <td><%= chemical_substance.use %></td>
+        <td><%= chemical_substance.status %></td>
+        <td><%= chemical_substance.responsible %></td>
+        <td><%= chemical_substance.location %></td>
+        <td><%= chemical_substance.expiration_date %></td>
+        <td><%= chemical_substance.dangerous %></td>
+        <td><%= chemical_substance.rI7 %></td>
+        <td><%= chemical_substance.rI4 %></td>
+        <td><%= chemical_substance.toxic %></td>
+        <td><%= chemical_substance.oxidant %></td>
+        <td><%= chemical_substance.explosive %></td>
+        <td><%= chemical_substance.irritating %></td>
+        <td><%= chemical_substance.inflamable %></td>
+        <td><%= chemical_substance.corrosive %></td>
+        <td><%= chemical_substance.nocive %></td>
+        <td><%= chemical_substance.investigation %></td>
+        <td><%= chemical_substance.teaching %></td>
+        <td><%= chemical_substance.extention %></td>
+        <td><%= chemical_substance.management %></td>
+        <td><%= link_to 'Show', chemical_substance %></td>
+        <td><%= link_to 'Edit', edit_chemical_substance_path(chemical_substance) %></td>
+        <td><%= link_to 'Destroy', chemical_substance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chemical substance', new_chemical_substance_path %>

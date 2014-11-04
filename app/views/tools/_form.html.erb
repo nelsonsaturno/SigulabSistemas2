@@ -1,0 +1,77 @@
+<%= form_for(@tool) do |f| %>
+  <% if @tool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
+
+      <ul>
+      <% @tool.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :national_good %><br>
+    <%= f.number_field :national_good %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br>
+    <%= f.text_field :use %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :bill %><br>
+    <%= f.text_field :bill %>
+  </div>
+  <div class="field">
+    <%= f.label :from_set %><br>
+    <%= f.check_box :from_set %>
+  </div>
+  <div class="field">
+    <%= f.label :investigation %><br>
+    <%= f.check_box :investigation %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %><br>
+    <%= f.check_box :teaching %>
+  </div>
+  <div class="field">
+    <%= f.label :extention %><br>
+    <%= f.check_box :extention %>
+  </div>
+  <div class="field">
+    <%= f.label :management %><br>
+    <%= f.check_box :management %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

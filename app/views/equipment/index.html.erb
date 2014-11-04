@@ -1,0 +1,61 @@
+<h1>Listing equipment</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Serial</th>
+      <th>National good</th>
+      <th>Status</th>
+      <th>Last calibration</th>
+      <th>Use</th>
+      <th>Responsible</th>
+      <th>Location</th>
+      <th>Adquisition date</th>
+      <th>Buy order</th>
+      <th>Cost</th>
+      <th>Bill</th>
+      <th>Investigation</th>
+      <th>Teaching</th>
+      <th>Extention</th>
+      <th>Management</th>
+      <th>Calibrated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipment.each do |equipment| %>
+      <tr>
+        <td><%= equipment.name %></td>
+        <td><%= equipment.brand %></td>
+        <td><%= equipment.model %></td>
+        <td><%= equipment.serial %></td>
+        <td><%= equipment.national_good %></td>
+        <td><%= equipment.status %></td>
+        <td><%= equipment.last_calibration %></td>
+        <td><%= equipment.use %></td>
+        <td><%= equipment.responsible %></td>
+        <td><%= equipment.location %></td>
+        <td><%= equipment.adquisition_date %></td>
+        <td><%= equipment.buy_order %></td>
+        <td><%= equipment.cost %></td>
+        <td><%= equipment.bill %></td>
+        <td><%= equipment.investigation %></td>
+        <td><%= equipment.teaching %></td>
+        <td><%= equipment.extention %></td>
+        <td><%= equipment.management %></td>
+        <td><%= equipment.calibrated %></td>
+        <td><%= link_to 'Show', equipment %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
+        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Equipment', new_equipment_path %>

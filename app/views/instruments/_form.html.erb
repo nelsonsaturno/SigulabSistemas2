@@ -1,0 +1,81 @@
+<%= form_for(@instrument) do |f| %>
+  <% if @instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instrument.errors.count, "error") %> prohibited this instrument from being saved:</h2>
+
+      <ul>
+      <% @instrument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_unit %><br>
+    <%= f.text_field :measurement_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.text_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br>
+    <%= f.text_field :use %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :last_calibration %><br>
+    <%= f.date_select :last_calibration %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :national_good %><br>
+    <%= f.number_field :national_good %>
+  </div>
+  <div class="field">
+    <%= f.label :investigation %><br>
+    <%= f.check_box :investigation %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %><br>
+    <%= f.check_box :teaching %>
+  </div>
+  <div class="field">
+    <%= f.label :extention %><br>
+    <%= f.check_box :extention %>
+  </div>
+  <div class="field">
+    <%= f.label :management %><br>
+    <%= f.check_box :management %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

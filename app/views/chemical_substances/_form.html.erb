@@ -1,0 +1,121 @@
+<%= form_for(@chemical_substance) do |f| %>
+  <% if @chemical_substance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chemical_substance.errors.count, "error") %> prohibited this chemical_substance from being saved:</h2>
+
+      <ul>
+      <% @chemical_substance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :purity %><br>
+    <%= f.text_field :purity %>
+  </div>
+  <div class="field">
+    <%= f.label :matter_states %><br>
+    <%= f.text_field :matter_states %>
+  </div>
+  <div class="field">
+    <%= f.label :controlled %><br>
+    <%= f.check_box :controlled %>
+  </div>
+  <div class="field">
+    <%= f.label :legal_regime %><br>
+    <%= f.text_field :legal_regime %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :cas %><br>
+    <%= f.text_field :cas %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br>
+    <%= f.text_field :use %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %><br>
+    <%= f.date_select :expiration_date %>
+  </div>
+  <div class="field">
+    <%= f.label :dangerous %><br>
+    <%= f.text_field :dangerous %>
+  </div>
+  <div class="field">
+    <%= f.label :rI7 %><br>
+    <%= f.check_box :rI7 %>
+  </div>
+  <div class="field">
+    <%= f.label :rI4 %><br>
+    <%= f.check_box :rI4 %>
+  </div>
+  <div class="field">
+    <%= f.label :toxic %><br>
+    <%= f.check_box :toxic %>
+  </div>
+  <div class="field">
+    <%= f.label :oxidant %><br>
+    <%= f.check_box :oxidant %>
+  </div>
+  <div class="field">
+    <%= f.label :explosive %><br>
+    <%= f.check_box :explosive %>
+  </div>
+  <div class="field">
+    <%= f.label :irritating %><br>
+    <%= f.check_box :irritating %>
+  </div>
+  <div class="field">
+    <%= f.label :inflamable %><br>
+    <%= f.check_box :inflamable %>
+  </div>
+  <div class="field">
+    <%= f.label :corrosive %><br>
+    <%= f.check_box :corrosive %>
+  </div>
+  <div class="field">
+    <%= f.label :nocive %><br>
+    <%= f.check_box :nocive %>
+  </div>
+  <div class="field">
+    <%= f.label :investigation %><br>
+    <%= f.check_box :investigation %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %><br>
+    <%= f.check_box :teaching %>
+  </div>
+  <div class="field">
+    <%= f.label :extention %><br>
+    <%= f.check_box :extention %>
+  </div>
+  <div class="field">
+    <%= f.label :management %><br>
+    <%= f.check_box :management %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

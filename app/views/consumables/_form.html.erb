@@ -1,0 +1,65 @@
+<%= form_for(@consumable) do |f| %>
+  <% if @consumable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consumable.errors.count, "error") %> prohibited this consumable from being saved:</h2>
+
+      <ul>
+      <% @consumable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :dimentions %><br>
+    <%= f.text_field :dimentions %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br>
+    <%= f.text_field :use %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :investigation %><br>
+    <%= f.check_box :investigation %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %><br>
+    <%= f.check_box :teaching %>
+  </div>
+  <div class="field">
+    <%= f.label :extention %><br>
+    <%= f.check_box :extention %>
+  </div>
+  <div class="field">
+    <%= f.label :management %><br>
+    <%= f.check_box :management %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
