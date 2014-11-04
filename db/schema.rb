@@ -11,10 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024232834) do
+ActiveRecord::Schema.define(version: 20141104223346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checks", force: true do |t|
+    t.integer  "execution_id"
+    t.string   "check_number"
+    t.float    "amount"
+    t.datetime "elaboration_date"
+    t.datetime "sign_date"
+    t.datetime "delivery_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "checks", ["execution_id"], name: "index_checks_on_execution_id", using: :btree
+
+  create_table "commitments", force: true do |t|
+    t.string   "code"
+    t.float    "amount"
+    t.string   "description"
+    t.string   "recipient"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "executions", force: true do |t|
+    t.integer  "commitment_id"
+    t.string   "code"
+    t.float    "amount"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
 
   create_table "labs", force: true do |t|
     t.string "name"
