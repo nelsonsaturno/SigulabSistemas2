@@ -11,23 +11,26 @@
  * file per style scope.
  *
  *= require bootstrap.min
+ *= require administration_only
  *  ------------
- *  Descripcion: Diseño de la pagina principal.
- *  Autor: Inventario
- *  Fecha: 15/10/2014
  */
 
 .novis {
   display: none;
 }
 
-// Bootstrap dropdown title fix
-ul.nav li.dropdown:hover ul.dropdown-menu {
-  display: block;
-}
-
+/* Bootstrap glyphicon rails fix */
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('/assets/glyphicons-halflings-regular.eot');
   src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+$sigulab-color: #336699;
+$white-text: #FFFFFF;
+
+.jumbotron {
+  background-color: $sigulab-color;
+  h1 { color: white; }
+  p { color: white; }
 }
