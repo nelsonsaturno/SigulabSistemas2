@@ -1,29 +1,5 @@
-<% if @subsystem == 'inventario' %>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Inventario</h1>
-			<p>Subsistema de Gestión de Inventarios</p>
-		</div>
+<div class="container">
+	<div class="row">
+		<%= image_tag "logo_drupal.jpg", class: 'col-xs-12' %>
 	</div>
-<% elsif @subsystem == 'compras' %>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Compras</h1>
-			<p>Subsistema de Gestión Compras</p>
-		</div>
-	</div>
-<% elsif @subsystem == 'administracion' %>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Administracion</h1>
-			<p>Subsistema de Gestión Administrativa</p>
-		</div>
-	</div>
-<% else %>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>SIGULAB</h1>
-			<p>Sistema Integrado de Gestión de la Unidad de Laboratorio de la USB</p>
-		</div>
-	</div>
-<% end %>
+</div>
