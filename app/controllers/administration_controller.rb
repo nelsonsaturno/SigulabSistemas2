@@ -5,6 +5,9 @@ class AdministrationController < ApplicationController
   def index
   end
   
+  def summary
+  end
+  
   private
   
   def set_subsystem
