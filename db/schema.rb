@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20141105160112) do
   add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
 
   create_table "incomes", force: true do |t|
+    t.integer  "lab_id"
+    t.float    "amount"
+    t.integer  "origin",      default: 0
+    t.string   "description"
+    t.datetime "date"
+    t.string   "organism"
+    t.string   "document"
+    t.string   "financing"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
