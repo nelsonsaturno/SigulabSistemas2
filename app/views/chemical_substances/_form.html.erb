@@ -12,74 +12,58 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Nombre %><br>
+    <%= '* Nombre' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :Pureza %><br>
+
+  <div class="field">
+    <%= 'Regimen legal:' %><br>
+    <%= f.check_box :rI7 %>
+    <%= 'RI7' %>
+    <%= f.check_box :rI4 %>
+    <%= 'RI4' %><br>
+  </div>
+
+    <%= 'Pureza' %><br>
     <%= f.text_field :purity %>
   </div>
   <div class="field">
-    <%= f.label :Estado_Materia %><br>
+    <%= 'Estado materia' %><br>
     <%= f.select(:matter_states, [['Sólido'], ['Líquido'], ['Gaseoso'] ] ) %>
   </div>
   <div class="field">
-    <%= f.label :controlado %><br>
+    <%= 'Controlado' %><br>
     <%= f.select(:controlled, [['Si'], ['No']] ) %>
 
   </div>
   <div class="field">
-    <%= f.label :regimen_legal %><br>
-    <%= f.text_field :legal_regime %>
-  </div>
-  <div class="field">
-    <%= f.label :cantidad %><br>
+    <%= 'Cantidad' %><br>
     <%= f.number_field(:quantity, min: 0) %>
   </div>
   <div class="field">
-    <%= f.label :cas %><br>
+    <%= 'CAS' %><br>
     <%= f.text_field :cas %>
   </div>
   <div class="field">
-    <%= f.label :use %><br>
-    <%= f.text_field :use %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
+    <%= 'Estatus' %><br>
     <%= f.text_field :status %>
   </div>
   <div class="field">
-    <%= f.label :responsable %><br>
+    <%= '* Responsable' %><br>
     <%= f.text_field :responsible %>
   </div>
   <div class="field">
-    <%= f.label :ubicación %><br>
+    <%= '* Ubicación' %><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :fecha_de_expiración %><br>
+    <%= 'Fecha de expiración' %><br>
     <%= f.date_select :expiration_date %>
   </div>
-  <div class="field">
-    <%= f.label :peligrosidad %><br>
-    <%= f.text_field :dangerous %>
-   
-  </div>
-
-  <div class="field">
-    <%= f.label :regimen_legal %><br>
-        <br>
-    <%= f.check_box :rI7 %>
-    <%= 'RI7' %><br>
-    <%= f.check_box :rI4 %>
-    <%= 'RI4' %><br>
-    <br>
-  </div>
-
-
 
 <div class="field">
-    <%= f.label :peligro %><br>
+    <%= 'Peligrosidad' %><br>
     <br>
     <%= f.check_box :toxic %>
     <%= f.label :Tóxico %>
@@ -99,21 +83,17 @@
     <%= f.label :Irritante %><br>
 
   </div>
-
+  
 
   <div class="field">
-  <br>
-    <%=  'Uso' %><br>
+  <%= 'Uso:'%><br>
    <%= f.check_box :investigation %>
-    <%= f.label :Investigación %><br>
+    <%= 'Investigacion' %><br>
     <%= f.check_box :teaching %>
-    <%= f.label :Docencia %><br>
+    <%= 'Docencia' %><br>
     <%= f.check_box :extention %>
-    <%= f.label :Extensión %><br>
+    <%= 'Extension' %><br>
     <%= f.check_box :management %>
-    <%= f.label :Gestión %><br>
-   </div>
-<br> 
-
+    <%= 'Gestion' %><br></div>
 
 <% end %>

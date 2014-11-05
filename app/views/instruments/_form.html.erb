@@ -12,70 +12,62 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= '* Nombre' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :brand %><br>
+    <%= 'Marca' %><br>
     <%= f.text_field :brand %>
   </div>
   <div class="field">
-    <%= f.label :model %><br>
+    <%= 'Modelo' %><br>
     <%= f.text_field :model %>
   </div>
   <div class="field">
-    <%= f.label :measurement_unit %><br>
+    <%= 'Unidad de medida' %><br>
     <%= f.text_field :measurement_unit %>
   </div>
   <div class="field">
-    <%= f.label :capacity %><br>
+    <%= 'Capacidad' %><br>
     <%= f.text_field :capacity %>
   </div>
   <div class="field">
-    <%= f.label :material %><br>
+    <%= 'Material' %><br>
     <%= f.text_field :material %>
   </div>
   <div class="field">
-    <%= f.label :use %><br>
-    <%= f.text_field :use %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
+    <%= 'Estatus' %><br>
     <%= f.text_field :status %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= '* Ubicación' %><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :last_calibration %><br>
+    <%= 'Ultima Calibración' %><br>
     <%= f.date_select :last_calibration %>
   </div>
   <div class="field">
-    <%= f.label :responsible %><br>
+    <%= '* Responsable' %><br>
     <%= f.text_field :responsible %>
   </div>
   <div class="field">
-    <%= f.label :national_good %><br>
+    <%= 'Numero bien nacional' %><br>
     <%= f.number_field :national_good %>
   </div>
   <div class="field">
-    <%= f.label :investigation %><br>
-    <%= f.check_box :investigation %>
-  </div>
-  <div class="field">
-    <%= f.label :teaching %><br>
+
+     <%= 'Uso:'%><br>
+   <%= f.check_box :investigation %>
+    <%= 'Investigación' %><br>
     <%= f.check_box :teaching %>
-  </div>
-  <div class="field">
-    <%= f.label :extention %><br>
+    <%= 'Docencia' %><br>
     <%= f.check_box :extention %>
-  </div>
-  <div class="field">
-    <%= f.label :management %><br>
+    <%= 'Extensión' %><br>
     <%= f.check_box :management %>
+    <%= 'Gestion' %><br>
   </div>
-  <div class="actions">
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
