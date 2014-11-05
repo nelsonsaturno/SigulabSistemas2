@@ -29,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :national_good %><br>
-    <%= f.number_field :national_good %>
+    <%= f.number_field (:national_good, min: 0) %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>
   </div>
   <div class="field">
     <%= f.label :last_calibration %><br>
@@ -68,24 +68,19 @@
     <%= f.text_field :bill %>
   </div>
   <div class="field">
-    <%= f.label :investigation %><br>
-    <%= f.check_box :investigation %>
-  </div>
-  <div class="field">
-    <%= f.label :teaching %><br>
+     <br>
+   <%= f.check_box :investigation %>
+    <%= 'Investigacion' %><br>
     <%= f.check_box :teaching %>
-  </div>
-  <div class="field">
-    <%= f.label :extention %><br>
+    <%= 'Docencia' %><br>
     <%= f.check_box :extention %>
-  </div>
-  <div class="field">
-    <%= f.label :management %><br>
+    <%= 'Extension' %><br>
     <%= f.check_box :management %>
+    <%= 'Gestion' %><br>
   </div>
   <div class="field">
     <%= f.label :calibrated %><br>
-    <%= f.text_field :calibrated %>
+    <%= f.select(:calibrated, [[''],['Si'], ['No'], ['Desconocido'] ])  %>
   </div>
   <div class="actions">
     <%= f.submit %>
