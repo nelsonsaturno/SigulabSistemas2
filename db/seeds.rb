@@ -6,33 +6,29 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-## MONTO ASIGNADO SEED
-
-
-## OLD TRANSACTION SEED
-=begin
-montoAsignado = [
-  ['Reformulacion 2013 al 2014', 274290.37 ],
-  ['Presupuesto 2014', 130000 ],
-  ['Inversion 2014', 270000],
-  ['Donacion Ing. Quimica',  9936.5]
+# Labs (name, sae_code, sae_name)
+labs_list = [
+  [ 'ULAB', 'U01', 'Unidad de Laboratorios' ],
+  [ 'A', 'U02', 'Laboratorio A' ],
+  [ 'B', 'U03', 'Laboratorio B' ],
+  [ 'C', 'U04', 'Laboratorio C' ],
+  [ 'D', 'U05', 'Laboratorio D' ],
+  [ 'E', 'U06', 'Laboratorio E' ],
+  [ 'F', 'U07', 'Laboratorio F' ],
+  [ 'G', 'U08', 'Laboratorio G' ],
 ]
-
-# explicitly define the date format using strptime
-#Date.strptime("12/13/2013", "%m/%d/%Y")
-
-gastos = [
-  [ '20/06/2012', 'B038-2012', 'ANSYS, INC', 48375],
-  [ '11/04/2013', 'B033-2013', 'FOE INCORPORATED', 54360],
-  [ '21/11/2013', 'B082-2013', 'AGA GAS, C.A.', 5004.16],
-  [ '04/04/2014', 'B030-2014', 'QUIMICOS LA BARRACA, C.A.', 12882.8] 
-]
-
-montoAsignado.each do |description, income|
-  Transaction.create(description: description, income: income)
+ 
+labs_list.each do |name, sae_code, sae_name|
+  Lab.create(name: name, sae_code: sae_code, sae_name: sae_name)  
 end
 
-gastos.each do |date, outcome_code, recipient, outcome|
-  Transaction.create( date: Date.strptime(date, "%d/%m/%Y"), outcome_code: outcome_code, recipient: recipient, outcome: outcome)
+# Incomes (amount, origin, description, date, organism, document, financing)
+incomes_list = [
+  [ 896845.82, Income.origins[:reformulation], 'Reformulacion 2014', 1/1/2014 ],
+  [ 1030000.00, Income.origins[:ordinary], 'Asignacion Presupuesto 2014', 28/1/2014 ],
+  [ 3030000.00, Income.origins[:ordinary], 'Asignacion Inversion Presupuesto 2014', 3/31/2014 ],
+  [ 9936.50, Income.origins[:extraordinary], 'Donacion de la Asociacion de Estudiantes de IQ USB', 5/14/2014 ],
+]
+incomes_list.each do |amount, origin, description, date|
+  Income.create(amount: amount, origin: origin, description: description, date: date)
 end
-=end
