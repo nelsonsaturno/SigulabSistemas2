@@ -1,47 +1,75 @@
-<h1>Listing consumables</h1>
+<h1><i class="fa fa-fire"></i> Consumibles</h1>
 
-<table>
+
+<div id = "table2">
+</div>
+<div id="invetario"> Inventario </div>
+<br>
+
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+    .tg td{font-family:Arial, sans-serif;font-size:15px;padding:20px 30px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+    .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#C67777;}
+    .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;color:#000000;text-align:center}
+    .tg .tg-s6z2{text-align:center}
+    .tg .tg-093g{font-weight:bold;text-align:center}
+    .tg .tg-hgcj{font-weight:bold;text-align:center}
+    .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px;}
+
+    </style> 
+
+
+ <table class="tg">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Dimentions</th>
-      <th>Material</th>
-      <th>Quantity</th>
-      <th>Location</th>
-      <th>Use</th>
-      <th>Responsible</th>
-      <th>Investigation</th>
+      <th class="tg-093g">Nombre</th>
+     <th class="tg-hgcj">Descripción</th>
+   <!--     <th>Dimentions</th>
+      <th>Material</th> -->
+     <!-- <th class="tg-hgcj">Cantidad</th> -->
+      <th class="tg-hgcj">Ubicación</th>
+    <!--   <th>Use</th> -->
+      <th class="tg-hgcj">Responsable</th>
+<!--       <th>Investigation</th>
       <th>Teaching</th>
       <th>Extention</th>
-      <th>Management</th>
-      <th colspan="3"></th>
+      <th>Management</th> -->
+
     </tr>
   </thead>
 
   <tbody>
     <% @consumables.each do |consumable| %>
       <tr>
-        <td><%= consumable.name %></td>
-        <td><%= consumable.description %></td>
-        <td><%= consumable.dimentions %></td>
-        <td><%= consumable.material %></td>
-        <td><%= consumable.quantity %></td>
-        <td><%= consumable.location %></td>
-        <td><%= consumable.use %></td>
-        <td><%= consumable.responsible %></td>
-        <td><%= consumable.investigation %></td>
+        <td class="tg-s6z2"><%= consumable.name %></td>
+         <td><%= consumable.description %></td>
+  <!--      <td><%= consumable.dimentions %></td>
+        <td><%= consumable.material %></td> -->
+       <!--  <td class="tg-s6z2"><%= consumable.quantity %></td> -->
+        <td class="tg-qpa3"><%= consumable.location %></td>
+<!--         <td><%= consumable.use %></td> -->
+       <td class="tg-s6z2"><%= consumable.responsible %></td>
+<!--         <td><%= consumable.investigation %></td>
         <td><%= consumable.teaching %></td>
         <td><%= consumable.extention %></td>
-        <td><%= consumable.management %></td>
-        <td><%= link_to 'Show', consumable %></td>
-        <td><%= link_to 'Edit', edit_consumable_path(consumable) %></td>
-        <td><%= link_to 'Destroy', consumable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= consumable.management %></td> -->
+
+
+      <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', consumable %></br>
+        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_consumable_path(consumable) %><br>
+       <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', consumable, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
+
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<br>
+<br>
+<br>
 
-<%= link_to 'New Consumable', new_consumable_path %>
+<i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atras ', inventario_url %>
+

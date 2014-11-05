@@ -4,11 +4,6 @@
 
 
 
-body {
-    font-family             : Verdana, Arial, Helvetica, sans-serif;
-}
-
-
 #table2 {
     border: 1px solid black;
     opacity: 0.2;
@@ -16,3 +11,11 @@ body {
 
 }
 
+#invetario{
+  	position 				: relative;
+    left 					: 500px;
+    font-size               : 17px;
+    font-style 				: oblique;
+    opacity					:0.5;
+    font-family 			: "Times New Roman", Georgia, Serif;
+    }

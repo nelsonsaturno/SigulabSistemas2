@@ -2,6 +2,7 @@
 
 <div id = "table2">
 </div>
+<div id="invetario"> Inventario </div>
 <br>
 
     <style type="text/css">
@@ -12,7 +13,7 @@
     .tg .tg-s6z2{text-align:center}
     .tg .tg-093g{font-weight:bold;text-align:center}
     .tg .tg-hgcj{font-weight:bold;text-align:center}
-    .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:13px;font-style: oblique; border-width:0px;}
+    .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px;}
 
     </style> 
 
@@ -80,13 +81,17 @@
         <td><%= chemical_substance.extention %></td>
         <td><%= chemical_substance.management %></td> -->
 
-        <td class="tg-092g"><i class="fa fa-search fa-large" style="color:black"><%= link_to ' Ver', chemical_substance %></br></br>
-        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %></td>
-       <!--  <td><%= link_to 'Destroy', chemical_substance, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', chemical_substance %></br>
+        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
+       <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', chemical_substance, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+<br>
 
 <br>
 
