@@ -4,6 +4,8 @@ class CreateCommitments < ActiveRecord::Migration
       #Required on integration #!
       #t.references :commitable, polymorphic: true
       
+      t.references :lab
+      
       t.string :code
       t.float :amount
       t.string :description

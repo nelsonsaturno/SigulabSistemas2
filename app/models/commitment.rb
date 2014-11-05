@@ -3,5 +3,5 @@ class Commitment < ActiveRecord::Base
   #belongs_to :commitable, polymorphic: true
   
   has_many :executions
-  has_many :labs
+  belongs_to :lab
 end
