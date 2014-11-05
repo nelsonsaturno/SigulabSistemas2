@@ -1,98 +1,105 @@
-<h1><i class="fa fa-flask"></i> Sustancias Químicas</h1>
+<div id="LeDivQuimicas">
 
-<div id = "table2">
-</div>
-<div id="invetario"> Inventario </div>
-<br>
+  <h1><i class="fa fa-flask"></i> Sustancias Químicas</h1>
 
-    <style type="text/css">
-    .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-    .tg td{font-family:Arial, sans-serif;font-size:15px;padding:20px 30px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-    .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
-    .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;color:#000000;text-align:center}
-    .tg .tg-s6z2{text-align:center}
-    .tg .tg-093g{font-weight:bold;text-align:center}
-    .tg .tg-hgcj{font-weight:bold;text-align:center}
-    .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px;}
-
-    </style> 
+  <div id = "table2">
+  </div>
+  <div id="invetario"> Inventario </div>
+  <br>
 
 
-  <thead>
-    <table class="tg">
-    <tr>
-      <th class="tg-093g">Nombre</th>
-     <!--  <th>Purity</th>
-      <th>Matter states</th>
-      <th>Controlled</th>
-      <th>Legal regime</th>
-      <th>Quantity</th> -->
-      <th class="tg-hgcj">Cas</th>
-      <!-- <th>Use</th>
-      <th>Status</th> -->
-      <th class="tg-hgcj">Responsable</th>
-      <th class="tg-hgcj">Ubicación</th>
-     <!--  <th>Expiration date</th>
-      <th>Dangerous</th>
-      <th>Ri7</th>
-      <th>Ri4</th>
-      <th>Toxic</th>
-      <th>Oxidant</th>
-      <th>Explosive</th>
-      <th>Irritating</th>
-      <th>Inflamable</th>
-      <th>Corrosive</th>
-      <th>Nocive</th>
-      <th>Investigation</th>
-      <th>Teaching</th>
-      <th>Extention</th>
-      <th>Management</th> -->
-     
-    </tr>
-  </thead>
+      <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:5px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
+      .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+      .tg .tg-s6z2{text-align:center}
+      .tg .tg-093g{font-weight:bold;text-align:center; padding: 2px;}
+      .tg .tg-hgcj{font-weight:bold;text-align:center}
+      .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 15px; line-height:1.4em;}
 
-  <tbody>
-    <% @chemical_substances.each do |chemical_substance| %>
+      </style> 
+
+
+    <thead>
+      <table class="tg">
       <tr>
-        <td class="tg-s6z2"><%= chemical_substance.name %></td>
-<!--         <td><%= chemical_substance.purity %></td>
-        <td><%= chemical_substance.matter_states %></td>
-        <td><%= chemical_substance.controlled %></td>
-        <td><%= chemical_substance.legal_regime %></td>
-        <td><%= chemical_substance.quantity %></td> -->
-        <td class="tg-s6z2"><%= chemical_substance.cas %></td>
-<!--         <td><%= chemical_substance.use %></td>
-        <td><%= chemical_substance.status %></td> -->
-        <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
-        <td class="tg-s6z2"><%= chemical_substance.location %></td>
-<!--         <td><%= chemical_substance.expiration_date %></td>
-        <td><%= chemical_substance.dangerous %></td>
-        <td><%= chemical_substance.rI7 %></td>
-        <td><%= chemical_substance.rI4 %></td>
-        <td><%= chemical_substance.toxic %></td>
-        <td><%= chemical_substance.oxidant %></td>
-        <td><%= chemical_substance.explosive %></td>
-        <td><%= chemical_substance.irritating %></td>
-        <td><%= chemical_substance.inflamable %></td>
-        <td><%= chemical_substance.corrosive %></td>
-        <td><%= chemical_substance.nocive %></td>
-        <td><%= chemical_substance.investigation %></td>
-        <td><%= chemical_substance.teaching %></td>
-        <td><%= chemical_substance.extention %></td>
-        <td><%= chemical_substance.management %></td> -->
-
-        <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', chemical_substance %></br>
-        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
-       <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', chemical_substance, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-
+        <th class="tg-093g">Nombre</th>
+       <!--  <th>Purity</th>
+        <th>Matter states</th>
+        <th>Controlled</th>
+        <th>Legal regime</th>
+        <th>Quantity</th> -->
+        <th class="tg-hgcj">CAS</th>
+        <!-- <th>Use</th>
+        <th>Status</th> -->
+        <th class="tg-hgcj">Responsable</th>
+        <th class="tg-hgcj">Ubicación</th>
+       <!--  <th>Expiration date</th>
+        <th>Dangerous</th>
+        <th>Ri7</th>
+        <th>Ri4</th>
+        <th>Toxic</th>
+        <th>Oxidant</th>
+        <th>Explosive</th>
+        <th>Irritating</th>
+        <th>Inflamable</th>
+        <th>Corrosive</th>
+        <th>Nocive</th>
+        <th>Investigation</th>
+        <th>Teaching</th>
+        <th>Extention</th>
+        <th>Management</th> -->
+       
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-<br>
+    <tbody>
+      <% @chemical_substances.each do |chemical_substance| %>
+        <tr>
+          <td class="tg-s6z2"><%= chemical_substance.name %></td>
+  <!--         <td><%= chemical_substance.purity %></td>
+          <td><%= chemical_substance.matter_states %></td>
+          <td><%= chemical_substance.controlled %></td>
+          <td><%= chemical_substance.legal_regime %></td>
+          <td><%= chemical_substance.quantity %></td> -->
+          <td class="tg-s6z2"><%= chemical_substance.cas %></td>
+  <!--         <td><%= chemical_substance.use %></td>
+          <td><%= chemical_substance.status %></td> -->
+          <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
+          <td class="tg-s6z2"><%= chemical_substance.location %></td>
+  <!--         <td><%= chemical_substance.expiration_date %></td>
+          <td><%= chemical_substance.dangerous %></td>
+          <td><%= chemical_substance.rI7 %></td>
+          <td><%= chemical_substance.rI4 %></td>
+          <td><%= chemical_substance.toxic %></td>
+          <td><%= chemical_substance.oxidant %></td>
+          <td><%= chemical_substance.explosive %></td>
+          <td><%= chemical_substance.irritating %></td>
+          <td><%= chemical_substance.inflamable %></td>
+          <td><%= chemical_substance.corrosive %></td>
+          <td><%= chemical_substance.nocive %></td>
+          <td><%= chemical_substance.investigation %></td>
+          <td><%= chemical_substance.teaching %></td>
+          <td><%= chemical_substance.extention %></td>
+          <td><%= chemical_substance.management %></td> -->
 
-<br>
+          
+            <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', chemical_substance %></br>
+            <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
+           <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        
 
-<i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atras ', inventario_url %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+
+  <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br>
+ </div>
