@@ -11,10 +11,123 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024232834) do
+ActiveRecord::Schema.define(version: 20141103195104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chemical_substances", force: true do |t|
+    t.string   "name"
+    t.string   "purity"
+    t.string   "matter_states"
+    t.boolean  "controlled"
+    t.string   "legal_regime"
+    t.string   "quantity"
+    t.string   "cas"
+    t.string   "use"
+    t.string   "status"
+    t.string   "responsible"
+    t.string   "location"
+    t.date     "expiration_date"
+    t.string   "dangerous"
+    t.boolean  "rI7"
+    t.boolean  "rI4"
+    t.boolean  "toxic"
+    t.boolean  "oxidant"
+    t.boolean  "explosive"
+    t.boolean  "irritating"
+    t.boolean  "inflamable"
+    t.boolean  "corrosive"
+    t.boolean  "nocive"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "consumables", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "dimentions"
+    t.string   "material"
+    t.string   "quantity"
+    t.string   "location"
+    t.string   "use"
+    t.string   "responsible"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "equipment", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "serial"
+    t.integer  "national_good"
+    t.string   "status"
+    t.date     "last_calibration"
+    t.text     "use"
+    t.string   "responsible"
+    t.string   "location"
+    t.date     "adquisition_date"
+    t.string   "buy_order"
+    t.float    "cost"
+    t.string   "bill"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.string   "calibrated"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instruments", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "measurement_unit"
+    t.float    "capacity"
+    t.string   "material"
+    t.string   "use"
+    t.string   "status"
+    t.string   "location"
+    t.date     "last_calibration"
+    t.string   "responsible"
+    t.integer  "national_good"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tools", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "type"
+    t.integer  "national_good"
+    t.string   "status"
+    t.string   "use"
+    t.string   "responsible"
+    t.string   "location"
+    t.string   "material"
+    t.string   "bill"
+    t.boolean  "from_set"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

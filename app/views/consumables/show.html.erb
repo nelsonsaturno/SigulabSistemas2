@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @consumable.name %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @consumable.description %>
+</p>
+
+<p>
+  <strong>Dimensiones:</strong>
+  <%= @consumable.dimentions %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @consumable.material %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @consumable.quantity %>
+</p>
+
+<p>
+  <strong>Ubicación:</strong>
+  <%= @consumable.location %>
+</p>
+
+<p>
+  <strong>Use:</strong>
+  <%= @consumable.use %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @consumable.responsible %>
+</p>
+
+<p>
+  <strong>Investigación:</strong>
+  <%= @consumable.investigation %>
+</p>
+
+<p>
+  <strong>Docencia:</strong>
+  <%= @consumable.teaching %>
+</p>
+
+<p>
+  <strong>Extensión:</strong>
+  <%= @consumable.extention %>
+</p>
+
+<p>
+  <strong>Gestión:</strong>
+  <%= @consumable.management %>
+</p>
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>

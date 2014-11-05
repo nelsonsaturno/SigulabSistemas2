@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
+  resources :chemical_substances
+
+  resources :consumables
+
+  resources :tools
+
+  resources :instruments
+
+  resources :equipment
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  get "inventario" => "statics#inventario", :as => "inventario"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

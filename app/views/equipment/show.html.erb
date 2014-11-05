@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @equipment.name %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @equipment.brand %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @equipment.model %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @equipment.serial %>
+</p>
+
+<p>
+  <strong>Numero de Bien Nacional:</strong>
+  <%= @equipment.national_good %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @equipment.status %>
+</p>
+
+<p>
+  <strong>Ultima Calibración:</strong>
+  <%= @equipment.last_calibration %>
+</p>
+
+<p>
+  <strong>Uso:</strong>
+  <%= @equipment.use %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @equipment.responsible %>
+</p>
+
+<p>
+  <strong>Ubicación:</strong>
+  <%= @equipment.location %>
+</p>
+
+<p>
+  <strong>Fecha Adquisición:</strong>
+  <%= @equipment.adquisition_date %>
+</p>
+
+<p>
+  <strong>Orden de Compra:</strong>
+  <%= @equipment.buy_order %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @equipment.cost %>
+</p>
+
+<p>
+  <strong>Factura:</strong>
+  <%= @equipment.bill %>
+</p>
+
+<p>
+  <strong>Investigación:</strong>
+  <%= @equipment.investigation %>
+</p>
+
+<p>
+  <strong>Docencia:</strong>
+  <%= @equipment.teaching %>
+</p>
+
+<p>
+  <strong>Extensión:</strong>
+  <%= @equipment.extention %>
+</p>
+
+<p>
+  <strong>Gestión:</strong>
+  <%= @equipment.management %>
+</p>
+
+<p>
+  <strong>Calibrated:</strong>
+  <%= @equipment.calibrated %>
+</p>
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
