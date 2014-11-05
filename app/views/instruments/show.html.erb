@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @instrument.name %>
 </p>
 
 <p>
-  <strong>Brand:</strong>
+  <strong>Marca:</strong>
   <%= @instrument.brand %>
 </p>
 
 <p>
-  <strong>Model:</strong>
+  <strong>Modelo:</strong>
   <%= @instrument.model %>
 </p>
 
 <p>
-  <strong>Measurement unit:</strong>
+  <strong>Unidad de medida:</strong>
   <%= @instrument.measurement_unit %>
 </p>
 
 <p>
-  <strong>Capacity:</strong>
+  <strong>Capacidad:</strong>
   <%= @instrument.capacity %>
 </p>
 
@@ -31,54 +31,54 @@
 </p>
 
 <p>
-  <strong>Use:</strong>
+  <strong>Uso:</strong>
   <%= @instrument.use %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Estatus:</strong>
   <%= @instrument.status %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Ubicación:</strong>
   <%= @instrument.location %>
 </p>
 
 <p>
-  <strong>Last calibration:</strong>
+  <strong>Ultima Calibración:</strong>
   <%= @instrument.last_calibration %>
 </p>
 
 <p>
-  <strong>Responsible:</strong>
+  <strong>Responsable:</strong>
   <%= @instrument.responsible %>
 </p>
 
 <p>
-  <strong>National good:</strong>
+  <strong>Numero de Bien Nacional:</strong>
   <%= @instrument.national_good %>
 </p>
 
 <p>
-  <strong>Investigation:</strong>
+  <strong>Investigación:</strong>
   <%= @instrument.investigation %>
 </p>
 
 <p>
-  <strong>Teaching:</strong>
+  <strong>Docencia:</strong>
   <%= @instrument.teaching %>
 </p>
 
 <p>
-  <strong>Extention:</strong>
+  <strong>Extensión:</strong>
   <%= @instrument.extention %>
 </p>
 
 <p>
-  <strong>Management:</strong>
+  <strong>Gestión:</strong>
   <%= @instrument.management %>
 </p>
-
-<%= link_to 'Edit', edit_instrument_path(@instrument) %> |
-<%= link_to 'Back', instruments_path %>
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', instruments_path %>

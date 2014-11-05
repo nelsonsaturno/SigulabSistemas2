@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @consumable.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @consumable.description %>
 </p>
 
 <p>
-  <strong>Dimentions:</strong>
+  <strong>Dimensiones:</strong>
   <%= @consumable.dimentions %>
 </p>
 
@@ -21,12 +21,12 @@
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong>Cantidad:</strong>
   <%= @consumable.quantity %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Ubicación:</strong>
   <%= @consumable.location %>
 </p>
 
@@ -36,29 +36,29 @@
 </p>
 
 <p>
-  <strong>Responsible:</strong>
+  <strong>Responsable:</strong>
   <%= @consumable.responsible %>
 </p>
 
 <p>
-  <strong>Investigation:</strong>
+  <strong>Investigación:</strong>
   <%= @consumable.investigation %>
 </p>
 
 <p>
-  <strong>Teaching:</strong>
+  <strong>Docencia:</strong>
   <%= @consumable.teaching %>
 </p>
 
 <p>
-  <strong>Extention:</strong>
+  <strong>Extensión:</strong>
   <%= @consumable.extention %>
 </p>
 
 <p>
-  <strong>Management:</strong>
+  <strong>Gestión:</strong>
   <%= @consumable.management %>
 </p>
-
-<%= link_to 'Edit', edit_consumable_path(@consumable) %> |
-<%= link_to 'Back', consumables_path %>
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>

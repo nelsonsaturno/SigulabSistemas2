@@ -1,42 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @tool.name %>
 </p>
 
 <p>
-  <strong>Brand:</strong>
+  <strong>Marca:</strong>
   <%= @tool.brand %>
 </p>
 
 <p>
-  <strong>Type:</strong>
+  <strong>Tipo:</strong>
   <%= @tool.type %>
 </p>
 
 <p>
-  <strong>National good:</strong>
+  <strong>Numero Bien Nacional:</strong>
   <%= @tool.national_good %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Estats:</strong>
   <%= @tool.status %>
 </p>
 
 <p>
-  <strong>Use:</strong>
+  <strong>USO:</strong>
   <%= @tool.use %>
 </p>
 
 <p>
-  <strong>Responsible:</strong>
+  <strong>Responsable:</strong>
   <%= @tool.responsible %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Ubicación:</strong>
   <%= @tool.location %>
 </p>
 
@@ -46,34 +46,34 @@
 </p>
 
 <p>
-  <strong>Bill:</strong>
+  <strong>Factura:</strong>
   <%= @tool.bill %>
 </p>
 
 <p>
-  <strong>From set:</strong>
+  <strong>De un juego:</strong>
   <%= @tool.from_set %>
 </p>
 
 <p>
-  <strong>Investigation:</strong>
+  <strong>Investigación:</strong>
   <%= @tool.investigation %>
 </p>
 
 <p>
-  <strong>Teaching:</strong>
+  <strong>Docencia:</strong>
   <%= @tool.teaching %>
 </p>
 
 <p>
-  <strong>Extention:</strong>
+  <strong>Extensión:</strong>
   <%= @tool.extention %>
 </p>
 
 <p>
-  <strong>Management:</strong>
+  <strong>Gestión:</strong>
   <%= @tool.management %>
 </p>
-
-<%= link_to 'Edit', edit_tool_path(@tool) %> |
-<%= link_to 'Back', tools_path %>
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>
