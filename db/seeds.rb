@@ -24,11 +24,11 @@ end
 
 # Incomes (amount, origin, description, date, organism, document, financing)
 incomes_list = [
-  [ 896845.82, Income.origins[:reformulation], 'Reformulacion 2014', 1/1/2014 ],
-  [ 1030000.00, Income.origins[:ordinary], 'Asignacion Presupuesto 2014', 28/1/2014 ],
-  [ 3030000.00, Income.origins[:ordinary], 'Asignacion Inversion Presupuesto 2014', 3/31/2014 ],
-  [ 9936.50, Income.origins[:extraordinary], 'Donacion de la Asociacion de Estudiantes de IQ USB', 5/14/2014 ],
+  [ 896845.82, Income.origins[:reformulation], 'Reformulacion 2014', '1/1/2014' ],
+  [ 1030000.00, Income.origins[:ordinary], 'Asignacion Presupuesto 2014', '28/1/2014' ],
+  [ 3030000.00, Income.origins[:ordinary], 'Asignacion Inversion Presupuesto 2014', '31/3/2014' ],
+  [ 9936.50, Income.origins[:extraordinary], 'Donacion de la Asociacion de Estudiantes de IQ USB', '14/5/2014' ],
 ]
 incomes_list.each do |amount, origin, description, date|
-  Income.create(amount: amount, origin: origin, description: description, date: date)
+  Income.create(amount: amount, origin: origin, description: description, date: DateTime.strptime(date,'%d/%m/%Y'))
 end
