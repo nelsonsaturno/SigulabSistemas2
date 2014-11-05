@@ -1,5 +1,4 @@
 class AdministrationController < ApplicationController
-  layout 'administration'
   
   before_action :set_subsystem 
   
