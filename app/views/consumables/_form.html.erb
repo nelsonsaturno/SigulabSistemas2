@@ -12,53 +12,48 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= '* Nombre' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= 'Descripcion' %><br>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :dimentions %><br>
+    <%= 'Dimensiones' %><br>
     <%= f.text_field :dimentions %>
   </div>
   <div class="field">
-    <%= f.label :material %><br>
+    <%= 'Material' %><br>
     <%= f.text_field :material %>
   </div>
   <div class="field">
-    <%= f.label :quantity %><br>
+    <%= 'Cantidad' %><br>
     <%= f.text_field :quantity %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= '* Ubicacion' %><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :use %><br>
-    <%= f.text_field :use %>
-  </div>
-  <div class="field">
-    <%= f.label :responsible %><br>
+    <%= '* Responsable' %><br>
     <%= f.text_field :responsible %>
   </div>
   <div class="field">
-    <%= f.label :investigation %><br>
-    <%= f.check_box :investigation %>
-  </div>
-  <div class="field">
-    <%= f.label :teaching %><br>
+  <br>
+    <%= 'Uso:'%><br>
+   <%= f.check_box :investigation %>
+    <%= 'Investigacion' %><br>
     <%= f.check_box :teaching %>
-  </div>
-  <div class="field">
-    <%= f.label :extention %><br>
+    <%= 'Docencia' %><br>
     <%= f.check_box :extention %>
-  </div>
-  <div class="field">
-    <%= f.label :management %><br>
+    <%= 'Extension' %><br>
     <%= f.check_box :management %>
-  </div>
+    <%= 'Gestion' %><br>
+   </div>
+<br> 
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -12,80 +12,72 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= '* Nombre ' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :brand %><br>
+    <%= 'Marca' %><br>
     <%= f.text_field :brand %>
   </div>
   <div class="field">
-    <%= f.label :model %><br>
+    <%= 'Modelo' %><br>
     <%= f.text_field :model %>
   </div>
   <div class="field">
-    <%= f.label :serial %><br>
-    <%= f.text_field :serial %>
+    <%= '* Serial' %><br>
+    <%= f.text_field(:serial) %>
   </div>
   <div class="field">
-    <%= f.label :national_good %><br>
-    <%= f.number_field :national_good %>
+    <%= '* Numero bien nacional:' %><br>
+    <%= f.number_field(:national_good, min: 0) %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= 'Estatus' %><br>
+    <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>
   </div>
   <div class="field">
-    <%= f.label :last_calibration %><br>
-    <%= f.date_select :last_calibration %>
-  </div>
-  <div class="field">
-    <%= f.label :use %><br>
-    <%= f.text_area :use %>
-  </div>
-  <div class="field">
-    <%= f.label :responsible %><br>
+    <%= '* Responsable:' %><br>
     <%= f.text_field :responsible %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= '* Ubicacion' %><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :adquisition_date %><br>
+    <%= 'Fecha de adquisicion' %><br>
     <%= f.date_select :adquisition_date %>
   </div>
   <div class="field">
-    <%= f.label :buy_order %><br>
+    <%= 'Orden de compra' %><br>
     <%= f.text_field :buy_order %>
   </div>
   <div class="field">
-    <%= f.label :cost %><br>
+    <%= 'Precio' %><br>
     <%= f.text_field :cost %>
   </div>
   <div class="field">
-    <%= f.label :bill %><br>
+    <%= 'Factura' %><br>
     <%= f.text_field :bill %>
   </div>
   <div class="field">
-    <%= f.label :investigation %><br>
-    <%= f.check_box :investigation %>
-  </div>
-  <div class="field">
-    <%= f.label :teaching %><br>
+
+     <%= 'Uso:'%><br>
+   <%= f.check_box :investigation %>
+    <%= 'Investigación' %><br>
     <%= f.check_box :teaching %>
-  </div>
-  <div class="field">
-    <%= f.label :extention %><br>
+    <%= 'Docencia' %><br>
     <%= f.check_box :extention %>
-  </div>
-  <div class="field">
-    <%= f.label :management %><br>
+    <%= 'Extensión' %><br>
     <%= f.check_box :management %>
+    <%= 'Gestion' %><br>
   </div>
   <div class="field">
-    <%= f.label :calibrated %><br>
-    <%= f.text_field :calibrated %>
+    <%= 'Calibrado' %><br>
+    <%= f.select(:calibrated, [[''],['Si'], ['No'], ['Desconocido'] ])  %>
+  </div>
+  <div class="field">
+    <%= 'Ultima calibracion:' %><br>
+    <%= f.date_select :last_calibration %>
   </div>
   <div class="actions">
     <%= f.submit %>
