@@ -1,7 +1,7 @@
 <%= form_for(@instrument) do |f| %>
   <% if @instrument.errors.any? %>
     <div id="error_explanation">
-      <h2><!--<%= pluralize(@instrument.errors.count, "error") %>--> Error:</h2>
+      <h2><%= pluralize(@instrument.errors.count, "errores") %> prohiben este instrumento de ser guardado:</h2>
 
       <ul>
       <% @instrument.errors.full_messages.each do |message| %>

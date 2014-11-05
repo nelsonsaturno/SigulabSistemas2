@@ -1,7 +1,7 @@
 <%= form_for(@chemical_substance) do |f| %>
   <% if @chemical_substance.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@chemical_substance.errors.count, "error") %> prohibited this chemical_substance from being saved:</h2>
+      <h2><%= pluralize(@chemical_substance.errors.count, "errores") %> prohiben esta sustancia quimica de ser guardada:</h2>
 
       <ul>
       <% @chemical_substance.errors.full_messages.each do |message| %>
@@ -42,7 +42,7 @@
     <%= f.number_field(:quantity, min: 0) %>
   </div>
   <div class="field">
-    <%= 'CAS' %><br>
+    <%= '* CAS' %><br>
     <%= f.text_field :cas %>
   </div>
   <div class="field">
