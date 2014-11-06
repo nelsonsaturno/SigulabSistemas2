@@ -35,9 +35,10 @@
   <%= @equipment.last_calibration %>
 </p>
 
+
 <p>
-  <strong>Uso:</strong>
-  <%= @equipment.use %>
+  <strong>Long   Anch   Prof    Medida</strong>
+  <%= @equipment.lenght %><%= @equipment.depth %><%= @equipment.width %><%= @equipment.meassure %>
 </p>
 
 <p>
@@ -71,29 +72,23 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @equipment.investigation %>
-</p>
+  <strong>Uso:</strong>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @equipment.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @equipment.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @equipment.management %>
-</p>
-
-<p>
-  <strong>Calibrated:</strong>
-  <%= @equipment.calibrated %>
+  <% if @equipment.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @equipment.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @equipment.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @equipment.management %>
+    <%= ' Gest' %>
+  <% end %>
 </p>
 <br>
-<i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
+<% if can? :update, @equipment %>
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
+<% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>

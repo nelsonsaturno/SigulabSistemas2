@@ -17,13 +17,6 @@
   </div>
   <div class="field">
 
-  <div class="field">
-    <%= 'Regimen legal:' %><br>
-    <%= f.check_box :rI7 %>
-    <%= 'RI7' %>
-    <%= f.check_box :rI4 %>
-    <%= 'RI4' %><br>
-  </div>
 
     <%= 'Pureza' %><br>
     <%= f.text_field :purity %>
@@ -35,14 +28,20 @@
   <div class="field">
     <%= 'Controlado' %><br>
     <%= f.select(:controlled, [['Si'], ['No']] ) %>
-
+  </div>
+  <div class="field">
+    <%= 'Regimen legal:' %><br>
+    <%= f.check_box :rI7 %>
+    <%= 'RI7' %>
+    <%= f.check_box :rI4 %>
+    <%= 'RI4' %><br>
   </div>
   <div class="field">
     <%= 'Cantidad' %><br>
-    <%= f.number_field(:quantity, min: 0) %>
+    <%= f.number_field(:quantity, min: 0) %><%= f.select(:meassure, [['Kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %>
   </div>
   <div class="field">
-    <%= '* CAS' %><br>
+    <%= 'CAS' %><br>
     <%= f.text_field :cas %>
   </div>
   <div class="field">

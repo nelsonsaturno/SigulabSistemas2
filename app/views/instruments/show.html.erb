@@ -30,10 +30,6 @@
   <%= @instrument.material %>
 </p>
 
-<p>
-  <strong>Uso:</strong>
-  <%= @instrument.use %>
-</p>
 
 <p>
   <strong>Estatus:</strong>
@@ -59,26 +55,24 @@
   <strong>Numero de Bien Nacional:</strong>
   <%= @instrument.national_good %>
 </p>
-
 <p>
-  <strong>Investigación:</strong>
-  <%= @instrument.investigation %>
-</p>
+  <strong>Uso:</strong>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @instrument.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @instrument.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @instrument.management %>
+  <% if @instrument.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @instrument.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @instrument.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @instrument.management %>
+    <%= ' Gest' %>
+  <% end %>
 </p>
 <br>
-<i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
+<% if can? :update, @instrument %>
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
+<% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', instruments_path %>

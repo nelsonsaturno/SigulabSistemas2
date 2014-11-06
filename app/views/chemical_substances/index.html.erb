@@ -86,8 +86,12 @@
 
           
             <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', chemical_substance %></br>
-            <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
-           <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            <% if can? :update, @chemical_substance %>
+              <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
+            <% end %>
+            <% if can? :destroy, @chemical_substance %>
+              <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            <%end%>
         
 
         </tr>
@@ -98,8 +102,10 @@
   <br>
 
 
-
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <% if can? :create, @chemical_substance %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | 
+  <%end%>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br>
  </div>

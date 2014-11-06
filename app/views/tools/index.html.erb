@@ -60,8 +60,12 @@
         <td><%= tool.management %></td> -->
 
       <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', tool %></br>
+      <% if can? :update, @tool %>
         <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_tool_path(tool) %><br>
+      <%end%>
+      <% if can? :destroy, @tool %>
        <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', tool, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <%end%>
 
 
 
@@ -75,6 +79,8 @@
 <br>
 
 <br>
-
-<i class="fa fa-plus-circle"></i><%= link_to ' Nueva herramienta', new_tool_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+<% if can? :create, @tool %>
+  <i class="fa fa-plus-circle"></i><%= link_to ' Nueva herramienta', new_tool_path %> | 
+<% end %>
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
 

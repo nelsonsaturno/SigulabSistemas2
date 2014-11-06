@@ -70,8 +70,12 @@
         <td><%= equipment.calibrated %></td> -->
 
         <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', equipment %></br>
-        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',edit_equipment_path(equipment) %><br>
+        <% if can? :update, @equipment %>
+          <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',edit_equipment_path(equipment) %><br>
+        <% end %>
+         <% if can? :destroy, @equipment %>
         <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', equipment, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <% end %>
 
 
 
@@ -84,5 +88,6 @@
 <br>
 <br>
 <br>
-
-<i class="fa fa-plus-circle"></i><%= link_to ' Nueva equipo', new_equipment_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atras ', inventario_url %>
+<% if can? :create, @equipment %>
+  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atras ', inventario_url %>
+<% end %>

@@ -58,8 +58,12 @@
 
 
         <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', consumable %></br>
+        <% if can? :update, @consumable %>
           <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_consumable_path(consumable) %><br>
+        <%end%>
+        <% if can? :destroy, @consumable %>
          <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', consumable, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        <%end%>
 
 
 
@@ -69,8 +73,10 @@
   </table>
 
   <br>
-
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <% if can? :create, @consumable %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
+  <%end%>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br>
 

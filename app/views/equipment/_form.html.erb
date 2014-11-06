@@ -31,6 +31,27 @@
     <%= '* Numero bien nacional:' %><br>
     <%= f.number_field(:national_good, min: 0) %>
   </div>
+  
+  <div class="field">
+    <%= 'Longitud:' %><br>
+    <%= f.number_field(:lenght, min: 0) %>
+  </div>
+
+  <div class="field">
+    <%= 'Anchura:' %><br>
+    <%= f.number_field(:depth, min: 0) %>
+  </div>
+
+  <div class="field">
+    <%= 'Profundidad:' %><br>
+    <%= f.number_field(:width, min: 0) %>
+  </div>
+  
+  <div class="field">
+    <%= 'Medida' %><br>
+    <%= f.select(:status, [['m'], ['cm']] ) %>
+  </div>
+
   <div class="field">
     <%= 'Estatus' %><br>
     <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>

@@ -64,9 +64,12 @@
           <td><%= instrument.management %></td> -->
 
         <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', instrument %></br>
+        <% if can? :update, @instrument %>
           <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_instrument_path(instrument) %><br>
+        <%end%>
+        <% if can? :destroy, @instrument %>
          <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', instrument, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
-
+        <%end%>
 
         </tr>
       <% end %>
@@ -74,8 +77,10 @@
   </table>
 
   <br>
-
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Instrumento', new_instrument_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <% if can? :create, @instrument %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Instrumento', new_instrument_path %> | 
+  <%end%>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br>
 </div>
