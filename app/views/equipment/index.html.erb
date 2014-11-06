@@ -85,9 +85,10 @@
 </table>
 
 <br>
-<br>
-<br>
+
+
 <br>
 <% if can? :create, @equipment %>
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atras ', inventario_url %>
+  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path %> |
 <% end %>
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>

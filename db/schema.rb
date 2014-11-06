@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105125634) do
+ActiveRecord::Schema.define(version: 20141106001831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.string   "legal_regime"
     t.string   "quantity"
     t.string   "cas"
-    t.string   "use"
     t.string   "status"
     t.string   "responsible"
     t.string   "location"
@@ -45,16 +44,15 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "meassure"
   end
 
   create_table "consumables", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "dimentions"
     t.string   "material"
     t.string   "quantity"
     t.string   "location"
-    t.string   "use"
     t.string   "responsible"
     t.boolean  "investigation"
     t.boolean  "teaching"
@@ -72,7 +70,6 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.integer  "national_good"
     t.string   "status"
     t.date     "last_calibration"
-    t.text     "use"
     t.string   "responsible"
     t.string   "location"
     t.date     "adquisition_date"
@@ -86,6 +83,10 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.string   "calibrated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "lenght"
+    t.decimal  "depth"
+    t.decimal  "width"
+    t.string   "meassure"
   end
 
   create_table "instruments", force: true do |t|
@@ -95,7 +96,6 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.string   "measurement_unit"
     t.float    "capacity"
     t.string   "material"
-    t.string   "use"
     t.string   "status"
     t.string   "location"
     t.date     "last_calibration"
@@ -115,7 +115,6 @@ ActiveRecord::Schema.define(version: 20141105125634) do
     t.string   "type"
     t.integer  "national_good"
     t.string   "status"
-    t.string   "use"
     t.string   "responsible"
     t.string   "location"
     t.string   "material"
