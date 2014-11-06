@@ -7,7 +7,7 @@
       </ol>
 </div>
 
-<div class="grid_8 push_3">
+<div class="grid_7 push_3">
 	 <%= link_to '<button type="button" class="btn btn-primary"> Compras </button>'.html_safe, compras_url %><br><br>
 </div>
 <% end %>

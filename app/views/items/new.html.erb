@@ -1,13 +1,12 @@
 <div class="grid_7">
       <ol class="breadcrumb">
-         <li> <a href="http://localhost:3000"> Home </a></li>
-			<li> <a href="http://localhost:3000/compras"> Compras </a></li>
-         <li> <a href="http://localhost:3000/solicitud">  Solicitud </a></li>
-         <li> <a href="http://localhost:3000/especificacionesTecnicas">  Especificaciones Tecnicas </a></li>
-        <li class="active">  Item </a></li>
+          <li> <%=link_to 'Home', controller: 'statics'%></li>
+			 <li> <%=link_to 'Compras', compras_url %></li>
+          <li> <%=link_to 'Solicitud', solicitud_url %></li>
+         <li> <%=link_to 'Especificaciones Técnicas', especificacionesTecnicas_url %></li>
+        <li class="active">Item </a></li>
       </ol>
 </div>
-
 
 <div class="grid_7 push_2">
 

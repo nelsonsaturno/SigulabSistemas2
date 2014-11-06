@@ -2,9 +2,9 @@
 
 <div class="grid_7">
       <ol class="breadcrumb">
-         <li> <a href="http://localhost:3000"> Home </a></li>
-			<li> <a href="http://localhost:3000/compras"> Compras </a></li>
-         <li class="active">  Solicitud de compras </li>
+         <li> <%=link_to 'Home', controller: 'statics'%></li>
+         <li> <%=link_to 'Home', compras_url %></li>
+         <li class="active">  Solicitud  </li>
       </ol>
 </div>
 
