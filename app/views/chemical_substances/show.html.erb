@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  <strong>Regimen Legal:</strong>
+  <strong>Régimen Legal:</strong>
 
    <% if @chemical_substance.rI7 %>
     <%= 'RI7' %>
@@ -67,22 +67,22 @@
   <strong>Peligrosidad:</strong>
  
   <% if @chemical_substance.toxic %>
-    <%= 'Toxico' %>
+    <%= ' Tóxico ' %>
   <% end %>
   <% if @chemical_substance.oxidant %>
-    <%= ' Comburente' %>
+    <%= ' Comburente ' %>
   <% end %>
   <% if @chemical_substance.explosive %>
-    <%= ' Explosivo' %>
-  <% end %><br>
+    <%= ' Explosivo ' %>
+  <% end %>
   <% if @chemical_substance.irritating %>
-    <%= ' Irritante' %>
+    <%= ' Irritante ' %>
   <% end %>
   <% if @chemical_substance.inflamable %>
-    <%= 'Inflamable' %>
+    <%= ' Inflamable ' %>
   <% end %>
   <% if @chemical_substance.corrosive %>
-    <%= ' Corrosivo' %>
+    <%= ' Corrosivo ' %>
   <% end %>
   <% if @chemical_substance.nocive %>
     <%= ' Nocivo' %>
@@ -93,21 +93,22 @@
   <strong>Uso:</strong>
 
   <% if @chemical_substance.investigation %>
-    <%= 'Inves' %>
+    <%= ' Investigación ' %>
   <% end %>
   <% if @chemical_substance.teaching %>
-    <%= ' Doc' %>
+    <%= ' Docencia ' %>
   <% end %>
   <% if @chemical_substance.extention %>
-    <%= ' Exten' %>
+    <%= ' Extensión ' %>
   <% end %>
   <% if @chemical_substance.management %>
-    <%= ' Gest' %>
+    <%= ' Gestión ' %>
   <% end %>
 </p>
 
-<br>
+<br><br>
 <% if can? :update, @chemical_substance %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_chemical_substance_path(@chemical_substance) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', chemical_substances_path %>
+<br><br><br><br>

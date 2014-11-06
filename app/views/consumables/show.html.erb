@@ -29,16 +29,16 @@
   <strong>Uso:</strong>
 
   <% if @consumable.investigation %>
-    <%= 'Inves' %>
+    <%= ' Investigación ' %>
   <% end %>
   <% if @consumable.teaching %>
-    <%= ' Doc' %>
+    <%= ' Docencia ' %>
   <% end %>
   <% if @consumable.extention %>
-    <%= ' Exten' %>
+    <%= ' Extentensión ' %>
   <% end %>
   <% if @consumable.management %>
-    <%= ' Gest' %>
+    <%= ' Gestión ' %>
   <% end %>
 </p>
 
@@ -47,8 +47,9 @@
   <%= @consumable.responsible %>
 </p>
 
-<br>
+<br><br>
 <% if can? :update, @consumable %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>
+<br><br><br><br>

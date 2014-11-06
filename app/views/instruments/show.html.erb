@@ -42,7 +42,7 @@
 </p>
 
 <p>
-  <strong>Ultima Calibración:</strong>
+  <strong>Última Calibración:</strong>
   <%= @instrument.last_calibration %>
 </p>
 
@@ -52,27 +52,28 @@
 </p>
 
 <p>
-  <strong>Numero de Bien Nacional:</strong>
+  <strong>Número de Bien Nacional:</strong>
   <%= @instrument.national_good %>
 </p>
 <p>
   <strong>Uso:</strong>
 
   <% if @instrument.investigation %>
-    <%= 'Inves' %>
+    <%= ' Investigación ' %>
   <% end %>
   <% if @instrument.teaching %>
-    <%= ' Doc' %>
+    <%= ' Docencia ' %>
   <% end %>
   <% if @instrument.extention %>
-    <%= ' Exten' %>
+    <%= ' Extentensión ' %>
   <% end %>
   <% if @instrument.management %>
-    <%= ' Gest' %>
+    <%= ' Gestión ' %>
   <% end %>
 </p>
-<br>
+<br><br>
 <% if can? :update, @instrument %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', instruments_path %>
+<br><br><br><br>

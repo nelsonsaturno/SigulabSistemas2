@@ -60,12 +60,12 @@
           <td><%= tool.extention %></td>
           <td><%= tool.management %></td> -->
 
-        <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', tool %></br>
+        <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', tool %></br>
         <% if can? :update, @tool %>
           <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_tool_path(tool) %><br>
         <%end%>
         <% if can? :destroy, @tool %>
-         <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', tool, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+         <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', tool, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
         <%end%>
 
 

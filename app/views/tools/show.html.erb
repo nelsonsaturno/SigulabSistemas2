@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <strong>Numero Bien Nacional:</strong>
+  <strong>Número Bien Nacional:</strong>
   <%= @tool.national_good %>
 </p>
 
@@ -54,20 +54,22 @@
   <strong>Uso:</strong>
 
   <% if @tool.investigation %>
-    <%= 'Inves' %>
+    <%= ' Investigación ' %>
   <% end %>
   <% if @tool.teaching %>
-    <%= ' Doc' %>
+    <%= ' Docencia ' %>
   <% end %>
   <% if @tool.extention %>
-    <%= ' Exten' %>
+    <%= ' Extensión ' %>
   <% end %>
   <% if @tool.management %>
-    <%= ' Gest' %>
+    <%= ' Gestión ' %>
   <% end %>
 </p>
-<br>
+
+<br><br>
 <% if can? :update, @tool %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>
+<br><br><br><br>

@@ -11,90 +11,97 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= '* Nombre' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
+  <div class ="Informacion">
 
+    <div class="field">
+      <%= 'Nombre:' %><br>
+      <%= f.text_field :name %> 
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Pureza:' %><br>
+      <%= f.text_field :purity %>
+    </div>
 
-    <%= 'Pureza' %><br>
-    <%= f.text_field :purity %>
-  </div>
+    <div class="field">
+      <%= 'Estado materia:' %><br>
+      <%= f.select(:matter_states, [['Sólido'], ['Líquido'], ['Gaseoso'] ] ) %>
+    </div>
+    <div class="field">
+      <%= 'Controlado:' %><br>
+      <%= f.select(:controlled, [['Sí'], ['No']] ) %>
+    </div>
+    <div class="field">
+      <%= 'Régimen legal:' %><br>
+      <%= f.check_box :rI7 %>
+      <%= 'RI7' %>
+      <%= f.check_box :rI4 %>
+      <%= 'RI4' %><br>
+    </div>
+    <div class="field">
+      <%= 'Cantidad:' %><br>
+      <%= f.number_field(:quantity, min: 0) %><%= f.select(:meassure, [['Kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %>
+    </div>
+    <div class="field">
+      <%= 'CAS:' %><br>
+      <%= f.text_field :cas %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Estatus:' %><br>
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+      <%= 'Responsable:' %><br>
+      <%= f.text_field :responsible %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Ubicación:' %><br>
+      <%= f.text_field :location %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Fecha de expiración:' %><br>
+      <%= f.date_select :expiration_date %>
+    </div>
+   
   <div class="field">
-    <%= 'Estado materia' %><br>
-    <%= f.select(:matter_states, [['Sólido'], ['Líquido'], ['Gaseoso'] ] ) %>
-  </div>
-  <div class="field">
-    <%= 'Controlado' %><br>
-    <%= f.select(:controlled, [['Si'], ['No']] ) %>
-  </div>
-  <div class="field">
-    <%= 'Regimen legal:' %><br>
-    <%= f.check_box :rI7 %>
-    <%= 'RI7' %>
-    <%= f.check_box :rI4 %>
-    <%= 'RI4' %><br>
-  </div>
-  <div class="field">
-    <%= 'Cantidad' %><br>
-    <%= f.number_field(:quantity, min: 0) %><%= f.select(:meassure, [['Kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %>
-  </div>
-  <div class="field">
-    <%= 'CAS' %><br>
-    <%= f.text_field :cas %>
-  </div>
-  <div class="field">
-    <%= 'Estatus' %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= '* Responsable' %><br>
-    <%= f.text_field :responsible %>
-  </div>
-  <div class="field">
-    <%= '* Ubicación' %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= 'Fecha de expiración' %><br>
-    <%= f.date_select :expiration_date %>
-  </div>
+      <%= 'Peligrosidad:' %><br>
+      <%= f.check_box :toxic %>
+      <%= f.label :Tóxico %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.check_box :inflamable %>
+      <%= f.label :Inflamable %><br>
+      <%= f.check_box :oxidant %>
+      <%= f.label :Comburente  %>&nbsp;
+      <%= f.check_box :corrosive %>
+      <%= f.label :Corrosivo %><br>
+      <%= f.check_box :explosive %>
+      <%= f.label :Explosivo %>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.check_box :nocive %>
+      <%= f.label :Nocivo %><br>
+      <%= f.check_box :irritating %>
+      <%= f.label :Irritante %><br>
 
-<div class="field">
-    <%= 'Peligrosidad' %><br>
-    <br>
-    <%= f.check_box :toxic %>
-    <%= f.label :Tóxico %>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= f.check_box :inflamable %>
-    <%= f.label :Inflamable %><br>
-    <%= f.check_box :oxidant %>
-    <%= f.label :Comburente  %>&nbsp;
-    <%= f.check_box :corrosive %>
-    <%= f.label :Corrosivo %><br>
-    <%= f.check_box :explosive %>
-    <%= f.label :Explosivo %>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <%= f.check_box :nocive %>
-    <%= f.label :Nocivo %><br>
-    <%= f.check_box :irritating %>
-    <%= f.label :Irritante %><br>
+    </div>
+    
 
-  </div>
-  
-
-  <div class="field">
-  <%= 'Uso:'%><br>
-   <%= f.check_box :investigation %>
-    <%= 'Investigacion' %><br>
-    <%= f.check_box :teaching %>
-    <%= 'Docencia' %><br>
-    <%= f.check_box :extention %>
-    <%= 'Extension' %><br>
-    <%= f.check_box :management %>
-    <%= 'Gestion' %><br></div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+    <%= 'Uso:'%><br>
+     <%= f.check_box :investigation %>
+      <%= 'Investigación' %><br>
+      <%= f.check_box :teaching %>
+      <%= 'Docencia' %><br>
+      <%= f.check_box :extention %>
+      <%= 'Extensión' %><br>
+      <%= f.check_box :management %>
+      <%= 'Gestión' %><br></div>
+      <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <br><br>
   </div>
 <% end %>

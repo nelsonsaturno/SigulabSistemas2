@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  <strong>Numero de Bien Nacional:</strong>
+  <strong>Número de Bien Nacional:</strong>
   <%= @equipment.national_good %>
 </p>
 
@@ -31,14 +31,19 @@
 </p>
 
 <p>
-  <strong>Ultima Calibración:</strong>
+  <strong>Última Calibración:</strong>
   <%= @equipment.last_calibration %>
 </p>
 
 
 <p>
-  <strong>Long   Anch   Prof    Medida</strong>
-  <%= @equipment.lenght %><%= @equipment.depth %><%= @equipment.width %><%= @equipment.meassure %>
+  <strong> Medidas: </strong><br>
+  <strong> - Alto: </strong>
+  <%= @equipment.lenght %><%= @equipment.meassure %><br>
+  <strong> - Ancho: </strong>
+  <%= @equipment.width %><%= @equipment.meassure %><br>
+  <strong> - Profundidad:</strong>
+  <%= @equipment.depth %><%= @equipment.meassure %>
 </p>
 
 <p>
@@ -75,20 +80,21 @@
   <strong>Uso:</strong>
 
   <% if @equipment.investigation %>
-    <%= 'Inves' %>
+    <%= ' Investigación ' %>
   <% end %>
   <% if @equipment.teaching %>
-    <%= ' Doc' %>
+    <%= ' Docencia ' %>
   <% end %>
   <% if @equipment.extention %>
-    <%= ' Exten' %>
+    <%= ' Extentensión ' %>
   <% end %>
   <% if @equipment.management %>
-    <%= ' Gest' %>
+    <%= ' Gestión ' %>
   <% end %>
 </p>
-<br>
+<br><br>
 <% if can? :update, @equipment %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
+<br><br><br><br>

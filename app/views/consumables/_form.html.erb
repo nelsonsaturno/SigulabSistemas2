@@ -1,7 +1,7 @@
 <%= form_for(@consumable) do |f| %>
   <% if @consumable.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@consumable.errors.count, "error(es)") %> prohíben que este consumible sea guardado:</h2>
+      <h2><%= pluralize(@consumable.errors.count, "error(es") %>) prohíben que este consumible sea guardado:</h2>
 
       <ul>
       <% @consumable.errors.full_messages.each do |message| %>
@@ -11,46 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= '* Nombre' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= 'Descripcion' %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= 'Material' %><br>
-    <%= f.text_field :material %>
-  </div>
-  <div class="field">
-    <%= 'Cantidad' %><br>
-    <%= f.text_field :quantity %>
-  </div>
-  <div class="field">
-    <%= '* Ubicacion' %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= '* Responsable' %><br>
-    <%= f.text_field :responsible %>
-  </div>
-  <div class="field">
-  <br>
-    <%= 'Uso:'%><br>
-   <%= f.check_box :investigation %>
-    <%= 'Investigacion' %><br>
-    <%= f.check_box :teaching %>
-    <%= 'Docencia' %><br>
-    <%= f.check_box :extention %>
-    <%= 'Extension' %><br>
-    <%= f.check_box :management %>
-    <%= 'Gestion' %><br>
-   </div>
-<br> 
+<div class ="Informacion">
+    <div class="field">
+      <%= 'Nombre:' %><br>
+      <%= f.text_field :name %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Descripción:' %><br>
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= 'Material:' %><br>
+      <%= f.text_field :material %>
+    </div>
+    <div class="field">
+      <%= 'Cantidad:' %><br>
+      <%= f.text_field :quantity %>
+    </div>
+    <div class="field">
+      <%= 'Ubicación:' %><br>
+      <%= f.text_field :location %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Responsable:' %><br>
+      <%= f.text_field :responsible %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+    <br>
+      <%= 'Uso:'%><br>
+     <%= f.check_box :investigation %>
+      <%= 'Investigación' %><br>
+      <%= f.check_box :teaching %>
+      <%= 'Docencia' %><br>
+      <%= f.check_box :extention %>
+      <%= 'Extensión' %><br>
+      <%= f.check_box :management %>
+      <%= 'Gestión' %><br>
+     </div>
+      <br> 
 
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <br><br>
   </div>
 <% end %>

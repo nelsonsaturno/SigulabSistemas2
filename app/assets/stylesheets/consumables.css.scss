@@ -20,9 +20,18 @@
     }
 
 #LeDivConsumibles {
-    background-image        :   url('/assets/Sustancias.png');
-    background-size         : 650px;  
+    background-image        :   url('/assets/consumibles2.png');
+    /*background-size         : 580px;*/  
     background-repeat       : no-repeat; 
     background-position     : bottom center; 
     background-color        : #FFFFFF;
+}
+
+.red {
+    font-size               : 22px;
+    color                   : red;
+}
+
+.Informacion {
+    line-height             :1.6em;
 }
