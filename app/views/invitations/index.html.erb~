@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+	<div class="grid_7">
+		   <ol class="breadcrumb">
+		      <li> <a href="http://localhost:3000"> Home </a></li>
+				<li> <a href="http://localhost:3000/compras"> Compras </a></li>
+		      <li> <a href="http://localhost:3000/solicitud">  Solicitud </a></li>
+		      <li class="active"> Carta de invitación</li>
+		   </ol>
+	</div>
+	<div class="grid_7 ">
+			<h2>Cartas de invitacíon</h2>
+			<%= render 'invitationtable' %>
+			<%= link_to '<button type="button" class="btn btn-primary"> Agregar otra invitación </button>'.html_safe, new_invitation_path %> 
+			<br><br>
+			<%= link_to '<button type="button" class="btn btn-primary"> Volver a solicitud de compra </button>'.html_safe, 
+		                                                          														solicitud_url %>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+# encoding: utf-8
+class Item < ActiveRecord::Base
+  
+  TipoItem = ['Equipos y mobiliarios', 'Instrumentos de medición', 'Herramientas', 
+              'Sustancias químicas', 'Consumibles y materiales']
+
+
+
+end

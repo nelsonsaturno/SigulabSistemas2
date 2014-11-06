@@ -1,0 +1,63 @@
+# encoding: utf-8
+class ReportePDF < Prawn::Document
+
+  def initialize(items) 
+    super()
+    @items = items
+    header
+    titulo
+    table_content
+  end
+ 
+  def header
+    #This inserts an image in the pdf file and sets the size of the image
+    image "#{Rails.root}/app/assets/images/cebolla.png", width: 70, height: 45, :position => 55
+    move_up 40
+    image "#{Rails.root}/app/assets/images/logo_ulab.png", width: 100, height: 80, :position => 430
+    font("#{Prawn::DATADIR}/fonts/DejaVuSans.ttf") do 
+    	draw_text "UNIVERSIDAD SIMÓN BOLÍVAR", :at =>[0,657]
+      font_size 10
+    	draw_text "Vicerectorado Académico", :at => [25,645]
+      font_size 8
+      draw_text "Unidad de laboratorios", :at =>  [40, 634]
+    end
+
+  end
+
+  def titulo
+   move_down 50
+   table tittle do
+      row(0).font_style = :bold
+      self.header = true
+      self.row_colors = ['DDDDDD','DDDDDD']
+      self.column_widths = [450,90]
+    end
+  end
+
+   def tittle 
+      [[{:content => "ESPECIFICACIONES TÉCNICAS DEL BIEN", :rowspan => 2, :size => 20, :background_color => "DDDDDD"  },
+        {:content => "Registro No.", :background_color => "DDDDDD"}],
+        [{:content => "", :background_color => "FFFFFF"}]]
+   end
+
+
+    def table_content 
+    move_down 30
+    # Then I set the table column widths
+    table items_rows do
+      row(0).font_style = :bold
+      self.header = true
+      self.row_colors = ['DDDDDD', 'FFFFFF']
+      self.column_widths = [100, 240,100,100]
+    end
+  end
+ 
+  def items_rows
+    [['Nombre', 'Descripción','Dimensiones','Cantidad']] +
+      @items.map do |item|
+      [item.nombre, item.descripcion, item.dimensiones, item.cantidad]
+    end
+  end
+
+
+end

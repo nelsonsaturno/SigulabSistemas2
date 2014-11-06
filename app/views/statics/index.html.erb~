@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+
+
+<div class="grid_7">
+      <ol class="breadcrumb">
+         <li class="active" href="#"> Home </li>>
+      </ol>
+</div>
+
+<div class="grid_8 push_3">
+	 <%= link_to '<button type="button" class="btn btn-primary"> Compras </button>'.html_safe, compras_url %><br><br>
+</div>
+<% end %>

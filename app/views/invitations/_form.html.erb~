@@ -1,0 +1,110 @@
+<div class="grid_7">
+	<%= form_for(@invitation) do |f| %>
+	  <% if @invitation.errors.any? %>
+		 <div id="error_explanation">
+		   <h2><%= pluralize(@invitation.errors.count, "error") %> prohibited this invitation from being saved:</h2>
+
+		   <ul>
+		   <% @invitation.errors.full_messages.each do |message| %>
+		     <li><%= message %></li>
+		   <% end %>
+		   </ul>
+		 </div>
+	  <% end %>
+</div>
+
+<div class="grid_7 push_4">
+	<div class ="table">
+		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label :nombreEmpresa, "Nombre de la empresa" %><br>
+			 <%= f.text_field :nombreEmpresa, :placeholder => "Empresa a invitar" %>
+		  </div>
+		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label :direccion, "Dirección de la empresa" %><br>
+			 <%= f.text_field :direccion %>
+		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label :correo, "Correo del solicitante" %><br>
+			 <%= f.text_field :correo, :placeholder => "Correo del solicitante" %>
+		  </div>
+		  </div>
+		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label :telefono, "Teléfono del solicitante" %><br>
+			 <%= f.text_field :telefono, :placeholder => "Teléfono del solicitante" %>
+		  </div>
+		  <div class="field">
+			 <%= f.label :telefonoAdicional, "Teléfono adicional" %><br>
+			 <%= f.text_field :telefonoAdicional %>
+		  </div>
+		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label :responsable, "Nombre del responsable" %><br>
+			 <%= f.text_field :responsable, :placeholder => "Nombre del solicitante" %><br>
+		  </div>
+		  <div class="actions">
+			 <%= f.submit "Aceptar", data: { confirm: '¿Está seguro de la informacion que acaba de suministrar?' }  %>
+		  </div>
+		<% end %>
+		<br><%= link_to '<button type="button" class="btn btn-primary"> Volver a la página anterior </button>'.html_safe, controller: 
+																																"invitations" %>
+   </div>
+</div>
+
+
+<style>
+input[type="submit"] {
+
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
+border: 1px solid transparent;
+border-radius: 4px;
+
+
+}
+
+input[type="text"], textarea, input[type="number"] {
+
+display: block;
+width: 200px;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+.red {
+
+font-size: 20px;
+color: red;
+
+}
+
+
+input[type="text"]:focus, textarea:focus, input[type="number"]:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+
+</style>
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<div class="grid_7">
+      <ol class="breadcrumb">
+         <li> <a href="http://localhost:3000"> Home </a></li>
+			<li> <a href="http://localhost:3000/compras"> Compras </a></li>
+         <li> <a href="http://localhost:3000/solicitud">  Solicitud  </a></li>
+        <li class="active">  Especificaciones Técnicas </a></l
+      </ol>
+</div>
+
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+</head>
+<body>
+<div class="grid_6 push_1" id="tittle" >
+	<h1>Especificaciones Técnicas</h1>
+   <br>
+   <div class="grid_2">
+		<%= link_to ' Bien / Consumible ', new_item_path %> 
+   </div>
+   <div class="grid_2 push_1">
+		<%= link_to 'Consultar bienes', items_path %><br>
+   </div>
+   <div class="grid_2">
+		<%= link_to 'Servicio', new_service_path %>
+   </div>
+   <div class="grid_2 push_1">
+		<%= link_to 'Consultar servicios', services_path %>
+   </div>
+   <br><br> <br><br> 
+   <div id=volver" class="grid_1 push_1">
+		<%= link_to '<button type="button" class="btn btn-primary" id="volver"> Volver a la página anterior </button>'.html_safe,  																																			solicitud_url %>
+   </div>
+
+</div>
+</body>
+<style>
+
+h1 {
+
+position: relative; 
+right: 20px;
+
+}
+
+#volver {
+
+  height: 35px;
+  text-align:center;
+
+}
+
+a:visited { 
+  color:#333;
+  font-size: 14px;
+}
+a:hover { 
+  color: #333;
+  font-size: 14px;
+}
+a:active { 
+  color: #333;
+  font-size: 14px;
+}
+
+
+</style>
+
+</html>

@@ -1,0 +1,28 @@
+<div class="grid_7">
+      <ol class="breadcrumb">
+         <li> <a href="http://localhost:3000"> Home </a></li>
+			<li> <a href="http://localhost:3000/compras"> Compras </a></li>
+         <li> <a href="http://localhost:3000/solicitud">  Solicitud de compras </a></li>
+         <li class="active"> Carta de invitación</li>
+      </ol>
+</div>
+
+<div class="grid_7 push_2">
+
+	<h3>Carta de Invitacíon</h3>
+
+</div>
+
+<%= render 'form' %>
+
+<style>
+
+h3 {
+
+position:relative;
+
+
+}
+
+</style>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+<table id="invitationTable" class="table table-bordered" >
+	  <thead>
+		 <tr>
+		   <th align="left">Nombre de la empresa</th>
+		   <th align="left">Correo del responsable</th>
+		   <th align="left">Responsable</th>
+		 </tr>
+	  </thead>
+
+	  <tbody>
+		 <% @invitations.each do |invitation| %>
+	  		<tr>
+		     <td style="text-decoration:underline; color:black"><%= link_to invitation.nombreEmpresa, invitation %></td>
+		     <td><%= invitation.correo %></td>
+		     <td><%= invitation.responsable %></td>
+		   </tr>
+
+		 <% end %>
+	  </tbody>
+	</table>
+</body>
+
+<style>
+
+
+
+#invitationTable th {
+      background-color: #94E79E;
+      border-color:#7A7070;
+     font-size: 14px;
+  }
+
+#invitationTable th, td, tr{
+ border-color:black;
+ }
+
+
+
+ .table-bordered {
+
+border-color:#7A7070;
+
+}
+
+.table-bordered>tbody>tr>td {
+
+border-color:#7A7070;
+
+}
+
+#invitationTable tr:nth-child(even) {
+
+background-color: #F2F8F7;
+
+}
+
+input[type=submit] {
+-webkit-appearance: button;
+cursor: pointer;
+background-color:#F8F0BE;
+border-radius:px;
+}
+
+</style>

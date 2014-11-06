@@ -1,0 +1,18 @@
+class StaticsController < ApplicationController
+	def index
+	end
+
+
+   def solicitudCompra
+   end
+
+   def compra
+   end
+  
+   def recepcionBienes
+   end
+  
+   def conformidadServicio
+	end
+
+end

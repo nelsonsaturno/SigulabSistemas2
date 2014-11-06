@@ -1,0 +1,41 @@
+class especificaciones_tecnicas < Prawn::Document
+  def initialize(items)
+    super()
+    @items = items
+    header
+    table_content
+  end
+
+
+  def header
+    #This inserts an image in the pdf file and sets the size of the image
+    image "#{Rails.root}/app/assets/images/favicon.ico", width: 230, height: 150
+  end
+  
+
+    def table_content 
+    y_position = cursor - 50
+    # This makes a call to product_rows and gets back an array of data that will populate the columns and rows of a table
+    # I then included some styling to include a header and make its text bold. I made the row background colors alternate between grey and     
+    # white
+    # Then I set the table column widths
+    table items_rows do
+      row(0).font_style = :bold
+      self.header = true
+      self.row_colors = ['DDDDDD', 'FFFFFF']
+      self.column_widths = [40, 300, 200]
+    end
+  end
+ 
+  def items_rows
+    [['ID', 'Nombre', 'Descripcion','Dimensiones','Cantidad']] +
+      @items.map do |items|
+      [item.id, item.nombre, item.descripcion, item.dimensiones, item.cantidad]
+    end
+  end
+
+
+
+end
+
+  

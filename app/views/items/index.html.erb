@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="grid_7">
+      <ol class="breadcrumb">
+         <li> <a href="http://localhost:3000"> Home </a></li>
+			<li> <a href="http://localhost:3000/compras"> Compras </a></li>
+         <li> <a href="http://localhost:3000/solicitud">  Solicitud  </a></li>
+         <li> <a href="http://localhost:3000/especificacionesTecnicas">  Especificaciones Tecnicas </a></li>
+        <li class="active">  Item </a></li>
+      </ol>
+</div>
+
+
+	<div class="grid_7">
+		<h3>Bienes / Consumibles Solicitados</h3>
+		<%= render 'itemtable' %>
+		<%= link_to '<button type="button" class="btn btn-primary"> Agregar otro ítem </button>'.html_safe, new_item_path %> <br><br>
+      <%= link_to '<button type="button" class="btn btn-primary"> Descargar solicitud  </button>'.html_safe,
+                                                                                 items_path(@item, :format => 'pdf') %> <br><br>
+		<%= link_to '<button type="button" class="btn btn-primary"> Volver a especificaciones técnicas </button>'.html_safe, 
+                                                                 especificacionesTecnicas_url %>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

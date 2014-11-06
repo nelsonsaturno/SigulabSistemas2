@@ -1,0 +1,6 @@
+# encoding: utf-8
+class Service < ActiveRecord::Base
+  TipoServicio = ['Reparación', 'Alquiler', 'Mantenimiento', 'Instalación', 'Calibración']
+  validates_presence_of :nombre, :message => "del servicio no puede estar en blanco"
+
+end

@@ -1,20 +1,13 @@
 <% if user_signed_in? %>
-	En esta pagina deberan colocar los links hacia las distintas funcionalidades del sistema
-	integrado. <br/>
-	Utilicen javascript para generar menus y submenus y los links en esta pantalla se manejaran
-	de la siguiente manera:
-	<br/>
-	<br/>
-	link_to 'LINK QUE APARECE EN LA PAGINA', url
-	<br/>
-	<br/>
-	por ejemplo, si deben moverse a sustancias quimicas debe ser algo tipo
-	<br/>
-	<br/>
 
-	link_to 'Sustancias Quimicas', sustancia_quimicas_url 
 
-	<% else %>
-	<%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-	<%= link_to "Iniciar Sesion", new_user_session_path, :class => 'navbar-link'  %>
+<div class="grid_7">
+      <ol class="breadcrumb">
+         <li class="active" href="#"> Home </li>>
+      </ol>
+</div>
+
+<div class="grid_7 push_3">
+	 <%= link_to '<button type="button" class="btn btn-primary"> Compras </button>'.html_safe, compras_url %><br><br>
+</div>
 <% end %>

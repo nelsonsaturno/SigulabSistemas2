@@ -1,0 +1,11 @@
+# encoding: utf-8
+class ReporteInvitations < Prawn::Document
+
+  def initialize(invitation) 
+	 print "INIT OK "
+    super()
+    @invitation = invitation
+    text "EJEMPLO"
+  end
+ 
+end

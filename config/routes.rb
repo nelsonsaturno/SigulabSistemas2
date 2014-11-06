@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :invitations
+
+  resources :services
+
+  resources :items
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -6,6 +12,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'statics#index'
+
+
+  get "compras" => "statics#compras", :as => "compras"
+  get "solicitud" => "statics#solicitud", :as => "solicitud"
+  get "especificacionesTecnicas" => "statics#especificacionesTecnicas", :as => "especificacionesTecnicas"
+  get "construccion" => "statics#construccion", :as => "construccion"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
