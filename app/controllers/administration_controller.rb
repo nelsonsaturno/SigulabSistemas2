@@ -1,4 +1,5 @@
 class AdministrationController < ApplicationController
+  layout 'bootlayout'
   
   before_action :set_subsystem 
   

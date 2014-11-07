@@ -10,26 +10,110 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap.min
  *= require_tree .
+ *
+ *  ------------
+ *  Descripcion: Diseño de la pagina principal.
+ *  Autor: Inventario
+ *  Fecha: 15/10/2014
  */
 
-/* Bootstrap glyphicon rails fix */
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('/assets/glyphicons-halflings-regular.eot');
-  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+/* Main*/
+body {
+    background-color        : #FFFFFF;
+    background-repeat       : no-repeat;
+    background-position     : top;
+    font-family             : Verdana, Arial, Helvetica, sans-serif;
+    font-size               : 11px;
+    line-height             : 1.6em;
+    margin                  : 0;
+    padding                 : 0;
 }
 
-/* Bootstrap center columns */
-.row-centered {
-    text-align:center;
+/* Parte principal */
+#principal {
+    height                  : auto;
+    width                   : 960px;
+    margin-left             : auto;
+    margin-right            : auto;
+    background-color        : #FFFFFF;
+    color                   : #000000;
 }
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
+
+/* Header */
+#header{
+    position: relative;
+}
+
+/* Area de trabajo */
+#area {
+    padding                 : 1em 0;
+    background-color        : #FFFFFF;
+    height                  : 71.35%;
+    width                   : 100%;
+    position                : relative;
+}
+
+/* Contenido */
+#Contenido {
+    background-color        : #FFFFFF;
+    position                : relative;
+    float                   : left;
+	font-size           :12pt;
+    margin-left             : 10px;
+    margin-right            : 10px;
+    width                   : 580px;
+    height                  : 100%;
+    left                    : 180px;
+}
+
+/* Menu izquierdo */
+#BannerIzquierda{
+    position                : relative;
+    width                   : 160px;
+    height                  : 100%;
+    background-color        : #FFFFFF;
+    float                   : left;
+    left                    : -600px;
+    margin-left             : 10px;
+    margin-right            : 10px;
+    text-decoration         : none; 
+}
+
+/* Menu derecho */
+#BannerDerecha{
+    position                : relative;
+    width                   : 160px;
+    height                  : 100%;
+    background-color        : #FFFFFF;
+    float                   : left;
+    margin-left             : 10px;
+    margin-right            : 10px;
+}
+
+/* Hiperlinks */
+a {
+    text-decoration         : none;
+    text-align              : right;
+    color                   : #336699;
+    font-weight             : bold;
+}
+
+/* Hiperlinks en HOVER*/
+a:hover {
+    cursor                  : pointer;
+    color                   : #8ed6ff;
+    text-align              : right;
+	background: #ffffff;
+}
+
+/* Listas del menu */
+li {
+    list-style              : none;
+    text-align              : right;
+}
+
+/* Linea de separacion */
+hr {
+    opacity                 : 0.4;
 }

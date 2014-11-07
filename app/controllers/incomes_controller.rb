@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  layout 'bootlayout'
 
   def index
     @incomes = Income.all

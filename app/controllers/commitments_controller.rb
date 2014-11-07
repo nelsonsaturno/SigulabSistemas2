@@ -1,4 +1,5 @@
 class CommitmentsController < ApplicationController
+  layout 'bootlayout'
   
   def index
     @commitments = Commitment.all
