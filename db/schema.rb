@@ -16,6 +16,19 @@ ActiveRecord::Schema.define(version: 20141106001831) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "checks", force: true do |t|
+    t.integer  "execution_id"
+    t.string   "check_number"
+    t.float    "amount"
+    t.datetime "elaboration_date"
+    t.datetime "sign_date"
+    t.datetime "delivery_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "checks", ["execution_id"], name: "index_checks_on_execution_id", using: :btree
+
   create_table "chemical_substances", force: true do |t|
     t.string   "name"
     t.string   "purity"
@@ -45,6 +58,17 @@ ActiveRecord::Schema.define(version: 20141106001831) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "meassure"
+  end
+
+  create_table "commitments", force: true do |t|
+    t.integer  "lab_id"
+    t.string   "code"
+    t.float    "amount"
+    t.string   "description"
+    t.string   "recipient"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "consumables", force: true do |t|
@@ -89,6 +113,30 @@ ActiveRecord::Schema.define(version: 20141106001831) do
     t.string   "meassure"
   end
 
+  create_table "executions", force: true do |t|
+    t.integer  "commitment_id"
+    t.string   "code"
+    t.float    "amount"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
+
+  create_table "incomes", force: true do |t|
+    t.integer  "lab_id"
+    t.float    "amount"
+    t.integer  "origin",      default: 0
+    t.string   "description"
+    t.datetime "date"
+    t.string   "organism"
+    t.string   "document"
+    t.string   "financing"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "instruments", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -105,6 +153,45 @@ ActiveRecord::Schema.define(version: 20141106001831) do
     t.boolean  "teaching"
     t.boolean  "extention"
     t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invitations", force: true do |t|
+    t.string   "nombreEmpresa"
+    t.string   "direccion"
+    t.string   "correo"
+    t.string   "telefono"
+    t.string   "telefonoAdicional"
+    t.string   "responsable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "nombre"
+    t.string   "tipo"
+    t.text     "descripcion"
+    t.string   "dimensiones"
+    t.integer  "cantidad"
+    t.string   "unidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "numeroBien"
+  end
+
+  create_table "labs", force: true do |t|
+    t.string "name"
+    t.string "sae_code"
+    t.string "sae_name"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "nombre"
+    t.string   "numeroBien"
+    t.string   "tipo"
+    t.text     "descripcion"
+    t.string   "ubicacion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

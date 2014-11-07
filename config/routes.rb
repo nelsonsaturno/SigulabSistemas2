@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
+  resources :invitations
+  resources :services
+  resources :items
   resources :chemical_substances
-
   resources :consumables
-
   resources :tools
-
   resources :instruments
-
   resources :equipment
 
   devise_for :users,
@@ -19,6 +18,22 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'statics#index'
+
+  # Rutas del Subsistema de Compras
+  get "/compras", to: "comprando#compras", :as => "compras"
+  get "/solicitud", to: "comprando#solicitud", :as => "solicitud"
+  get "/especificacionesTecnicas", to: "comprando#especificacionesTecnicas", :as => "especificacionesTecnicas"
+  get "/construccion", to: "comprando#construccion", :as => "construccion"
+  #get "compras" => "#compras", :as => "compras"
+  #get "solicitud" => "Comprando#solicitud", :as => "solicitud"
+  #get "especificacionesTecnicas" => "Comprando#especificacionesTecnicas", :as => "especificacionesTecnicas"
+  #get "construccion" => "Comprando#construccion", :as => "construccion"
+  
+  # Rutas del Subsistema de Administracion
+  get 'administration/(:action)', to: 'administration', as: :administration
+  resources :incomes
+  resources :commitments
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -68,4 +83,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
 end
