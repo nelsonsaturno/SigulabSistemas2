@@ -21,3 +21,5 @@
 # Temporal Files
 *~
 
+# Others
+/db/schema.rb
