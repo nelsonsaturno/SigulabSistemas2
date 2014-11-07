@@ -8,11 +8,15 @@
 		</ol>
 	</div>
 	<% if @income.errors.any? %>
-		<% @income.errors.full_messages.each do |msg| %>
-			<div class="col-xs-12" role="alert">
-				<div class="alert alert-danger"><%= msg %></div>
-			</div> 
-		<% end %>
+		<div class="col-xs-12" role="alert">
+			<div class="alert alert-danger">
+				<ul>
+					<% @income.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>	
+			</div>
+		</div>
 	<% end %>
 	<div class="col-xs-12">
 		<%= form_for @income, url: {action: 'create'}, html: { class: 'form-horizontal' } do |i| %>	
