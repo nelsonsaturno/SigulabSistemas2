@@ -41,8 +41,10 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
+  border-radius: 4px;
+  background-color: red;
+  border-width: thin;
 }
 
 #error_explanation {
