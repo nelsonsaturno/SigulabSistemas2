@@ -26,11 +26,14 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'statics#index'
 
-
-  get "compras" => "statics#compras", :as => "compras"
-  get "solicitud" => "statics#solicitud", :as => "solicitud"
-  get "especificacionesTecnicas" => "statics#especificacionesTecnicas", :as => "especificacionesTecnicas"
-  get "construccion" => "statics#construccion", :as => "construccion"
+  get "/compras", to: "comprando#compras", :as => "compras"
+  get "/solicitud", to: "comprando#solicitud", :as => "solicitud"
+  get "/especificacionesTecnicas", to: "comprando#especificacionesTecnicas", :as => "especificacionesTecnicas"
+  get "/construccion", to: "comprando#construccion", :as => "construccion"
+  #get "compras" => "#compras", :as => "compras"
+  #get "solicitud" => "Comprando#solicitud", :as => "solicitud"
+  #get "especificacionesTecnicas" => "Comprando#especificacionesTecnicas", :as => "especificacionesTecnicas"
+  #get "construccion" => "Comprando#construccion", :as => "construccion"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
