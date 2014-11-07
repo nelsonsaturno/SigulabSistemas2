@@ -45,3 +45,6 @@ gem 'devise'
 
 # Use hirb for table console lookup
 gem 'hirb'
+
+# Use for datetime validation
+gem 'jc-validates_timeliness'
