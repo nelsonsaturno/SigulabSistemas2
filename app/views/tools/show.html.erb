@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<ol class="breadcrumb">
+	<li> <%=link_to 'Home', controller: 'statics'%></li>
+	<li> <%=link_to 'Inventario', inventario_url %></li>
+	<li> <%=link_to 'Herramientas', tools_path %></li>
+	<li class="active"> Ver </li>
+</ol>
 <p>
   <strong>Nombre:</strong>
   <%= @tool.name %>
@@ -16,18 +21,13 @@
 </p>
 
 <p>
-  <strong>Numero Bien Nacional:</strong>
+  <strong>Número Bien Nacional:</strong>
   <%= @tool.national_good %>
 </p>
 
 <p>
-  <strong>Estats:</strong>
+  <strong>Estatus:</strong>
   <%= @tool.status %>
-</p>
-
-<p>
-  <strong>USO:</strong>
-  <%= @tool.use %>
 </p>
 
 <p>
@@ -56,24 +56,25 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @tool.investigation %>
+  <strong>Uso:</strong>
+
+  <% if @tool.investigation %>
+    <%= ' Investigación ' %>
+  <% end %>
+  <% if @tool.teaching %>
+    <%= ' Docencia ' %>
+  <% end %>
+  <% if @tool.extention %>
+    <%= ' Extensión ' %>
+  <% end %>
+  <% if @tool.management %>
+    <%= ' Gestión ' %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @tool.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @tool.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @tool.management %>
-</p>
-<br>
-<i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
+<br><br>
+<% if can? :update, @tool %>
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
+<% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>
+<br><br><br><br>

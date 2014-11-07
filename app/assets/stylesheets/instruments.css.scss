@@ -18,9 +18,17 @@
     }
 
 #LeDivInstrumentos {
-    background-image        :   url('/assets/instrumento.png');
-    background-size         : 300px;  
+    background-image        :   url('/assets/Sustancias.png');
+    background-size         : 650px;  
     background-repeat       : no-repeat; 
-    background-position     : 120% 55%;  
+    background-position     : bottom center; 
     background-color        : #FFFFFF;
+}
+.red {
+    font-size               : 22px;
+    color                   : red;
+}
+
+.Informacion {
+    line-height             :1.6em;
 }

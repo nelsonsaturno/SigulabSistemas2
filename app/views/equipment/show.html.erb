@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<ol class="breadcrumb">
+	<li> <%=link_to 'Home', controller: 'statics'%></li>
+	<li> <%=link_to 'Inventario', inventario_url %></li>
+	<li> <%=link_to 'Equipos y mobiliarios', equipment_index_path %></li>
+	<li class="active"> Ver </li>
+</ol>
 <p>
   <strong>Nombre:</strong>
   <%= @equipment.name %>
@@ -21,7 +26,7 @@
 </p>
 
 <p>
-  <strong>Numero de Bien Nacional:</strong>
+  <strong>Número de Bien Nacional:</strong>
   <%= @equipment.national_good %>
 </p>
 
@@ -31,13 +36,24 @@
 </p>
 
 <p>
-  <strong>Ultima Calibración:</strong>
-  <%= @equipment.last_calibration %>
+  <strong>Calibrated:</strong>
+  <%= @equipment.calibrated %>
 </p>
 
 <p>
-  <strong>Uso:</strong>
-  <%= @equipment.use %>
+  <strong>Última Calibración:</strong>
+  <%= @equipment.last_calibration %>
+</p>
+
+
+<p>
+  <strong> Medidas: </strong><br>
+  <strong> - Alto: </strong>
+  <%= @equipment.lenght %><%= @equipment.meassure %><br>
+  <strong> - Ancho: </strong>
+  <%= @equipment.width %><%= @equipment.meassure %><br>
+  <strong> - Profundidad:</strong>
+  <%= @equipment.depth %><%= @equipment.meassure %>
 </p>
 
 <p>
@@ -71,29 +87,24 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @equipment.investigation %>
-</p>
+  <strong>Uso:</strong>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @equipment.teaching %>
+  <% if @equipment.investigation %>
+    <%= ' Investigación ' %>
+  <% end %>
+  <% if @equipment.teaching %>
+    <%= ' Docencia ' %>
+  <% end %>
+  <% if @equipment.extention %>
+    <%= ' Extensión ' %>
+  <% end %>
+  <% if @equipment.management %>
+    <%= ' Gestión ' %>
+  <% end %>
 </p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @equipment.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @equipment.management %>
-</p>
-
-<p>
-  <strong>Calibrated:</strong>
-  <%= @equipment.calibrated %>
-</p>
-<br>
-<i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
+<br><br>
+<% if can? :update, @equipment %>
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
+<% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
+<br><br><br><br>

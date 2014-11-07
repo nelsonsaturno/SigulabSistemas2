@@ -1,7 +1,7 @@
 <%= form_for(@tool) do |f| %>
   <% if @tool.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
+      <h2><%= pluralize(@tool.errors.count, "error(es") %>) prohíben que esta herramienta sea guardada:</h2>
 
       <ul>
       <% @tool.errors.full_messages.each do |message| %>
@@ -11,58 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= '* Nombre' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= 'Marca' %><br>
-    <%= f.text_field :brand %>
-  </div>
-  <div class="field">
-    <%= 'Tipo' %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= 'Numero bien nacional' %><br>
-    <%= f.number_field :national_good %>
-  </div>
-  <div class="field">
-    <%= 'Estatus' %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= '* Responsable' %><br>
-    <%= f.text_field :responsible %>
-  </div>
-  <div class="field">
-    <%= '* Ubicación' %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= 'Material' %><br>
-    <%= f.text_field :material %>
-  </div>
-  <div class="field">
-    <%= 'Factura' %><br>
-    <%= f.text_field :bill %>
-  </div>
-  <div class="field">
-    <%= f.check_box :from_set %>
-    <%= 'Pertenece a un juego' %><br>
-  </div>
-  <div class="field">
+  <div class ="Informacion">
 
-     <%= 'Uso:'%><br>
-   <%= f.check_box :investigation %>
-    <%= 'Investigación' %><br>
-    <%= f.check_box :teaching %>
-    <%= 'Docencia' %><br>
-    <%= f.check_box :extention %>
-    <%= 'Extensión' %><br>
-    <%= f.check_box :management %>
-    <%= 'Gestion' %><br>
-  </div>  <div class="actions">
+    <div class="field">
+      <%= 'Nombre:' %><br>
+      <%= f.text_field :name %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Marca:' %><br>
+      <%= f.text_field :brand %>
+    </div>
+    <div class="field">
+      <%= 'Tipo:' %><br>
+      <%= f.text_field :type %>
+    </div>
+    <div class="field">
+      <%= 'Número bien nacional:' %><br>
+      <%= f.number_field :national_good %>
+    </div>
+    <div class="field">
+      <%= 'Estatus:' %><br>
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+      <%= 'Responsable:' %><br>
+      <%= f.text_field :responsible %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Ubicación:' %><br>
+      <%= f.text_field :location %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Material:' %><br>
+      <%= f.text_field :material %>
+    </div>
+    <div class="field">
+      <%= 'Factura:' %><br>
+      <%= f.text_field :bill %>
+    </div>
+    <div class="field">
+      <%= f.check_box :from_set %>
+      <%= 'Pertenece a un juego:' %><br>
+    </div>
+    <div class="field">
+
+       <%= 'Uso:'%><br>
+     <%= f.check_box :investigation %>
+      <%= 'Investigación' %><br>
+      <%= f.check_box :teaching %>
+      <%= 'Docencia' %><br>
+      <%= f.check_box :extention %>
+      <%= 'Extensión' %><br>
+      <%= f.check_box :management %>
+      <%= 'Gestión' %><br>
+    </div>
+    <br>
+    <div class="actions">
     <%= f.submit %>
+    </div>
+    <br><br>
   </div>
 <% end %>

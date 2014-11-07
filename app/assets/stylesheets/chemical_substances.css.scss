@@ -4,10 +4,9 @@
 
 
 #table2 {
-    border: 1px solid black;
-    opacity: 0.2;
-    border-width:thin;
-
+    border                  : 1px solid black;
+    opacity                 : 0.2;
+    border-width            : thin;
 }
 
 #invetario{
@@ -15,14 +14,23 @@
     left 					: 500px;
     font-size               : 17px;
     font-style 				: oblique;
-    opacity					:0.5;
+    opacity					: 0.5;
     font-family 			: "Times New Roman", Georgia, Serif;
-    }
+}
 
 #LeDivQuimicas {
-    background-image        :   url('/assets/SustanciasQuimicas.png');
-    background-size         : 580px;  
-    background-repeat       : repeat; 
-    background-position		: 0% 0%; 
+    background-image        : url('/assets/Chemical3.png');
+    background-size         : 540px;  
+    background-repeat       : no-repeat; 
+    background-position		: bottom left; 
     background-color        : #FFFFFF;
+}
+
+.red {
+    font-size               : 22px;
+    color                   : red;
+}
+
+.Informacion {
+    line-height             :1.6em;
 }

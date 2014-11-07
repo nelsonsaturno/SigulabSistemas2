@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<ol class="breadcrumb">
+	<li> <%=link_to 'Home', controller: 'statics'%></li>
+	<li> <%=link_to 'Inventario', inventario_url %></li>
+	<li> <%=link_to 'Instrumentos', instruments_path %></li>
+	<li class="active"> Ver </li>
+</ol>
 <p>
   <strong>Nombre:</strong>
   <%= @instrument.name %>
@@ -30,10 +35,6 @@
   <%= @instrument.material %>
 </p>
 
-<p>
-  <strong>Uso:</strong>
-  <%= @instrument.use %>
-</p>
 
 <p>
   <strong>Estatus:</strong>
@@ -46,7 +47,7 @@
 </p>
 
 <p>
-  <strong>Ultima Calibración:</strong>
+  <strong>Última Calibración:</strong>
   <%= @instrument.last_calibration %>
 </p>
 
@@ -56,29 +57,28 @@
 </p>
 
 <p>
-  <strong>Numero de Bien Nacional:</strong>
+  <strong>Número de Bien Nacional:</strong>
   <%= @instrument.national_good %>
 </p>
-
 <p>
-  <strong>Investigación:</strong>
-  <%= @instrument.investigation %>
-</p>
+  <strong>Uso:</strong>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @instrument.teaching %>
+  <% if @instrument.investigation %>
+    <%= ' Investigación ' %>
+  <% end %>
+  <% if @instrument.teaching %>
+    <%= ' Docencia ' %>
+  <% end %>
+  <% if @instrument.extention %>
+    <%= ' Extensión ' %>
+  <% end %>
+  <% if @instrument.management %>
+    <%= ' Gestión ' %>
+  <% end %>
 </p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @instrument.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @instrument.management %>
-</p>
-<br>
-<i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
+<br><br>
+<% if can? :update, @instrument %>
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
+<% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', instruments_path %>
+<br><br><br><br>

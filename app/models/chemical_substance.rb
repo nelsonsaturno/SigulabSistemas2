@@ -1,6 +1,7 @@
 class ChemicalSubstance < ActiveRecord::Base
-	validates :name, presence: true
-	validates :location, presence: true
-	validates :cas, presence: true, uniqueness: true
-	validates :responsible, presence: true
+# 	CASSSS CREO QUE NO ES UNICO
+	validates :name, :presence => {:message => "no puede ser blanco"}
+	validates :location, :presence => {:message => "no puede ser blanco"}
+	validates :cas, :presence => {:message => "no puede ser blanco"}, uniqueness: true
+	validates :responsible, :presence => {:message => "no puede ser blanco"}
 end

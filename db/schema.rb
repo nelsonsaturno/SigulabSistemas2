@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103195104) do
+ActiveRecord::Schema.define(version: 20141107001322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checks", force: true do |t|
+    t.integer  "execution_id"
+    t.string   "check_number"
+    t.float    "amount"
+    t.datetime "elaboration_date"
+    t.datetime "sign_date"
+    t.datetime "delivery_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "checks", ["execution_id"], name: "index_checks_on_execution_id", using: :btree
 
   create_table "chemical_substances", force: true do |t|
     t.string   "name"
@@ -24,7 +37,6 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.string   "legal_regime"
     t.string   "quantity"
     t.string   "cas"
-    t.string   "use"
     t.string   "status"
     t.string   "responsible"
     t.string   "location"
@@ -45,16 +57,26 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "meassure"
+  end
+
+  create_table "commitments", force: true do |t|
+    t.integer  "lab_id"
+    t.string   "code"
+    t.float    "amount"
+    t.string   "description"
+    t.string   "recipient"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "consumables", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "dimentions"
     t.string   "material"
     t.string   "quantity"
     t.string   "location"
-    t.string   "use"
     t.string   "responsible"
     t.boolean  "investigation"
     t.boolean  "teaching"
@@ -72,7 +94,6 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.integer  "national_good"
     t.string   "status"
     t.date     "last_calibration"
-    t.text     "use"
     t.string   "responsible"
     t.string   "location"
     t.date     "adquisition_date"
@@ -86,6 +107,34 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.string   "calibrated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "lenght"
+    t.decimal  "depth"
+    t.decimal  "width"
+    t.string   "meassure"
+  end
+
+  create_table "executions", force: true do |t|
+    t.integer  "commitment_id"
+    t.string   "code"
+    t.float    "amount"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
+
+  create_table "incomes", force: true do |t|
+    t.integer  "lab_id"
+    t.float    "amount"
+    t.integer  "origin",      default: 0
+    t.string   "description"
+    t.datetime "date"
+    t.string   "organism"
+    t.string   "document"
+    t.string   "financing"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "instruments", force: true do |t|
@@ -95,7 +144,6 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.string   "measurement_unit"
     t.float    "capacity"
     t.string   "material"
-    t.string   "use"
     t.string   "status"
     t.string   "location"
     t.date     "last_calibration"
@@ -109,26 +157,6 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.datetime "updated_at"
   end
 
-  create_table "tools", force: true do |t|
-    t.string   "name"
-    t.string   "brand"
-    t.string   "type"
-    t.integer  "national_good"
-    t.string   "status"
-    t.string   "use"
-    t.string   "responsible"
-    t.string   "location"
-    t.string   "material"
-    t.string   "bill"
-    t.boolean  "from_set"
-    t.boolean  "investigation"
-    t.boolean  "teaching"
-    t.boolean  "extention"
-    t.boolean  "management"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-  
   create_table "invitations", force: true do |t|
     t.string   "nombreEmpresa"
     t.string   "direccion"
@@ -152,6 +180,12 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.string   "numeroBien"
   end
 
+  create_table "labs", force: true do |t|
+    t.string "name"
+    t.string "sae_code"
+    t.string "sae_name"
+  end
+
   create_table "services", force: true do |t|
     t.string   "nombre"
     t.string   "numeroBien"
@@ -161,7 +195,26 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
+  create_table "tools", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "type"
+    t.integer  "national_good"
+    t.string   "status"
+    t.string   "responsible"
+    t.string   "location"
+    t.string   "material"
+    t.string   "bill"
+    t.boolean  "from_set"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -176,6 +229,23 @@ ActiveRecord::Schema.define(version: 20141103195104) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.boolean  "technician"
+    t.boolean  "labBoss"
+    t.boolean  "director"
+    t.boolean  "acquisition"
+    t.boolean  "acquisition_analist"
+    t.boolean  "import_analist"
+    t.boolean  "import"
+    t.boolean  "manage"
+    t.boolean  "manage_analist"
+    t.boolean  "quality_analist"
+    t.boolean  "quality"
+    t.boolean  "gsmp"
+    t.boolean  "directorate"
+    t.boolean  "labassistant"
+    t.boolean  "section_boss"
+    t.boolean  "proy_responsible"
+    t.boolean  "external"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

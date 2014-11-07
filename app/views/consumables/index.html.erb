@@ -1,7 +1,11 @@
 <div id="LeDivConsumibles">
   <h1><i class="fa fa-fire"></i> Consumibles</h1>
 
-
+	<ol class="breadcrumb">
+		<li> <%=link_to 'Home', controller: 'statics'%></li>
+		<li> <%=link_to 'Inventario', inventario_url %></li>
+		<li class="active"> Consumibles </li>
+	</ol>
   <div id = "table2">
   </div>
   <div id="invetario"> Inventario </div>
@@ -10,15 +14,15 @@
 
       <style type="text/css">
       .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#C67777;}
-      .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;color:#000000;text-align:center}
+      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:5px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:5px 30px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#D3BD13;}
+      .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
       .tg .tg-s6z2{text-align:center;}
       .tg .tg-093g{font-weight:bold;text-align:center;}
       .tg .tg-hgcj{font-weight:bold;text-align:center; padding:5px;}
-      .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 5px;line-height:1.4em;}
+      .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 10px;line-height:1.4em;}
 
-      </style> 
+      </style>  
 
 
    <table class="tg">
@@ -26,7 +30,7 @@
       <tr>
         <th class="tg-093g">Nombre</th>
        <th class="tg-hgcj">Descripción</th>
-     <!--     <th>Dimentions</th>
+     <!--     
         <th>Material</th> -->
        <!-- <th class="tg-hgcj">Cantidad</th> -->
         <th class="tg-hgcj">Ubicación</th>
@@ -44,12 +48,12 @@
       <% @consumables.each do |consumable| %>
         <tr>
           <td class="tg-s6z2"><%= consumable.name %></td>
-           <td><%= consumable.description %></td>
-    <!--      <td><%= consumable.dimentions %></td>
+           <td class="tg-s6z2"><%= consumable.description %></td>
+    <!--     
           <td><%= consumable.material %></td> -->
          <!--  <td class="tg-s6z2"><%= consumable.quantity %></td> -->
           <td class="tg-qpa3"><%= consumable.location %></td>
-  <!--         <td><%= consumable.use %></td> -->
+  <!--          -->
          <td class="tg-s6z2"><%= consumable.responsible %></td>
   <!--         <td><%= consumable.investigation %></td>
           <td><%= consumable.teaching %></td>
@@ -58,8 +62,12 @@
 
 
         <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', consumable %></br>
+        <% if can? :update, @consumable %>
           <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_consumable_path(consumable) %><br>
+        <%end%>
+        <% if can? :destroy, @consumable %>
          <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', consumable, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        <%end%>
 
 
 
@@ -69,9 +77,10 @@
   </table>
 
   <br>
-
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <% if can? :create, @consumable %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
+  <%end%>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br>
-
+  <br><br><br><br>
 </div>

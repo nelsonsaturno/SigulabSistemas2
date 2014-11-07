@@ -2,7 +2,11 @@
 
   <h1><i class="fa fa-flask"></i> Sustancias Químicas</h1>
 
-  <div id = "table2">
+<ol class="breadcrumb">
+	<li> <%=link_to 'Home', controller: 'statics'%></li>
+	<li> <%=link_to 'Inventario', inventario_url %></li>
+	<li class="active"> Sustancias Químicas </li>
+</ol>  <div id = "table2">
   </div>
   <div id="invetario"> Inventario </div>
   <br>
@@ -10,12 +14,12 @@
 
       <style type="text/css">
       .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:5px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
+      .tg td{font-family:Arial, sans-serif;font-size:15px;padding: 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
       .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
       .tg .tg-s6z2{text-align:center}
-      .tg .tg-093g{font-weight:bold;text-align:center; padding: 2px;}
-      .tg .tg-hgcj{font-weight:bold;text-align:center}
+      .tg .tg-093g{font-weight:bold;text-align:center;}
+      .tg .tg-hgcj{font-weight:bold;text-align:center;}
       .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 15px; line-height:1.4em;}
 
       </style> 
@@ -64,7 +68,7 @@
           <td><%= chemical_substance.legal_regime %></td>
           <td><%= chemical_substance.quantity %></td> -->
           <td class="tg-s6z2"><%= chemical_substance.cas %></td>
-  <!--         <td><%= chemical_substance.use %></td>
+  <!--     
           <td><%= chemical_substance.status %></td> -->
           <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
           <td class="tg-s6z2"><%= chemical_substance.location %></td>
@@ -86,8 +90,12 @@
 
           
             <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', chemical_substance %></br>
-            <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
-           <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            <% if can? :update, @chemical_substance %>
+              <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
+            <% end %>
+            <% if can? :destroy, @chemical_substance %>
+              <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            <%end%>
         
 
         </tr>
@@ -98,8 +106,10 @@
   <br>
 
 
-
-  <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  <% if can? :create, @chemical_substance %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | 
+  <%end%>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br>
- </div>
+  <br><br><br><br>
+</div>

@@ -69,6 +69,6 @@ class ConsumablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def consumable_params
-      params.require(:consumable).permit(:name, :description, :dimentions, :material, :quantity, :location, :use, :responsible, :investigation, :teaching, :extention, :management)
+      params.require(:consumable).permit(:name, :description, :material, :quantity, :location, :responsible, :investigation, :teaching, :extention, :management)
     end
 end

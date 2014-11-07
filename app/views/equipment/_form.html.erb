@@ -1,7 +1,7 @@
 <%= form_for(@equipment) do |f| %>
   <% if @equipment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+      <h2><%= pluralize(@equipment.errors.count, "error(es") %>) prohíben que este equipo sea guardado:</h2>
 
       <ul>
       <% @equipment.errors.full_messages.each do |message| %>
@@ -11,75 +11,106 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= '* Nombre ' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= 'Marca' %><br>
-    <%= f.text_field :brand %>
-  </div>
-  <div class="field">
-    <%= 'Modelo' %><br>
-    <%= f.text_field :model %>
-  </div>
-  <div class="field">
-    <%= '* Serial' %><br>
-    <%= f.text_field(:serial) %>
-  </div>
-  <div class="field">
-    <%= '* Numero bien nacional:' %><br>
-    <%= f.number_field(:national_good, min: 0) %>
-  </div>
-  <div class="field">
-    <%= 'Estatus' %><br>
-    <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>
-  </div>
-  <div class="field">
-    <%= '* Responsable:' %><br>
-    <%= f.text_field :responsible %>
-  </div>
-  <div class="field">
-    <%= '* Ubicacion' %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= 'Fecha de adquisicion' %><br>
-    <%= f.date_select :adquisition_date %>
-  </div>
-  <div class="field">
-    <%= 'Orden de compra' %><br>
-    <%= f.text_field :buy_order %>
-  </div>
-  <div class="field">
-    <%= 'Precio' %><br>
-    <%= f.text_field :cost %>
-  </div>
-  <div class="field">
-    <%= 'Factura' %><br>
-    <%= f.text_field :bill %>
-  </div>
-  <div class="field">
+  <div class ="Informacion">
+    <div class="field">
+      <%= 'Nombre:' %><br>
+      <%= f.text_field :name %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Marca:' %><br>
+      <%= f.text_field :brand %>
+    </div>
+    <div class="field">
+      <%= 'Modelo:' %><br>
+      <%= f.text_field :model %>
+    </div>
+    <div class="field">
+      <%= 'Serial:' %><br>
+      <%= f.text_field(:serial) %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Número bien nacional:' %><br>
+      <%= f.number_field(:national_good, min: 0) %>
+      <span class="red">*</span>
+    </div>
+    
+    <div class="field">
+      <%= 'Alto:' %><br>
+      <%= f.number_field(:lenght, min: 0) %>
+    </div>
 
-     <%= 'Uso:'%><br>
-   <%= f.check_box :investigation %>
-    <%= 'Investigación' %><br>
-    <%= f.check_box :teaching %>
-    <%= 'Docencia' %><br>
-    <%= f.check_box :extention %>
-    <%= 'Extensión' %><br>
-    <%= f.check_box :management %>
-    <%= 'Gestion' %><br>
-  </div>
-  <div class="field">
-    <%= 'Calibrado' %><br>
-    <%= f.select(:calibrated, [[''],['Si'], ['No'], ['Desconocido'] ])  %>
-  </div>
-  <div class="field">
-    <%= 'Ultima calibracion:' %><br>
-    <%= f.date_select :last_calibration %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <%= 'Ancho:' %><br>
+      <%= f.number_field(:width, min: 0) %>
+    </div>
+
+    <div class="field">
+      <%= 'Profundidad:' %><br>
+      <%= f.number_field(:depth, min: 0) %>
+    </div>
+    
+    <div class="field">
+      <%= 'Medida:' %><br>
+      <%= f.select(:status, [['m'], ['cm']] ) %>
+    </div>
+
+    <div class="field">
+      <%= 'Estatus:' %><br>
+      <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>
+    </div>
+    <div class="field">
+      <%= 'Responsable:' %><br>
+      <%= f.text_field :responsible %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Ubicación:' %><br>
+      <%= f.text_field :location %>
+      <span class="red">*</span>
+    </div>
+    <div class="field">
+      <%= 'Fecha de adquisición:' %><br>
+      <%= f.date_select :adquisition_date %>
+    </div>
+    <div class="field">
+      <%= 'Orden de compra:' %><br>
+      <%= f.text_field :buy_order %>
+    </div>
+    <div class="field">
+      <%= 'Precio:' %><br>
+      <%= f.text_field :cost %>
+    </div>
+    <div class="field">
+      <%= 'Factura:' %><br>
+      <%= f.text_field :bill %>
+    </div>
+    <div class="field">
+
+       <%= 'Uso:'%><br>
+     <%= f.check_box :investigation %>
+      <%= 'Investigación' %><br>
+      <%= f.check_box :teaching %>
+      <%= 'Docencia' %><br>
+      <%= f.check_box :extention %>
+      <%= 'Extensión' %><br>
+      <%= f.check_box :management %>
+      <%= 'Gestión' %><br>
+    </div>
+    <div class="field">
+      <%= 'Calibrado:' %><br>
+      <%= f.select(:calibrated, [[''],['Sí'], ['No'], ['Desconocido'] ])  %>
+    </div>
+    <div class="field">
+      <%= 'Última calibración:' %><br>
+      <%= f.date_select :last_calibration %>
+    </div>
+    <br>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <br><br>
   </div>
 <% end %>
