@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# UTF-8 Invalid ASCII fix
+Encoding.default_external = Encoding::UTF_8
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -41,6 +43,12 @@ gem 'spring',        group: :development
 
 # Use devise
 gem 'devise'
+
+# Use hirb for table console lookup
+gem 'hirb'
+
+# Use for datetime validation
+gem 'jc-validates_timeliness'
 
 #Use prawn
 gem 'prawn'
