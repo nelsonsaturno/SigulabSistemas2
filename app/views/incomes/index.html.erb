@@ -18,8 +18,8 @@
 			<% @incomes.each do |i| %>
 				<tr>
 					<td><%= i.id %></td>
-					<td><%= i.lab_id %></td>
-					<td><%= i.date.strftime('%d/%m/%Y') %></td>
+					<td><%= i.lab.name %></td>
+					<td><%= i.date.strftime('%m/%d/%Y') %></td>
 					<td><%= link_to i.description, i %></td>
 					<td><%= number_to_currency(i.amount, :unit => "Bs.F. ") %></td>
 				</tr>
