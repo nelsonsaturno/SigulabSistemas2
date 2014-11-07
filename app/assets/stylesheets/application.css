@@ -56,6 +56,10 @@ body {
 
 /* Contenido */
 #Contenido {
+   /* background-image        :   url('http://eurochemicals.com/media/catalog/product//5/-/5-meo_dalt.png');
+    background-size         : 400px;  
+    background-repeat       : repeat; 
+    background-position: right;     */
     background-color        : #FFFFFF;
     position                : relative;
     float                   : left;

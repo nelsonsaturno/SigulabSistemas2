@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105160112) do
+ActiveRecord::Schema.define(version: 20141105210046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,37 @@ ActiveRecord::Schema.define(version: 20141105160112) do
 
   add_index "checks", ["execution_id"], name: "index_checks_on_execution_id", using: :btree
 
+  create_table "chemical_substances", force: true do |t|
+    t.string   "name"
+    t.string   "purity"
+    t.string   "matter_states"
+    t.boolean  "controlled"
+    t.string   "legal_regime"
+    t.string   "quantity"
+    t.string   "cas"
+    t.string   "use"
+    t.string   "status"
+    t.string   "responsible"
+    t.string   "location"
+    t.date     "expiration_date"
+    t.string   "dangerous"
+    t.boolean  "rI7"
+    t.boolean  "rI4"
+    t.boolean  "toxic"
+    t.boolean  "oxidant"
+    t.boolean  "explosive"
+    t.boolean  "irritating"
+    t.boolean  "inflamable"
+    t.boolean  "corrosive"
+    t.boolean  "nocive"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "commitments", force: true do |t|
     t.integer  "lab_id"
     t.string   "code"
@@ -36,6 +67,47 @@ ActiveRecord::Schema.define(version: 20141105160112) do
     t.string   "description"
     t.string   "recipient"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "consumables", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "dimentions"
+    t.string   "material"
+    t.string   "quantity"
+    t.string   "location"
+    t.string   "use"
+    t.string   "responsible"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "equipment", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "serial"
+    t.integer  "national_good"
+    t.string   "status"
+    t.date     "last_calibration"
+    t.text     "use"
+    t.string   "responsible"
+    t.string   "location"
+    t.date     "adquisition_date"
+    t.string   "buy_order"
+    t.float    "cost"
+    t.string   "bill"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.string   "calibrated"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -64,10 +136,84 @@ ActiveRecord::Schema.define(version: 20141105160112) do
     t.datetime "updated_at"
   end
 
+  create_table "instruments", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "measurement_unit"
+    t.float    "capacity"
+    t.string   "material"
+    t.string   "use"
+    t.string   "status"
+    t.string   "location"
+    t.date     "last_calibration"
+    t.string   "responsible"
+    t.integer  "national_good"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invitations", force: true do |t|
+    t.string   "nombreEmpresa"
+    t.string   "direccion"
+    t.string   "correo"
+    t.string   "telefono"
+    t.string   "telefonoAdicional"
+    t.string   "responsable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "nombre"
+    t.string   "tipo"
+    t.text     "descripcion"
+    t.string   "dimensiones"
+    t.integer  "cantidad"
+    t.string   "unidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "numeroBien"
+  end
+
   create_table "labs", force: true do |t|
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "nombre"
+    t.string   "numeroBien"
+    t.string   "tipo"
+    t.text     "descripcion"
+    t.string   "ubicacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tools", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "type"
+    t.integer  "national_good"
+    t.string   "status"
+    t.string   "use"
+    t.string   "responsible"
+    t.string   "location"
+    t.string   "material"
+    t.string   "bill"
+    t.boolean  "from_set"
+    t.boolean  "investigation"
+    t.boolean  "teaching"
+    t.boolean  "extention"
+    t.boolean  "management"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

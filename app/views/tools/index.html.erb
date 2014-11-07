@@ -1,0 +1,80 @@
+<h1><i class="fa fa-wrench"></i>  Herramientas</h1>
+
+<div id = "table2">
+</div>
+<div id="invetario"> Inventario </div>
+<br>
+
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+    .tg td{font-family:Arial, sans-serif;font-size:15px;padding:20px 30px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+    .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#68D261;}
+    .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;color:#000000;text-align:center}
+    .tg .tg-s6z2{text-align:center}
+    .tg .tg-093g{font-weight:bold;text-align:center}
+    .tg .tg-hgcj{font-weight:bold;text-align:center}
+    .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px;}
+
+    </style> 
+
+
+<thead>
+  <table class="tg">
+    <tr>
+      <th class="tg-093g">Nombre</th>
+      <th class="tg-hgcj">Marca</th>
+  <!--     <th>Type</th>
+      <th>National good</th>
+      <th>Status</th>
+      <th>Use</th> -->
+      <th class="tg-hgcj">Responsable</th>
+      <th class="tg-hgcj">Ubicación</th>
+   <!--    <th>Material</th>
+      <th>Bill</th>
+      <th>From set</th>
+      <th>Investigation</th>
+      <th>Teaching</th>
+      <th>Extention</th>
+      <th>Management</th> -->
+   
+    </tr>
+   </thead>
+
+  <tbody>
+    <% @tools.each do |tool| %>
+      <tr>
+        <td class="tg-s6z2"><%= tool.name %></td>
+        <td class="tg-s6z2"><%= tool.brand %></td>
+       <!--  <td><%= tool.type %></td>
+        <td><%= tool.national_good %></td>
+        <td><%= tool.status %></td>
+         -->
+        <td class="tg-qpa3"><%= tool.responsible %></td>
+        <td class="tg-s6z2"><%= tool.location %></td>
+      <!--   <td><%= tool.material %></td>
+        <td><%= tool.bill %></td>
+        <td><%= tool.from_set %></td>
+        <td><%= tool.investigation %></td>
+        <td><%= tool.teaching %></td>
+        <td><%= tool.extention %></td>
+        <td><%= tool.management %></td> -->
+
+      <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"><%= link_to ' Ver', tool %></br>
+        <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_tool_path(tool) %><br>
+       <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Eliminar', tool, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<br>
+
+<i class="fa fa-plus-circle"></i><%= link_to ' Nueva herramienta', new_tool_path %> | <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+

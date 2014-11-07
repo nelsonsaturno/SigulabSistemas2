@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @tool.name %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @tool.brand %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @tool.type %>
+</p>
+
+<p>
+  <strong>Numero Bien Nacional:</strong>
+  <%= @tool.national_good %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @tool.status %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @tool.responsible %>
+</p>
+
+<p>
+  <strong>Ubicación:</strong>
+  <%= @tool.location %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @tool.material %>
+</p>
+
+<p>
+  <strong>Factura:</strong>
+  <%= @tool.bill %>
+</p>
+
+<p>
+  <strong>De un juego:</strong>
+  <%= @tool.from_set %>
+</p>
+
+<p>
+  <strong>Uso:</strong>
+
+  <% if @tool.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @tool.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @tool.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @tool.management %>
+    <%= ' Gest' %>
+  <% end %>
+</p>
+
+<br>
+<i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>

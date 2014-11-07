@@ -1,0 +1,73 @@
+<%= form_for(@instrument) do |f| %>
+  <% if @instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><!--<%= pluralize(@instrument.errors.count, "error") %>--> Error:</h2>
+
+      <ul>
+      <% @instrument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= '* Nombre' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= 'Marca' %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= 'Modelo' %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= 'Unidad de medida' %><br>
+    <%= f.text_field :measurement_unit %>
+  </div>
+  <div class="field">
+    <%= 'Capacidad' %><br>
+    <%= f.text_field :capacity %>
+  </div>
+  <div class="field">
+    <%= 'Material' %><br>
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= 'Estatus' %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= '* Ubicación' %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= 'Ultima Calibración' %><br>
+    <%= f.date_select :last_calibration %>
+  </div>
+  <div class="field">
+    <%= '* Responsable' %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= 'Numero bien nacional' %><br>
+    <%= f.number_field :national_good %>
+  </div>
+  <div class="field">
+
+     <%= 'Uso:'%><br>
+   <%= f.check_box :investigation %>
+    <%= 'Investigación' %><br>
+    <%= f.check_box :teaching %>
+    <%= 'Docencia' %><br>
+    <%= f.check_box :extention %>
+    <%= 'Extensión' %><br>
+    <%= f.check_box :management %>
+    <%= 'Gestion' %><br>
+  </div>
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

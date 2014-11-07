@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+
+	<table id="itemTable" class="table table-bordered" >
+	  <thead>
+		 <tr>
+		   <th align="left">Nombre</th>
+         <th align="left">Tipo</th>
+		   <th align="left">Descripción</th>
+		 </tr>
+	  </thead>
+
+	  <tbody>
+		 <% @items.each do |item| %>
+	  		<tr>
+		     <td style="text-decoration:underline; color:black"><%= link_to item.nombre, item %></td>
+		     <td><%= item.tipo %></td>
+		     <td><%= item.descripcion %></td>
+		   </tr>
+		 <% end %>
+	  </tbody>
+	</table>
+</body>
+
+<style>
+
+
+a:visited { 
+   color:black;
+   font-weight: bold;
+	font-size: 110%;
+}
+
+a:active { 
+   color: black;
+   font-weight: bold;
+   font-size: 110%;
+}
+
+#itemTable th {
+      background-color: #94E79E;
+      border-color:#7A7070;
+      font-size: 14px;
+  }
+
+#itemTable th td tr{
+ border-color:black;
+ }
+
+
+
+ .table-bordered {
+
+border-color:#7A7070;
+
+}
+
+.table-bordered>tbody>tr>td {
+
+border-color:#7A7070;
+
+}
+
+#itemTable tr:nth-child(even) {
+
+background-color: #F2F8F7;
+
+}
+
+input[type=submit] {
+-webkit-appearance: button;
+cursor: pointer;
+background-color:#F8F0BE;
+border-radius:px;
+}
+
+</style>
+

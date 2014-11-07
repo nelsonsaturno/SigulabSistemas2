@@ -17,3 +17,7 @@
 
 # Eclipse project file
 .project
+
+# Temporal Files
+*~
+

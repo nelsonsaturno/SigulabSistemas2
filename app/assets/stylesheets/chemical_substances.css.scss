@@ -1,0 +1,28 @@
+// Place all the styles related to the chemical_substances controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#table2 {
+    border: 1px solid black;
+    opacity: 0.2;
+    border-width:thin;
+
+}
+
+#invetario{
+  	position 				: relative;
+    left 					: 500px;
+    font-size               : 17px;
+    font-style 				: oblique;
+    opacity					:0.5;
+    font-family 			: "Times New Roman", Georgia, Serif;
+    }
+
+#LeDivQuimicas {
+    background-image        :   url('/assets/SustanciasQuimicas.png');
+    background-size         : 580px;  
+    background-repeat       : repeat; 
+    background-position		: 0% 0%; 
+    background-color        : #FFFFFF;
+}
