@@ -21,6 +21,10 @@
 				<td class="col-xs-7"><%= @commitment.lab.name %></td>
 			</tr>
 			<tr>
+				<td class="col-xs-5 text-right">Fecha:</td>
+				<td class="col-xs-7"><%= @commitment.date.strftime('%m/%d/%Y') %></td>
+			</tr>
+			<tr>
 				<td class="col-xs-5 text-right">Codigo:</td>
 				<td class="col-xs-7"><%= @commitment.code %></td>
 			</tr>

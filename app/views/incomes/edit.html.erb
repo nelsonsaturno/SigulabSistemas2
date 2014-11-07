@@ -24,7 +24,7 @@
 			<div class="form-group">
 				<label for='income_lab_id' class="col-xs-2 control-label text-right">Laboratorio *</label>
 				<div class="col-xs-3">
-					<select id="income_lab_id" name="income[lab_id]" form="new_income" class="form-control">
+					<select id="income_lab_id" name="income[lab_id]" form="edit_income_<%= @income.id %>" class="form-control">
 						<% @labs.each do |l| %>
 							<option value='<%= l.id %>'><%= l.sae_name %></option>
 						<% end %>
@@ -35,7 +35,7 @@
 			<div class="form-group">
 				<label for='income_origin' class="col-xs-2 control-label text-right">Origen *</label>
 				<div class="col-xs-3">
-					<select id="income_origin" name="income[origin]" form="new_income" class="form-control">
+					<select id="income_origin" name="income[origin]" form="edit_income_<%= @income.id %>" class="form-control">
 						<option value="ordinary">Presupuesto Ordinario</option>
 						<option value="extraordinary">Presupuesto Extraordinario</option>
 						<option value="projects">Proyectos</option>

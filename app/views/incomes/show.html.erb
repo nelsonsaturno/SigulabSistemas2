@@ -21,6 +21,10 @@
 				<td class="col-xs-7"><%= @income.lab.name %></td>
 			</tr>
 			<tr>
+				<td class="col-xs-5 text-right">Fecha:</td>
+				<td class="col-xs-7"><%= @income.date.strftime('%m/%d/%Y') %></td>
+			</tr>
+			<tr>
 				<td class="col-xs-5 text-right">Origen:</td>
 				<td class="col-xs-7">
 					<% case @income.origin %>
