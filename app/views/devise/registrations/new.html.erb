@@ -20,14 +20,54 @@
 
 
 <div class="field">
-
+<br>
 <b><%='Tipo de usuario:' %></b><br>
-   <%= f.check_box :administrator %>
-     <%= 'Administrador'%><br>
-    <%= f.check_box :technician %>
-     <%= 'Tecnico'%><br>
-    <%= f.check_box :labBoss %>
-     <%= 'Jefe de laboratorio'%><br>
+  <%= f.check_box :director %>
+  <%= 'Director'%><br>
+  <%= f.check_box :directorate %>
+  <%= 'Coordinador direccion'%><br>
+  <%= f.check_box :gsmp %>
+  <%= 'GSMP'%><br><br>
+  
+
+  <%= 'Coordinación de adquisiciones :' %><br>
+  <%= f.check_box :acquisition %>
+  <%= 'Coordinador'%>
+  <%= f.check_box :acquisition_analist %>
+  <%= 'Analista'%><br><br>
+
+  <%= 'Coordinación de importaciones :' %><br>
+  <%= f.check_box :import %>
+  <%= 'Coordinador'%>
+  <%= f.check_box :import_analist %>
+  <%= 'Analista'%><br><br>
+
+  <%= 'Coordinación de administración:' %><br>
+  <%= f.check_box :manage %>
+  <%= 'Coordinador'%>
+  <%= f.check_box :manage_analist %>
+  <%= 'Analista'%><br><br>
+
+  <%= 'Coordinación de calidad:' %><br>
+  <%= f.check_box :quality %>
+  <%= 'Coordinador'%>
+  <%= f.check_box :quality_analist %>
+  <%= 'Analista'%><br><br>
+
+
+  <%= 'Personal laboratorio :' %><br>
+  <%= f.check_box :labBoss %>
+  <%= 'Jefe de laboratorio'%>
+  <%= f.check_box :labassistant %>
+  <%= 'Asistente de laboratorio'%><br>
+  <%= f.check_box :section_boss %>
+  <%= 'Jefe de sección'%>
+  <%= f.check_box :proy_responsible %>
+  <%= 'Responsable de proyecto'%><br>
+  <%= f.check_box :technician %>
+  <%= 'Técnico'%><br><br>
+  <%= f.check_box :external %>
+  <%= 'Agente externo'%><br>
 </div>
 
   <div><%= f.submit "Registrarse!" %></div>

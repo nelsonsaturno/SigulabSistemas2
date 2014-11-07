@@ -2,16 +2,66 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-      	if user.administrator?
+      	if user.gsmp?
       		can :manage, :all
 
+        elsif user.director?
+          can :index, :all
+
+        elsif user.acquisition?
+          can :create, :all 
+          can :index, :all
+          can :update, :all
+
+        elsif user.acquisition_analist?
+          can :create, :all
+          can :index, :all
+
+        elsif user.import?
+          can :create, :all
+          can :index, :all
+
+        elsif user.import_analist?
+          can :create, :all
+          can :index, :all
+
+        elsif user.manage?
+          can :index, :all
+          
+        elsif user.manage_analist?
+          can :index, :all
+        
+        elsif user.quality?
+          can :index, :all
+
+        elsif user.quality_analist?
+          can :index, :all
+
+        elsif user.directorate?
+          can :index, :all
+        
+        elsif user.external?
+          can :index, :all
+        
+        elsif user.section_boss?
+          can :index, :all
+          can :update, :all
+        
+        elsif user.labassistant?
+          can :index, :all
+          can :update, :all
+
+        elsif user.proy_responsible?
+          can :index, :all
+          can :update, :all
+        
+          
+          
+          
       	elsif user.labBoss?
-      		can :create, :all 
-      		can :update, :all
       		can :index, :all
       		
       	elsif user.technician?
-      		can :create, :all
       		can :index, :all
       	else  
       		can :index, :all  
