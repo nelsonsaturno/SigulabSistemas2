@@ -30,10 +30,6 @@
   <%= @instrument.material %>
 </p>
 
-<p>
-  <strong>Uso:</strong>
-  <%= @instrument.use %>
-</p>
 
 <p>
   <strong>Estatus:</strong>
@@ -61,24 +57,22 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @instrument.investigation %>
+  <strong>Uso:</strong>
+
+  <% if @instrument.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @instrument.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @instrument.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @instrument.management %>
+    <%= ' Gest' %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @instrument.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @instrument.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @instrument.management %>
-</p>
 <br>
 <i class="fa fa-cog"></i><%= link_to ' Editar', edit_instrument_path(@instrument) %> |
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', instruments_path %>

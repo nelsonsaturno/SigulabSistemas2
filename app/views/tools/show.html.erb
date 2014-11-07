@@ -21,13 +21,8 @@
 </p>
 
 <p>
-  <strong>Estats:</strong>
+  <strong>Estatus:</strong>
   <%= @tool.status %>
-</p>
-
-<p>
-  <strong>USO:</strong>
-  <%= @tool.use %>
 </p>
 
 <p>
@@ -56,24 +51,22 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @tool.investigation %>
+  <strong>Uso:</strong>
+
+  <% if @tool.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @tool.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @tool.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @tool.management %>
+    <%= ' Gest' %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @tool.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @tool.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @tool.management %>
-</p>
 <br>
 <i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>

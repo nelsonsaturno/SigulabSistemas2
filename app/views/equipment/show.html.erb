@@ -36,11 +36,6 @@
 </p>
 
 <p>
-  <strong>Uso:</strong>
-  <%= @equipment.use %>
-</p>
-
-<p>
   <strong>Responsable:</strong>
   <%= @equipment.responsible %>
 </p>
@@ -71,24 +66,22 @@
 </p>
 
 <p>
-  <strong>Investigación:</strong>
-  <%= @equipment.investigation %>
+  <strong>Uso:</strong>
+
+  <% if @equipment.investigation %>
+    <%= 'Inves' %>
+  <% end %>
+  <% if @equipment.teaching %>
+    <%= ' Doc' %>
+  <% end %>
+  <% if @equipment.extention %>
+    <%= ' Exten' %>
+  <% end %>
+  <% if @equipment.management %>
+    <%= ' Gest' %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Docencia:</strong>
-  <%= @equipment.teaching %>
-</p>
-
-<p>
-  <strong>Extensión:</strong>
-  <%= @equipment.extention %>
-</p>
-
-<p>
-  <strong>Gestión:</strong>
-  <%= @equipment.management %>
-</p>
 
 <p>
   <strong>Calibrated:</strong>
