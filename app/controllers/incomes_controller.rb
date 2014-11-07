@@ -2,8 +2,7 @@ class IncomesController < ApplicationController
   layout 'bootlayout'
 
   def index
-    @incomes = Income.all
-    
+    @incomes = Income.all 
     @sum = @incomes.sum(:amount)
   end
 
@@ -33,6 +32,30 @@ class IncomesController < ApplicationController
     else
       @labs = Lab.all
       render 'new'
+    end
+  end
+  
+  def edit
+    @income = Income.find(params[:id])
+    @labs = Lab.all
+  end
+  
+  def update
+    # Check Date
+    unless params[:income].nil?
+      begin
+        params[:income][:date] = DateTime.parse(params[:income][:date])
+      rescue ArgumentError
+        params[:income][:date] = nil
+      end
+    end
+    @income = Income.find(params[:id])
+    
+    if @income.update_attributes(income_params)
+      redirect_to income_url(@income)
+    else
+      @labs = Lab.all
+      render 'edit'
     end
   end
   

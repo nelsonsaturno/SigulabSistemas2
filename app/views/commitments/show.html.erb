@@ -38,7 +38,10 @@
 <div class="row">
 	<div class="col-xs-12">
 		<%= link_to edit_commitment_path do %>
-			<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Editar Entrada</button>
+			<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Editar Compromiso</button>
+		<% end %>
+		<%= link_to action: 'destroy' do %>
+			<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Eliminar Compromiso</button>
 		<% end %>
 	</div>
 </div>

@@ -6,7 +6,7 @@ class CommitmentsController < ApplicationController
     @sum = @commitments.sum(:amount)
   end
 
- def show
+  def show
     @commitment = Commitment.find(params[:id])
   end
   
@@ -32,6 +32,31 @@ class CommitmentsController < ApplicationController
     else
       @labs = Lab.all
       render 'new'
+    end
+  end
+  
+  def edit
+    @commitment = Commitment.find(params[:id])
+    @labs = Lab.all
+  end
+  
+  def update
+    # Check Date
+    unless params[:commitment].nil?
+      begin
+        params[:commitment][:date] = DateTime.parse(params[:commitment][:date])
+      rescue ArgumentError
+        params[:commitment][:date] = nil
+      end
+    end
+    
+    @commitment = Commitment.find(params[:id])
+    
+    if @commitment.update_attributes(commitment_params)
+      redirect_to action: 'index'
+    else
+      @labs = Lab.all
+      render 'edit'
     end
   end
   

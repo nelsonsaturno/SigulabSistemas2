@@ -4,12 +4,11 @@ class Commitment < ActiveRecord::Base
   enum origin: [:ordinary, :extraordinary, :projects, :reformulation]
   belongs_to :lab
 
-  validates :lab, :presence => true
-  validates :code, :presence => true
-  validates :amount, :presence => true, numericality: { greater_than: 0 }
+  validates :lab, presence: true
+  validates :code, presence: true
+  validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true, length: {maximum: 512}
   validates :recipient, presence: true, length: {maximum: 512}
   validates :date, presence: true
   validates_datetime :date
-
 end
