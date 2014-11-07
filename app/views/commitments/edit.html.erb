@@ -24,7 +24,7 @@
 			<div class="form-group">
 				<label for='commitment_lab_id' class="col-xs-2 control-label text-right">Laboratorio *</label>
 				<div class="col-xs-3">
-					<select id="commitment_lab_id" name="commitment[lab_id]" form="new_commitment" class="form-control">
+					<select id="commitment_lab_id" name="commitment[lab_id]" form="edit_commitment_<%= @commitment.id %>" class="form-control">
 						<% @labs.each do |l| %>
 							<option value='<%= l.id %>'><%= l.sae_name %></option>
 						<% end %>
