@@ -22,7 +22,12 @@
 
 <p>
   <strong>Controlada:</strong>
-  <%= @chemical_substance.controlled %>
+  <% if @chemical_substance.controlled %>
+    <%= 'Sí' %>
+  <% else %>
+    <%= 'No' %>
+  <% end %>
+  
 </p>
 
 <p>

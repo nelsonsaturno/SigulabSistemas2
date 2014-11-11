@@ -20,7 +20,7 @@
     </div>
     <div class="field">
       <%= 'Pureza:' %><br>
-      <%= f.text_field :purity %> %
+      <%= f.number_field(:purity, min: 0, max: 100, :step => 'any') %>%
     </div>
 
     <div class="field">
@@ -40,7 +40,7 @@
     </div>
     <div class="field">
       <%= 'Cantidad:' %><br>
-      <%= f.number_field(:quantity, min: 0) %><%= f.select(:meassure, [['Kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %>
+      <%= f.number_field(:quantity, min: 0, :step => 'any') %><%= f.select(:meassure, [['Kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %>
     </div>
     <div class="field">
       <%= 'CAS:' %><br>
@@ -48,8 +48,8 @@
       <span class="red">*</span>
     </div>
     <div class="field">
-      <%= 'Estatus:' %><br>
-      <%= f.text_field :status %>
+      <%= 'Estado:' %><br>
+      <%= f.select(:status, [['Vigente'], ['Vencido'], ['Indeterminado']] ) %>
     </div>
     <div class="field">
       <%= 'Responsable:' %><br>
@@ -63,7 +63,7 @@
     </div>
     <div class="field">
       <%= 'Fecha de expiración:' %><br>
-      <%= f.date_select :expiration_date %>
+      <%= f.date_select :expiration_date, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %>
     </div>
    
   <div class="field">
