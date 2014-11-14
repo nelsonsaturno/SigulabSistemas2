@@ -22,7 +22,13 @@
 
       </style> 
 
-
+	<div id="search">
+		<%= form_tag(tools_path, :method => "get", id: "search-form") do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Herramienta a buscar" %>
+			<%= submit_tag "Buscar", :name => nil %>
+		<% end %>
+	</div>
+	
   <thead>
     <table class="tg">
       <tr>

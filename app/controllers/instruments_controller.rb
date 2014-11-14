@@ -5,6 +5,11 @@ class InstrumentsController < ApplicationController
   # GET /instruments.json
   def index
     @instruments = Instrument.all
+	if params[:search]
+		@instruments = Instrument.search(params[:search])
+	else
+		@instruments = Instrument.all.order('created_at DESC')
+	end
   end
 
   # GET /instruments/1

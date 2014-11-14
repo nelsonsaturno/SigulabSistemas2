@@ -24,6 +24,12 @@
 
       </style>  
 
+	<div id="search">
+		<%= form_tag(consumables_path, :method => "get", id: "search-form") do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Consumible a buscar" %>
+			<%= submit_tag "Buscar", :name => nil %>
+		<% end %>
+	</div>
 
    <table class="tg">
     <thead>

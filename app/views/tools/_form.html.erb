@@ -31,8 +31,8 @@
       <%= f.number_field :national_good %>
     </div>
     <div class="field">
-      <%= 'Estatus:' %><br>
-      <%= f.text_field :status %>
+      <%= 'Estado:' %><br>
+      <%= f.select(:status, [['En buen estado'], ['Dañado']]) %>     
     </div>
     <div class="field">
       <%= 'Responsable:' %><br>

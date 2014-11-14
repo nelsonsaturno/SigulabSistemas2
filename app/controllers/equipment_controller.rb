@@ -4,7 +4,11 @@ class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
   def index
-    @equipment = Equipment.all
+	if params[:search]
+		@equipment = Equipment.search(params[:search])
+	else
+		@equipment = Equipment.all.order('created_at DESC')
+	end
   end
 
   # GET /equipment/1

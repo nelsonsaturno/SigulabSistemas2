@@ -5,6 +5,11 @@ class ToolsController < ApplicationController
   # GET /tools.json
   def index
     @tools = Tool.all
+	if params[:search]
+		@tools = Tool.search(params[:search])
+	else
+		@tools = Tool.all.order('created_at DESC')
+	end
   end
 
   # GET /tools/1

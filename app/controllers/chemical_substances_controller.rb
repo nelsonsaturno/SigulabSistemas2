@@ -1,10 +1,14 @@
 class ChemicalSubstancesController < ApplicationController
-  before_action :set_chemical_substance, only: [:show, :edit, :update, :destroy]
+  before_action :set_chemical_substance, only: [:show, :edit, :update, :destroy, :search]
 
   # GET /chemical_substances
   # GET /chemical_substances.json
   def index
-    @chemical_substances = ChemicalSubstance.all
+  	if params[:search]
+		@chemical_substances = ChemicalSubstance.search(params[:search])
+	else
+		@chemical_substances = ChemicalSubstance.all.order('created_at DESC')
+	end
   end
 
   # GET /chemical_substances/1
@@ -60,7 +64,7 @@ class ChemicalSubstancesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chemical_substance

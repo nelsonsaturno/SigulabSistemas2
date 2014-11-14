@@ -4,7 +4,11 @@ class ConsumablesController < ApplicationController
   # GET /consumables
   # GET /consumables.json
   def index
-    @consumables = Consumable.all
+	if params[:search]
+		@consumables = Consumable.search(params[:search])
+	else
+		@consumables = Consumable.all.order('created_at DESC')
+	end
   end
 
   # GET /consumables/1
