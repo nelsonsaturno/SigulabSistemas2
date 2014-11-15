@@ -70,10 +70,6 @@
         <td class="col-xs-7"><%= @chemical_substance.expiration_date %></td>
       </tr>
        <tr>
-        <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-        <td class="col-xs-7"><%= @chemical_substance.location %></td>
-      </tr>
-       <tr>
           <td class="col-xs-5 text-right"><strong>Peligrosidad:</strong></td>
           <td class="col-xs-7">
              <% if @chemical_substance.toxic %>
@@ -125,10 +121,10 @@
 
 
 
-
-<br><br>
+<div class="col-xs-12">
 <% if can? :update, @chemical_substance %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_chemical_substance_path(@chemical_substance) %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', chemical_substances_path %>
 <br><br><br><br>
+</div>

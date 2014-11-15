@@ -71,10 +71,6 @@
         <td class="col-xs-7"><%=f.date_select :expiration_date, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %></td>
       </tr>
        <tr>
-        <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-        <td class="col-xs-7"><%=  f.text_field :location %></td>
-      </tr>
-       <tr>
           <td class="col-xs-5 text-right"><strong>Peligrosidad:</strong></td>
           <td class="col-xs-7">
               <%= f.check_box :toxic %>
@@ -107,8 +103,11 @@
             <%= 'Gestión' %></div></td>
           </tr>
 
+             <tr>
+              
+             </tr>
+        <tr>
 
-      <tr>
         <td class="col-xs-5 text-right">
            <div class="actions">
             <%= f.submit %><td>
