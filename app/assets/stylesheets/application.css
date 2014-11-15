@@ -28,6 +28,7 @@ body {
     line-height             : 1.6em;
     margin                  : 0;
     padding                 : 0;
+    overflow-x              : hidden;
 }
 
 /* Parte principal */
@@ -74,7 +75,7 @@ body {
 a {
     text-decoration         : none;
     text-align              : right;
-    color                   : #336699;
+    color                   : #384157;
     font-weight             : bold;
 }
 
@@ -83,7 +84,14 @@ a:hover {
     cursor                  : pointer;
     color                   : #8ed6ff;
     text-align              : right;
-	background: #ffffff;
+	background 				: #ffffff;
+	text-decoration			: none; 
+}
+a:visited {
+	color 					: #384157;
+}
+a:visited:hover {
+	color 					: #8ed6ff;
 }
 
 /* Listas del menu */
@@ -96,9 +104,6 @@ li {
 hr {
     opacity                 : 0.4;
 }
-
-
-
 
 .container {
   padding-right: 15px;
