@@ -5,116 +5,126 @@
 	<li> <%=link_to 'Sustancias Químicas', chemical_substances_path %></li>
 	<li class="active"> Ver </li>
 </ol>
-<p>
-  <strong>Nombre:</strong>
-  <%= @chemical_substance.name %>
-</p>
-
-<p>
-  <strong>Pureza:</strong>
-  <%= @chemical_substance.purity %> %
-</p>
-
-<p>
-  <strong>Estado de la materia:</strong>
-  <%= @chemical_substance.matter_states %>
-</p>
-
-<p>
-  <strong>Controlada:</strong>
-  <% if @chemical_substance.controlled %>
-    <%= 'Sí' %>
-  <% else %>
-    <%= 'No' %>
-  <% end %>
-  
-</p>
-
-<p>
-  <strong>Régimen Legal:</strong>
-
-   <% if @chemical_substance.rI7 %>
-    <%= 'RI7' %>
-  <% end %>
-  <% if @chemical_substance.rI4 %>
-    <%= ' RI4' %>
-  <% end %>
-
-</p>
 
 
-<p>
-  <strong>Cantidad:</strong>
-  <%= @chemical_substance.quantity %><% @chemical_substance.meassure %>
-</p>
 
-<p>
-  <strong>CAS:</strong>
-  <%= @chemical_substance.cas %>
-</p>
 
-<p>
-  <strong>Estatus:</strong>
-  <%= @chemical_substance.status %>
-</p>
 
-<p>
-  <strong>Responsable:</strong>
-  <%= @chemical_substance.responsible %>
-</p>
+    <div class="col-xs-12">
+        <table class="table table-striped">
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.name %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Pureza:</strong></td>
+            <td class="col-xs-7"><%=@chemical_substance.purity %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Estado materia:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.matter_states %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Controlado:</strong></td>
+            <td class="col-xs-7"><% if @chemical_substance.controlled %>
+                <%= 'Sí' %>
+              <% else %>
+                <%= 'No' %>
+              <% end %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Régimen legal:</strong></td>
+            <td class="col-xs-7">  <% if @chemical_substance.rI7 %>
+              <%= 'RI7' %>
+            <% end %>
+            <% if @chemical_substance.rI4 %>
+              <%= ' RI4' %>
+            <% end %>
+            </td>
 
-<p>
-  <strong>Ubicación:</strong>
-  <%= @chemical_substance.location %>
-</p>
+          </tr>
+     
+            <tr>
+            <td class="col-xs-5 text-right"><strong>Cantidad:</strong></td>
+            <td class="col-xs-7"> <%= @chemical_substance.quantity %><% @chemical_substance.meassure %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>CAS:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.cas %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.status %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-7"> <%= @chemical_substance.responsible %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.location %></td>
+          </tr>
+           
+                  <tr>
+        <td class="col-xs-5 text-right"><strong>Fecha de expiración:</strong></td>
+        <td class="col-xs-7"><%= @chemical_substance.expiration_date %></td>
+      </tr>
+       <tr>
+        <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+        <td class="col-xs-7"><%= @chemical_substance.location %></td>
+      </tr>
+       <tr>
+          <td class="col-xs-5 text-right"><strong>Peligrosidad:</strong></td>
+          <td class="col-xs-7">
+             <% if @chemical_substance.toxic %>
+              <%= ' Tóxico ' %>
+            <% end %>
+            <% if @chemical_substance.oxidant %>
+              <%= ' Comburente ' %>
+            <% end %>
+            <% if @chemical_substance.explosive %>
+              <%= ' Explosivo ' %>
+            <% end %>
+            <% if @chemical_substance.irritating %>
+              <%= ' Irritante ' %>
+            <% end %>
+            <% if @chemical_substance.inflamable %>
+              <%= ' Inflamable ' %>
+            <% end %>
+            <% if @chemical_substance.corrosive %>
+              <%= ' Corrosivo ' %>
+            <% end %>
+            <% if @chemical_substance.nocive %>
+              <%= ' Nocivo' %>
+            <% end %>
+        </td>
+      </tr>
 
-<p>
-  <strong>Fecha de expiración:</strong>
-  <%= @chemical_substance.expiration_date %>
-</p>
+        <tr>
+        <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
+            <td class="col-xs-7">   
+            <% if @chemical_substance.investigation %>
+              <%= ' Investigación ' %>
+            <% end %>
+            <% if @chemical_substance.teaching %>
+              <%= ' Docencia ' %>
+            <% end %>
+            <% if @chemical_substance.extention %>
+              <%= ' Extensión ' %>
+            <% end %>
+            <% if @chemical_substance.management %>
+              <%= ' Gestión ' %>
+            <% end %></div></td>
+          </tr>
 
-<p>
-  <strong>Peligrosidad:</strong>
- 
-  <% if @chemical_substance.toxic %>
-    <%= ' Tóxico ' %>
-  <% end %>
-  <% if @chemical_substance.oxidant %>
-    <%= ' Comburente ' %>
-  <% end %>
-  <% if @chemical_substance.explosive %>
-    <%= ' Explosivo ' %>
-  <% end %>
-  <% if @chemical_substance.irritating %>
-    <%= ' Irritante ' %>
-  <% end %>
-  <% if @chemical_substance.inflamable %>
-    <%= ' Inflamable ' %>
-  <% end %>
-  <% if @chemical_substance.corrosive %>
-    <%= ' Corrosivo ' %>
-  <% end %>
-  <% if @chemical_substance.nocive %>
-    <%= ' Nocivo' %>
-  <% end %>
-</p>
+          
+        </table>
 
-<p>
-  <strong>Uso:</strong>
+      </div>
 
-  <% if @chemical_substance.investigation %>
-    <%= ' Investigación ' %>
-  <% end %>
-  <% if @chemical_substance.teaching %>
-    <%= ' Docencia ' %>
-  <% end %>
-  <% if @chemical_substance.extention %>
-    <%= ' Extensión ' %>
-  <% end %>
-  <% if @chemical_substance.management %>
-    <%= ' Gestión ' %>
-  <% end %>
-</p>
+
+
+
 
 <br><br>
 <% if can? :update, @chemical_substance %>

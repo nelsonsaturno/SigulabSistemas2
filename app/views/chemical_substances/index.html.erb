@@ -1,81 +1,87 @@
-<div id="LeDivQuimicas">
-
-  <h1><i class="fa fa-flask"></i> Sustancias Químicas</h1>
-
 <ol class="breadcrumb">
-	<li> <%=link_to 'Home', controller: 'statics'%></li>
-	<li> <%=link_to 'Inventario', inventario_url %></li>
-	<li class="active"> Sustancias Químicas </li>
-</ol>  <div id = "table2">
-  </div>
-  <div id="invetario"> Inventario </div>
-  <br>
+  <li> <%=link_to 'Home', controller: 'statics'%></li>
+  <li> <%=link_to 'Inventario', inventario_url %></li>
+  <li class="active"> Sustancias Químicas </li>
+</ol>  
+
+<class="LaLa">
+  <div id="LeDivQuimicas">
+
+    <h1><i class="fa fa-flask"></i> Sustancias Químicas</h1>
 
 
-      <style type="text/css">
-      .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-      .tg td{font-family:Arial, sans-serif;font-size:15px;padding: 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
-      .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
-      .tg .tg-s6z2{text-align:center}
-      .tg .tg-093g{font-weight:bold;text-align:center;}
-      .tg .tg-hgcj{font-weight:bold;text-align:center;}
-      .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 15px; line-height:1.4em;}
-
-      </style> 
-
-    <div id="search">
-		<%= form_tag(chemical_substances_path, :method => "get", id: "search-form") do %>
-			<%= text_field_tag :search, params[:search], placeholder: "Sustancia a buscar" %>
-			<%= submit_tag "Buscar", :name => nil %>
-<!-- 			<%= select_tag(:columna, options_for_select(@chemical_substances.columns.map{|c| [c.name] }),:selected => "name") %> -->
-		<% end %>
+  <div id = "table2">
     </div>
+    <div id="invetario"> Inventario </div>
+    <br>
 
-    <thead>
-      <table class="tg">
-      <tr>
-        <th class="tg-093g">Nombre</th>
-       <!--  <th>Purity</th>
-        <th>Matter states</th>
-        <th>Controlled</th>
-        <th>Quantity</th> -->
-        <th class="tg-hgcj">CAS</th>
-<!--         <th>Status</th> -->
-        <th class="tg-hgcj">Responsable</th>
-        <th class="tg-hgcj">Ubicación</th>
-       <!--  <th>Expiration date</th>
-        <th>Ri7</th>
-        <th>Ri4</th>
-        <th>Toxic</th>
-        <th>Oxidant</th>
-        <th>Explosive</th>
-        <th>Irritating</th>
-        <th>Inflamable</th>
-        <th>Corrosive</th>
-        <th>Nocive</th>
-        <th>Investigation</th>
-        <th>Teaching</th>
-        <th>Extention</th>
-        <th>Management</th> -->
+
+        <style type="text/css">
        
-      </tr>
-    </thead>
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+        .tg td{font-family:Arial, sans-serif;font-size:15px;padding: 12px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6358F2;}
+        .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        .tg .tg-s6z2{text-align:center}
+        .tg .tg-093g{font-weight:bold;text-align:center;}
+        .tg .tg-hgcj{font-weight:bold;text-align:center;}
+        .tg .tg-092g{color:#FFFFFF;background-color:#FFFFFF;font-weight:bold;text-align:left;font-size:14px;font-style: oblique; border-width:0px; padding: 4px; line-height:1.4em;}
 
-    <tbody>
-      <% @chemical_substances.each do |chemical_substance| %>
+        </style> 
+
+      <div id="search">
+  		<%= form_tag(chemical_substances_path, :method => "get", id: "search-form") do %>
+  			<%= text_field_tag :search, params[:search], placeholder: "Sustancia a buscar" %>
+  			<%= submit_tag "Buscar", :class => 'btn btn-success btn-sm', :name => nil %>
+  <!-- 			<%= select_tag(:columna, options_for_select(@chemical_substances.columns.map{|c| [c.name] }),:selected => "name") %> -->
+  		<% end %>
+      </div>
+      <br>
+
+      <thead>
+        <table class="tg">
         <tr>
-          <td class="tg-s6z2"><%= chemical_substance.name %></td>
+          <th class="tg-093g">Nombre</th>
+         <!--  <th>Purity</th>
+          <th>Matter states</th>
+          <th>Controlled</th>-->
+          <th class="tg-hgcj">Fecha Expiración</th> 
+          <th class="tg-hgcj">CAS</th>
+  <!--         <th>Status</th> -->
+          <th class="tg-hgcj">Responsable</th>
+          <th class="tg-hgcj">Ubicación</th>
+         <!--  <th>Cantidad</th>
+          <th>Ri7</th>
+          <th>Ri4</th>
+          <th>Toxic</th>
+          <th>Oxidant</th>
+          <th>Explosive</th>
+          <th>Irritating</th>
+          <th>Inflamable</th>
+          <th>Corrosive</th>
+          <th>Nocive</th>
+          <th>Investigation</th>
+          <th>Teaching</th>
+          <th>Extention</th>
+          <th>Management</th> -->
+         
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @chemical_substances.each do |chemical_substance| %>
+          <tr>
+            <td class="tg-s6z2"><%= link_to chemical_substance.name, chemical_substance %></td>
   <!--         <td><%= chemical_substance.purity %></td>
           <td><%= chemical_substance.matter_states %></td>
-          <td><%= chemical_substance.controlled %></td>
-          <td><%= chemical_substance.quantity %></td> -->
+          <td><%= chemical_substance.controlled %></td> -->
+          <td class="tg-s6z2"><%= chemical_substance.expiration_date %></td> 
           <td class="tg-s6z2"><%= chemical_substance.cas %></td>
   <!--     
           <td><%= chemical_substance.status %></td> -->
           <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
           <td class="tg-s6z2"><%= chemical_substance.location %></td>
-  <!--         <td><%= chemical_substance.expiration_date %></td>
+  <!--         <td><%= chemical_substance.quantity %></td>
           <td><%= chemical_substance.rI7 %></td>
           <td><%= chemical_substance.rI4 %></td>
           <td><%= chemical_substance.toxic %></td>
@@ -91,27 +97,22 @@
           <td><%= chemical_substance.management %></td> -->
 
           
-            <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', chemical_substance %></br>
-            <% if can? :update, @chemical_substance %>
-              <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar', edit_chemical_substance_path(chemical_substance) %><br>
-            <% end %>
-            <% if can? :destroy, @chemical_substance %>
-              <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
-            <%end%>
-        
+          
 
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <br>
+    <br>
 
 
-  <% if can? :create, @chemical_substance %>
-    <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | 
-  <%end%>
-  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br>
-</div>
+    <% if can? :create, @chemical_substance %>
+      <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | 
+    <%end%>
+    <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+  </div>
+ </div>

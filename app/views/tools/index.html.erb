@@ -1,10 +1,13 @@
+<ol class="breadcrumb">
+  <li> <%=link_to 'Home', controller: 'statics'%></li>
+  <li> <%=link_to 'Inventario', inventario_url %></li>
+  <li class="active"> Herramientas </li>
+</ol>
+
+
 <div id="LeDivTools">
   <h1><i class="fa fa-wrench"></i>  Herramientas</h1>
-<ol class="breadcrumb">
-	<li> <%=link_to 'Home', controller: 'statics'%></li>
-	<li> <%=link_to 'Inventario', inventario_url %></li>
-	<li class="active"> Herramientas </li>
-</ol>
+
   <div id = "table2">
   </div>
   <div id="invetario"> Inventario </div>
@@ -12,8 +15,8 @@
 
       <style type="text/css">
       .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:5px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#68D261;}
+      .tg td{font-family:Arial, sans-serif;font-size:15px;padding:12px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+      .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#43654A;}
       .tg .tg-qpa3{font-family:Arial, Helvetica, sans-serif !important;text-align:center}
       .tg .tg-s6z2{text-align:center}
       .tg .tg-093g{font-weight:bold;text-align:center}
@@ -25,9 +28,10 @@
 	<div id="search">
 		<%= form_tag(tools_path, :method => "get", id: "search-form") do %>
 			<%= text_field_tag :search, params[:search], placeholder: "Herramienta a buscar" %>
-			<%= submit_tag "Buscar", :name => nil %>
+			<%= submit_tag "Buscar", :class => 'btn btn-success btn-sm', :name => nil %>
 		<% end %>
 	</div>
+  <br>
 	
   <thead>
     <table class="tg">
@@ -36,8 +40,9 @@
         <th class="tg-hgcj">Marca</th>
     <!--     <th>Type</th>
         <th>National good</th>
-        <th>Status</th>
+        
         <th>Use</th> -->
+        <th class="tg-hgcj">Status</th>
         <th class="tg-hgcj">Responsable</th>
         <th class="tg-hgcj">Ubicación</th>
      <!--    <th>Material</th>
@@ -54,12 +59,13 @@
     <tbody>
       <% @tools.each do |tool| %>
         <tr>
-          <td class="tg-s6z2"><%= tool.name %></td>
+          <td class="tg-s6z2"><%= link_to tool.name, tool %></td>
           <td class="tg-s6z2"><%= tool.brand %></td>
          <!--  <td><%= tool.type %></td>
           <td><%= tool.national_good %></td>
-          <td><%= tool.status %></td>
+        
          -->
+          <td class="tg-qpa3"><%= tool.status %></td>
           <td class="tg-qpa3"><%= tool.responsible %></td>
           <td class="tg-s6z2"><%= tool.location %></td>
         <!--   <td><%= tool.material %></td>
@@ -69,15 +75,6 @@
           <td><%= tool.teaching %></td>
           <td><%= tool.extention %></td>
           <td><%= tool.management %></td> -->
-
-        <td class="tg-092g"><i class="fa fa-search fa-1x" style="color:black"></i><%= link_to ' Ver', tool %></br>
-        <% if can? :update, @tool %>
-          <i class="fa fa-cog fa-1x" style="color:blue"></i><%= link_to ' Editar',  edit_tool_path(tool) %><br>
-        <%end%>
-        <% if can? :destroy, @tool %>
-         <i class="fa fa-times fa-1x" style="color:red"></i><%= link_to ' Ocultar', tool, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
-        <%end%>
-
 
 
         </tr>
