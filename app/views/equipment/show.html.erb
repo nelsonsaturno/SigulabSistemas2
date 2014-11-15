@@ -5,103 +5,104 @@
 	<li> <%=link_to 'Equipos y mobiliarios', equipment_index_path %></li>
 	<li class="active"> Ver </li>
 </ol>
-<p>
-  <strong>Nombre:</strong>
-  <%= @equipment.name %>
-</p>
-
-<p>
-  <strong>Marca:</strong>
-  <%= @equipment.brand %>
-</p>
-
-<p>
-  <strong>Modelo:</strong>
-  <%= @equipment.model %>
-</p>
-
-<p>
-  <strong>Serial:</strong>
-  <%= @equipment.serial %>
-</p>
-
-<p>
-  <strong>Número de Bien Nacional:</strong>
-  <%= @equipment.national_good %>
-</p>
-
-<p>
-  <strong>Estatus:</strong>
-  <%= @equipment.status %>
-</p>
-
-<p>
-  <strong>Calibrado:</strong>
-  <%= @equipment.calibrated %>
-</p>
-
-<p>
-  <strong>Última Calibración:</strong>
-  <%= @equipment.last_calibration %>
-</p>
 
 
-<p>
-  <strong> Medidas: </strong><br>
-  <strong> - Alto: </strong>
-  <%= @equipment.lenght %><%= @equipment.meassure %><br>
-  <strong> - Ancho: </strong>
-  <%= @equipment.width %><%= @equipment.meassure %><br>
-  <strong> - Profundidad:</strong>
-  <%= @equipment.depth %><%= @equipment.meassure %>
-</p>
+ <table class="table table-striped">
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"><%= @equipment.name %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Marca:</strong></td>
+            <td class="col-xs-7"><%= @equipment.brand %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Modelo:</strong></td>
+            <td class="col-xs-7"><%= @equipment.model %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Serial:</strong></td>
+            <td class="col-xs-7"><%=  @equipment.serial %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Número de Bien Nacional:</strong></td>
+            <td class="col-xs-7">  <%= @equipment.national_good %>
+               
+            </td>
 
-<p>
-  <strong>Responsable:</strong>
-  <%= @equipment.responsible %>
-</p>
+          </tr>
+     
+            <tr>
+            <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
+            <td class="col-xs-7"><%= @equipment.status %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Calibrado:</strong></td>
+            <td class="col-xs-7"><%= @equipment.calibrated  %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Última Calibración:</strong></td>
+            <td class="col-xs-7"><%= @equipment.last_calibration %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Medidas:</strong></td>
+            <td class="col-xs-7"><strong> - Alto: </strong>
+            <%= @equipment.lenght %><%= @equipment.meassure %><br>
+            <strong> - Ancho: </strong>
+            <%= @equipment.width %><%= @equipment.meassure %><br>
+            <strong> - Profundidad:</strong>
+            <%= @equipment.depth %><%= @equipment.meassure %></td>
+          </tr>
+           
+        <tr>
+          <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+          <td class="col-xs-7"><%= @equipment.responsible %></td>
+      </tr>
+       <tr>
+          <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+          <td class="col-xs-7"><%= @equipment.location %>
+        </td>
+      </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Fecha Adquisición::</strong></td>
+          <td class="col-xs-7"><%= @equipment.adquisition_date %>
+        </td>
+      </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+          <td class="col-xs-7"><%= @equipment.buy_order %>
+        </td>
+      </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+          <td class="col-xs-7"><%= @equipment.cost  %>
+        </td>
+      </tr>
+       <tr>
+          <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+          <td class="col-xs-7"> <%= @equipment.bill %>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
+            <td class="col-xs-7">  
+            <% if @equipment.investigation %>
+              <%= ' Investigación ' %>
+            <% end %>
+            <% if @equipment.teaching %>
+              <%= ' Docencia ' %>
+            <% end %>
+            <% if @equipment.extention %>
+              <%= ' Extensión ' %>
+            <% end %>
+            <% if @equipment.management %>
+              <%= ' Gestión ' %>
+            <% end %></td>
+          </tr>
+          
+        </table>
 
-<p>
-  <strong>Ubicación:</strong>
-  <%= @equipment.location %>
-</p>
 
-<p>
-  <strong>Fecha Adquisición:</strong>
-  <%= @equipment.adquisition_date %>
-</p>
-
-<p>
-  <strong>Orden de Compra:</strong>
-  <%= @equipment.buy_order %>
-</p>
-
-<p>
-  <strong>Costo:</strong>
-  <%= @equipment.cost %>
-</p>
-
-<p>
-  <strong>Factura:</strong>
-  <%= @equipment.bill %>
-</p>
-
-<p>
-  <strong>Uso:</strong>
-
-  <% if @equipment.investigation %>
-    <%= ' Investigación ' %>
-  <% end %>
-  <% if @equipment.teaching %>
-    <%= ' Docencia ' %>
-  <% end %>
-  <% if @equipment.extention %>
-    <%= ' Extensión ' %>
-  <% end %>
-  <% if @equipment.management %>
-    <%= ' Gestión ' %>
-  <% end %>
-</p>
 <br><br>
 <% if can? :update, @equipment %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
