@@ -1,58 +1,55 @@
 <p id="notice"><%= notice %></p>
 <ol class="breadcrumb">
-	<li> <%=link_to 'Home', controller: 'statics'%></li>
+	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
 	<li> <%=link_to 'Inventario', inventario_url %></li>
 	<li> <%=link_to 'Consumibles', consumables_path %></li>
 	<li class="active"> Ver </li> 
 </ol>
-<p>
-  <strong>Nombre:</strong>
-  <%= @consumable.name %>
-</p>
 
-<p>
-  <strong>Descripción:</strong>
-  <%= @consumable.description %>
-</p>
 
-<p>
-  <strong>Material:</strong>
-  <%= @consumable.material %>
-</p>
+ <table class="table table-striped">
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"><%=  @consumable.name %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Descripción:</strong></td>
+            <td class="col-xs-7"><%= @consumable.description %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Material:</strong></td>
+            <td class="col-xs-7"><%= @consumable.material %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-7"><%= @consumable.responsible %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-7"><%=  @consumable.location %></td>
+          </tr>
+           
+         <tr>
+            <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
+              <td class="col-xs-7"> <% if @consumable.investigation %>
+                <%= ' Investigación ' %>
+              <% end %>
+              <% if @consumable.teaching %>
+                <%= ' Docencia ' %>
+              <% end %>
+              <% if @consumable.extention %>
+                <%= ' Extensión ' %>
+              <% end %>
+              <% if @consumable.management %>
+                <%= ' Gestión ' %>
+              <% end %></td>
+         </tr>
+        <tr>        
 
-<p>
-  <strong>Cantidad:</strong>
-  <%= @consumable.quantity %>
-</p>
+          
+        </table>
 
-<p>
-  <strong>Ubicación:</strong>
-  <%= @consumable.location %>
-</p>
-
-<p>
-  <strong>Uso:</strong>
-
-  <% if @consumable.investigation %>
-    <%= ' Investigación ' %>
-  <% end %>
-  <% if @consumable.teaching %>
-    <%= ' Docencia ' %>
-  <% end %>
-  <% if @consumable.extention %>
-    <%= ' Extensión ' %>
-  <% end %>
-  <% if @consumable.management %>
-    <%= ' Gestión ' %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Responsable:</strong>
-  <%= @consumable.responsible %>
-</p>
-
-<br><br>
+<br>
 <% if can? :update, @consumable %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
 <% end %>
