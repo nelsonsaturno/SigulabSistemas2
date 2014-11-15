@@ -47,7 +47,7 @@
             <tr>
             <td class="col-xs-5 text-right"><strong>Cantidad:</strong></td>
             <td class="col-xs-7"><%= f.number_field(:quantity, min: 0, :step => 'any') %>
-            <%= f.select(:meassure, [['kg'], ['g'], ['mg'], ['l'], ['ml'] ] ) %></td>
+            <%= f.select(:meassure, [['KG'], ['G'], ['MG'], ['L'], ['ml'] ] ) %></td>
           </tr>
            <tr>
             <td class="col-xs-5 text-right"><strong>CAS:</strong></td>
@@ -55,7 +55,7 @@
           </tr>
            <tr>
             <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
-            <td class="col-xs-7"><%=f.select(:status, [['Vigente'], ['Vencido'], ['Indeterminado']] )%></td>
+            <td class="col-xs-7"><%=f.select(:status, [['VIGENTE'], ['VENCIDO'], ['INDETERMINADO']] )%></td>
           </tr>
            <tr>
             <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
@@ -94,18 +94,32 @@
       <tr>
         <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
             <td class="col-xs-7">   <%= f.check_box :investigation %>
-            <%= 'Investigación' %>
+            <%= 'INVESTIGACIÓN' %>
             <%= f.check_box :teaching %>
-            <%= 'Docencia' %>
+            <%= 'DOCENCIA' %>
             <%= f.check_box :extention %>
-            <%= 'Extensión' %>
-            <%= f.check_box :management %>
-            <%= 'Gestión' %></div></td>
+            <%= 'EXTENSIÓN' %></div></td>
           </tr>
 
-             <tr>
-              
-             </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :bill %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :buy_order %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%=f.date_select :adquisition_date, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %></td> 
+          </tr>
+          
+          <tr>
+          </tr>
         <tr>
 
         <td class="col-xs-5 text-right">
