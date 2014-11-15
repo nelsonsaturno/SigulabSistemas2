@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :acts
+
+  get 'acto_motivado/index'
+
+  get 'ofertas/index'
+
+  get 'informe_recomendacion/index'
+
   resources :invitations
   resources :services
   resources :items

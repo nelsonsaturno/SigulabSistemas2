@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
       end
     end
+    @sum = Item.count
   end
 
   # GET /items/1

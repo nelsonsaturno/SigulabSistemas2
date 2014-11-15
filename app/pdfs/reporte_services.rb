@@ -5,35 +5,30 @@ class ReporteServices < Prawn::Document
     super()
     @services = services
     header
+    repeat :all do
+      pie_de_pagina
+    end
     titulo
     table_content
-	 pie_de_pagina
   end
  
   def header
-    #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/cebolla.png", width: 70, height: 45, :position => 55
-    move_up 40
-    image "#{Rails.root}/app/assets/images/logo_ulab.png", width: 100, height: 80, :position => 430
-    font("#{Prawn::DATADIR}/fonts/DejaVuSans.ttf") do 
-    	draw_text "UNIVERSIDAD SIMÓN BOLÍVAR", :at =>[0,657]
-      font_size 10
-    	draw_text "Vicerectorado Académico", :at => [25,645]
-      font_size 8
-      draw_text "Unidad de laboratorios", :at =>  [40, 634]
-    end
+      #This inserts an image in the pdf file and sets the size of the image
+      image "#{Rails.root}/app/assets/images/coord.jpg", width: 180, height: 100, :position => 0
+      move_up 50
+      image "#{Rails.root}/app/assets/images/Logo_ULab.jpg", width: 50, height: 55, :position => 490  
 
   end
 
   def titulo
-   move_down 50
-   table tittle do
+    move_down 35
+      table tittle do
       row(0).font_style = :bold
       self.header = true
       self.row_colors = ['DDDDDD','DDDDDD']
       self.column_widths = [455,85]
     end
-  end
+   end
 
    def tittle 
       [[{:content => "      ESPECIFICACIONES TÉCNICAS DE SERVICIOS", :rowspan => 2, :size => 20, :background_color => "DDDDDD",
@@ -44,7 +39,7 @@ class ReporteServices < Prawn::Document
 
 
   def table_content 
-    move_down 30
+    move_down 25
     # Then I set the table column widths
     table items_rows do
       row(0).font_style = :bold
@@ -53,8 +48,8 @@ class ReporteServices < Prawn::Document
       self.column_widths = [60,120,80,200,80]
     end
 
-  move_down 45
-  text "______________________\n\nFirma de Autorizacion\ \ \ \ \n", :align => :right 
+    move_down 45
+    text "______________________\n\nFirma de Autorizacion\ \ \ \ \n", :align => :right 
   end
 
 

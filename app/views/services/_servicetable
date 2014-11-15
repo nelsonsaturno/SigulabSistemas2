@@ -4,7 +4,7 @@
 </head>
 <body>
 
-	<table id="serviceTable"  class="table table-bordered">
+	<table id="serviceTable"  class="table table-hover">
 	  <thead>
 		 <tr>
 		   <th>Nombre</th>
@@ -20,9 +20,13 @@
            <td><%= service.tipo%></td>
 		   </tr>
 		 <% end %>
+		 <% if @sum == 0 %>
+		 	<tr class="warning">
+				<td class="text-center" colspan="5"><h4>No hay servicios registrados</h4></td>
+			</tr>
+		 <% end %>
 	  </tbody>
 	</table>
-
 </body>
 
 <style>
@@ -33,12 +37,6 @@ a:visited {
    color:black;
    font-weight: bold;
 	font-size: 110%;
-}
-
-a:active { 
-   color: black;
-   font-weight: bold;
-   font-size: 110%;
 }
 
 #serviceTable th {
@@ -53,19 +51,19 @@ a:active {
 
 
 
- .table-bordered {
+ .table-hover {
 
 border-color:#7A7070;
 
 }
 
-.table-bordered>tbody>tr>td {
+.table-hover>tbody>tr>td {
 
 border-color:#7A7070;
 
 }
 
-#itemTable tr:nth-child(even) {
+#serviceTable tr:nth-child(even) {
 
 background-color: #F2F8F7;
 

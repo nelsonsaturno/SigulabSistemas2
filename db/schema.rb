@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107001322) do
+ActiveRecord::Schema.define(version: 20141112221640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acto_motivados", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "acts", force: true do |t|
+    t.string   "numRegistro"
+    t.string   "proveedor"
+    t.string   "bienServicio"
+    t.string   "tesis"
+    t.string   "responsable"
+    t.string   "justificacion"
+    t.string   "providencia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "checks", force: true do |t|
     t.integer  "execution_id"
@@ -137,6 +154,11 @@ ActiveRecord::Schema.define(version: 20141107001322) do
     t.datetime "updated_at"
   end
 
+  create_table "informe_recomendacions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "instruments", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -184,6 +206,16 @@ ActiveRecord::Schema.define(version: 20141107001322) do
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
+  end
+
+  create_table "nota_devolucions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requisicions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "services", force: true do |t|

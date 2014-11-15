@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<div class="grid_7">
+<div class="grid_12">
       <ol class="breadcrumb">
           <li> <%=link_to 'Home', controller: 'statics'%></li>
 			 <li> <%=link_to 'Compras', compras_url %></li>
@@ -12,27 +12,28 @@
 </div>
 
 
-   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag 'application_compras', media: 'all', 'data-turbolinks-track' => true %>
 
 </head>
 <body>
-<div class="grid_6 push_1" id="tittle" >
+<div class="grid_12" id="tittle" >
 	<h1>Especificaciones Técnicas</h1>
    <br>
-   <div class="grid_2">
+   <div class="grid_2 push_3">
 		<h4><%= link_to ' Bien / Consumible ', new_item_path %></h4>
    </div>
-   <div class="grid_2 push_1">
+   <div class="grid_2 push_5">
 		<h4><%= link_to 'Consultar bienes', items_path %><br></h4>
    </div>
-   <div class="grid_2">
+   <br><br>
+   <div class="grid_2 push_3">
 		<h4><%= link_to 'Servicio', new_service_path %></h4>
    </div>
-   <div class="grid_2 push_1">
+   <div class="grid_2 push_5">
 		<h4><%= link_to 'Consultar servicios', services_path %></h4>
    </div>
    <br><br> <br><br> 
-   <div id=volver class="grid_1 push_1">
+   <div id=volver class="grid_2 push_4">
 		<%= link_to '<button type="button" class="btn btn-primary" id="volver"> Volver a la página anterior </button>'.html_safe, solicitud_url %>
    </div>
 
@@ -44,27 +45,26 @@ h1 {
 
 position: relative; 
 right: 20px;
-
+text-align: center;
 }
 
 #volver {
 
   height: 35px;
-  text-align:center;
 
 }
+
 
 a:visited { 
   color:#333;
   font-size: 14px;
 }
-a:active { 
-  color: #333;
-  font-size: 14px;
-}
+
 
 h4 {
   font-size: 12px;
+  text-align: left;
+  position: relative;
 }
 
 

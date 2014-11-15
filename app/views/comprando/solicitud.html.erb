@@ -1,6 +1,6 @@
 <body>
 
-<div class="grid_7">
+<div class="grid_12">
       <ol class="breadcrumb">
          <li> <%=link_to 'Home', controller: 'statics'%></li>
          <li> <%=link_to 'Compras', compras_url %></li>
@@ -8,20 +8,20 @@
       </ol>
 </div>
 
-<div class="grid_7 push_1">	
+<div class="grid_12">	
 	<h1> Solicitud de Compras </h1>	
    <br>
 </div>
 
 
 
-<div class="grid_7 push_5">
+<div class="grid_12 push_5">
 	<%= link_to "Especificaciones Técnicas", especificacionesTecnicas_url %><br>
    <%= link_to "Carta de Invitación", invitations_url %><br>
   	<%= link_to "Cotización de Proveedores", construccion_url %><br>
 	<%= link_to "Requisición", construccion_url %><br>
 	<%= link_to "Informe de recomendación", construccion_url %><br>
-	<%= link_to "Acto de Motivación", construccion_url %><br>
+	<%= link_to "Acto de Motivación", acts_url %><br>
 	<%= link_to "Nota de Devolución", construccion_url %><br>
 
 </div>
@@ -45,6 +45,11 @@ a:active {
   color: #333;
   font-size: 14px;
 }
+
+h1 {
+  text-align: center;
+}
+
 
 </style>
 

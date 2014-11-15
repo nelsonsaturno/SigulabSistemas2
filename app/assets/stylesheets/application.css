@@ -28,6 +28,7 @@ body {
     line-height             : 1.6em;
     margin                  : 0;
     padding                 : 0;
+    min-width               : 960px
 }
 
 /* Parte principal */
@@ -105,19 +106,32 @@ a {
 
 /* Hiperlinks en HOVER*/
 a:hover {
-    cursor                  : pointer;
-    color                   : #8ed6ff;
-    text-align              : right;
-	background: #ffffff;
+    cursor : pointer;
+    color : #8ed6ff;
+    text-align : right;
+    background: transparent;
 }
 
 /* Listas del menu */
 li {
     list-style              : none;
     text-align              : right;
+    color: #428BCA;
 }
 
 /* Linea de separacion */
 hr {
     opacity                 : 0.4;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

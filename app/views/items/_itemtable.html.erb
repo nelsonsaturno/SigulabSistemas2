@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<table id="itemTable" class="table table-bordered" >
+	<table id="itemTable" class="table table-hover" >
 	  <thead>
 		 <tr>
 		   <th align="left">Nombre</th>
@@ -22,6 +22,11 @@
 		     <td><%= item.descripcion %></td>
 		   </tr>
 		 <% end %>
+		 <% if @sum == 0 %>
+		 	<tr class="warning">
+				<td class="text-center" colspan="5"><h4>No hay bienes/consumibles registrados</h4></td>
+			</tr>
+		 <% end %>
 	  </tbody>
 	</table>
 </body>
@@ -35,11 +40,6 @@ a:visited {
 	font-size: 110%;
 }
 
-a:active { 
-   color: black;
-   font-weight: bold;
-   font-size: 110%;
-}
 
 #itemTable th {
       background-color: #94E79E;
@@ -52,16 +52,20 @@ a:active {
  }
 
 
-.table-bordered {
+.hoverTable {
 
 border-color:#7A7070;
 
 }
 
-.table-bordered>tbody>tr>td {
+.hoverTable>tbody>tr>td {
 
 border-color:#7A7070;
 
+}
+
+.hoverTable>tbody>tr:hover {
+background-color: #ffff99;
 }
 
 #itemTable tr:nth-child(even) {

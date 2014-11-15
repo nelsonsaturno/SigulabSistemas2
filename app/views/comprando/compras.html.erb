@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-
-</head>
 <body>
-<div class="grid_7">
-      <ol class="breadcrumb">
-         <li> <%=link_to 'Home', controller: 'statics'%></li>
-         <li class="active"> Compras </li>
-      </ol>
+<div class="container_12">
+	<div class="grid_12">
+	      <ol class="breadcrumb">
+	         <li> <%=link_to 'Home', controller: 'statics'%></li>
+	         <li class="active"> Compras </li>
+	      </ol>
+	</div>
+	<div class="grid_12 push_4">
+		<ul id="tittle">
+			<li><%= link_to solicitud_url do %>
+				<li><h3><span class="glyphicon glyphicon-shopping-cart"></span> Solicitud de Compra</h3></li>
+			<% end %></li>
+			<li><%= link_to construccion_url do %>
+				<li><h3><span class="glyphicon glyphicon-credit-card"></span> Compra</h3></li>
+			<% end %></li>
+			<li><%= link_to construccion_url do %>
+				<li><h3><span class="glyphicon glyphicon-chevron-down"></span> Recepción de Bienes</h3></li>
+			<% end %></li>
+			<li><%= link_to construccion_url do %>
+				<li><h3><span class="glyphicon glyphicon-ok"></span> Conformidad de Servicio</h3></li>
+			<% end %></li>
+		</ul>
+	</div>
 </div>
-
-<div id="tittle" class="grid_7">
-  <%= link_to '<button type="button" class="btn btn-primary"> Solicitud de Compra </button>'.html_safe, solicitud_url  %><br><br>
-  <%= link_to '<button type="button" class="btn btn-primary"> Compra </button>'.html_safe, construccion_url %><br><br>
-  <%= link_to '<button type="button" class="btn btn-primary"> Recepción de Bienes</button>'.html_safe, construccion_url %><br><br>
-  <%= link_to '<button type="button" class="btn btn-primary"> Conformidad de Servicio</button>'.html_safe, construccion_url %><br><br>
-
-</div>
-
 </body>
 <style>
 
@@ -29,8 +32,22 @@ text-align:center;
 
 }
 
-</style>
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: white;
+}
 
-</html>
+ul {
+	line-height: 0.2;
+}
+
+h3 {
+	text-align: left;
+}
+
+
+</style>
 
  

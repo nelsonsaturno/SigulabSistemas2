@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<div class="grid_7">
+<div class="grid_12">
       <ol class="breadcrumb">
           <li> <%=link_to 'Home', controller: 'statics'%></li>
 			 <li> <%=link_to 'Compras', compras_url %></li>
@@ -13,7 +13,7 @@
         <li class="active">Invitación</a></li>
       </ol>
 </div>
-	<div class="grid_7 ">
+	<div class="grid_12">
 			<h3>Cartas de invitacíon</h3>
 			<%= render 'invitationtable' %>
 			<%= link_to '<button type="button" class="btn btn-primary"> Agregar otra invitación </button>'.html_safe, new_invitation_path %> 

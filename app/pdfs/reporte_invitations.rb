@@ -59,7 +59,7 @@ class ReporteInvitations < Prawn::Document
   end
 
   def texto
-    time = Time.now + 5.days
+    time = Time.now + 7.days
     move_down 10
     text"Para dar cumplimiento con lo establecido en el articulo 73 con Rango, Valor y Fuerza de Ley de Contrataciones Públicas (Gaceta Nº 				39.503 de Fecha 06 de septiembre 2010), referente al Procedimiento por <u><b>Consulta de Precios</b></u> hasta 2.500 U.T. para bienes, ó 5.000 U.T. 				para servicios, en concordancia con los artículos 109 y 113 del Reglamento de Ley de Contrataciones Públicas (Gaceta oficial 39.181 			de fecha 19 de Mayo 2009), tenemos el agrado de dirigirnos a ustedes, en la oportunidad de solicitar una oferta, la cual debe 			contener la siguiente información:", :align => :justify, :indent_paragraphs => 40, :inline_format => true
 

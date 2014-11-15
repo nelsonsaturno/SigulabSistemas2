@@ -1,13 +1,13 @@
-<div class="grid_7">
+<div class="grid_12">
       <ol class="breadcrumb">
           <li> <%=link_to 'Home', controller: 'statics'%></li>
 		  <li> <%=link_to 'Compras', compras_url %></li>
           <li> <%=link_to 'Solicitud', solicitud_url %></li>
-          <li class="active"> Invitacíon</a></li>
+          <li class="active"> Invitación </a></li>
       </ol>
 </div>
 
-<div class="grid_7">
+<div class="grid_12">
 	<div id="tittle">
 	<table id="invitationTable" class="table table-bordered">
 	  <thead>
@@ -41,7 +41,7 @@
                                              invitation_path(@invitation, :format => 'pdf') %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_invitation_path(@invitation) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Eliminar </button>'.html_safe, @invitation,method: :delete,
-       data: { confirm: '¿Está seguro que desea eliminar el bi?' } %></td><br><br>
+       data: { confirm: '¿Está seguro que desea eliminar la Carta de invitación?' } %></td><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Atrás </button>'.html_safe, invitations_path %><br>
   </div>
 </div>

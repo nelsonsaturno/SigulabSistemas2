@@ -3,16 +3,11 @@ class ServicesController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
-  # GET /services
-  # GET /services.json
+  # GET /services/
+  # GET /services/json
   def index
     @services = Service.all
-  end
-
-  # GET /services/1
-  # GET /services/1.json
-  def index
-    @services = Service.all
+    @sum = Service.count
     respond_to do |format|
       format.html
       format.pdf do
