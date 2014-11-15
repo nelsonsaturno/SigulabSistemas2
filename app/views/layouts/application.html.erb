@@ -76,7 +76,7 @@
 								<% if user_signed_in? %>
 
 									<a href="#" class="dropdown-toggle " data-toggle="dropdown">
-										<strong><%= current_user.email %></strong>
+										<strong><%= current_user.username %></strong>
 										<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu" role="menu">
@@ -103,18 +103,17 @@
 			</nav><!-- end of navbar -->
 		</div>
 		<!-- here shall end-->
-	</div>
+		<div id="Contenido">
+					<!-- AREA DE TRABAJO -->
+					<div id = "area">
 
-				<!-- AREA DE TRABAJO -->
-				<div id = "area">
-
-					<!-- CONTENIDO -->
-				
-						<%= yield %>
+						<!-- CONTENIDO -->
+					
+							<%= yield %>
+					</div>
 
 					<div class="region region-footer">
 						<div id="block-block-1" class="block block-block first">
-						
 							<br>
 							<div class="inner">
 								<div class="content">
@@ -138,6 +137,9 @@
 						</div>
 					</div>
 				</div>
+	</div>
+				
+
 			</div>
 		</div>
 	</body>
