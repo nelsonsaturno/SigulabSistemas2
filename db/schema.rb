@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112221640) do
+ActiveRecord::Schema.define(version: 20141115224547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "acto_motivados", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "acts", force: true do |t|
     t.string   "numRegistro"
@@ -103,6 +98,42 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "updated_at"
   end
 
+  create_table "devolutions", force: true do |t|
+    t.string   "numRegistro"
+    t.string   "numRequisicion"     default: ""
+    t.boolean  "requisicion"        default: false
+    t.string   "numAutorizacion"    default: ""
+    t.boolean  "autorizacion"       default: false
+    t.string   "numCertificacion"   default: ""
+    t.boolean  "certificacion"      default: false
+    t.string   "numSolicitud"       default: ""
+    t.boolean  "solicitud"          default: false
+    t.string   "numInforme"         default: ""
+    t.boolean  "informe"            default: false
+    t.string   "numOtro"            default: ""
+    t.boolean  "otro"               default: false
+    t.boolean  "disponibilidad"     default: false
+    t.boolean  "idioma"             default: false
+    t.boolean  "discriminado"       default: false
+    t.boolean  "firma"              default: false
+    t.boolean  "carencia"           default: false
+    t.boolean  "nombre"             default: false
+    t.boolean  "direccion"          default: false
+    t.boolean  "datos"              default: false
+    t.boolean  "rif"                default: false
+    t.boolean  "telefonos"          default: false
+    t.boolean  "persona"            default: false
+    t.boolean  "otroCarencia"       default: false
+    t.boolean  "contacto"           default: false
+    t.boolean  "copia"              default: false
+    t.boolean  "factura"            default: false
+    t.boolean  "foto"               default: false
+    t.string   "observaciones"      default: "No hay observaciones"
+    t.string   "unidadSolicitante"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "equipment", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -154,11 +185,6 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "updated_at"
   end
 
-  create_table "informe_recomendacions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "instruments", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -206,16 +232,6 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
-  end
-
-  create_table "nota_devolucions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "requisicions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "services", force: true do |t|

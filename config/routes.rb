@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :devolutions
+
   resources :acts
 
   get 'acto_motivado/index'
+
+  get 'nota_devolucion/index'
 
   get 'ofertas/index'
 
