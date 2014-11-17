@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112221640) do
+ActiveRecord::Schema.define(version: 20141116154606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "acto_motivados", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "acts", force: true do |t|
     t.string   "numRegistro"
@@ -154,11 +149,6 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "updated_at"
   end
 
-  create_table "informe_recomendacions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "instruments", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -208,12 +198,9 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string "sae_name"
   end
 
-  create_table "nota_devolucions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "requisicions", force: true do |t|
+  create_table "quotes", force: true do |t|
+    t.string   "nombre"
+    t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
