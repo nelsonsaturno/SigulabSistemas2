@@ -7,6 +7,7 @@ class InvitationsController < ApplicationController
   # GET /invitations.json
   def index
     @invitations = Invitation.all
+    @sumInvitation = Invitation.count
   end
 
   # GET /invitations/1

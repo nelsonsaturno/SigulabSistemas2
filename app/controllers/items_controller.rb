@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @sumItem = Item.count
     respond_to do |format|
       format.html
       format.pdf do
@@ -14,7 +15,6 @@ class ItemsController < ApplicationController
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
       end
     end
-    @sum = Item.count
   end
 
   # GET /items/1

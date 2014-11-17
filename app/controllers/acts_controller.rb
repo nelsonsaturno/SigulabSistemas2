@@ -6,6 +6,7 @@ class ActsController < ApplicationController
   # GET /acts.json
   def index
     @acts = Act.all
+    @sumActs = Act.count
   end
 
   # GET /acts/1

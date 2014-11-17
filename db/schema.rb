@@ -98,6 +98,42 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.datetime "updated_at"
   end
 
+  create_table "devolutions", force: true do |t|
+    t.string   "numRegistro"
+    t.string   "numRequisicion"     default: ""
+    t.boolean  "requisicion"        default: false
+    t.string   "numAutorizacion"    default: ""
+    t.boolean  "autorizacion"       default: false
+    t.string   "numCertificacion"   default: ""
+    t.boolean  "certificacion"      default: false
+    t.string   "numSolicitud"       default: ""
+    t.boolean  "solicitud"          default: false
+    t.string   "numInforme"         default: ""
+    t.boolean  "informe"            default: false
+    t.string   "numOtro"            default: ""
+    t.boolean  "otro"               default: false
+    t.boolean  "disponibilidad"     default: false
+    t.boolean  "idioma"             default: false
+    t.boolean  "discriminado"       default: false
+    t.boolean  "firma"              default: false
+    t.boolean  "carencia"           default: false
+    t.boolean  "nombre"             default: false
+    t.boolean  "direccion"          default: false
+    t.boolean  "datos"              default: false
+    t.boolean  "rif"                default: false
+    t.boolean  "telefonos"          default: false
+    t.boolean  "persona"            default: false
+    t.boolean  "otroCarencia"       default: false
+    t.boolean  "contacto"           default: false
+    t.boolean  "copia"              default: false
+    t.boolean  "factura"            default: false
+    t.boolean  "foto"               default: false
+    t.string   "observaciones"      default: "No hay observaciones"
+    t.string   "unidadSolicitante"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "equipment", force: true do |t|
     t.string   "name"
     t.string   "brand"

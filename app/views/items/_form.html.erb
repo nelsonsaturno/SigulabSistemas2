@@ -1,10 +1,10 @@
 
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-<div class="grid_7 push_5">
+<div class="grid_12 push_5">
    <%= form_for(@item) do |f| %>
    <% if @item.errors.any? %>
-      <h2>Error: se han introducido datos incorrectos</h2>
+      <h2>Rellene todos los campos obligatorios</h2>
       <br>
    <% end %>
 	<div class ="table">

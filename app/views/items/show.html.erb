@@ -1,4 +1,4 @@
-<div class="grid_7">
+<div class="grid_12">
       <ol class="breadcrumb">
           <li> <%=link_to 'Home', controller: 'statics'%></li>
 			 <li> <%=link_to 'Compras', compras_url %></li>
@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="grid_7">
+<div class="grid_12">
 	<div id="tittle">
 	<table id="itemTable" class="table table-bordered">
 	  <thead>
@@ -39,11 +39,11 @@
 	  </thead>
 	</table>
 	<br>
-
+	<%= link_to '<button type="button" class="btn btn-primary"> Agregar otro ítem </button>'.html_safe, new_item_path %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_item_path(@item) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Eliminar </button>'.html_safe, @item,method: :delete,
        data: { confirm: '¿Está seguro que desea eliminar el bién?' } %></td><br><br>
-   <%= link_to '<button type="button" class="btn btn-primary"> Atrás </button>'.html_safe, items_path %><br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Finalizar </button>'.html_safe, items_path %><br>
    
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <div class="grid_12 push_5">
   <%= form_for(@act) do |f| %>
     <% if @act.errors.any? %>
-      <h2>Error: se han dejado campos vacíos</h2>
+      <h2>Rellene todos los campos obligatorios</h2>
       <br>
     <% end %>
   <div class ="table">
@@ -23,22 +23,22 @@
       <div class="field">
           <span class="red">*</span>
        <%= f.label "Será usado en:" %><br>
-       <%= f.text_field :tesis, :placeholder => "Especifique Tésis, Proyecto, etc." %>
+       <%= f.text_field :tesis, :placeholder => "Tésis, Proyecto, etc." %>
       </div>
       <div class="field">
         <span class="red">*</span>
        <%= f.label "Nombre del Responsable" %><br>
-       <%= f.text_field :responsable, :placeholder => "Indique el nombre del solicitante" %>
+       <%= f.text_field :responsable, :placeholder => "Nombre del solicitante" %>
       </div>
       <div class="field">
           <span class="red">*</span>
        <%= f.label "Justificación" %><br>
-       <%= f.text_field :justificacion, :placeholder => "Explique por qué se solicitan los bienes y/o servicios" %>
+       <%= f.text_field :justificacion, :placeholder => "Razón de solicitud" %>
       </div>
       <div class="field">
         <span class="red">*</span>
        <%= f.label "Providencia" %><br>
-       <%= f.text_field :providencia, :placeholder => "Indique de donde provienen los fondos" %>
+       <%= f.text_field :providencia, :placeholder => "Providencia de fondos" %>
       </div>
       <div class="actions">
        <%= f.submit "Aceptar", data: { confirm: '¿Está seguro de la informacion que acaba de suministrar?' }  %>
@@ -73,7 +73,7 @@ border-radius: 4px;
 input[type="text"], textarea, input[type="number"] {
 
 display: block;
-width: 200px;
+width: 220px;
 height: 34px;
 padding: 6px 12px;
 font-size: 14px;

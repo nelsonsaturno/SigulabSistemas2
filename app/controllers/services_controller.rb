@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
   # GET /services/json
   def index
     @services = Service.all
-    @sum = Service.count
+    @sumService = Service.count
     respond_to do |format|
       format.html
       format.pdf do

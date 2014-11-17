@@ -37,6 +37,7 @@
 		 </tr>
 	  </thead>
    </table>
+   <%= link_to '<button type="button" class="btn btn-primary"> Agregar otra invitación </button>'.html_safe, new_invitation_path(@invitation) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Descargar invitación  </button>'.html_safe,
                                              invitation_path(@invitation, :format => 'pdf') %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_invitation_path(@invitation) %><br><br>
