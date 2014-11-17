@@ -1,0 +1,29 @@
+<div class="grid_12">
+
+  <br/><br>
+
+	<% if !flash[:notice].blank? %>
+	  <div class="alert alert-info">
+	  <%= flash[:notice] %>
+	  </div>
+	<% end %>
+	<br>
+	<br>
+	<table class="table table-bordered table-striped">
+	  <thead>
+		 <tr>
+		   <th>Nombre</th>
+		   <th>Link de descarga</th>
+		 </tr>
+	  </thead>
+	  <tbody>
+		 <% @quotes.each do |quote| %>
+		   <tr>
+		     <td><%= link_to quote.nombre, quote %></td>
+		     <td><%= link_to "Descargar cotización", quote.attachment_url %></td>
+		   </tr>
+		 <% end %>
+	  </tbody>
+	</table>
+
+</div>
