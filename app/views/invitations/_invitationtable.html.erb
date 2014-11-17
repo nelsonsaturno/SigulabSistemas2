@@ -17,8 +17,8 @@
 		 <% @invitations.each do |invitation| %>
 	  		<tr>
 		     <td style="text-decoration:underline; color:black"><%= link_to invitation.nombreEmpresa, invitation %></td>
-		     <td><%= invitation.correo %></td>
 		     <td><%= invitation.responsable %></td>
+		     <td><%= invitation.correo %></td>     
 		   </tr>
 		 <% end %>
 		 <% if @sumInvitation == 0 %>

@@ -43,15 +43,15 @@ class ReporteDevolutions < Prawn::Document
 								 [{:width => 180, :height => 20},{:width => 180, :height => 20},{:width => 180, :height => 20}]
 								]
 
-			cuerpo2 = [[{:content => "UNIDAD SOLICITANTE", :align => :center, :size => 10, :height => 19, :font_style => :bold, :background_color => "DDDDDD", :width => 540}],
+			cuerpo2 = [[{:content => "UNIDAD SOLICITANTE", :align => :center, :size => 10, :height => 19, :font_style => :bold, :background_color => "959595", :width => 540}],
 								 [{:content => "#{@devolution.unidadSolicitante}", :align => :center, :size => 10, :height => 19, :font_style => :bold, :background_color => "DDDDDD", :width => 540}],
-								 [{:content => "CAUSA DE LA DEVOLUCIÓN", :align => :center, :size => 10, :height => 19, :font_style => :bold, :background_color => "DDDDDD", :width => 540}]
+								 [{:content => "CAUSA DE LA DEVOLUCIÓN", :align => :center, :size => 10, :height => 19, :font_style => :bold, :background_color => "959595", :width => 540}]
 								]
 
 			cuerpo3 = [[{:width => 290, :height => 180, :background_color => "DDDDDD"},{:content => "Carencia de Documentos:", :size => 10, :width => 250, :height => 180, :background_color => "DDDDDD"}]]
 
-			cuerpo4 = [[{:content => "OBSERVACIONES", :align => :center, :background_color => "DDDDDD", :height => 19, :width => 380, :size => 10, :font_style => :bold},
-								 	{:content => "Por la Coord. Adquisiciones:", :align => :center, :background_color => "DDDDDD", :height => 19, :width => 160, :size => 10, :font_style => :bold}]]
+			cuerpo4 = [[{:content => "OBSERVACIONES", :align => :center, :background_color => "959595", :height => 19, :width => 380, :size => 10, :font_style => :bold},
+								 	{:content => "Por la Coord. Adquisiciones:", :align => :center, :background_color => "959595", :height => 19, :width => 160, :size => 10, :font_style => :bold}]]
 
 			cuerpo5 = [[{:content => "#{@devolution.observaciones}", :align => :left, :size => 11, :height => 80, :width => 380},
 								 	{:align => :center, :height => 80, :width => 160}]]
