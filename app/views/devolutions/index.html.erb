@@ -16,7 +16,13 @@
 
 
   <div class="grid_12">
-    <h3>Notas de Devolución</h3>
+    
+    <div class="grid_5">
+      <h3>Notas de Devolución</h3><br>
+    </div>
+    <div class="grid_3 push_4 text-right" id="agregar">
+        <%= link_to 'Agregar nota de devolución'.html_safe, new_devolution_path %>
+      </div>
     <%= render 'devolutiontable' %>
     <%= link_to '<button type="button" class="btn btn-primary"> Agregar nota de devolución </button>'.html_safe, new_devolution_path %> <br><br>
     <%= link_to '<button type="button" class="btn btn-primary"> Volver a solicitud de compras </button>'.html_safe, solicitud_url %>
@@ -24,3 +30,17 @@
 
 </body>
 </html>
+
+
+<style>
+  
+#agregar {
+  font-size: 14px;
+}
+
+h3 {
+  position: relative;
+  text-align: center;
+}
+
+</style>

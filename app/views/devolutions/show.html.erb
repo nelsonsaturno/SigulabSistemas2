@@ -144,12 +144,13 @@
          </tr>
     </thead>
    </table>
-   <%= link_to '<button type="button" class="btn btn-primary"> Descargar Nota de devolución  </button>'.html_safe,
+   <%= link_to '<button type="button" class="btn btn-primary"> Agregar otra nota de devolución </button>'.html_safe, new_devolution_path %> <br><br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Descargar nota de devolución  </button>'.html_safe,
                                              devolution_path(@devolution, :format => 'pdf') %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_devolution_path(@devolution) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Eliminar </button>'.html_safe, @devolution,method: :delete,
        data: { confirm: '¿Está seguro que desea eliminar la Nota de devolución?' } %></td><br><br>
-   <%= link_to '<button type="button" class="btn btn-primary"> Atrás </button>'.html_safe, devolutions_path %><br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Finalizar </button>'.html_safe, devolutions_path %><br>
   </div>
 </div>
 

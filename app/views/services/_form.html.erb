@@ -7,12 +7,17 @@
       <br>
   <% end %>
 	<div class ="table">
- 		 <div class="field">
+ 		   <div class="field">
          <span class="red">*</span>
     		 <%= f.label "Tipo de servicio" %><br>
           <%= f.collection_select :tipo, Service::TipoServicio, :to_s, :to_s, 
           :include_blank => true %>
   		 </div>
+       <div class="field">
+         <span class="red">*</span>
+         <%= f.label "Descripción del Servicio" %><br>
+          <%= f.text_area :descripcion, :placeholder => "Máximo 100 caracteres" %>
+       </div>
         <div class="field">
          <span class="red">*</span>
     		 <%= f.label "Nombre del equipo" %><br>
@@ -22,11 +27,6 @@
          <span class="red">*</span>
     		 <%= f.label "Número del bien" %><br>
           <%= f.text_field :numeroBien %>
-  		 </div>
-		 <div class="field">
-         <span class="red">*</span>
-    		 <%= f.label "Descripción" %><br>
-          <%= f.text_area :descripcion, :placeholder => "Máximo 100 caracteres" %>
   		 </div>
   		 <div class="field">
          <span class="red">*</span>

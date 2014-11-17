@@ -13,7 +13,7 @@
                 <%= f.label 'Número de Registro', :align => :middle %><br>
             </div>
             <div class="grid_3">
-                <%= f.text_field :numRegistro, :align => :middle %>
+                <%= f.text_field :numRegistro, :align => :middle, :placeholder => "\#" %>
                 <br><br><br>
             </div>
         </div>
@@ -100,7 +100,7 @@
                 <%= f.label 'Unidad Solicitante', :align => :middle %><br>
             </div>
             <div class="grid_3">
-                <%= f.text_field :unidadSolicitante, :align => :middle %>
+                <%= f.text_field :unidadSolicitante, :align => :middle, :placeholder => "Nombre de la Unidad" %>
                 <br><br><br>
             </div>
         </div>
@@ -220,18 +220,19 @@
                 <%= f.label 'Observaciones', :align => :middle %><br>
             </div>
             <div class="grid_3">
-                <%= f.text_field :observaciones, :align => :middle %>
+                <%= f.text_field :observaciones, :align => :middle, :placeholder => "Indique en caso de que exista alguna" %>
                 <br><br><br>
             </div>
         </div>
 
       </div>
-
+      <div class="grid_4 push_3 text-center">
       <div class="actions">
          <%= f.submit "Aceptar", data: { confirm: '¿Está seguro de la informacion que acaba de suministrar?' }  %>
       </div>
     <% end %>
     <br><%= link_to '<button type="button" class="btn btn-primary"> Volver a la página anterior </button>'.html_safe, controller: "devolutions" %>
+    </div>
 </div>
 
 
