@@ -57,3 +57,6 @@ gem 'prawn'
 
 #Use prawn table
 gem 'prawn-table'
+
+#Use Carrierwave
+gem 'carrierwave'

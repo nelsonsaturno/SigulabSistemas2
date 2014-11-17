@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112221640) do
+ActiveRecord::Schema.define(version: 20141117182048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "acto_motivados", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "acts", force: true do |t|
     t.string   "numRegistro"
@@ -31,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string   "providencia"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "checks", force: true do |t|
@@ -103,6 +99,42 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "updated_at"
   end
 
+  create_table "devolutions", force: true do |t|
+    t.string   "numRegistro"
+    t.string   "numRequisicion"
+    t.boolean  "requisicion"
+    t.string   "numAutorizacion"
+    t.boolean  "autorizacion"
+    t.string   "numCertificacion"
+    t.boolean  "certificacion"
+    t.string   "numSolicitud"
+    t.boolean  "solicitud"
+    t.string   "numInforme"
+    t.boolean  "informe"
+    t.string   "numOtro"
+    t.boolean  "otro"
+    t.boolean  "disponibilidad"
+    t.boolean  "idioma"
+    t.boolean  "discriminado"
+    t.boolean  "firma"
+    t.boolean  "carencia"
+    t.boolean  "nombre"
+    t.boolean  "direccion"
+    t.boolean  "datos"
+    t.boolean  "rif"
+    t.boolean  "telefonos"
+    t.boolean  "persona"
+    t.boolean  "otroCarencia"
+    t.boolean  "contacto"
+    t.boolean  "copia"
+    t.boolean  "factura"
+    t.boolean  "foto"
+    t.string   "observaciones"
+    t.string   "unidadSolicitante"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "equipment", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -154,11 +186,6 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "updated_at"
   end
 
-  create_table "informe_recomendacions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "instruments", force: true do |t|
     t.string   "name"
     t.string   "brand"
@@ -188,6 +215,7 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string   "responsable"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "items", force: true do |t|
@@ -200,6 +228,7 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "numeroBien"
+    t.string   "user_id"
   end
 
   create_table "labs", force: true do |t|
@@ -208,14 +237,12 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string "sae_name"
   end
 
-  create_table "nota_devolucions", force: true do |t|
+  create_table "quotes", force: true do |t|
+    t.string   "nombre"
+    t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "requisicions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "services", force: true do |t|
@@ -226,6 +253,7 @@ ActiveRecord::Schema.define(version: 20141112221640) do
     t.string   "ubicacion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "tools", force: true do |t|

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :quotes
+
   resources :acts
 
   get 'acto_motivado/index'

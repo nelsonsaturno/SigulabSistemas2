@@ -6,7 +6,9 @@ class ServicesController < ApplicationController
   # GET /services/
   # GET /services/json
   def index
-    @services = Service.all
+    if current_user
+    	@services = Service.where(:user_id => current_user.username).all
+	 end
     @sum = Service.count
     respond_to do |format|
       format.html
@@ -31,6 +33,7 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
+    @service.user_id = current_user.username
 
     respond_to do |format|
       if @service.save

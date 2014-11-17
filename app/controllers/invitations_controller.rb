@@ -6,7 +6,9 @@ class InvitationsController < ApplicationController
   # GET /invitations
   # GET /invitations.json
   def index
-    @invitations = Invitation.all
+    if current_user
+    	@invitations = Invitation.where(:user_id => current_user.username).all
+    end
   end
 
   # GET /invitations/1
@@ -36,6 +38,7 @@ class InvitationsController < ApplicationController
   # POST /invitations.json
   def create
     @invitation = Invitation.new(invitation_params)
+    @invitation.user_id = current_user.username
 
     respond_to do |format|
       if @invitation.save

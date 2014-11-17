@@ -5,7 +5,9 @@ class ActsController < ApplicationController
   # GET /acts
   # GET /acts.json
   def index
-    @acts = Act.all
+    if current_user
+    	@acts = Act.where(:user_id => current_user.username).all
+  	 end
   end
 
   # GET /acts/1
@@ -34,6 +36,7 @@ class ActsController < ApplicationController
   # POST /acts.json
   def create
     @act = Act.new(act_params)
+    @act.user_id = current_user.username
 
     respond_to do |format|
       if @act.save
