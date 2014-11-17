@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116154606) do
+ActiveRecord::Schema.define(version: 20141115224547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,35 +100,35 @@ ActiveRecord::Schema.define(version: 20141116154606) do
 
   create_table "devolutions", force: true do |t|
     t.string   "numRegistro"
-    t.string   "numRequisicion"     default: ""
-    t.boolean  "requisicion"        default: false
-    t.string   "numAutorizacion"    default: ""
-    t.boolean  "autorizacion"       default: false
-    t.string   "numCertificacion"   default: ""
-    t.boolean  "certificacion"      default: false
-    t.string   "numSolicitud"       default: ""
-    t.boolean  "solicitud"          default: false
-    t.string   "numInforme"         default: ""
-    t.boolean  "informe"            default: false
-    t.string   "numOtro"            default: ""
-    t.boolean  "otro"               default: false
-    t.boolean  "disponibilidad"     default: false
-    t.boolean  "idioma"             default: false
-    t.boolean  "discriminado"       default: false
-    t.boolean  "firma"              default: false
-    t.boolean  "carencia"           default: false
-    t.boolean  "nombre"             default: false
-    t.boolean  "direccion"          default: false
-    t.boolean  "datos"              default: false
-    t.boolean  "rif"                default: false
-    t.boolean  "telefonos"          default: false
-    t.boolean  "persona"            default: false
-    t.boolean  "otroCarencia"       default: false
-    t.boolean  "contacto"           default: false
-    t.boolean  "copia"              default: false
-    t.boolean  "factura"            default: false
-    t.boolean  "foto"               default: false
-    t.string   "observaciones"      default: "No hay observaciones"
+    t.string   "numRequisicion"
+    t.boolean  "requisicion"
+    t.string   "numAutorizacion"
+    t.boolean  "autorizacion"
+    t.string   "numCertificacion"
+    t.boolean  "certificacion"
+    t.string   "numSolicitud"
+    t.boolean  "solicitud"
+    t.string   "numInforme"
+    t.boolean  "informe"
+    t.string   "numOtro"
+    t.boolean  "otro"
+    t.boolean  "disponibilidad"
+    t.boolean  "idioma"
+    t.boolean  "discriminado"
+    t.boolean  "firma"
+    t.boolean  "carencia"
+    t.boolean  "nombre"
+    t.boolean  "direccion"
+    t.boolean  "datos"
+    t.boolean  "rif"
+    t.boolean  "telefonos"
+    t.boolean  "persona"
+    t.boolean  "otroCarencia"
+    t.boolean  "contacto"
+    t.boolean  "copia"
+    t.boolean  "factura"
+    t.boolean  "foto"
+    t.string   "observaciones"
     t.string   "unidadSolicitante"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -232,13 +232,6 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
-  end
-
-  create_table "quotes", force: true do |t|
-    t.string   "nombre"
-    t.string   "attachment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "services", force: true do |t|
