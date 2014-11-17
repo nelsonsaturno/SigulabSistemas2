@@ -9,6 +9,7 @@ class InvitationsController < ApplicationController
     if current_user
     	@invitations = Invitation.where(:user_id => current_user.username).all
     end
+    @sumInvitation = Invitation.count
   end
 
   # GET /invitations/1

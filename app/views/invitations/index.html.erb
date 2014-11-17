@@ -14,7 +14,12 @@
       </ol>
 </div>
 	<div class="grid_12">
-			<h3>Cartas de invitacíon</h3>
+			<div class="grid_5">
+				<h3>Cartas de Invitación</h3><br>
+			</div>
+			<div class="grid_3 push_4 text-right" id="agregar">
+		      <%= link_to 'Agregar otra invitación'.html_safe, new_invitation_path %> 
+		    </div>
 			<%= render 'invitationtable' %>
 			<%= link_to '<button type="button" class="btn btn-primary"> Agregar otra invitación </button>'.html_safe, new_invitation_path %> 
 			<br><br>
@@ -24,3 +29,15 @@
 </body>
 </html>
 
+<style>
+  
+#agregar {
+  font-size: 14px;
+  text-align: right;
+}
+
+h3 {
+  position: relative;
+}
+
+</style>

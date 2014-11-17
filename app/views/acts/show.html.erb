@@ -41,12 +41,13 @@
      </tr>
     </thead>
    </table>
+   <%= link_to '<button type="button" class="btn btn-primary"> Agregar otro acto motivado </button>'.html_safe, new_act_path(@act) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Descargar Acto Motivado  </button>'.html_safe,
                                              act_path(@act, :format => 'pdf') %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_act_path(@act) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Eliminar </button>'.html_safe, @act,method: :delete,
        data: { confirm: '¿Está seguro que desea eliminar el Acto Motivado?' } %></td><br><br>
-   <%= link_to '<button type="button" class="btn btn-primary"> Atrás </button>'.html_safe, acts_path %><br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Finalizar </button>'.html_safe, acts_path %><br>
   </div>
 </div>
 

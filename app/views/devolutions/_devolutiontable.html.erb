@@ -4,26 +4,26 @@
   
 </head>
 <body>
-<table id="invitationTable" class="table table-hover" >
+<table id="devolutionTable" class="table table-hover" >
 	  <thead>
 		 <tr>
-		   <th align="left">Nombre de la empresa</th>
-		   <th align="left">Correo del responsable</th>
-		   <th align="left">Responsable</th>
+		   <th align="left">No. Registro</th>
+		   <th align="left">Unidad Solicitante</th>
+		   <th align="left">Observaciones</th>
 		 </tr>
 	  </thead>
 
 	  <tbody>
-		 <% @invitations.each do |invitation| %>
+		 <% @devolutions.each do |devolution| %>
 	  		<tr>
-		     <td style="text-decoration:underline; color:black"><%= link_to invitation.nombreEmpresa, invitation %></td>
-		     <td><%= invitation.responsable %></td>
-		     <td><%= invitation.correo %></td>     
+		     <td style="text-decoration:underline; color:black"><%= link_to devolution.numRegistro, devolution %></td>
+		     <td><%= devolution.unidadSolicitante %></td>
+		     <td><%= devolution.observaciones %></td>
 		   </tr>
 		 <% end %>
-		 <% if @sumInvitation == 0 %>
+		 <% if @sumDevolution == 0 %>
 		 	<tr class="warning">
-				<td class="text-center" colspan="5"><h4>No hay invitaciones registradas</h4></td>
+				<td class="text-center" colspan="5"><h4>No hay notas de devolución registradas</h4></td>
 			</tr>
 		 <% end %>
 	  </tbody>
@@ -38,13 +38,13 @@ a:visited {
 	font-size: 110%;
 }
 
-#invitationTable th {
+#devolutionTable th {
       background-color: #94E79E;
       border-color:#7A7070;
      font-size: 14px;
   }
 
-#invitationTable th, td, tr{
+#devolutionTable th, td, tr{
  border-color:black;
  }
 
@@ -62,11 +62,11 @@ border-color:#7A7070;
 
 }
 
-.table-hover>tbody>tr:hover {
+#devolutionTable tr:hover {
 background-color: #ffff99;
 }
 
-#invitationTable tr:nth-child(even) {
+#devolutionTable tr:nth-child(even) {
 
 background-color: #F2F8F7;
 

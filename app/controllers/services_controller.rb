@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
     if current_user
     	@services = Service.where(:user_id => current_user.username).all
 	 end
-    @sum = Service.count
+    @sumService = Service.count
     respond_to do |format|
       format.html
       format.pdf do

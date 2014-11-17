@@ -4,7 +4,7 @@
   
 </head>
 <body>
-<table id="actTable" class="table table-bordered" >
+<table id="actTable" class="table table-hover" >
 	  <thead>
 		 <tr>
 		   <th align="left">Proveedor</th>
@@ -22,7 +22,11 @@
 		     <td><%= act.justificacion %></td>
 		     <td><%= act.responsable %></td>
 		   </tr>
-
+		 <% end %>
+		 <% if @sumActs == 0 %>
+		 	<tr class="warning">
+				<td class="text-center" colspan="5"><h4>No hay Actos Motivados registrados</h4></td>
+			</tr>
 		 <% end %>
 	  </tbody>
 	</table>
@@ -30,30 +34,38 @@
 
 <style>
 
+a:visited { 
+   color:black;
+   font-weight: bold;
+	font-size: 110%;
+}
 
 
 #actTable th {
       background-color: #94E79E;
       border-color:#7A7070;
-     font-size: 14px;
+      font-size: 14px;
   }
 
-#actTable th, td, tr{
+#actTable th td tr{
  border-color:black;
  }
 
 
-
- .table-bordered {
+.table-hover {
 
 border-color:#7A7070;
 
 }
 
-.table-bordered>tbody>tr>td {
+.table-hover>tbody>tr>td {
 
 border-color:#7A7070;
 
+}
+
+.table-hover>tbody>tr:hover {
+background-color: #ffff99;
 }
 
 #actTable tr:nth-child(even) {

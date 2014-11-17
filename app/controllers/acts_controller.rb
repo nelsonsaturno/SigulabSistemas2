@@ -8,6 +8,7 @@ class ActsController < ApplicationController
     if current_user
     	@acts = Act.where(:user_id => current_user.username).all
   	 end
+    @sumActs = Act.count
   end
 
   # GET /acts/1
