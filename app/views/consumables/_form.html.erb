@@ -15,7 +15,7 @@
     
     <table class="table table-striped">
           <tr>
-            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-5 text-right"><strong>*Nombre:</strong></td>
             <td class="col-xs-7"><%= f.text_field :name %></td>
           </tr>
           <tr>
@@ -27,11 +27,11 @@
             <td class="col-xs-7"><%= f.text_field :material %></td>
           </tr>
            <tr>
-            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-5 text-right"><strong>*Responsable:</strong></td>
             <td class="col-xs-7"><%= f.text_field :responsible %></td>
           </tr>
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-5 text-right"><strong>*Ubicación:</strong></td>
             <td class="col-xs-7"><%=  f.text_field :location %></td>
           </tr>
           <tr>
@@ -41,7 +41,8 @@
            
          <tr>
             <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
-              <td class="col-xs-7">   <%= f.check_box :investigation %>
+              <td class="col-xs-7">   
+              <%= f.check_box :investigation %>
               <%= 'Investigación' %>
               <%= f.check_box :teaching %>
               <%= 'Docencia' %>
@@ -50,8 +51,24 @@
               <%= f.check_box :management %>
               <%= 'Gestión' %></div></td>
          </tr>
+         <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :bill %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :buy_order %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%=f.date_select :adquisition_date, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %></td> 
+          </tr>
+         
         <tr>
-
         <td class="col-xs-5 text-right">
            <div class="actions">
             <%= f.submit %><td>

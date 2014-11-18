@@ -26,7 +26,8 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Controlado:</strong></td>
-            <td class="col-xs-7"><% if @chemical_substance.controlled %>
+            <td class="col-xs-7">
+              <% if @chemical_substance.controlled %>
                 <%= 'SÍ' %>
               <% else %>
                 <%= 'NO' %>

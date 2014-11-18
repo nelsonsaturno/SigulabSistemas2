@@ -5,9 +5,11 @@ class ChemicalSubstancesController < ApplicationController
   # GET /chemical_substances.json
   def index
   	if params[:search]
-		@chemical_substances = ChemicalSubstance.search(params[:search])
+		@chemical_substances = ChemicalSubstance.where(:showable => true).search(params[:search])
+		@chemical_substances_all=ChemicalSubstance.search(params[:search])
 	else
-		@chemical_substances = ChemicalSubstance.all.order('created_at DESC')
+		@chemical_substances = ChemicalSubstance.where(:showable => true).order('created_at DESC')
+		@chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
 	end
   end
 
@@ -24,18 +26,6 @@ class ChemicalSubstancesController < ApplicationController
   # GET /chemical_substances/1/edit
   def edit
   end
-# # # 
-# # #   def uppercase_fields
-# # #     self.name.upcase!
-# # #     self.matter_states.upcase!
-# # #     self.cas.upcase!
-# # #     self.status.upcase!
-# # #     self.responsible.upcase!
-# # #     self.location.upcase!
-# # #     self.meassure.upcase!
-# # #     self.bill.upcase!
-# # #     self.buy_order.upcase!
-# # #   end
 
   # POST /chemical_substances
   # POST /chemical_substances.json
@@ -72,7 +62,7 @@ class ChemicalSubstancesController < ApplicationController
   def destroy
     @chemical_substance.destroy
     respond_to do |format|
-      format.html { redirect_to chemical_substances_url, notice: 'Sustancia Quimica fue eliminado de forma exitosa.' }
+      format.html { redirect_to chemical_substances_url, notice: 'Sustancia Quimica fue ocultada de forma exitosa.' }
       format.json { head :no_content }
     end
   end
