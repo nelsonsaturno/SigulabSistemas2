@@ -1,6 +1,6 @@
   <ol class="breadcrumb">
-		<li> <%=link_to 'Inicio', controller: 'statics'%></li>
-    <li> <%=link_to 'Inventario', inventario_url %></li>
+   <li> <%=link_to 'Inicio', controller: 'statics'%></li>
+   <li> <%=link_to 'Inventario', inventario_url %></li>
     <li class="active"> Consumibles </li>
   </ol>
 
@@ -37,9 +37,9 @@
     <thead>
       <tr>
         <th class="tg-093g">Nombre</th>
-       <th class="tg-hgcj">Descripción</th>
-     <!--     
-        <th>Material</th> -->
+      <!--  <th class="tg-hgcj">Descripción</th> -->
+        
+           <th class="tg-093g">Material</th>
        <th class="tg-hgcj">Cantidad</th>
         <th class="tg-hgcj">Ubicación</th>
       <!--   <th>Use</th> -->
@@ -56,10 +56,10 @@
       <% @consumables.each do |consumable| %>
         <tr>
           <td class="tg-s6z2"><%= link_to consumable.name, consumable %></td>
-           <td class="tg-s6z2"><%= consumable.description %></td>
-    <!--     
-          <td><%= consumable.material %></td> -->
-          <td class="tg-s6z2"><%= consumable.quantity %></td>
+          <!--  <td class="tg-s6z2"><%= consumable.description %></td> -->
+    <!--      -->
+          <td class="tg-qpa3"><%= consumable.material %></td>
+           <td class="tg-qpa3"><%= consumable.quantity %></td>
           <td class="tg-qpa3"><%= consumable.location %></td>
   <!--          -->
          <td class="tg-s6z2"><%= consumable.responsible %></td>
@@ -79,5 +79,5 @@
     <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
   <%end%>
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
-  <br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br>
 </div>
