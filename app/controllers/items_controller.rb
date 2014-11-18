@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    if current_user
+   	 @items = Item.where(:user_id => current_user.username).all
+    end
     @sumItem = Item.count
     respond_to do |format|
       format.html
@@ -35,6 +37,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.username
 
     respond_to do |format|
       if @item.save

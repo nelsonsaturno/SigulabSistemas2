@@ -5,8 +5,10 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
-    @sumQuotes = Quote.count
+	if current_user
+    @quotes = Quote.where(:user_id => current_user.username).all
+    @sumQuotes = Quote.where(:user_id => current_user.username).count
+   end
   end
 
   # GET /quotes/1
@@ -27,6 +29,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
+    @quote.user_id = current_user.username
 
     respond_to do |format|
       if @quote.save

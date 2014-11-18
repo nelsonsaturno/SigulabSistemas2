@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116154606) do
+ActiveRecord::Schema.define(version: 20141117182048) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.string   "providencia"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "checks", force: true do |t|
@@ -214,6 +216,7 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.string   "responsable"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "items", force: true do |t|
@@ -226,6 +229,7 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "numeroBien"
+    t.string   "user_id"
   end
 
   create_table "labs", force: true do |t|
@@ -239,6 +243,7 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "services", force: true do |t|
@@ -249,6 +254,7 @@ ActiveRecord::Schema.define(version: 20141116154606) do
     t.string   "ubicacion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
   end
 
   create_table "tools", force: true do |t|

@@ -13,4 +13,6 @@ class Item < ActiveRecord::Base
   validates_presence_of :unidad, :message => "del Item no puede estar en blanco" 
   validates :numeroBien, presence: false
 
+  belongs_to :user
+
 end
