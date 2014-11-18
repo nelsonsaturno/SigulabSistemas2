@@ -20,7 +20,7 @@
 <div class="grid_12 push_5">
 	<%= form_for(@quote) do |f| %>
   		<% if @quote.errors.any? %>
-         <h2>Error: se han introducido datos incorrectos</h2>
+         <h2>Error: ha dejado campos vacíos</h2>
       	<br>	
   		<% end %>
   
@@ -31,7 +31,7 @@
   </div>
   <div class="field">
  	 <span class="red">*</span>
-    <%= f.label "Oferta de cotización" %><br>
+    <%= f.label "Oferta" %><br>
     <%= f.file_field :attachment, id:"browse", style:"display: none", onChange:"Handlechange()" %>
 	 <input type="text" id="filename" readonly="true"/>
 	 <input type="button" class="btn btn-default" value="Examinar" id="fakeBrowse" onclick="HandleBrowseClick();"/>

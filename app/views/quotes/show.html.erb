@@ -1,9 +1,9 @@
 <div class="grid_12">
       <ol class="breadcrumb">
-          <li> <%=link_to 'Home', controller: 'statics'%></li>
+          <li> <%=link_to 'Inicio', controller: 'statics'%></li>
 			 <li> <%=link_to 'Compras', compras_url %></li>
           <li> <%=link_to 'Solicitud', solicitud_url %></li>
-        <li class="active">Cotización </a></li>
+        <li class="active">Ofertas </a></li>
       </ol>
 </div>
 
@@ -16,16 +16,17 @@
        	<td><%=@quote.nombre%></td>
     	</tr>
      	 <tr>
-       	<th>Cotización</th>
-       	<td><%= link_to "Ver cotización", @quote.attachment_url %></td>
+       	<th>Oferta</th>
+       	<td><%= link_to "Ver Ofeerta", @quote.attachment_url %></td>
     	</tr>
  	 </thread>
 	</table>
 	<br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Agregar otra oferta </button>'.html_safe, new_quote_path %> <br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Modificar </button>'.html_safe, edit_quote_path(@quote) %><br><br>
    <%= link_to '<button type="button" class="btn btn-primary"> Eliminar </button>'.html_safe, @quote,method: :delete,
-       data: { confirm: "¿Está seguro que desea eliminar la cotización de  #{@quote.nombre} ?" } %></td><br><br>
-   <%= link_to '<button type="button" class="btn btn-primary"> Atrás </button>'.html_safe, quotes_path %><br>
+       data: { confirm: "¿Está seguro que desea eliminar la oferta de  #{@quote.nombre} ?" } %></td><br><br>
+   <%= link_to '<button type="button" class="btn btn-primary"> Finalizar </button>'.html_safe, quotes_path %><br>
 	</div>
 </div>
 

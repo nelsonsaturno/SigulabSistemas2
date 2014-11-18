@@ -6,19 +6,18 @@
 
 <div class="grid_12">
       <ol class="breadcrumb">
-          <li> <%=link_to 'Home', controller: 'statics'%></li>
+          <li> <%=link_to 'Inicio', controller: 'statics'%></li>
 			 <li> <%=link_to 'Compras', compras_url %></li>
           <li> <%=link_to 'Solicitud', solicitud_url %></li>
-        <li class="active">Cotización </a></li>
+        <li class="active">Ofertas </a></li>
       </ol>
 </div>
 
 
 	<div class="grid_12">
-		<h3>Cotizaciones</h3>
-		<%= link_to '<button type="button" class="btn btn-primary"> Agregar otra cotización </button>'.html_safe, new_quote_path %> <br><br>
-		<%= link_to '<button type="button" class="btn btn-primary"> Volver a solicitud de compras </button>'.html_safe,
-																													 solicitud_url %>
+		<h3>Ofertas</h3>
+		<%= link_to '<button type="button" class="btn btn-primary"> Agregar otra oferta </button>'.html_safe, new_quote_path %> <br><br>
+		<%= link_to '<button type="button" class="btn btn-primary"> Volver a solicitud de compras </button>'.html_safe, solicitud_url %>
 		<%= render 'quotetable' %>
 	</div>
 

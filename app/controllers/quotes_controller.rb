@@ -6,6 +6,7 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     @quotes = Quote.all
+    @sumQuotes = Quote.count
   end
 
   # GET /quotes/1
