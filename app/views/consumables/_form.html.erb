@@ -15,24 +15,24 @@
     
     <table class="table table-striped">
           <tr>
-            <td class="col-xs-5 text-right"><strong>*Nombre:</strong></td>
-            <td class="col-xs-7"><%= f.text_field :name %></td>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :name %><span class="red">*</span</td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Descripción:</strong></td>
-            <td class="col-xs-7"><%= f.text_field :description %></td>
+            <td class="col-xs-7"><%= f.text_area :description %></td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Material:</strong></td>
             <td class="col-xs-7"><%= f.text_field :material %></td>
           </tr>
            <tr>
-            <td class="col-xs-5 text-right"><strong>*Responsable:</strong></td>
-            <td class="col-xs-7"><%= f.text_field :responsible %></td>
+            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :responsible %><span class="red">*</span</td>
           </tr>
           <tr>
-            <td class="col-xs-5 text-right"><strong>*Ubicación:</strong></td>
-            <td class="col-xs-7"><%=  f.text_field :location %></td>
+            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :location %><span class="red">*</span</td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Cantidad:</strong></td>

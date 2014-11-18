@@ -49,7 +49,25 @@
               <% end %></td>
          </tr>
         <tr>        
-
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%= @consumable.bill %></td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= @consumable.cost %> Bs.</td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-7"><%= @consumable.buy_order %></td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%= @consumable.adquisition_date %></td>
+          </tr>
           
         </table>
 

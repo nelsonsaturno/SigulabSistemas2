@@ -13,6 +13,7 @@ class Consumable < ActiveRecord::Base
 	def uppercase_fields
 		self.name.mb_chars.upcase!
 		self.material.mb_chars.upcase!
+		self.quantity.mb_chars.upcase!
 		self.location.mb_chars.upcase!
 		self.responsible.mb_chars.upcase!
 		self.bill.mb_chars.upcase!

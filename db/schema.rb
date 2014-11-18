@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118071604) do
+ActiveRecord::Schema.define(version: 20141118082250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20141118071604) do
     t.string   "buy_order"
     t.date     "adquisition_date"
     t.text     "description"
+    t.boolean  "showable",         default: true
   end
 
   create_table "equipment", force: true do |t|
@@ -104,7 +105,6 @@ ActiveRecord::Schema.define(version: 20141118071604) do
     t.string   "location"
     t.date     "adquisition_date"
     t.string   "buy_order"
-    t.float    "cost"
     t.string   "bill"
     t.boolean  "investigation"
     t.boolean  "teaching"
@@ -113,10 +113,14 @@ ActiveRecord::Schema.define(version: 20141118071604) do
     t.string   "calibrated"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "lenght"
-    t.decimal  "depth"
-    t.decimal  "width"
-    t.string   "meassure"
+    t.decimal  "cost"
+    t.float    "length"
+    t.float    "depth"
+    t.float    "width"
+    t.string   "measurelength"
+    t.string   "measuredepth"
+    t.string   "measurewidth"
+    t.boolean  "showable",         default: true
   end
 
   create_table "executions", force: true do |t|
