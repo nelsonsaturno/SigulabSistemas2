@@ -4,13 +4,13 @@ class ChemicalSubstance < ActiveRecord::Base
 	validates :cas, :presence => {:message => "no puede ser blanco"}
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
 	validates :quantity, :presence => {:message => "no puede ser blanco"}
+	before_save :uppercase_fields
+	before_update :uppercase_fields
 	
 	def self.search(query)
 		where("name like ?", "%#{query}%") 
 	end
 	
-	before_save :uppercase_fields
-	before_update :uppercase_fields
 
 	def uppercase_fields
 		self.name.mb_chars.upcase!

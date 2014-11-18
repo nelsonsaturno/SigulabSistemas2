@@ -24,7 +24,8 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Pureza:</strong></td>
-            <td class="col-xs-7"><%= f.number_field(:purity, min: 0, max: 100, :step => 'any') %></td>
+            <td class="col-xs-7"><%= f.number_field(:purity, min: 0, max: 100, :step => 'any') %>%
+            </td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Estado materia:</strong></td>
@@ -109,7 +110,7 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
-            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp Bs.</td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
