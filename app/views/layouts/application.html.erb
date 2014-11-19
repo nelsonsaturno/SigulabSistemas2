@@ -43,6 +43,13 @@
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
 	$(function() {
+		$( ".datepicker" ).datepicker({
+		dateFormat: 'dd-mm-yy',
+		yearRange: '1900:2018',
+		});
+	});
+
+	$(function() {
 	    $( document ).tooltip({
 	      position: {
 	        my: "center bottom-20",
@@ -58,11 +65,6 @@
 	      }
 	    });
 	  });
-
-
-	$(function() {
-		$( document ).tooltip();
-	});
 
 
   </script>
