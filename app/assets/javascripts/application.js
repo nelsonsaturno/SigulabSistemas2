@@ -11,15 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+
+//= require jquery.turbolinks
 //= require jquery_ujs
+
+
 //= require turbolinks
 //= require_tree .
-
-
-
-
-// $(function() {
-//   $('#datepicker').datepicker();
-// });
-
- <td class="col-xs-7"><%= f.text_field :expiration_date %></td>

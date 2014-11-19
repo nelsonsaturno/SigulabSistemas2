@@ -43,13 +43,46 @@
 	$.datepicker.setDefaults($.datepicker.regional['es']);
 
 	$(function() {
-		$( ".datepicker" ).datepicker({
-		dateFormat: 'dd-mm-yy',
-		yearRange: '1900:2018',
-		});
+	    $( document ).tooltip({
+	      position: {
+	        my: "center bottom-20",
+	        at: "center top",
+	        using: function( position, feedback ) {
+	          $( this ).css( position );
+	          $( "<div>" )
+	            .addClass( "arrow" )
+	            .addClass( feedback.vertical )
+	            .addClass( feedback.horizontal )
+	            .appendTo( this );
+	        }
+	      }
+	    });
+	  });
+
+
+	$(function() {
+		$( document ).tooltip();
 	});
 
+
   </script>
+
+ <style>
+  .ui-tooltip, .arrow:after {
+    color: black;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: black;
+    border-radius: 15px;
+    font: bold 10px "Helvetica Neue", Sans-Serif;
+    font
+    text-transform: uppercase;
+    box-shadow: 0 0 4px black;
+  }
+
+
+  </style>
 
 
 </head>
@@ -58,7 +91,7 @@
 	<div id="principal">
 
 		<div id="header" role="banner">
-			<a title="Inicio" href="http://www.ulab.usb.ve/" alt="Inicio"/><%= image_tag "logo_drupal.jpg" %> </a>
+			<a href="http://www.ulab.usb.ve/" alt="Inicio"/><%= image_tag "logo_drupal.jpg" %> </a>
 
 		<!-- aqui empieza el pein-->
 
