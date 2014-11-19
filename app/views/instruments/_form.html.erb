@@ -11,70 +11,91 @@
     </div>
   <% end %>
 
-  <div class ="Informacion">
-    <div class="field">
-      <%= 'Nombre:' %><br>
-      <%= f.text_field :name %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Marca:' %><br>
-      <%= f.text_field :brand %>
-    </div>
-    <div class="field">
-      <%= 'Modelo:' %><br>
-      <%= f.text_field :model %>
-    </div>
-    <div class="field">
-      <%= 'Unidad de medida:' %><br>
-      <%= f.text_field :measurement_unit %>
-    </div>
-    <div class="field">
-      <%= 'Capacidad:' %><br>
-      <%= f.number_field(:capacity, min: 0, :step => 'any') %>
-    </div>
-    <div class="field">
-      <%= 'Material:' %><br>
-      <%= f.text_field :material %>
-    </div>
-    <div class="field">
-      <%= 'Estatus:' %><br>
-      <%= f.text_field :status %>
-    </div>
-    <div class="field">
-      <%= 'Ubicación:' %><br>
-      <%= f.text_field :location %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Última Calibración:' %><br>
-      <%= f.date_select :last_calibration %>
-    </div>
-    <div class="field">
-      <%= 'Responsable:' %><br>
-      <%= f.text_field :responsible %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Número bien nacional:' %><br>
-      <%= f.number_field :national_good %>
-    </div>
-    <div class="field">
+<div class ="Informacion">
+  <div class="col-xs-12">
+        <table class="table table-striped">
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"> <%= f.text_field :name %>
+            <span class="red">*</span></td>
+          </tr> 
 
-       <%= 'Uso:'%><br>
-     <%= f.check_box :investigation %>
-      <%= 'Investigación' %><br>
-      <%= f.check_box :teaching %>
-      <%= 'Docencia' %><br>
-      <%= f.check_box :extention %>
-      <%= 'Extensión' %><br>
-      <%= f.check_box :management %>
-      <%= 'Gestión' %><br>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Marca:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :brand %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Modelo:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :brand %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Unidad de medida::</strong></td>
+            <td class="col-xs-7"><%= f.text_field :measurement_unit %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Capacidad:</strong></td>
+            <td class="col-xs-7"><%= f.number_field(:capacity, min: 0, :step => 'any') %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Material:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :material %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :status %></td>
+          </tr> 
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :location %>
+            <span class="red">*</span></td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Última Calibración:</strong></td>
+            <td class="col-xs-7"> <%= f.text_field :last_calibration, :class => "datepicker" %></td> </td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :responsible %>
+            <span class="red">*</span></td>
+          </tr>
+
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Número bien nacional:</strong></td>
+            <td class="col-xs-7"><%= f.number_field :national_good %></td>
+          </tr>
+
+    
+    
+          <tr>
+            <td class="col-xs-5 text-right"><strong><%= 'Uso:'%></strong></td>
+           <td class="col-xs-7"><%= f.check_box :investigation %>
+            <%= 'Investigación' %><br>
+            <%= f.check_box :teaching %>
+            <%= 'Docencia' %><br>
+            <%= f.check_box :extention %>
+            <%= 'Extensión' %><br>
+            <%= f.check_box :management %>
+            <%= 'Gestión' %></td></tr>
+          
+        
+        </div>
+      </table>
+
+      </div>
+
+
+    <div class="actions">
+    <%= f.submit %>
     </div>
+
     <br>
-      <div class="actions">
-      <%= f.submit %>
-    </div>
-    <br><br>
   </div>
 <% end %>

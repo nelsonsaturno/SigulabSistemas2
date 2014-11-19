@@ -65,7 +65,7 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
-            <td class="col-xs-7"><%=f.date_select :adquisition_date, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %></td> 
+            <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %></td> 
           </tr>
          
         <tr>
