@@ -24,16 +24,17 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Pureza:</strong></td>
-            <td class="col-xs-7"><%= f.number_field(:purity, min: 0, max: 100, :step => 'any') %></td>
+            <td class="col-xs-7"><%= f.number_field(:purity, min: 0, max: 100, :step => 'any') %>&nbsp;%
+            </td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Estado materia:</strong></td>
-            <td class="col-xs-7"><%= f.select(:matter_states, [ ['Líquido'],['Sólido'],['Gaseoso'] ] ) %></td>
+            <td class="col-xs-7"><%= f.select(:matter_states, [ ['LÍQUIDO'],['SÓLIDO'],['GASEOSO'] ] ) %></td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Controlado:</strong></td>
             <td class="col-xs-7">
-            <%= f.select(:controlled,[['No',false], ['Sí', true]]) %>
+            <%= f.select(:controlled,[['NO',false], ['SÍ', true]]) %>
 
             </tr>
           <tr>
@@ -111,7 +112,7 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
-            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp;BS.</td> 
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>

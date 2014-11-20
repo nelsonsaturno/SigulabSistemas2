@@ -1,28 +1,30 @@
+require "unicode_utils"
 class ChemicalSubstance < ActiveRecord::Base
 	validates :name, :presence => {:message => "no puede ser blanco"}
 	validates :location, :presence => {:message => "no puede ser blanco"}
 	validates :cas, :presence => {:message => "no puede ser blanco"}
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
 	validates :quantity, :presence => {:message => "no puede ser blanco"}
+	before_validation :uppercase_fields
+	before_update :uppercase_fields
 	
 	def self.search(query)
+		query=UnicodeUtils.upcase(query, :es)
 		where("name like ?", "%#{query}%") 
 	end
 	
-	before_save :uppercase_fields
-	before_update :uppercase_fields
-
-	def uppercase_fields
-		self.name.mb_chars.upcase!
-		self.matter_states.mb_chars.upcase!
-		self.cas.mb_chars.upcase!
-		self.status.mb_chars.upcase!
-		self.responsible.mb_chars.upcase!
-		self.location.mb_chars.upcase!
-		self.meassure.mb_chars.upcase!
-		self.bill.mb_chars.upcase!
-		self.buy_order.mb_chars.upcase!
-	end
+	private
+		def uppercase_fields
+			self.name=UnicodeUtils.upcase(self.name, :es)
+			self.matter_states=UnicodeUtils.upcase(self.matter_states, :es)
+			self.cas=UnicodeUtils.upcase(self.cas, :es)
+			self.status=UnicodeUtils.upcase(self.status, :es)
+			self.responsible=UnicodeUtils.upcase(self.responsible, :es)
+			self.location=UnicodeUtils.upcase(self.location, :es)
+			self.meassure=UnicodeUtils.upcase(self.meassure, :es)
+			self.bill=UnicodeUtils.upcase(self.bill, :es)
+			self.buy_order=UnicodeUtils.upcase(self.buy_order, :es)
+		end
 
 end
 

@@ -1,3 +1,4 @@
+require "unicode_utils"
 class Equipment < ActiveRecord::Base
 	validates :name, :presence => {:message => "no puede ser blanco"}
 	validates :serial,  :presence => {:message => "no puede ser blanco"}
@@ -7,22 +8,25 @@ class Equipment < ActiveRecord::Base
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
 	
 	def self.search(query)
+		query=UnicodeUtils.upcase(query, :es)
 		where("name like ?", "%#{query}%") 
 	end
 	
 	before_save :uppercase_fields
 	before_update :uppercase_fields
-
+	
+private
 	def uppercase_fields
-		self.name.mb_chars.upcase!
-		self.brand.mb_chars.upcase!
-		self.model.mb_chars.upcase!
-		self.serial.mb_chars.upcase!
-		
-		self.responsible.mb_chars.upcase!
-		self.location.mb_chars.upcase!
-		self.meassure.mb_chars.upcase!
-		self.bill.mb_chars.upcase!
-		self.buy_order.mb_chars.upcase!
+		self.name=UnicodeUtils.upcase(self.name, :es)
+		self.brand=UnicodeUtils.upcase(self.brand, :es)
+		self.model=UnicodeUtils.upcase(self.model, :es)
+		self.serial=UnicodeUtils.upcase(self.serial, :es)
+		self.responsible=UnicodeUtils.upcase(self.responsible, :es)
+		self.location=UnicodeUtils.upcase(self.location, :es)
+		self.measurelength=UnicodeUtils.upcase(self.measurelength, :es)
+		self.measuredepth=UnicodeUtils.upcase(self.measuredepth, :es)
+		self.measurewidth=UnicodeUtils.upcase(self.measurewidth, :es)
+		self.bill=UnicodeUtils.upcase(self.bill, :es)
+		self.buy_order=UnicodeUtils.upcase(self.buy_order, :es)
 	end
 end
