@@ -38,17 +38,16 @@
     <table class="tg">
       <tr>
         <th class="tg-093g">Nombre</th>
-  <!--       <th>Brand</th> -->
-        <th class="tg-hgcj">Modelo</th>
-  <!--       <th>Serial</th>
-        <th>National good</th>
-        <th>Status</th>
-       
-        <th>Use</th> -->
-        <th class="tg-hgcj">Ultima Calibración</th>
-        <th class="tg-hgcj">Responsable</th>
+        <th class="tg-hgcj">National good</th>
         <th class="tg-hgcj">Ubicación</th>
-    <!--     <th>Adquisition date</th>
+        <th class="tg-hgcj">Responsable</th>
+        <th class="tg-hgcj">Status</th>
+  <!--  <th>Brand</th>
+        <th class="tg-hgcj">Ultima Calibración</th>
+        <th>Serial</th>
+        <th class="tg-hgcj">Modelo</th>
+        <th>Use</th>
+        <th>Adquisition date</th>
         <th>Buy order</th>
         <th>Cost</th>
         <th>Bill</th>
@@ -57,7 +56,6 @@
         <th>Extention</th>
         <th>Management</th>
         <th>Calibrated</th> -->
-      
       </tr>
     </thead>
 
@@ -65,27 +63,23 @@
       <% @equipment.each do |equipment| %>
         <tr>
           <td class="tg-s6z2"><%=  link_to equipment.name, equipment  %></td>
-      <!--     <td><%= equipment.brand %></td> -->
-          <td class="tg-s6z2"><%= equipment.model %></td>
-   <!--        <td><%= equipment.serial %></td>
-          <td><%= equipment.national_good %></td>
-          <td><%= equipment.status %></td>
-        
-          <td>-->
-          <td class="tg-s6z2"><%= equipment.last_calibration %></td>
-          <td class="tg-qpa3"><%= equipment.responsible %></td>
+          <td class="tg-s6z2"><%= equipment.national_good %></td>
           <td class="tg-s6z2"><%= equipment.location %></td>
-       <!--    <td><%= equipment.adquisition_date %></td>
+          <td class="tg-qpa3"><%= equipment.responsible %></td>
+          <td class="tg-s6z2"><%= equipment.status %></td>
+      <!--     <td><%= equipment.brand %></td> 
+          <td class="tg-s6z2"><%= equipment.last_calibration %></td>
+          <td class="tg-s6z2"><%= equipment.model %></td>
+          <td><%= equipment.serial %></td>
           <td><%= equipment.buy_order %></td>
           <td><%= equipment.cost %></td>
           <td><%= equipment.bill %></td>
+          <td><%= equipment.adquisition_date %></td>
           <td><%= equipment.investigation %></td>
           <td><%= equipment.teaching %></td>
           <td><%= equipment.extention %></td>
           <td><%= equipment.management %></td>
           <td><%= equipment.calibrated %></td> -->
-
-
         </tr>
       <% end %>
     </tbody>

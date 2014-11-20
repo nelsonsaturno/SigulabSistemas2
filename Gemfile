@@ -57,3 +57,6 @@ gem 'prawn'
 
 #Use prawn table
 gem 'prawn-table'
+
+# Use for unicode support
+gem 'unicode_utils'

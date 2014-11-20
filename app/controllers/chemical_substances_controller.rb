@@ -75,6 +75,6 @@ class ChemicalSubstancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chemical_substance_params
-      params.require(:chemical_substance).permit(:name, :purity, :matter_states, :controlled, :legal_regime, :quantity, :cas, :meassure, :status, :responsible, :location, :expiration_date, :dangerous, :rI7, :rI4, :toxic, :oxidant, :explosive, :irritating, :inflamable, :corrosive, :nocive, :investigation, :teaching, :extention, :management, :cost, :bill, :buy_order, :adquisition_date)
+      params.require(:chemical_substance).permit(:name, :purity, :matter_states, :controlled, :quantity, :cas, :meassure, :status, :responsible, :location, :expiration_date, :rI7, :rI4, :toxic, :oxidant, :explosive, :irritating, :inflamable, :corrosive, :nocive, :investigation, :teaching, :extention, :cost, :bill, :buy_order, :adquisition_date, :showable)
     end
 end

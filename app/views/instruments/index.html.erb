@@ -6,7 +6,7 @@
 
 
 <div id="LeDivInstrumentos">
-  <h1><i class="fa fa-eyedropper"></i> Instrumentos</h1>
+  <h1><i class="fa fa-eyedropper"></i> Instrumentos de Medición</h1>
 
   <div id = "table2">
   </div>
@@ -39,16 +39,16 @@
       <tr>
         <th class="tg-093g">Nombre</th>
         <th class="tg-hgcj">Marca</th>
-  <!--       <th>Model</th> -->
-  <!--       <th>Measurement unit</th>
-        <th>Capacity</th>
-        <th>Material</th>
-        <th>Use</th> -->
         <th class="tg-hgcj">Status</th>
         <th class="tg-hgcj">Ubicación</th>
-  <!--       <th>Last calibration</th> -->
         <th class="tg-hgcj">Responsable</th>
-  <!--       <th>National good</th>
+  <!--       <th>Model</th> 
+        <th>Measurement unit</th>
+        <th>Capacity</th>
+        <th>Material</th>
+        <th>Use</th> 
+        <th>Last calibration</th>
+        <th>National good</th>
         <th>Investigation</th>
         <th>Teaching</th>
         <th>Extention</th>
@@ -62,15 +62,15 @@
         <tr>
           <td class="tg-s6z2"><%= link_to instrument.name, instrument %></td>
           <td class="tg-qpa3"><%= instrument.brand %></td>
+          <td class="tg-qpa3"><%= instrument.status %></td> 
+          <td class="tg-qpa3"><%= instrument.location %></td>
+         <td class="tg-s6z2"><%= instrument.responsible %></td>
   <!--         <td><%= instrument.model %></td>
           <td><%= instrument.measurement_unit %></td>
           <td><%= instrument.capacity %></td>
-          <td><%= instrument.material %></td>-->
-          <td class="tg-qpa3"><%= instrument.status %></td> 
-          <td class="tg-qpa3"><%= instrument.location %></td>
-  <!--         <td><%= instrument.last_calibration %></td> -->
-         <td class="tg-s6z2"><%= instrument.responsible %></td>
-  <!--         <td><%= instrument.national_good %></td>
+          <td><%= instrument.material %></td>
+          <td><%= instrument.last_calibration %></td>
+          <td><%= instrument.national_good %></td>
           <td><%= instrument.investigation %></td>
           <td><%= instrument.teaching %></td>
           <td><%= instrument.extention %></td>

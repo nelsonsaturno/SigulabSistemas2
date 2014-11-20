@@ -50,13 +50,13 @@
             <td class="col-xs-5 text-right"><strong>Dimensiones:</strong></td>
             <td class="col-xs-7">
             <strong>Alto:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
-            <%= f.number_field(:length, min: 0) %>
+            <%= f.number_field(:length, min: 0, :step => 'any') %>
             <%= f.select(:measurelength, [['M'], ['MM']] ) %><br><br>
             <strong>Ancho:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong>
-             <%= f.number_field(:width, min: 0) %>
+             <%= f.number_field(:width, min: 0, :step => 'any') %>
             <%= f.select(:measurewidth, [['M'], ['MM']] ) %><br><br>
             <strong>Profundidad:</strong>
-            <%= f.number_field(:depth, min: 0) %>
+            <%= f.number_field(:depth, min: 0, :step => 'any') %>
             <%= f.select(:measuredepth, [['M'], ['MM']] ) %>
             </td>
           </tr>
@@ -73,7 +73,7 @@
         </td>
       </tr>
       <tr>
-          <td class="col-xs-5 text-right"><strong>Fecha Adquisición::</strong></td>
+          <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
           <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %>
         </td>
       </tr>
@@ -84,7 +84,7 @@
       </tr>
       <tr>
           <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
-          <td class="col-xs-7"> <%= f.text_field :cost %>
+          <td class="col-xs-7"> <%= f.text_field :cost %>&nbsp;BS.</td>
         </td>
       </tr>
        <tr>

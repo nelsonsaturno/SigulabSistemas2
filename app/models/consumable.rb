@@ -1,9 +1,11 @@
+require "unicode_utils"
 class Consumable < ActiveRecord::Base
 	validates :name, :presence => {:message => "no puede ser blanco"}
 	validates :location, :presence => {:message => "no puede ser blanco"}
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
 	
 	def self.search(query)
+		query=UnicodeUtils.upcase(query, :es)
 		where("name like ?", "%#{query}%") 
 	end
 	
@@ -11,13 +13,13 @@ class Consumable < ActiveRecord::Base
 	before_update :uppercase_fields
 
 	def uppercase_fields
-		self.name.mb_chars.upcase!
-		self.material.mb_chars.upcase!
-		self.quantity.mb_chars.upcase!
-		self.location.mb_chars.upcase!
-		self.responsible.mb_chars.upcase!
-		self.bill.mb_chars.upcase!
-		self.buy_order.mb_chars.upcase!
+		self.name=UnicodeUtils.upcase(self.name, :es)
+		self.material=UnicodeUtils.upcase(self.material, :es)
+		self.quantity=UnicodeUtils.upcase(self.quantity, :es)
+		self.location=UnicodeUtils.upcase(self.location, :es)
+		self.responsible=UnicodeUtils.upcase(self.responsible, :es)
+		self.bill=UnicodeUtils.upcase(self.bill, :es)
+		self.buy_order=UnicodeUtils.upcase(self.buy_order, :es)
 	end
 
 end
