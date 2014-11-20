@@ -2,20 +2,98 @@
 <html>
 <head>
 	<title>Sigulab</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+	<%= stylesheet_link_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-darkness/jquery-ui.css', 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
 	<%= csrf_meta_tags %>
 	<title> Unidad de Laboratorios - SIGULAB </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="shortcut icon" href="../../assets/images/favicon.ico" type= "image/png">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+  <script>
+
+	$.datepicker.regional['es'] = {
+	closeText: 'Cerrar',
+	prevText: ' < ',
+	nextText: ' > ',
+	currentText: 'Hoy',
+	monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+	monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+	dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+	dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+	dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+	weekHeader: 'Sm',
+	dateFormat: 'dd/mm/yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+	};
+
+	$.datepicker.setDefaults($.datepicker.regional['es']);
+
+	$(function() {
+		$( ".datepicker" ).datepicker({
+		dateFormat: 'dd-mm-yy',
+		yearRange: '1900:2018',
+		});
+	});
+
+	$(function() {
+	    $( document ).tooltip({
+	      position: {
+	        my: "center bottom-20",
+	        at: "center top",
+	        using: function( position, feedback ) {
+	          $( this ).css( position );
+	          $( "<div>" )
+	            .addClass( "arrow" )
+	            .addClass( feedback.vertical )
+	            .addClass( feedback.horizontal )
+	            .appendTo( this );
+	        }
+	      }
+	    });
+	  });
+
+
+  </script>
+
+ <style>
+  .ui-tooltip, .arrow:after {
+    color: black;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: black;
+    border-radius: 15px;
+    font: bold 10px "Helvetica Neue", Sans-Serif;
+    font
+    text-transform: uppercase;
+    box-shadow: 0 0 4px black;
+  }
+
+
+  </style>
+
+
 </head>
 <body>
 
 	<div id="principal">
 
 		<div id="header" role="banner">
-			<a title="Inicio" href="http://www.ulab.usb.ve/" alt="Inicio"/><%= image_tag "logo_drupal.jpg" %> </a>
+			<a href="http://www.ulab.usb.ve/" alt="Inicio"/><%= image_tag "logo_drupal.jpg" %> </a>
 
 		<!-- aqui empieza el pein-->
 
