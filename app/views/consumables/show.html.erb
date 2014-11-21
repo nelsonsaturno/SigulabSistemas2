@@ -77,7 +77,13 @@
 
 <br>
 <% if can? :update, @consumable %>
-  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable), 'data-no-turbolink' => true %> |
 <% end %>
+<% if can? :create, @consumable %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
+<%end%>
+<% if can? :hide, @consumable %>
+      <i class="fa fa-times"></i><%= link_to ' Ocultar', consumables_path %> | 
+<%end%>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>
 <br><br><br><br>

@@ -10,7 +10,6 @@
 
   <div id = "table2">
   </div>
-  <div id="invetario"> Inventario </div>
   <br>
 
       <style type="text/css">
@@ -37,15 +36,20 @@
     <table class="tg">
       <tr>
         <th class="tg-093g">Nombre</th>
-        <th class="tg-hgcj">Marca</th>
+       
+        <th class="tg-hgcj">De un Juego</th>
+        <th class="tg-hgcj">Número de Bien Nacional</th>
     <!--     <th>Type</th>
         <th>National good</th>
         
         <th>Use</th> -->
-        <th class="tg-hgcj">Status</th>
+       <th class="tg-hgcj">Ubicación</th>
         <th class="tg-hgcj">Responsable</th>
-        <th class="tg-hgcj">Ubicación</th>
-     <!--    <th>Material</th>
+        
+     <!--    
+      <th class="tg-hgcj">Status</th>
+        <th class="tg-hgcj">Marca</th>
+        <th>Material</th>
         <th>Bill</th>
         <th>From set</th>
         <th>Investigation</th>
@@ -60,15 +64,19 @@
       <% @tools.each do |tool| %>
         <tr>
           <td class="tg-s6z2"><%= link_to tool.name, tool %></td>
-          <td class="tg-s6z2"><%= tool.brand %></td>
+          <td class="tg-s6z2"><%= tool.from_set %></td>
+          <td class="tg-s6z2"><%= tool.national_good %></td>
+          <td class="tg-s6z2"><%= tool.location %></td>
+          <td class="tg-qpa3"><%= tool.responsible %></td>
          <!--  <td><%= tool.type %></td>
-          <td><%= tool.national_good %></td>
+         <td class="tg-s6z2"><%= tool.brand %></td>
+     
         
          -->
-          <td class="tg-qpa3"><%= tool.status %></td>
-          <td class="tg-qpa3"><%= tool.responsible %></td>
-          <td class="tg-s6z2"><%= tool.location %></td>
+          
+          
         <!--   <td><%= tool.material %></td>
+        <td class="tg-qpa3"><%= tool.status %></td>
           <td><%= tool.bill %></td>
           <td><%= tool.from_set %></td>
           <td><%= tool.investigation %></td>

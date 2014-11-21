@@ -34,7 +34,7 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Número bien nacional:</strong></td>
-            <td class="col-xs-7">  <%= f.number_field :national_good %></td>
+            <td class="col-xs-7">  <%= f.number_field :national_good %> <span class="red">*</span></td>
           </tr>
 
           <tr>
@@ -43,7 +43,7 @@
           </tr>
 
           <tr>
-            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Responsable: </strong></td>
             <td class="col-xs-7">  <%= f.text_field :responsible %><span class="red">*</span></td>
           </tr>
 
@@ -97,16 +97,25 @@
             <%= f.check_box :management %>
             <%= 'Gestión' %> </td>
           </tr><br>
-          </div>
+          
+    <tr>
+
+        <td class="col-xs-5 text-right">
+           <div class="actions">
+            <%= f.submit %><td>
+           </div>
+      </tr>
+          
+
+
+
            </table>
 
       </div>
 
 
     <br>
-    <div class="actions">
-    <%= f.submit %>
-    </div>
+  
     <br><br>
   </div>
 <% end %>

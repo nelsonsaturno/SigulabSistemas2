@@ -11,8 +11,7 @@
   <div id = "table2">
   </div>
 
-  <div id="invetario"> Inventario </div>
-  <br>
+   <br>
 
       <style type="text/css">
       .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
@@ -38,11 +37,13 @@
     <table class="tg">
       <tr>
         <th class="tg-093g">Nombre</th>
-        <th class="tg-hgcj">National good</th>
+        <th class="tg-hgcj">Número de Bien Nacional</th>
+        
         <th class="tg-hgcj">Ubicación</th>
         <th class="tg-hgcj">Responsable</th>
         <th class="tg-hgcj">Status</th>
-  <!--  <th>Brand</th>
+  <!--   <th class="tg-093g">Brand</th>
+
         <th class="tg-hgcj">Ultima Calibración</th>
         <th>Serial</th>
         <th class="tg-hgcj">Modelo</th>
@@ -62,12 +63,15 @@
     <tbody>
       <% @equipment.each do |equipment| %>
         <tr>
+      
           <td class="tg-s6z2"><%=  link_to equipment.name, equipment  %></td>
-          <td class="tg-s6z2"><%= equipment.national_good %></td>
+              <td class="tg-s6z2"><%= equipment.national_good %></td>
+       
+
           <td class="tg-s6z2"><%= equipment.location %></td>
           <td class="tg-qpa3"><%= equipment.responsible %></td>
           <td class="tg-s6z2"><%= equipment.status %></td>
-      <!--     <td><%= equipment.brand %></td> 
+      <!--       <td class="tg-s6z2"><%= equipment.brand %></td> 
           <td class="tg-s6z2"><%= equipment.last_calibration %></td>
           <td class="tg-s6z2"><%= equipment.model %></td>
           <td><%= equipment.serial %></td>
@@ -90,7 +94,7 @@
 
   <br>
   <% if can? :create, @equipment %>
-    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path %> |
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path , 'data-no-turbolink' => true%> |
   <% end %>
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br>
