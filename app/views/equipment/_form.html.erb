@@ -11,106 +11,116 @@
     </div>
   <% end %>
 
-  <div class ="Informacion">
-    <div class="field">
-      <%= 'Nombre:' %><br>
-      <%= f.text_field :name %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Marca:' %><br>
-      <%= f.text_field :brand %>
-    </div>
-    <div class="field">
-      <%= 'Modelo:' %><br>
-      <%= f.text_field :model %>
-    </div>
-    <div class="field">
-      <%= 'Serial:' %><br>
-      <%= f.text_field(:serial) %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Número bien nacional:' %><br>
-      <%= f.number_field(:national_good, min: 0) %>
-      <span class="red">*</span>
-    </div>
-    
-    <div class="field">
-      <%= 'Alto:' %><br>
-      <%= f.number_field(:lenght, min: 0) %>
-    </div>
+ <table class="table table-striped">
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Nombre:</strong></td>
+            <td class="col-xs-7"> <%= f.text_field :name %>
+            <span class="red">*</span></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Marca:</strong></td>
+            <td class="col-xs-7"> <%= f.text_field :brand %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Modelo:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :model  %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Serial:</strong></td>
+            <td class="col-xs-7"><%= f.text_field(:serial) %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Número de Bien Nacional:</strong></td>
+            <td class="col-xs-7">  <%= f.number_field(:national_good, min: 0) %></td>
+          </tr>
+     
+            <tr>
+            <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
+            <td class="col-xs-7"> <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['En Desuso'] ] ) %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Calibrado:</strong></td>
+            <td class="col-xs-7"><%= f.select(:calibrated, [['N/A'],['Sí'], ['No'], ['Desconocido'] ])  %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Última Calibración:</strong></td>
+            <td class="col-xs-7"> <%= f.text_field :last_calibration, :class => "datepicker" %></td>
+          </tr>
+           <tr>
+            <td class="col-xs-5 text-right"><strong>Dimensiones:</strong></td>
+            <td class="col-xs-7">
+            <strong>Alto:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
+            <%= f.number_field(:length, min: 0, :step => 'any') %>
+            <%= f.select(:measurelength, [['M'], ['MM']] ) %><br><br>
+            <strong>Ancho:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong>
+             <%= f.number_field(:width, min: 0, :step => 'any') %>
+            <%= f.select(:measurewidth, [['M'], ['MM']] ) %><br><br>
+            <strong>Profundidad:</strong>
+            <%= f.number_field(:depth, min: 0, :step => 'any') %>
+            <%= f.select(:measuredepth, [['M'], ['MM']] ) %>
+            </td>
+          </tr>
+           
+        <tr>
+          <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+          <td class="col-xs-7"><%= f.text_field :responsible %>
+      <span class="red">*</span></td>
+      </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :dependency %>
+            <span class="red">*</span> </td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :location %>
+            <span class="red">*</span> </td>
+          </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+          <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %>
+        </td>
+      </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+          <td class="col-xs-7"> <%= f.text_field :buy_order %>
+        </td>
+      </tr>
+      <tr>
+          <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+          <td class="col-xs-7"> <%= f.text_field :cost %>&nbsp;BS.</td>
+        </td>
+      </tr>
+       <tr>
+          <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+          <td class="col-xs-7"> <%= f.text_field :bill %>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
+         <td class="col-xs-7">  
+         <%= f.check_box :investigation %>
+         <%= 'Investigación' %>
+         <%= f.check_box :teaching %>
+         <%= 'Docencia' %>
+         <%= f.check_box :extention %>
+         <%= 'Extensión' %>
+         <%= f.check_box :management %>
+         <%= 'Gestión' %><br>
+      </tr>
 
-    <div class="field">
-      <%= 'Ancho:' %><br>
-      <%= f.number_field(:width, min: 0) %>
-    </div>
+           <tr>
+            <td class="col-xs-5 text-right">
+               <div class="actions">
+                <%= f.submit %><td>
+               </div>
+          </tr>
 
-    <div class="field">
-      <%= 'Profundidad:' %><br>
-      <%= f.number_field(:depth, min: 0) %>
-    </div>
-    
-    <div class="field">
-      <%= 'Medida:' %><br>
-      <%= f.select(:status, [['m'], ['cm']] ) %>
-    </div>
-
-    <div class="field">
-      <%= 'Estatus:' %><br>
-      <%= f.select(:status, [['Operativo'], ['Inoperativo Temporalmente'], ['Desuso'] ] ) %>
-    </div>
-    <div class="field">
-      <%= 'Responsable:' %><br>
-      <%= f.text_field :responsible %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Ubicación:' %><br>
-      <%= f.text_field :location %>
-      <span class="red">*</span>
-    </div>
-    <div class="field">
-      <%= 'Fecha de adquisición:' %><br>
-      <%= f.date_select :adquisition_date %>
-    </div>
-    <div class="field">
-      <%= 'Orden de compra:' %><br>
-      <%= f.text_field :buy_order %>
-    </div>
-    <div class="field">
-      <%= 'Precio:' %><br>
-      <%= f.text_field :cost %>
-    </div>
-    <div class="field">
-      <%= 'Factura:' %><br>
-      <%= f.text_field :bill %>
-    </div>
-    <div class="field">
-
-       <%= 'Uso:'%><br>
-     <%= f.check_box :investigation %>
-      <%= 'Investigación' %><br>
-      <%= f.check_box :teaching %>
-      <%= 'Docencia' %><br>
-      <%= f.check_box :extention %>
-      <%= 'Extensión' %><br>
-      <%= f.check_box :management %>
-      <%= 'Gestión' %><br>
-    </div>
-    <div class="field">
-      <%= 'Calibrado:' %><br>
-      <%= f.select(:calibrated, [[''],['Sí'], ['No'], ['Desconocido'] ])  %>
-    </div>
-    <div class="field">
-      <%= 'Última calibración:' %><br>
-      <%= f.date_select :last_calibration %>
-    </div>
+        </table>
     <br>
     <br>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    
     <br><br>
   </div>
 <% end %>

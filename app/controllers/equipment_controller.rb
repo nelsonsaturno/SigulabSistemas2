@@ -4,7 +4,13 @@ class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
   def index
-    @equipment = Equipment.all
+	if params[:search]
+		@equipment_all = Equipment.search(params[:search])
+		@equipment = Equipment.where(:showable => true).search(params[:search])
+	else
+		@equipment_all = Equipment.where(:showable => true).all.order('created_at DESC')
+		@equipment = Equipment.all.order('created_at DESC')
+	end
   end
 
   # GET /equipment/1
@@ -69,6 +75,6 @@ class EquipmentController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
-      params.require(:equipment).permit(:name, :brand, :model, :serial, :national_good, :status, :last_calibration, :lenght, :depth, :width, :meassure, :responsible, :location, :adquisition_date, :buy_order, :cost, :bill, :investigation, :teaching, :extention, :management, :calibrated)
+      params.require(:equipment).permit(:name, :brand, :model, :serial, :national_good, :status, :last_calibration, :length, :depth, :width, :measurelength,:measuredepth,:measurewidth, :responsible, :location, :adquisition_date, :buy_order, :cost, :bill, :investigation, :teaching, :extention, :management, :calibrated, :showable, :dependency)
     end
 end

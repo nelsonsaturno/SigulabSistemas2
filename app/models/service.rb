@@ -6,5 +6,6 @@ class Service < ActiveRecord::Base
   validates_presence_of :numeroBien
   validates_presence_of :descripcion
   validates_presence_of :ubicacion
+  belongs_to :user
 
 end

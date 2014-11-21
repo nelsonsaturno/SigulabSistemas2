@@ -1,50 +1,61 @@
 <body>
 
-<div class="grid_7">
-      <ol class="breadcrumb">
-         <li> <%=link_to 'Home', controller: 'statics'%></li>
-         <li> <%=link_to 'Compras', compras_url %></li>
-         <li class="active">  Solicitud  </li>
-      </ol>
-</div>
+	<div class="grid_12">
+		   <ol class="breadcrumb">
+		      <li> <%=link_to 'Inicio', controller: 'statics'%></li>
+		      <li> <%=link_to 'Compras', compras_url %></li>
+		      <li class="active">  Solicitud  </li>
+		   </ol>
+	</div>
 
-<div class="grid_7 push_1">	
-	<h1> Solicitud de Compras </h1>	
-   <br>
-</div>
+	<div class="grid_6 push_4">
 
+		<ul id="tittle">
+			<%= link_to especificacionesTecnicas_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-clipboard fa-1"> Especificaciones Técnicas </i></h4></li>
+		   <% end %>
+			<%= link_to invitations_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-envelope-o">&nbsp Carta de invitación </i></h4></li>
+		   <% end %>
+			<%= link_to quotes_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-usd"> &nbsp Ofertas </i></h4></li>
+		   <% end %>
+			<%= link_to construccion_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-file-text-o"> Informe de recomendación</i></h4></li>
+		   <% end %>
+			<%= link_to acts_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-angle-right"> &nbsp Acto motivado </i></h4></li>
+		   <% end %>
+		   <%= link_to requisitions_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-files-o"> Requisición </i></h4></li>
+		   <% end %>
+			<%= link_to devolutions_url do %>
+		       <li style="text-align:left"><h4><i class="fa fa-close"> Nota de devolución</i></h4></li>
+		   <% end %>
+         <br><br><%= link_to "Volver al menu inicial", compras_url , class:"btn btn-primary" %>
+		</ul>
 
+	</div>
 
-<div class="grid_7 push_5">
-	<%= link_to "Especificaciones Técnicas", especificacionesTecnicas_url %><br>
-   <%= link_to "Carta de Invitación", invitations_url %><br>
-  	<%= link_to "Cotización de Proveedores", construccion_url %><br>
-	<%= link_to "Requisición", construccion_url %><br>
-	<%= link_to "Informe de recomendación", construccion_url %><br>
-	<%= link_to "Acto de Motivación", construccion_url %><br>
-	<%= link_to "Nota de Devolución", construccion_url %><br>
-
-</div>
 </body>
 
 <style>
 
-a:link { 
- font-weight: bold;
- font-size: 14px;
+ul {
+	line-height: 0.2;
 }
-a:visited { 
-  color:#333;
-  font-size: 14px;
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: white;
+ }
+
+h1 {
+  text-align: center;
 }
-a:hover { 
-  color: #333;
-  font-size: 14px;
-}
-a:active { 
-  color: #333;
-  font-size: 14px;
-}
+
 
 </style>
 

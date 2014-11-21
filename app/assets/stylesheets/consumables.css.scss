@@ -3,27 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#table2 {
-    border: 1px solid black;
-    opacity: 0.2;
-    border-width:thin;
-
-}
-
-#invetario{
-  	position 				: relative;
-    left 					: 500px;
-    font-size               : 17px;
-    font-style 				: oblique;
-    opacity					:0.5;
-    font-family 			: "Times New Roman", Georgia, Serif;
-    }
-
 #LeDivConsumibles {
-    background-image        :   url('/assets/consumibles2.png');
-    /*background-size         : 580px;*/  
+    background-image        : url('/assets/consumables2.png');
+    background-size         : 250px;  
     background-repeat       : no-repeat; 
-    background-position     : bottom center; 
+    background-position     : bottom right; 
     background-color        : #FFFFFF;
 }
 

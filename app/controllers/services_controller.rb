@@ -3,16 +3,13 @@ class ServicesController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
-  # GET /services
-  # GET /services.json
+  # GET /services/
+  # GET /services/json
   def index
-    @services = Service.all
-  end
-
-  # GET /services/1
-  # GET /services/1.json
-  def index
-    @services = Service.all
+    if current_user
+    	@services = Service.where(:user_id => current_user.username).all
+      @sumService = Service.where(:user_id => current_user.username).count
+	 end
     respond_to do |format|
       format.html
       format.pdf do
@@ -36,6 +33,7 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
+    @service.user_id = current_user.username
 
     respond_to do |format|
       if @service.save

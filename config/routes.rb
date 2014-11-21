@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :specifications
+
+  resources :requisitions
+
+  resources :quotes
+  resources :devolutions
+  resources :acts
+
+  get 'acto_motivado/index'
+
+  get 'nota_devolucion/index'
+
+  get 'ofertas/index'
+
+  get 'informe_recomendacion/index'
+
   resources :invitations
   resources :services
   resources :items

@@ -4,7 +4,13 @@ class ConsumablesController < ApplicationController
   # GET /consumables
   # GET /consumables.json
   def index
-    @consumables = Consumable.all
+	if params[:search]
+		@consumables = Consumable.where(:showable => true).search(params[:search])
+		@consumables_all = Consumable.search(params[:search])
+	else
+		@consumables = Consumable.where(:showable => true).all.order('created_at DESC')
+		@consumables_all = Consumable.all.order('created_at DESC')
+	end
   end
 
   # GET /consumables/1
@@ -69,6 +75,6 @@ class ConsumablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def consumable_params
-      params.require(:consumable).permit(:name, :description, :material, :quantity, :location, :responsible, :investigation, :teaching, :extention, :management)
+      params.require(:consumable).permit(:name, :description, :material, :quantity, :location, :responsible, :investigation, :teaching, :extention, :management, :cost, :bill, :buy_order, :adquisition_date, :showable, :dependency)
     end
 end

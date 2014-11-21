@@ -11,96 +11,22 @@
    <body>
       <div class="container_12">
            <div class="grid_12">  
-           <%= image_tag "logo_drupal.jpg", :style => " display: block;
-		                              margin-left:auto;
-		                              margin-right: auto;" %> <br>
+           	<%= image_tag "logo_drupal.jpg", :style => " display: block; margin-left:auto; margin-right: auto;" %> 
+			<%= render 'shared/navbar2' , :style => " display: block; margin-left:auto; margin-right: auto;" %><br>
            </div>
-     		 <div class="grid_12" id="notice">
-			 <p><%= notice %></p>
-			 <p id="alert"><%= alert %></p>
-			 <% if user_signed_in? %> Sesión de  <%= current_user.email %>. ¿No es su cuenta?
-			 <%= link_to 'Terminar sesión', destroy_user_session_path, :method => :delete  %>
-			 <% end %>
-			 <br><br><br>
-			 </div>
+     		 
 
-
-			<div class="grid_3">
-		       <div id="sidebar-first" class="sidebar grid-3 pull-10">
-		       	<div class="region region-sidebar-first">
-		 				<div id="block-system-main-menu" class="block block-system block-menu first">
-	  						<div class="inner">
-		             		<div class="content">
-		   						<ul class="menu">
-		                        <li class="first leaf"><a href="http://www.ulab.usb.ve/node/9">Unidad de Laboratorios</a></li>
-										<li class="leaf"><a href="http://www.ulab.usb.ve/node/3">Laboratorios</a></li>
-										<li class="leaf"><a href="http://www.ulab.usb.ve/node/2">Unidades Administrativas</a></li>
-										<li class="last leaf"><a href="http://www.ulab.usb.ve/node/1">¿Quiénes Somos?</a></li>
-									</ul>    
-								</div>
-	  						</div>
-						</div>
-					<div id="block-menu-menu-historico" class="block block-menu">
-	  					<div class="inner">
-		             	<div class="content">
-		   					<ul class="menu">
-									<li class="first last leaf">
-										<a href="http://www.ulab.usb.ve/noticias" title="Archivo de Noticias">Archivo de Noticias</a></li>
-								</ul>    
-							</div>
-	  					</div>	
-					</div>
-	  			</div>
-		   </div>
-		</div>
-
-	<div class="grid_2" id="right_banner" >
-	  <div id="sidebar-second" class="sidebar grid-3">
-	  		<div class="region region-sidebar-second">
-		 		 <div id="block-block-2" class="block block-block first">
-	 				 <div class="inner">
-		             <div class="content">
-		   					<p><%= image_tag "logo_ulab.gif" %></p>
-									<p><%= image_tag "innovar.gif" %></p>
-									<p><a href="http://www.ulab.usb.ve/jornadas"><%= image_tag "stickers_jornadas.jpg" %></a></p>
-									<p><%= image_tag "cat_ulab.jpg" %><a href="http://www.ulab.usb.ve/sites/default/files/catalogo_ulab.pdf">
-										 </a>
-									</p>
-									<p><a href="http://www.ulab.usb.ve/node/26"><%= image_tag "cons_ulab.jpg" %></a></p>
-									<p><a href="http://www.ulab.usb.ve/node/27"><%= image_tag "doc_ulab.jpg" %></a></p>
-									<p><a href="http://www.ulab.usb.ve/node/25"><%= image_tag "comit_ulab.jpg" %></a></p>
-									<p><a href="https://www.facebook.com/pages/Unidad-de-Laboratorios-USB/173900382644914" target="_blank">
-										<%= image_tag "facebook.gif" %></a>
-									</p>
-		                     <p><%= image_tag "somosusb.gif" %></p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-		 				</div>
-	  				</div>
-				</div>
-	  		</div>
-		</div>
-	</div>
-
-
-
-			  <div class="grid_7">
-
-
+			  <div class="grid_12">
            		<div id="compras" class="grid_1">
                 <p> Compras </p>
                </div>
-              <br>
-			  <hr class="linea">
 			  </div>
 
 
 		<%= yield %>
 
 		<div class="grid_12">
+		<br><br><br><br>
 				<footer id="footer" class="section section-footer clearfix" role="footer">
 					<div class="region region-footer">
 			 			<div id="block-block-1" class="block block-block first">
@@ -138,7 +64,7 @@
 						</div>
 					</div>
 				</div>
-		  </div>
+		  	</div>
 		</footer>
    </div>
 </div>
@@ -208,6 +134,7 @@ margin-left: 70px;
 
 footer.section a, footer.section a:visited {
 color: #126598;
+text-align: center;
 }
 
 .inner {

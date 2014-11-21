@@ -7,7 +7,6 @@ one:
   measurement_unit: MyString
   capacity: 1.5
   material: MyString
-  use: MyString
   status: MyString
   location: MyString
   last_calibration: 2014-11-03
@@ -25,7 +24,6 @@ two:
   measurement_unit: MyString
   capacity: 1.5
   material: MyString
-  use: MyString
   status: MyString
   location: MyString
   last_calibration: 2014-11-03

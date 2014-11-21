@@ -5,28 +5,24 @@ class ReporteItems < Prawn::Document
     super()
     @items = items
     header
+    repeat :all do
+      pie_de_pagina
+    end
     titulo
     table_content
-    pie_de_pagina
   end
  
   def header
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/cebolla.png", width: 70, height: 45, :position => 55
-    move_up 40
-    image "#{Rails.root}/app/assets/images/logo_ulab.png", width: 100, height: 80, :position => 430
-    font("#{Prawn::DATADIR}/fonts/DejaVuSans.ttf") do 
-    	draw_text "UNIVERSIDAD SIMÓN BOLÍVAR", :at =>[0,657]
-      font_size 10
-    	draw_text "Vicerectorado Académico", :at => [25,645]
-      font_size 8
-      draw_text "Unidad de laboratorios", :at =>  [40, 634]
-    end
+    image "#{Rails.root}/app/assets/images/coord.jpg", width: 180, height: 100, :position => 0
+    move_up 50
+    image "#{Rails.root}/app/assets/images/Logo_ULab.jpg", width: 50, height: 55, :position => 490
+    
 
   end
 
   def titulo
-   move_down 50
+   move_down 35
    table tittle do
       row(0).font_style = :bold
       self.header = true
@@ -42,23 +38,23 @@ class ReporteItems < Prawn::Document
    end
 
 
-    def table_content 
-    move_down 30
+  def table_content 
+    move_down 25
     # Then I set the table column widths
     table items_rows do
       row(0).font_style = :bold
       self.header = true
       self.row_colors = ['DDDDDD', 'FFFFFF']
-      self.column_widths = [120,80,170,100,70]
+      self.column_widths = [80,120,170,100,70]
     end
     move_down 45
     text "______________________\n\nFirma de Autorizacion\ \ \ \ \n", :align => :right 
   end
  
   def items_rows
-    [['Nombre', 'tipo','Descripción','Dimensiones','Cantidad']] +
+    [['Tipo','Nombre','Descripción','Dimensiones','Cantidad']] +
       @items.map do |item|
-      [item.nombre, item.tipo, item.descripcion, item.dimensiones, item.cantidad]
+      [item.tipo, item.nombre, item.descripcion, item.dimensiones, item.cantidad]
     end
   end
 
