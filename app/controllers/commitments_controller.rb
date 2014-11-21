@@ -63,7 +63,7 @@ class CommitmentsController < ApplicationController
   private
   
     def commitment_params
-      params.require(:commitment).permit(:lab_id, :recipient, :amount, :description, :date, :code)
+      params.require(:commitment).permit(:lab_id, :sae_code, :recipient, :amount, :description, :date, :code)
     end
   
 end

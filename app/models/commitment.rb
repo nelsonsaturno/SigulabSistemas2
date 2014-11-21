@@ -5,6 +5,7 @@ class Commitment < ActiveRecord::Base
   belongs_to :lab
 
   validates :lab, presence: true
+  validates :sae_code, presence: true
   validates :code, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true, length: {maximum: 512}

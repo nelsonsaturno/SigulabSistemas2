@@ -27,7 +27,14 @@
 					<%= i.select(:lab_id, options_for_select(@labs.map { |l| [l.sae_name, l.id] }), {}, {class: "form-control"} ) %>
 				</div>
 			</div>	
-		
+			
+			<div class="form-group">
+				<label for='income_sae_code' class="col-xs-3 control-label text-right">Código SAE *</label>
+				<div class='col-xs-4'>
+					<%= i.text_field :sae_code, class: 'form-control' %>
+				</div>
+			</div>
+			
 			<div class="form-group">
 				<label for='commitment_code' class="col-xs-3 control-label text-right">Código *</label>
 				<div class='col-xs-4'>
