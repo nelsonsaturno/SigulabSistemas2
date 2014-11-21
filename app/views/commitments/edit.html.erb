@@ -2,7 +2,8 @@
 	<div class="col-xs-12">
 		<ol class="breadcrumb">
 			<li><%= link_to 'Inicio', controller: 'statics' %></li>
-			<li><%= link_to 'Administracion', administration_path %></li>
+			<li><%= link_to 'Administración', administration_path %></li>
+			<li><%= link_to 'Presupuesto', budget_path %></li>
 			<li><%= link_to 'Compromisos', commitments_path %></li>
 			<li><%= link_to @commitment.id, @commitment %></li>
 			<li class="active">Editar Compromiso</li>
@@ -20,20 +21,16 @@
 		</div>
 	<% end %>
 	<div class="col-xs-12">
-		<%= form_for @commitment, url: {action: 'update'},id: @commitment.id, html: { class: 'form-horizontal' } do |i| %>	
+		<%= form_for @commitment, url: {action: 'update'}, id: @commitment.id, html: {class: 'form-horizontal'} do |i| %>	
 			<div class="form-group">
-				<label for='commitment_lab_id' class="col-xs-2 control-label text-right">Laboratorio *</label>
+				<label for='commitment_lab_id' class="col-xs-2 control-label text-right">Dependencia *</label>
 				<div class="col-xs-3">
-					<select id="commitment_lab_id" name="commitment[lab_id]" form="edit_commitment_<%= @commitment.id %>" class="form-control">
-						<% @labs.each do |l| %>
-							<option value='<%= l.id %>'><%= l.sae_name %></option>
-						<% end %>
-					</select>
+					<%= i.select(:lab_id, options_for_select(@labs.map { |l| [l.sae_name, l.id] }, @commitment.lab_id), {}, {class: "form-control"} ) %>
 				</div>
 			</div>	
 		
 			<div class="form-group">
-				<label for='commitment_code' class="col-xs-2 control-label text-right">Codigo *</label>
+				<label for='commitment_code' class="col-xs-2 control-label text-right">Código *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :code, class: 'form-control' %>
 				</div>
@@ -58,7 +55,7 @@
 				<div class='col-xs-4'>
 					<div class="input-group">
 						<%= i.text_field :amount, class: 'form-control' %>
-						<span class="input-group-addon">Bs.F.</span>
+						<span class="input-group-addon">Bs.</span>
 					</div>
 				</div>
 			</div>
@@ -72,7 +69,7 @@
 
 			<div class="form-group">
 				<div class="col-xs-offset-2 col-xs-10">
-					<button type="submit" class="btn btn-default btn-primary">Editar Compromiso</button>
+					<button type="submit" class="btn btn-default btn-primary">Guardar Cambios</button>
 				</div>
 			</div>
 		<% end %>

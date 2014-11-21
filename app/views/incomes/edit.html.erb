@@ -2,7 +2,8 @@
 	<div class="col-xs-12">
 		<ol class="breadcrumb">
 			<li><%= link_to 'Inicio', controller: 'statics' %></li>
-			<li><%= link_to 'Administracion', administration_path %></li>
+			<li><%= link_to 'Administración', administration_path %></li>
+			<li><%= link_to 'Presupuesto', budget_path %></li>
 			<li><%= link_to 'Ingresos', incomes_path %></li>
 			<li><%= link_to @income.id, @income %></li>
 			<li class="active">Editar Ingreso</li>
@@ -22,80 +23,76 @@
 	<div class="col-xs-12">
 		<%= form_for @income, url: {action: 'update'}, id: @income.id, html: { class: 'form-horizontal' } do |i| %>	
 			<div class="form-group">
-				<label for='income_lab_id' class="col-xs-2 control-label text-right">Laboratorio *</label>
+				<label for='income_lab_id' class="col-xs-3 control-label text-right">Dependencia *</label>
 				<div class="col-xs-3">
-					<select id="income_lab_id" name="income[lab_id]" form="edit_income_<%= @income.id %>" class="form-control">
-						<% @labs.each do |l| %>
-							<option value='<%= l.id %>'><%= l.sae_name %></option>
-						<% end %>
-					</select>
+					<%= i.select(:lab_id, options_for_select(@labs.map { |l| [l.sae_name, l.id] }, @income.lab_id), {}, {class: "form-control"} ) %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_origin' class="col-xs-2 control-label text-right">Origen *</label>
-				<div class="col-xs-3">
-					<select id="income_origin" name="income[origin]" form="edit_income_<%= @income.id %>" class="form-control">
-						<option value="ordinary">Presupuesto Ordinario</option>
-						<option value="extraordinary">Presupuesto Extraordinario</option>
-						<option value="projects">Proyectos</option>
-						<option value="reformulation">Reformulacion</option>
-					</select>
+				<label for='income_origin' class="col-xs-3 control-label text-right">Origen *</label>
+				<div class="col-xs-3">		
+					<%= i.select(:origin, options_for_select(Income.origin_str.zip(Income.origins.keys), @income.origin), {}, {class: "form-control"} ) %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_description' class="col-xs-2 control-label text-right">Descripcion *</label>
+				<label for='income_description' class="col-xs-3 control-label text-right">Descripción *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :description, class: 'form-control' %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_financing' class="col-xs-2 control-label text-right">Financiamiento</label>
+				<label for='income_amount' class="col-xs-3 control-label text-right">Monto *</label>
+				<div class='col-xs-4'>
+					<div class="input-group">
+						<%= i.text_field :amount, class: 'form-control' %>
+						<span class="input-group-addon">Bs.</span>
+					</div>
+				</div>
+			</div>
+			
+			<hr />	
+			
+			<div class="form-group">
+				<label for='income_financing' class="col-xs-3 control-label text-right">Fuente de Financiamiento</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :financing, class: 'form-control' %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_organism' class="col-xs-2 control-label text-right">Organismo</label>
+				<label for='income_organism' class="col-xs-3 control-label text-right">Organismo</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :organism, class: 'form-control' %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_document' class="col-xs-2 control-label text-right">Documento</label>
+				<label for='income_document' class="col-xs-3 control-label text-right">Documento</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :document, class: 'form-control' %>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for='income_amount' class="col-xs-2 control-label text-right">Monto *</label>
-				<div class='col-xs-4'>
-					<div class="input-group">
-						<%= i.text_field :amount, class: 'form-control' %>
-						<span class="input-group-addon">Bs.F.</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<label for='income_date' class="col-xs-2 control-label text-right">Fecha *</label>
+				<label for='income_date' class="col-xs-3 control-label text-right">Fecha</label>
 				<div class='col-xs-4'>
 					<%= i.date_field :date, class: 'form-control' %>
 				</div>
 			</div>
+			
 			<div class="form-group">
-				<div class="col-xs-offset-2 col-xs-10">
-					<button type="submit" class="btn btn-default btn-primary">Editar Ingreso</button>
+				<div class="col-xs-offset-3 col-xs-10">
+					<button type="submit" class="btn btn-default btn-primary">Guardar Cambios</button>
 				</div>
 			</div>
 		<% end %>
 	</div>
-	<div class="col-xs-11 col-xs-offset-1">
-		<p>* Los campos son obligatorios </p>
+	<div class="col-xs-12">
+		<div class="well">
+			* Los campos son obligatorios.
+		</div>
 	</div>
 </div>

@@ -1,5 +1,16 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 class Income < ActiveRecord::Base
-  enum origin: [:ordinary, :extraordinary, :projects, :reformulation]
+  enum origin: [:ordinary, :extraordinary, :reformulation]
+  def self.origin_str
+  [
+    'Presupuesto Ordinario',
+    'Presupuesto Extraordinario',
+    'Reformulación'
+  ]
+  end
+  
   belongs_to :lab
 
   validates :lab, :presence => true

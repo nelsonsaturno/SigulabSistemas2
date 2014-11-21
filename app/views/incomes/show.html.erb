@@ -2,7 +2,8 @@
 	<div class="col-xs-12">
 		<ol class="breadcrumb">
 			<li><%= link_to 'Inicio', controller: 'statics' %></li>
-			<li><%= link_to 'Administracion', administration_path %></li>
+			<li><%= link_to 'Administración', administration_path %></li>
+			<li><%= link_to 'Presupuesto', budget_path %></li>
 			<li><%= link_to 'Ingresos', incomes_path %></li>
 			<li class="active"><%= @income.id%></li>
 		</ol>
@@ -13,47 +14,32 @@
 				<th class="active text-center" colspan="2"><h2><%= @income.description %></h2></th>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">ID:</td>
-				<td class="col-xs-7"><%= @income.id %></td>
-			</tr>
-			<tr>
-				<td class="col-xs-5 text-right">Laboratorio:</td>
-				<td class="col-xs-7"><%= @income.lab.name %></td>
-			</tr>
-			<tr>
-				<td class="col-xs-5 text-right">Fecha:</td>
-				<td class="col-xs-7"><%= @income.date.strftime('%m/%d/%Y') %></td>
+				<td class="col-xs-5 text-right">Dependencia:</td>
+				<td class="col-xs-7"><%= @income.lab.sae_name %></td>
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Origen:</td>
-				<td class="col-xs-7">
-					<% case @income.origin %>
-						<% when 'ordinary' %>
-							Presupuesto Ordinario
-						<% when 'extraordinary' %>
-							Presupuesto Extraordinario
-						<% when 'projects' %>
-							Projectos
-						<% when 'reformulation' %>
-							Reformulación de Presupuesto
-					<% end %> 
-				</td>
+				<td class="col-xs-7"><%= Income.origin_str[Income.origins[@income.origin]] %></td>
+			</tr>
+			<tr class="success">
+				<td class="col-xs-5 text-right">Monto (Bs.):</td>
+				<td class="col-xs-7"><%= number_to_currency(@income.amount, format: "%n", delimiter: ".", separator: ",") %></td>
+			</tr>
+			<tr>
+				<td class="col-xs-5 text-right">Fuente de Financiamiento:</td>
+				<td class="col-xs-7"><%= @income.financing %></td>
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Organismo:</td>
 				<td class="col-xs-7"><%= @income.organism %></td>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">Según Documento:</td>
+				<td class="col-xs-5 text-right">Documento:</td>
 				<td class="col-xs-7"><%= @income.document %></td>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">Financiamiento:</td>
-				<td class="col-xs-7"><%= @income.financing %></td>
-			</tr>
-			<tr class="success">
-				<td class="col-xs-5 text-right">Monto:</td>
-				<td class="col-xs-7"><%= number_to_currency(@income.amount, :unit => "Bs.F. ") %></td>
+				<td class="col-xs-5 text-right">Fecha:</td>
+				<td class="col-xs-7"><%= @income.date.strftime('%d/%m/%Y') %></td>
 			</tr>
 		</table>
 	</div>

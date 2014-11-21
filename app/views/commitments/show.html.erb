@@ -2,7 +2,8 @@
 	<div class="col-xs-12">
 		<ol class="breadcrumb">
 			<li><%= link_to 'Inicio', controller: 'statics' %></li>
-			<li><%= link_to 'Administracion', administration_path %></li>
+			<li><%= link_to 'Administración', administration_path %></li>
+			<li><%= link_to 'Presupuesto', budget_path %></li>
 			<li><%= link_to 'Compromisos', commitments_path %></li>
 			<li class="active"><%= @commitment.id%></li>
 		</ol>
@@ -13,19 +14,15 @@
 				<th class="active text-center" colspan="2"><h2><%= @commitment.description %></h2></th>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">ID:</td>
-				<td class="col-xs-7"><%= @commitment.id %></td>
-			</tr>
-			<tr>
-				<td class="col-xs-5 text-right">Laboratorio:</td>
-				<td class="col-xs-7"><%= @commitment.lab.name %></td>
+				<td class="col-xs-5 text-right">Dependencia:</td>
+				<td class="col-xs-7"><%= @commitment.lab.sae_name %></td>
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Fecha:</td>
-				<td class="col-xs-7"><%= @commitment.date.strftime('%m/%d/%Y') %></td>
+				<td class="col-xs-7"><%= @commitment.date.strftime('%d/%m/%Y') %></td>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">Codigo:</td>
+				<td class="col-xs-5 text-right">Código:</td>
 				<td class="col-xs-7"><%= @commitment.code %></td>
 			</tr>
 			<tr>
@@ -33,8 +30,8 @@
 				<td class="col-xs-7"><%= @commitment.recipient %></td>
 			</tr>
 			<tr class="success">
-				<td class="col-xs-5 text-right">Monto:</td>
-				<td class="col-xs-7"><%= number_to_currency(@commitment.amount, :unit => "Bs.F. ") %></td>
+				<td class="col-xs-5 text-right">Monto (Bs.):</td>
+				<td class="col-xs-7"><%= number_to_currency(@commitment.amount, format: "%n", delimiter: ".", separator: ",") %></td>
 			</tr>
 		</table>
 	</div>
