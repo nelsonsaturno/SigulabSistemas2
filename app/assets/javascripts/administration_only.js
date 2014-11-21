@@ -1,9 +1,12 @@
 // Bootstrap Datepicker by eternicode
-$( document ).ready(function() {
+datepicking = function() {
     $(".bootlayout-date").datepicker({
         format: "dd/mm/yyyy",
-        orientation: "top auto",
+        todayBtn: true,
+        language: "es",
         todayHighlight: true
     });
-});
+};
 
+$(document).ready(datepicking);
+$(document).on('page:load', datepicking);

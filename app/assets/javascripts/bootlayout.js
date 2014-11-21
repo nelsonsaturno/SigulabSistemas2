@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require bootstrap-datepicker
+//= require bootstrap-datepicker.es
 //= require administration_only
