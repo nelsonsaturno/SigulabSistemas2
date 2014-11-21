@@ -6,7 +6,6 @@ one:
   type: 
   national_good: 1
   status: MyString
-  use: MyString
   responsible: MyString
   location: MyString
   material: MyString
@@ -23,7 +22,6 @@ two:
   type: 
   national_good: 1
   status: MyString
-  use: MyString
   responsible: MyString
   location: MyString
   material: MyString

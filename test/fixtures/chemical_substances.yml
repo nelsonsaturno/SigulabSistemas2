@@ -5,15 +5,12 @@ one:
   purity: MyString
   matter_states: MyString
   controlled: false
-  legal_regime: MyString
   quantity: MyString
   cas: MyString
-  use: MyString
   status: MyString
   responsible: MyString
   location: MyString
   expiration_date: 2014-11-03
-  dangerous: MyString
   rI7: false
   rI4: false
   toxic: false
@@ -33,15 +30,12 @@ two:
   purity: MyString
   matter_states: MyString
   controlled: false
-  legal_regime: MyString
   quantity: MyString
   cas: MyString
-  use: MyString
   status: MyString
   responsible: MyString
   location: MyString
   expiration_date: 2014-11-03
-  dangerous: MyString
   rI7: false
   rI4: false
   toxic: false
