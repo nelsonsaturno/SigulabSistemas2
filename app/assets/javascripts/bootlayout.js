@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap.min
+//= require bootstrap-datepicker
+//= require administration_only
