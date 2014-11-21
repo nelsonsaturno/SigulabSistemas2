@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   has_many :items
   has_many :quotes
   has_many :acts
+  has_many :specifications
 
 end

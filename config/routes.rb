@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :specifications
+
   resources :requisitions
 
   resources :quotes
