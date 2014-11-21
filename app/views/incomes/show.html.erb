@@ -18,6 +18,10 @@
 				<td class="col-xs-7"><%= @income.lab.sae_name %></td>
 			</tr>
 			<tr>
+				<td class="col-xs-5 text-right">Código SAE:</td>
+				<td class="col-xs-7"><%= @income.sae_code %></td>
+			</tr>
+			<tr>
 				<td class="col-xs-5 text-right">Origen:</td>
 				<td class="col-xs-7"><%= Income.origin_str[Income.origins[@income.origin]] %></td>
 			</tr>
