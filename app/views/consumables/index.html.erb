@@ -74,7 +74,7 @@
 
   <br>
   <% if can? :create, @consumable %>
-    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path, 'data-no-turbolink' => true %> | 
   <%end%>
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br>

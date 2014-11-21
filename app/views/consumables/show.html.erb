@@ -73,7 +73,7 @@
 
 <br>
 <% if can? :update, @consumable %>
-  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable) %> |
+  <i class="fa fa-cog"></i><%= link_to ' Editar', edit_consumable_path(@consumable), 'data-no-turbolink' => true %> |
 <% end %>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>
 <br><br><br><br>
