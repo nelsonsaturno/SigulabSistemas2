@@ -108,5 +108,11 @@
 <% if can? :update, @equipment %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_equipment_path(@equipment) %> |
 <% end %>
+<% if can? :create, @equipment %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path %> |
+<% end %>
+<% if can? :hide, @equipment %>
+      <i class="fa fa-times"></i><%= link_to ' Ocultar', equipment_index_path %> | 
+<%end%>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
 <br><br><br><br>

@@ -143,6 +143,12 @@
 <% if can? :update, @chemical_substance %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_chemical_substance_path(@chemical_substance) %> |
 <% end %>
+<% if can? :create, @chemical_substance %>
+      <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path %> | 
+<%end%>
+<% if can? :hide, @chemical_substance %>
+      <i class="fa fa-times"></i><%= link_to ' Ocultar', chemical_substance_path %> | 
+<%end%>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', chemical_substances_path %>
 <br><br><br><br>
 </div>

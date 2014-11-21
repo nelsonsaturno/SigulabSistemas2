@@ -77,5 +77,11 @@
 <% if can? :update, @tool %>
   <i class="fa fa-cog"></i><%= link_to ' Editar', edit_tool_path(@tool) %> |
 <% end %>
+<% if can? :create, @tool %>
+    <i class="fa fa-plus-circle"></i><%= link_to ' Nueva herramienta', new_tool_path %> | 
+<% end %>
+<% if can? :hide, @tool %>
+      <i class="fa fa-times"></i><%= link_to ' Ocultar', tools_path %> | 
+<%end%>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', tools_path %>
 <br><br><br><br>
