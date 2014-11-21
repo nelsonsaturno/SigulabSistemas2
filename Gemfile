@@ -46,11 +46,13 @@ gem 'devise'
 
 # Use cancan
 gem 'cancan'
+
 # Use hirb for table console lookup
 gem 'hirb'
-
 # Use for datetime validation
 gem 'jc-validates_timeliness'
+# Use for font awesome icons
+gem 'font-awesome-sass'
 
 #Use prawn
 gem 'prawn'

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   #get "construccion" => "Comprando#construccion", :as => "construccion"
   
   # Rutas del Subsistema de Administracion
+  get 'administration/budget/(:action)', to: 'budget', as: :budget
   get 'administration/(:action)', to: 'administration', as: :administration
   resources :incomes
   resources :commitments

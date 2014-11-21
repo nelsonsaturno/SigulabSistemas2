@@ -14,6 +14,10 @@
  *= require administration_only.css.scss
  */
 
+/* Font Awesoome addition */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 /* Bootstrap glyphicon rails fix */
 @font-face {
   font-family: 'Glyphicons Halflings';
