@@ -2,7 +2,7 @@
 datepicking = function() {
     $(".bootlayout-date").datepicker({
         format: "dd/mm/yyyy",
-        todayBtn: true,
+        todayBtn: "linked",
         language: "es",
         todayHighlight: true
     });

@@ -86,7 +86,7 @@
 			<div class="form-group">
 				<label for='income_date' class="col-xs-3 control-label text-right">Fecha</label>
 				<div class='col-xs-4'>
-					<%= i.date_field :date, class: 'form-control' %>
+					<%= i.text_field :date, value: (@income.date.strftime("%d/%m/%Y") unless @income.date.blank?), class: 'bootlayout-date form-control', placeholder: 'Fecha de Recepción' %>
 				</div>
 			</div>
 			

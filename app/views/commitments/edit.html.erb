@@ -82,9 +82,9 @@
 			</div>
 			
 			<div class="form-group">
-				<label for='commitment_date' class="col-xs-3 control-label text-right">Fecha *</label>
+				<label for='commitment_date' class="col-xs-3 control-label text-right">Fecha</label>
 				<div class='col-xs-4'>
-					<%= i.date_field :date, class: 'form-control' %>
+					<%= i.text_field :date, value: (@commitment.date.strftime("%d/%m/%Y") unless @commitment.date.blank?), class: 'bootlayout-date form-control', placeholder: 'Fecha de Recepción' %>
 				</div>
 			</div>
 
