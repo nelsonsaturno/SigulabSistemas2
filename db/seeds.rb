@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -8,7 +11,7 @@
 
 # Labs (name, sae_code, sae_name)
 labs_list = [
-  [ 'ULAB', 'U01', 'Unidad de Laboratorios' ],
+  [ 'Dir', 'U01', 'Dirección ULAB' ],
   [ 'A', 'U02', 'Laboratorio A' ],
   [ 'B', 'U03', 'Laboratorio B' ],
   [ 'C', 'U04', 'Laboratorio C' ],
