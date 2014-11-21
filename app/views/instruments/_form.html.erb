@@ -47,7 +47,7 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
-            %= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
+             <td class="col-xs-7"><%= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
           </tr> 
 
           <tr>
@@ -86,15 +86,21 @@
             <%= 'Gestión' %></td></tr>
           
         
-        </div>
+           <tr>
+
+        <td class="col-xs-5 text-right">
+           <div class="actions">
+            <%= f.submit %><td>
+           </div>
+      </tr>
+          
+
       </table>
 
       </div>
 
 
-    <div class="actions">
-    <%= f.submit %>
-    </div>
+
 
     <br>
   </div>
