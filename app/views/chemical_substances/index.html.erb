@@ -29,9 +29,13 @@
 
       <div id="search">
   		<%= form_tag(chemical_substances_path, :method => "get", id: "search-form") do %>
-  			<%= text_field_tag :search, params[:search], placeholder: "Sustancia a buscar" %>
+  			<%= text_field_tag :search, params[:search], placeholder: "Nombre de la Sustancia" %>
   			<%= submit_tag "Buscar", :class => 'btn btn-success btn-sm', :name => nil %>
+  			
+<!-- 			<%= text_field_tag :searchDep, params[:searchDep], placeholder: "Buscar en Dependencia" %> -->
   <!-- 			<%= select_tag(:columna, options_for_select(@chemical_substances.columns.map{|c| [c.name] }),:selected => "name") %> -->
+<!--   			<%= select_tag params[:column],options_for_select([['Nombre',"name"],['Dependencia',"dependency"]]),:selected => "name" %> -->
+<!--   			<%= submit_tag "Buscar", :class => 'btn btn-success btn-sm', :name => nil %> -->
   		<% end %>
       </div>
       <br>
@@ -42,6 +46,7 @@
           <th class="tg-093g">Nombre</th>
           <th class="tg-093g">Estado de la Materia</th>
           <th class="tg-093g">Cantidad</th>
+          <th class="tg-hgcj">  </th>
           <th class="tg-hgcj">Ubicación</th>
           <th class="tg-hgcj">Responsable</th>
       
@@ -75,6 +80,7 @@
             <td class="tg-s6z2"><%= link_to chemical_substance.name, chemical_substance %></td>
            <td class="tg-s6z2"><%= chemical_substance.matter_states %></td>
            <td class="tg-s6z2"><%= chemical_substance.quantity %></td>
+           <td class="tg-s6z2"><%= chemical_substance.meassure %></td>
           <td class="tg-s6z2"><%= chemical_substance.location %></td>
           <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
           

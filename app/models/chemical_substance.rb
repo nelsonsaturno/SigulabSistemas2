@@ -13,8 +13,16 @@ class ChemicalSubstance < ActiveRecord::Base
 		query=UnicodeUtils.upcase(query, :es)
 		where("name like ?", "%#{query}%") 
 	end
+# 	def self.search(query,column)
+# 		query=UnicodeUtils.upcase(query, :es)
+# 		where("? like ?","%{column}%", "%#{query}%") 
+# 	end
 	
-	private
+	#No funciona aun
+	def hide
+		self.showable=false
+	end
+	
 	def uppercase_fields
 		self.name=UnicodeUtils.upcase(self.name, :es)
 		self.matter_states=UnicodeUtils.upcase(self.matter_states, :es)
@@ -31,7 +39,4 @@ class ChemicalSubstance < ActiveRecord::Base
 end
 
 # # # # # 
-# # # # # def self.search2(query,column)
-# # # # #   where("? like ?","%#{column}%", "%#{query}%") 
-# # # # # end
 

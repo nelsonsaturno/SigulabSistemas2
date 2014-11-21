@@ -83,7 +83,8 @@
     <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path %> | 
 <%end%>
 <% if can? :hide, @consumable %>
-      <i class="fa fa-times"></i><%= link_to ' Ocultar', consumables_path %> | 
+      <i class="fa fa-times fa-1x"></i><%= link_to ' Ocultar', @consumable, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+<!--       <i class="fa fa-times"></i><%= link_to ' Ocultar', consumables_path %> |  -->
 <%end%>
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', consumables_path %>
 <br><br><br><br>

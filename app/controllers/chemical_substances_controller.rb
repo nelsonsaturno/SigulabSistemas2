@@ -1,15 +1,15 @@
 class ChemicalSubstancesController < ApplicationController
-  before_action :set_chemical_substance, only: [:show, :edit, :update, :destroy, :search]
+  before_action :set_chemical_substance, only: [:show, :edit, :update, :destroy, :search, :hide]
 
   # GET /chemical_substances
   # GET /chemical_substances.json
   def index
   	if params[:search]
 		@chemical_substances = ChemicalSubstance.where(:showable => true).search(params[:search])
-		@chemical_substances_all=ChemicalSubstance.search(params[:search])
+# 		@chemical_substances_all=ChemicalSubstance.search(params[:search],params[:column])
 	else
 		@chemical_substances = ChemicalSubstance.where(:showable => true).order('created_at DESC')
-		@chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
+# 		@chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
 	end
   end
 
@@ -62,9 +62,17 @@ class ChemicalSubstancesController < ApplicationController
   def destroy
     @chemical_substance.destroy
     respond_to do |format|
-      format.html { redirect_to chemical_substances_url, notice: 'Sustancia Quimica fue ocultada de forma exitosa.' }
+      format.html { redirect_to chemical_substances_url, notice: 'Sustancia Quimica fue eliminada de forma exitosa.' }
       format.json { head :no_content }
     end
+  end
+  
+  def hide
+    @chemical_substance.hide
+    respond_to do |format|
+      format.html { redirect_to chemical_substances_url, notice: 'Sustancia Quimica fue ocultada de forma exitosa.' }
+      format.json { head :no_content }
+	end
   end
   
   private
