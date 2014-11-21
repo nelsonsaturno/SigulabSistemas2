@@ -26,7 +26,6 @@ en:
        update: "Actualizar"
   #hello: "Hello world"
 
-en:
   errors:
     messages:
       extension_white_list_error: "No esta permitido subit archivos %{extension}, solo: %{allowed_types}"
