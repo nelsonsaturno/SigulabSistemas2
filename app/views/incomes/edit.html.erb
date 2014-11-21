@@ -64,8 +64,8 @@
 			
 			<div class="form-group">
 				<label for='income_financing' class="col-xs-3 control-label text-right">Fuente de Financiamiento</label>
-				<div class='col-xs-4'>
-					<%= i.text_field :financing, class: 'form-control' %>
+				<div class="col-xs-4">
+					<%= i.select(:financing, options_for_select(Income.financing_str.zip(Income.financings.keys), @income.financing), {}, {class: "form-control"} ) %>
 				</div>
 			</div>
 			

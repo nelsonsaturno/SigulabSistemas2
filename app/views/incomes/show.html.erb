@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Fuente de Financiamiento:</td>
-				<td class="col-xs-7"><%= @income.financing %></td>
+				<td class="col-xs-7"><%= Income.financing_str[Income.financings[@income.financing]] %></td>
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Organismo:</td>

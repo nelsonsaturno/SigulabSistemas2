@@ -11,6 +11,17 @@ class Income < ActiveRecord::Base
   ]
   end
   
+  enum financing: [:transfer_public, :transfer_private, :donation_public, :donation_private, :locti]
+  def self.financing_str
+  [
+    'Transferencias Recibidas del Sector Publico',
+    'Transferencias Recibidas del Sector Privado',
+    'Donaciones Recibidas del Sector Público',
+    'Donaciones Recibidas del Sector Privado',
+    'LOCTI'
+  ]
+  end
+  
   belongs_to :lab
   
   validates :lab, presence: true
@@ -22,7 +33,6 @@ class Income < ActiveRecord::Base
   validates_datetime :date
   
   validates :organism, length: {maximum: 512}
-  validates :financing, length: {maximum: 512} #!No se sabe si es obligatorio
   validates :document, length: {maximum: 512} #!No se sabe si es obligatorio
   
 end
