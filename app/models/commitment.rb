@@ -1,7 +1,13 @@
 class Commitment < ActiveRecord::Base
-  #Required on integration #!
-  #belongs_to :commitable, polymorphic: true
-  enum origin: [:ordinary, :extraordinary, :projects, :reformulation]
+  enum document: [:order_buy, :order_service, :order_expend]
+  def self.document_str
+  [
+    'Orden de Compra',
+    'Orden de Servicio',
+    'Orden de Gasto'
+  ]
+  end
+  
   belongs_to :lab
 
   validates :lab, presence: true

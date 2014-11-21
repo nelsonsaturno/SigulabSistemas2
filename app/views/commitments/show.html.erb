@@ -22,6 +22,10 @@
 				<td class="col-xs-7"><%= @commitment.sae_code %></td>
 			</tr>
 			<tr>
+				<td class="col-xs-5 text-right">Documento:</td>
+				<td class="col-xs-7"><%= Commitment.document_str[Commitment.documents[@commitment.document]] %></td>
+			</tr>
+			<tr>
 				<td class="col-xs-5 text-right">Fecha:</td>
 				<td class="col-xs-7"><%= @commitment.date.strftime('%d/%m/%Y') %></td>
 			</tr>
