@@ -2,8 +2,8 @@ class ExecutionsController < ApplicationController
   layout 'bootlayout'
 
   def index
-    @executions = Execution.all.order("date ASC")
-    @sum = @executions.sum(:amount)
+    @executions = Execution.all
+    @sum = @executions.sum(:check_amount)
   end
 
   def show
@@ -12,19 +12,17 @@ class ExecutionsController < ApplicationController
   
   def new
     @execution = Execution.new
+    if params[:cid]
+      @commitment = Commitment.find(params[:cid])
+    end
   end
   
   def create
-    # Check Date
-    unless params[:execution].nil?
-      begin
-        params[:execution][:date] = DateTime.parse(params[:execution][:date])
-      rescue ArgumentError
-        params[:execution][:date] = nil
-      end
-    end
+    params[:execution][:check_elaboration_date] = purge_date(params[:check_elaboration_date])
+    params[:execution][:check_sign_date] = purge_date(params[:check_sign_date])
+    params[:execution][:check_delivery_date] = purge_date(params[:check_delivery_date])
     
-    @execution = execution.new(execution_params)
+    @execution = Execution.new(execution_params)
     
     if @execution.save
       redirect_to action: 'index'
@@ -58,7 +56,17 @@ class ExecutionsController < ApplicationController
   private
   
     def execution_params
-      params.require(:execution).permit(:sae_code, :amount, :date)
+      params.require(:execution).permit(:code, :commitment_id, :check_amount, :check_number, :check_elaboration_date, :check_sign_date, :check_delivery_date)
+    end
+    
+    def purge_date(date)
+      return date if date.blank?
+      begin
+        date = DateTime.parse(date)
+      rescue ArgumentError
+        return nil
+      end
+      return date
     end
   
 end

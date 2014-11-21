@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'administration/(:action)', to: 'administration', as: :administration
   resources :incomes
   resources :commitments
+  resources :executions
   
 
   # Example of regular route:

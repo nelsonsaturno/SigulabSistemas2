@@ -4,23 +4,31 @@
 			<li><%= link_to 'Inicio', controller: 'statics' %></li>
 			<li><%= link_to 'Administración', administration_path %></li>
 			<li><%= link_to 'Presupuesto', budget_path %></li>
-      <li><%= link_to 'Compromisos', commitment_path %></li>
+      		<li><%= link_to 'Ejecuciones', executions_path %></li>
 			<li class="active"><%= @execution.id%></li>
 		</ol>
 	</div>
 	<div class="col-xs-12">
 		<table class="table table-striped">
 			<tr>
-				<td class="col-xs-5 text-right">Código SAE:</td>
-				<td class="col-xs-7"><%= @execution.sae_code %></td>
+				<td class="col-xs-5 text-right">Dependencia:</td>
+				<td class="col-xs-7"><%= @execution.commitment.lab.sae_name %></td>
 			</tr>
 			<tr class="success">
 				<td class="col-xs-5 text-right">Monto (Bs.):</td>
-				<td class="col-xs-7"><%= number_to_currency(@execution.amount, format: "%n", delimiter: ".", separator: ",") %></td>
+				<td class="col-xs-7"><%= number_to_currency(@execution.check_amount, format: "%n", delimiter: ".", separator: ",") %></td>
 			</tr>
 			<tr>
-				<td class="col-xs-5 text-right">Fecha:</td>
-        <td class="col-xs-7"><%= @execution.date.strftime('%d/%m/%Y') unless  @execution.date.blank? %>  </td>
+				<td class="col-xs-5 text-right">Fecha de Elaboración:</td>
+        		<td class="col-xs-7"><%= @execution.check_elaboration_date.strftime('%d/%m/%Y') unless @execution.check_elaboration_date.blank? %>  </td>
+			</tr>
+			<tr>
+				<td class="col-xs-5 text-right">Fecha de Firma:</td>
+        		<td class="col-xs-7"><%= @execution.check_sign_date.strftime('%d/%m/%Y') unless @execution.check_sign_date.blank? %>  </td>
+			</tr>
+			<tr>
+				<td class="col-xs-5 text-right">Fecha de Entrega:</td>
+        		<td class="col-xs-7"><%= @execution.check_delivery_date.strftime('%d/%m/%Y') unless @execution.check_delivery_date.blank? %>  </td>
 			</tr>
 		</table>
 	</div>

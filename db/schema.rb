@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121124418) do
+ActiveRecord::Schema.define(version: 20141121161335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,10 +119,16 @@ ActiveRecord::Schema.define(version: 20141121124418) do
   create_table "executions", force: true do |t|
     t.integer  "commitment_id"
     t.string   "code"
-    t.float    "amount"
+    t.float    "check_amount"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "document",               default: 0
+    t.string   "check_number"
+    t.datetime "check_elaboration_date"
+    t.datetime "check_sign_date"
+    t.datetime "check_delivery_date"
+    t.integer  "check_delivery_status"
   end
 
   add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
