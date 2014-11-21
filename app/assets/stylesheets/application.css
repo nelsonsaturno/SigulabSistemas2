@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
- *
+ *= require font-awesome
  *  ------------
  *  Descripcion: Diseño de la pagina principal.
  *  Autor: Inventario
