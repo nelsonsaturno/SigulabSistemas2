@@ -8,8 +8,8 @@ class InvitationsController < ApplicationController
   def index
     if current_user
     	@invitations = Invitation.where(:user_id => current_user.username).all
+      @sumInvitation = Invitation.where(:user_id => current_user.username).count
     end
-    @sumInvitation = Invitation.count
   end
 
   # GET /invitations/1

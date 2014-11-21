@@ -8,16 +8,16 @@
       <br>
    <% end %>
 	<div class ="table">
-	  <div class="field">
-       <span class="red">*</span>
-		 <%= f.label "Nombre del ítem" %><br>
-		 <%= f.text_field :nombre, :placeholder => "Nombre del consumible" %>
-	  </div>
     <div class="field">
        <span class="red">*</span>
-		 <%= f.label "Tipo del ítem" %><br>
+     <%= f.label "Tipo del Bien/Consumible" %><br>
      <%= f.collection_select :tipo, Item::TipoItem, :to_s, :to_s, 
           :include_blank => true %>
+    </div>
+	  <div class="field">
+       <span class="red">*</span>
+		 <%= f.label "Nombre del Bien/Consumible" %><br>
+		 <%= f.text_field :nombre, :placeholder => "Nombre del consumible" %>
 	  </div>
 	  <div class="field">
        <span class="red">*</span>

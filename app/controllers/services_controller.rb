@@ -8,8 +8,8 @@ class ServicesController < ApplicationController
   def index
     if current_user
     	@services = Service.where(:user_id => current_user.username).all
+      @sumService = Service.where(:user_id => current_user.username).count
 	 end
-    @sumService = Service.count
     respond_to do |format|
       format.html
       format.pdf do

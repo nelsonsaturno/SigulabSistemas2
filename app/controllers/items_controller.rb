@@ -8,8 +8,8 @@ class ItemsController < ApplicationController
   def index
     if current_user
    	 @items = Item.where(:user_id => current_user.username).all
+     @sumItem = Item.where(:user_id => current_user.username).count
     end
-    @sumItem = Item.count
     respond_to do |format|
       format.html
       format.pdf do

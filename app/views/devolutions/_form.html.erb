@@ -171,7 +171,7 @@
                 <%= f.label 'Foto Referencial del Material y/o Equipo' %>
                 <%= f.label ' solicitado' %>
             </div>
-            <br><br>
+            <br><br><br><br>
         </div>
 
         <div class="grid_12 push_1">
@@ -220,7 +220,7 @@
                 <%= f.label 'Observaciones', :align => :middle %><br>
             </div>
             <div class="grid_3">
-                <%= f.text_field :observaciones, :align => :middle, :placeholder => "Indique en caso de que exista alguna" %>
+                <%= f.text_area :observaciones, :align => :middle, :placeholder => "Indique en caso de que exista alguna" %>
                 <br><br><br>
             </div>
         </div>
@@ -331,6 +331,7 @@ input[type="text"]:focus, textarea:focus, input[type="number"]:focus {
 h2 {
 
 position:relative;
+text-align: center;
 right: 60px;
 color:red;
 font-size: 20px;

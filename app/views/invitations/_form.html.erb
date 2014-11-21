@@ -12,13 +12,18 @@
 			 <%= f.text_field :nombreEmpresa, :placeholder => "Empresa a invitar" %>
 		  </div>
 		  <div class="field">
+          <span class="red">*</span>
+			 <%= f.label "Nombre del responsable" %><br>
+			 <%= f.text_field :responsable, :placeholder => "Nombre del solicitante" %>
+		  </div>
+		  <div class="field">
           		<span class="red">*</span>
-			 <%= f.label "Dirección de la empresa" %><br>
-			 <%= f.text_field :direccion %>
+			 <%= f.label "Contacto de la empresa" %><br>
+			 <%= f.text_field :direccion, :placeholder => "telefono o correo" %>
 		  </div>
 		  <div class="field">
           <span class="red">*</span>
-			 <%= f.label "Correo del solicitante" %><br>
+			 <%= f.label "Correo del responsable" %><br>
 			 <%= f.text_field :correo, :placeholder => "Correo del solicitante" %>
 		  </div>
 		  <div class="field">
@@ -28,12 +33,7 @@
 		  </div>
 		  <div class="field">
 			 <%= f.label "Teléfono adicional" %><br>
-			 <%= f.text_field :telefonoAdicional %>
-		  </div>
-		  <div class="field">
-          <span class="red">*</span>
-			 <%= f.label "Nombre del responsable" %><br>
-			 <%= f.text_field :responsable, :placeholder => "Nombre del solicitante" %><br>
+			 <%= f.text_field :telefonoAdicional %><br>
 		  </div>
 		  <div class="actions">
 			 <%= f.submit "Aceptar", data: { confirm: '¿Está seguro de la informacion que acaba de suministrar?' }  %>

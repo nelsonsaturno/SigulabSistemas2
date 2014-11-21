@@ -30,7 +30,7 @@ class CreateDevolutions < ActiveRecord::Migration
       t.boolean :copia
       t.boolean :factura
       t.boolean :foto
-      t.string :observaciones
+      t.text :observaciones
       t.string :unidadSolicitante
 
       t.timestamps

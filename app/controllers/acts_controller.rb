@@ -7,8 +7,8 @@ class ActsController < ApplicationController
   def index
     if current_user
     	@acts = Act.where(:user_id => current_user.username).all
+      @sumActs = Act.where(:user_id => current_user.username).count
   	 end
-    @sumActs = Act.count
   end
 
   # GET /acts/1

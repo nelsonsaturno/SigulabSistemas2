@@ -6,9 +6,10 @@ class DevolutionsController < ApplicationController
   # GET /devolutions
   # GET /devolutions.json
   def index
-    @devolutions = Devolution.all
-    @sumDevolution = Devolution.count
-
+    if current_user
+        @devolutions = Devolution.where(:user_id => current_user.username).all
+        @sumDevolution = Devolution.where(:user_id => current_user.username).count
+    end
   end
 
   # GET /devolutions/1
@@ -37,6 +38,8 @@ class DevolutionsController < ApplicationController
   # POST /devolutions.json
   def create
     @devolution = Devolution.new(devolution_params)
+    @devolution.user_id = current_user.username
+
 
     respond_to do |format|
       if @devolution.save

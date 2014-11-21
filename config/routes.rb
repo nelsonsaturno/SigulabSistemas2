@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :requisitions
+
   resources :quotes
   resources :devolutions
   resources :acts

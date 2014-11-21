@@ -52,7 +52,7 @@ class ReporteActs < Prawn::Document
 	  end
 
 	  def encabezado
-	 	 draw_text "Sartenejas, #{Time.now.strftime("%Y-%d-%m")}", :at => [415, 540]
+	 	 draw_text "Sartenejas, #{Time.now.strftime("%d-%m-%Y")}", :at => [415, 540]
 	  end
 
 	  def texto
