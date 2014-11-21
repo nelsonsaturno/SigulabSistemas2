@@ -29,7 +29,7 @@ class Income < ActiveRecord::Base
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true, length: {maximum: 512}
   validates :origin, presence: true
-  validates :date, presence: true
+  
   validates_datetime :date
   
   validates :organism, length: {maximum: 512}
