@@ -2,7 +2,7 @@ class IncomesController < ApplicationController
   layout 'bootlayout'
 
   def index
-    @incomes = Income.all 
+    @incomes = Income.all.order("date ASC")
     @sum = @incomes.sum(:amount)
   end
 

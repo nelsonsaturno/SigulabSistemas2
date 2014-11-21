@@ -2,7 +2,7 @@ class CommitmentsController < ApplicationController
   layout 'bootlayout'
   
   def index
-    @commitments = Commitment.all
+    @commitments = Commitment.all.order("date ASC")
     @sum = @commitments.sum(:amount)
   end
 
