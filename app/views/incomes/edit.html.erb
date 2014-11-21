@@ -84,8 +84,11 @@
 			</div>
 			
 			<div class="form-group">
-				<div class="col-xs-offset-3 col-xs-10">
-					<button type="submit" class="btn btn-default btn-primary">Guardar Cambios</button>
+				<div class="col-xs-offset-3 col-xs-9">
+					<button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Guardar Cambios</button>
+					<%= link_to @income, class: "btn btn-default btn-danger" do %>
+						<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancelar Operación
+					<% end %>
 				</div>
 			</div>
 		<% end %>

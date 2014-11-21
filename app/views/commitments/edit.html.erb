@@ -23,35 +23,35 @@
 	<div class="col-xs-12">
 		<%= form_for @commitment, url: {action: 'update'}, id: @commitment.id, html: {class: 'form-horizontal'} do |i| %>	
 			<div class="form-group">
-				<label for='commitment_lab_id' class="col-xs-2 control-label text-right">Dependencia *</label>
+				<label for='commitment_lab_id' class="col-xs-3 control-label text-right">Dependencia *</label>
 				<div class="col-xs-3">
 					<%= i.select(:lab_id, options_for_select(@labs.map { |l| [l.sae_name, l.id] }, @commitment.lab_id), {}, {class: "form-control"} ) %>
 				</div>
 			</div>	
 		
 			<div class="form-group">
-				<label for='commitment_code' class="col-xs-2 control-label text-right">Código *</label>
+				<label for='commitment_code' class="col-xs-3 control-label text-right">Código *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :code, class: 'form-control' %>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for='commitment_recipient' class="col-xs-2 control-label text-right">Beneficiario *</label>
+				<label for='commitment_recipient' class="col-xs-3 control-label text-right">Beneficiario *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :recipient, class: 'form-control' %>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for='commitment_description' class="col-xs-2 control-label text-right">Descripcion *</label>
+				<label for='commitment_description' class="col-xs-3 control-label text-right">Descripción *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :description, class: 'form-control' %>
 				</div>
 			</div>
 						
 			<div class="form-group">
-				<label for='commitment_amount' class="col-xs-2 control-label text-right">Monto *</label>
+				<label for='commitment_amount' class="col-xs-3 control-label text-right">Monto *</label>
 				<div class='col-xs-4'>
 					<div class="input-group">
 						<%= i.text_field :amount, class: 'form-control' %>
@@ -61,20 +61,25 @@
 			</div>
 			
 			<div class="form-group">
-				<label for='commitment_date' class="col-xs-2 control-label text-right">Fecha *</label>
+				<label for='commitment_date' class="col-xs-3 control-label text-right">Fecha *</label>
 				<div class='col-xs-4'>
 					<%= i.date_field :date, class: 'form-control' %>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<div class="col-xs-offset-2 col-xs-10">
-					<button type="submit" class="btn btn-default btn-primary">Guardar Cambios</button>
+				<div class="col-xs-offset-3 col-xs-9">
+					<button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Guardar Cambios</button>
+					<%= link_to @commitment, class: "btn btn-default btn-danger" do %>
+						<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancelar Operación
+					<% end %>
 				</div>
 			</div>
 		<% end %>
 	</div>
-	<div class="col-xs-11 col-xs-offset-1">
-		<p>* Los campos son obligatorios </p>
+	<div class="col-xs-12">
+		<div class="well">
+			* Los campos son obligatorios.
+		</div>
 	</div>
 </div>

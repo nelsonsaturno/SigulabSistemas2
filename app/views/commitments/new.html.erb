@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for='commitment_description' class="col-xs-3 control-label text-right">Descripcion *</label>
+				<label for='commitment_description' class="col-xs-3 control-label text-right">Descripción *</label>
 				<div class='col-xs-4'>
 					<%= i.text_field :description, class: 'form-control' %>
 				</div>
@@ -68,7 +68,10 @@
 
 			<div class="form-group">
 				<div class="col-xs-offset-3 col-xs-9">
-					<button type="submit" class="btn btn-default btn-primary">Agregar Compromiso</button>
+					<button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>&nbsp;&nbsp;Agregar Compromiso</button>
+					<%= link_to commitments_path, class: "btn btn-default btn-danger" do %>
+						<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancelar Operación
+					<% end %>
 				</div>
 			</div>
 		<% end %>
