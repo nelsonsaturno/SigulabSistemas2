@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-xs-12">
+		<ol class="breadcrumb">
+			<li><%= link_to 'Inicio', controller: 'statics' %></li>
+			<li><%= link_to 'Administración', administration_path %></li>
+			<li><%= link_to 'Presupuesto', budget_path %></li>
+      <li><%= link_to 'Compromisos', commitment_path %></li>
+			<li class="active"><%= @execution.id%></li>
+		</ol>
+	</div>
+	<div class="col-xs-12">
+		<table class="table table-striped">
+			<tr>
+				<td class="col-xs-5 text-right">Código SAE:</td>
+				<td class="col-xs-7"><%= @execution.sae_code %></td>
+			</tr>
+			<tr class="success">
+				<td class="col-xs-5 text-right">Monto (Bs.):</td>
+				<td class="col-xs-7"><%= number_to_currency(@execution.amount, format: "%n", delimiter: ".", separator: ",") %></td>
+			</tr>
+			<tr>
+				<td class="col-xs-5 text-right">Fecha:</td>
+        <td class="col-xs-7"><%= @execution.date.strftime('%d/%m/%Y') unless  @execution.date.blank? %>  </td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+    <%= link_to edit_execution_path do %>
+			<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Editar Ejecucion</button>
+		<% end %>
+		<%= link_to action: 'destroy' do %>
+			<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Eliminar Ejecucion</button>
+		<% end %>
+	</div>
+</div>

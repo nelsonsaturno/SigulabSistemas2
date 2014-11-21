@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td class="col-xs-5 text-right">Fecha:</td>
-				<td class="col-xs-7"><%= @income.date.strftime('%d/%m/%Y') %></td>
+				<td class="col-xs-7"><%= @income.date.strftime('%d/%m/%Y') unless  @income.date.blank? %>  </td>
 			</tr>
 		</table>
 	</div>

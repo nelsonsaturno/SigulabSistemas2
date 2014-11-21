@@ -30,7 +30,7 @@ class Income < ActiveRecord::Base
   validates :description, presence: true, length: {maximum: 512}
   validates :origin, presence: true
   
-  validates_datetime :date
+  validates_datetime :date, allow_blank: true
   
   validates :organism, length: {maximum: 512}
   validates :document, length: {maximum: 512} #!No se sabe si es obligatorio

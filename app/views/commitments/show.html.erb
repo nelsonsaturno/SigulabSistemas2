@@ -33,6 +33,10 @@
 				<td class="col-xs-5 text-right">Beneficiario:</td>
 				<td class="col-xs-7"><%= @commitment.recipient %></td>
 			</tr>
+      <tr>
+				<td class="col-xs-5 text-right">Observaciones:</td>
+        <td class="col-xs-7"><%= @commitment.observations %></td>
+			</tr>
 			<tr class="success">
 				<td class="col-xs-5 text-right">Monto (Bs.):</td>
 				<td class="col-xs-7"><%= number_to_currency(@commitment.amount, format: "%n", delimiter: ".", separator: ",") %></td>
