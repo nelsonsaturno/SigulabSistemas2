@@ -25,8 +25,12 @@
             <td class="col-xs-7"><%= @consumable.responsible %></td>
           </tr>
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-            <td class="col-xs-7"><%=  @consumable.location %></td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= @consumable.dependency %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
+            <td class="col-xs-7"><%= @consumable.location %></td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Cantidad:</strong></td>
@@ -36,16 +40,16 @@
          <tr>
             <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
               <td class="col-xs-7"> <% if @consumable.investigation %>
-                <%= ' Investigación ' %>
+                <%= ' INVESTIGACIÓN ' %>
               <% end %>
               <% if @consumable.teaching %>
-                <%= ' Docencia ' %>
+                <%= ' DOCENCIA ' %>
               <% end %>
               <% if @consumable.extention %>
-                <%= ' Extensión ' %>
+                <%= ' EXTENSIÓN ' %>
               <% end %>
               <% if @consumable.management %>
-                <%= ' Gestión ' %>
+                <%= ' GESTIÓN ' %>
               <% end %></td>
          </tr>
         <tr>        
@@ -60,7 +64,7 @@
           </tr>
           
           <tr>
-            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Órden de Compra:</strong></td>
             <td class="col-xs-7"><%= @consumable.buy_order %></td>
           </tr>
           

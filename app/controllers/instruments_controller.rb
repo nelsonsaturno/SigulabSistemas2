@@ -6,9 +6,11 @@ class InstrumentsController < ApplicationController
   def index
     @instruments = Instrument.all
 	if params[:search]
-		@instruments = Instrument.search(params[:search])
+		@instruments = Instrument.where(:showable => true).search(params[:search])
+		@instruments_all = Instrument.search(params[:search])
 	else
-		@instruments = Instrument.all.order('created_at DESC')
+		@instruments = Instrument.where(:showable => true).all.order('created_at DESC')
+		@instruments_all = Instrument.all.order('created_at DESC')
 	end
   end
 
@@ -74,6 +76,6 @@ class InstrumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instrument_params
-      params.require(:instrument).permit(:name, :brand, :model, :measurement_unit, :capacity, :material, :status, :location, :last_calibration, :responsible, :national_good, :investigation, :teaching, :extention, :management)
+      params.require(:instrument).permit(:name, :brand, :model, :measurement_unit, :capacity, :material, :status, :location, :last_calibration, :responsible, :national_good, :investigation, :teaching, :extention, :management, :adquisition_date, :buy_order, :cost, :bill, :dependency)
     end
 end

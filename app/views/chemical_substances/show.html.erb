@@ -62,7 +62,11 @@
             <td class="col-xs-7"> <%= @chemical_substance.responsible %></td>
           </tr>
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= @chemical_substance.dependency %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
             <td class="col-xs-7"><%= @chemical_substance.location %></td>
           </tr>
            
@@ -122,7 +126,7 @@
           </tr>
           
           <tr>
-            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Órden de Compra:</strong></td>
             <td class="col-xs-7"><%= @chemical_substance.buy_order %></td>
           </tr>
           

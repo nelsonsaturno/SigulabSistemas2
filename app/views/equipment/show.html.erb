@@ -26,13 +26,9 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Número de Bien Nacional:</strong></td>
-            <td class="col-xs-7">  <%= @equipment.national_good %>
-               
-            </td>
-
-          </tr>
-     
-            <tr>
+            <td class="col-xs-7">  <%= @equipment.national_good %></td>
+          </tr> 
+          <tr>
             <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
             <td class="col-xs-7"><%= @equipment.status %></td>
           </tr>
@@ -55,22 +51,25 @@
             <%= @equipment.depth %><%= @equipment.measuredepth %></td>
           </tr>
            
-        <tr>
-          <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
-          <td class="col-xs-7"><%= @equipment.responsible %></td>
-      </tr>
-       <tr>
-          <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-          <td class="col-xs-7"><%= @equipment.location %>
-        </td>
-      </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
+            <td class="col-xs-7"><%= @equipment.responsible %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= @equipment.dependency %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
+            <td class="col-xs-7"><%= @equipment.location %></td>
+          </tr>
       <tr>
           <td class="col-xs-5 text-right"><strong>Fecha Adquisición::</strong></td>
           <td class="col-xs-7"><%= @equipment.adquisition_date %>
         </td>
       </tr>
       <tr>
-          <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+          <td class="col-xs-5 text-right"><strong>Órden de Compra:</strong></td>
           <td class="col-xs-7"><%= @equipment.buy_order %>
         </td>
       </tr>
@@ -88,16 +87,16 @@
         <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
             <td class="col-xs-7">  
             <% if @equipment.investigation %>
-              <%= ' Investigación ' %>
+              <%= ' INVESTIGACIÓN ' %>
             <% end %>
             <% if @equipment.teaching %>
-              <%= ' Docencia ' %>
+              <%= ' DOCENCIA ' %>
             <% end %>
             <% if @equipment.extention %>
-              <%= ' Extensión ' %>
+              <%= ' EXTENSIÓN ' %>
             <% end %>
             <% if @equipment.management %>
-              <%= ' Gestión ' %>
+              <%= ' GESTIÓN ' %>
             <% end %></td>
           </tr>
           

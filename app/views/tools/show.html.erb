@@ -33,16 +33,16 @@
             <td class="col-xs-7"><%= @tool.type %></td>
           </tr>
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= @tool.dependency %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
             <td class="col-xs-7"><%= @tool.location %></td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Material:</strong></td>
             <td class="col-xs-7"><%= @tool.material %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
-            <td class="col-xs-7"><%= @tool.bill %></td>
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>De un juego:</strong></td>
@@ -54,18 +54,37 @@
             <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
               <td class="col-xs-7">   
               <% if @tool.investigation %>
-              <%= ' Investigación ' %>
+              <%= ' INVESTIGACIÓN ' %>
             <% end %>
             <% if @tool.teaching %>
-              <%= ' Docencia ' %>
+              <%= ' DOCENCIA ' %>
             <% end %>
             <% if @tool.extention %>
-              <%= ' Extensión ' %>
+              <%= ' EXTENSIÓN ' %>
             <% end %>
             <% if @tool.management %>
-              <%= ' Gestión ' %>
+              <%= ' GESTIÓN ' %>
             <% end %>
               </td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%= @tool.bill %></td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= @tool.cost %> Bs.</td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Órden de Compra:</strong></td>
+            <td class="col-xs-7"><%= @tool.buy_order %></td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%= @tool.adquisition_date %></td>
           </tr>
         </table>
 

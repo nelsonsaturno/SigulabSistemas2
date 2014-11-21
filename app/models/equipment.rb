@@ -4,6 +4,7 @@ class Equipment < ActiveRecord::Base
 	validates :serial,  :presence => {:message => "no puede ser blanco"}
 	validates_uniqueness_of :national_good, :allow_blank => true, :allow_nil => true
 # 	validates :national_good, :presence => {:message => "no puede ser blanco"}, :uniqueness => {:message => "ya existe otro equipo con el mismo numero de bien nacional"}
+	validates :dependency, :presence => {:message => "no puede ser blanco"}
 	validates :location, :presence => {:message => "no puede ser blanco"}
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
 	
@@ -15,7 +16,7 @@ class Equipment < ActiveRecord::Base
 	before_save :uppercase_fields
 	before_update :uppercase_fields
 	
-private
+	private
 	def uppercase_fields
 		self.name=UnicodeUtils.upcase(self.name, :es)
 		self.brand=UnicodeUtils.upcase(self.brand, :es)
@@ -28,5 +29,6 @@ private
 		self.measurewidth=UnicodeUtils.upcase(self.measurewidth, :es)
 		self.bill=UnicodeUtils.upcase(self.bill, :es)
 		self.buy_order=UnicodeUtils.upcase(self.buy_order, :es)
+		self.dependency=UnicodeUtils.upcase(self.dependency, :es)
 	end
 end

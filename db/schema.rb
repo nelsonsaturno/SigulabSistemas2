@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118082250) do
+ActiveRecord::Schema.define(version: 20141121051448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141118082250) do
     t.string   "buy_order"
     t.date     "adquisition_date"
     t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "commitments", force: true do |t|
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 20141118082250) do
     t.date     "adquisition_date"
     t.text     "description"
     t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "equipment", force: true do |t|
@@ -121,6 +123,7 @@ ActiveRecord::Schema.define(version: 20141118082250) do
     t.string   "measuredepth"
     t.string   "measurewidth"
     t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "executions", force: true do |t|
@@ -165,6 +168,12 @@ ActiveRecord::Schema.define(version: 20141118082250) do
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.string   "bill"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "invitations", force: true do |t|
@@ -216,13 +225,18 @@ ActiveRecord::Schema.define(version: 20141118082250) do
     t.string   "location"
     t.string   "material"
     t.string   "bill"
-    t.boolean  "from_set"
     t.boolean  "investigation"
     t.boolean  "teaching"
     t.boolean  "extention"
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.boolean  "showable",         default: true
+    t.boolean  "from_set"
+    t.string   "dependency"
   end
 
   create_table "users", force: true do |t|

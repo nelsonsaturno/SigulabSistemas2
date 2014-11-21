@@ -66,12 +66,17 @@
           <td class="col-xs-7"><%= f.text_field :responsible %>
       <span class="red">*</span></td>
       </tr>
-       <tr>
-          <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-          <td class="col-xs-7"><%= f.text_field :location %>
-      <span class="red">*</span>
-        </td>
-      </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :dependency %>
+            <span class="red">*</span> </td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :location %>
+            <span class="red">*</span> </td>
+          </tr>
       <tr>
           <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
           <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %>
@@ -94,16 +99,16 @@
       </tr>
       <tr>
         <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
-            <td class="col-xs-7">  
-            <%= f.check_box :investigation %>
-            <%= 'Investigación' %>
-            <%= f.check_box :teaching %>
-            <%= 'Docencia' %>
-            <%= f.check_box :extention %>
-            <%= 'Extensión' %>
-            <%= f.check_box :management %>
-            <%= 'Gestión' %><br>
-          </tr>
+         <td class="col-xs-7">  
+         <%= f.check_box :investigation %>
+         <%= 'Investigación' %>
+         <%= f.check_box :teaching %>
+         <%= 'Docencia' %>
+         <%= f.check_box :extention %>
+         <%= 'Extensión' %>
+         <%= f.check_box :management %>
+         <%= 'Gestión' %><br>
+      </tr>
 
            <tr>
             <td class="col-xs-5 text-right">

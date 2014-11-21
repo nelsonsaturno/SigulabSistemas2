@@ -47,9 +47,12 @@
           </tr> 
 
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
-            <td class="col-xs-7"><%= @instrument.location %>
-            </td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= @instrument.dependency %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
+            <td class="col-xs-7"><%= @instrument.location %></td>
           </tr>
 
           <tr>
@@ -73,18 +76,37 @@
           <tr>
             <td class="col-xs-5 text-right"><strong><%= 'Uso:'%></strong></td>
            <td class="col-xs-7"> <% if @instrument.investigation %>
-              <%= ' Investigación ' %>
+              <%= ' INVESTIGACIÓN ' %>
             <% end %>
             <% if @instrument.teaching %>
-              <%= ' Docencia ' %>
+              <%= ' DOCENCIA ' %>
             <% end %>
             <% if @instrument.extention %>
-              <%= ' Extensión ' %>
+              <%= ' EXTENSIÓN ' %>
             <% end %>
             <% if @instrument.management %>
-              <%= ' Gestión ' %>
-            <% end %></td></tr>
+              <%= ' GESTIÓN ' %>
+            <% end %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%= @instrument.bill %></td>
+          </tr>
           
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= @instrument.cost %> BS.</td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Órden de Compra:</strong></td>
+            <td class="col-xs-7"><%= @instrument.buy_order %></td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%= @instrument.adquisition_date %></td>
+          </tr>
         
         </div>
       </table>

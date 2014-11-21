@@ -48,29 +48,43 @@
           </tr>
 
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :dependency %>
+            <span class="red">*</span> </td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
             <td class="col-xs-7"><%= f.text_field :location %>
             <span class="red">*</span> </td>
           </tr>
-
+          
           <tr>
             <td class="col-xs-5 text-right"><strong>Material:</strong></td>
             <td class="col-xs-7"> <%= f.text_field :material %></td>
           </tr>
 
           <tr>
-            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
-            <td class="col-xs-7"> <%= f.text_field :bill %> </td>
-          </tr>
-
-          <tr>
             <td class="col-xs-5 text-right"><strong>Pertenece a un juego:</strong></td>
-            <td class="col-xs-7">  <%= f.check_box :from_set %> </td>
+            <td class="col-xs-7">  <%= f.text_field :from_set %> </td>
           </tr>
        
-    
-        
-    
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :bill %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp;BS.</td> 
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :buy_order %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %></td> 
+          </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong><%= 'Uso:'%></td>
               <td class="col-xs-7">

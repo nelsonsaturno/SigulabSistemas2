@@ -32,7 +32,8 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Unidad de medida::</strong></td>
-            <td class="col-xs-7"><%= f.text_field :measurement_unit %></td>
+            <td class="col-xs-7"><%= f.text_field :measurement_unit %>
+            <span class="red">*</span></td>
           </tr> 
 
           <tr>
@@ -47,13 +48,19 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
-            %= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
+             <td class="col-xs-7"><%= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
           </tr> 
 
           <tr>
-            <td class="col-xs-5 text-right"><strong>Ubicación:</strong></td>
+            <td class="col-xs-5 text-right"><strong>Dependencia:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :dependency %>
+            <span class="red">*</span> </td>
+          </tr>
+          
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Ubicación Física:</strong></td>
             <td class="col-xs-7"><%= f.text_field :location %>
-            <span class="red">*</span></td>
+            <span class="red">*</span> </td>
           </tr>
 
           <tr>
@@ -63,16 +70,29 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Responsable:</strong></td>
-            <td class="col-xs-7"><%= f.text_field :responsible %>
-            <span class="red">*</span></td>
+            <td class="col-xs-7"><%= f.text_field :responsible %><span class="red">*</span></td>
           </tr>
 
            <tr>
             <td class="col-xs-5 text-right"><strong>Número bien nacional:</strong></td>
             <td class="col-xs-7"><%= f.number_field :national_good %></td>
           </tr>
-
-    
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Factura:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :bill %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp;BS.</td> 
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
+            <td class="col-xs-7"><%=  f.text_field :buy_order %></td>
+          </tr>
+          <tr>
+            <td class="col-xs-5 text-right"><strong>Fecha Adquisición:</strong></td>
+            <td class="col-xs-7"><%= f.text_field :adquisition_date, :class => "datepicker" %></td> 
+          </tr>
     
           <tr>
             <td class="col-xs-5 text-right"><strong><%= 'Uso:'%></strong></td>
