@@ -37,11 +37,13 @@
     <table class="tg">
       <tr>
         <th class="tg-093g">Nombre</th>
-        <th class="tg-hgcj">National good</th>
+        <th class="tg-hgcj">Número de Bien Nacional</th>
+        
         <th class="tg-hgcj">Ubicación</th>
         <th class="tg-hgcj">Responsable</th>
         <th class="tg-hgcj">Status</th>
-  <!--  <th>Brand</th>
+  <!--   <th class="tg-093g">Brand</th>
+
         <th class="tg-hgcj">Ultima Calibración</th>
         <th>Serial</th>
         <th class="tg-hgcj">Modelo</th>
@@ -61,12 +63,15 @@
     <tbody>
       <% @equipment.each do |equipment| %>
         <tr>
+      
           <td class="tg-s6z2"><%=  link_to equipment.name, equipment  %></td>
-          <td class="tg-s6z2"><%= equipment.national_good %></td>
+              <td class="tg-s6z2"><%= equipment.national_good %></td>
+       
+
           <td class="tg-s6z2"><%= equipment.location %></td>
           <td class="tg-qpa3"><%= equipment.responsible %></td>
           <td class="tg-s6z2"><%= equipment.status %></td>
-      <!--     <td><%= equipment.brand %></td> 
+      <!--       <td class="tg-s6z2"><%= equipment.brand %></td> 
           <td class="tg-s6z2"><%= equipment.last_calibration %></td>
           <td class="tg-s6z2"><%= equipment.model %></td>
           <td><%= equipment.serial %></td>

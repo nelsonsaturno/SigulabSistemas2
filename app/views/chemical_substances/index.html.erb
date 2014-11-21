@@ -40,15 +40,19 @@
         <table class="tg">
         <tr>
           <th class="tg-093g">Nombre</th>
+          <th class="tg-093g">Estado de la Materia</th>
+          <th class="tg-093g">Cantidad</th>
           <th class="tg-hgcj">Ubicación</th>
           <th class="tg-hgcj">Responsable</th>
-          <th class="tg-hgcj">Status</th> 
-         <!--  <th>Purity</th>
+      
+         <!--  
+              <th class="tg-hgcj">Status</th> 
+         <th>Purity</th>
           <th class="tg-hgcj">Fecha Expiración</th> 
           <th class="tg-hgcj">CAS</th>
           <th>Matter states</th>
           <th>Controlled</th>
-          <th>Cantidad</th>
+     
           <th>Ri7</th>
           <th>Ri4</th>
           <th>Toxic</th>
@@ -69,10 +73,13 @@
         <% @chemical_substances.each do |chemical_substance| %>
           <tr>
             <td class="tg-s6z2"><%= link_to chemical_substance.name, chemical_substance %></td>
+           <td class="tg-s6z2"><%= chemical_substance.matter_states %></td>
+           <td class="tg-s6z2"><%= chemical_substance.quantity %></td>
           <td class="tg-s6z2"><%= chemical_substance.location %></td>
           <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
-          <td class="tg-qpa3"><%= chemical_substance.status %></td> 
-  <!--         <td><%= chemical_substance.purity %></td>
+          
+  <!--     <td class="tg-qpa3"><%= chemical_substance.status %></td>      
+          <td><%= chemical_substance.purity %></td>
           <td><%= chemical_substance.matter_states %></td>
           <td><%= chemical_substance.controlled %></td>  
           <td class="tg-s6z2"><%= chemical_substance.expiration_date %></td> 
