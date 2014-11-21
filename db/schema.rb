@@ -45,17 +45,13 @@ ActiveRecord::Schema.define(version: 20141121145158) do
 
   create_table "chemical_substances", force: true do |t|
     t.string   "name"
-    t.string   "purity"
     t.string   "matter_states"
     t.boolean  "controlled"
-    t.string   "legal_regime"
-    t.string   "quantity"
     t.string   "cas"
     t.string   "status"
     t.string   "responsible"
     t.string   "location"
     t.date     "expiration_date"
-    t.string   "dangerous"
     t.boolean  "rI7"
     t.boolean  "rI4"
     t.boolean  "toxic"
@@ -68,10 +64,17 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.boolean  "investigation"
     t.boolean  "teaching"
     t.boolean  "extention"
-    t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "meassure"
+    t.float    "purity"
+    t.float    "quantity"
+    t.decimal  "cost"
+    t.string   "bill"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "commitments", force: true do |t|
@@ -87,7 +90,6 @@ ActiveRecord::Schema.define(version: 20141121145158) do
 
   create_table "consumables", force: true do |t|
     t.string   "name"
-    t.string   "description"
     t.string   "material"
     t.string   "quantity"
     t.string   "location"
@@ -98,6 +100,13 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.string   "bill"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.text     "description"
+    t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "devolutions", force: true do |t|
@@ -149,7 +158,6 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.string   "location"
     t.date     "adquisition_date"
     t.string   "buy_order"
-    t.float    "cost"
     t.string   "bill"
     t.boolean  "investigation"
     t.boolean  "teaching"
@@ -158,10 +166,15 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.string   "calibrated"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "lenght"
-    t.decimal  "depth"
-    t.decimal  "width"
-    t.string   "meassure"
+    t.decimal  "cost"
+    t.float    "length"
+    t.float    "depth"
+    t.float    "width"
+    t.string   "measurelength"
+    t.string   "measuredepth"
+    t.string   "measurewidth"
+    t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "executions", force: true do |t|
@@ -206,6 +219,12 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.string   "bill"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.boolean  "showable",         default: true
+    t.string   "dependency"
   end
 
   create_table "invitations", force: true do |t|
@@ -286,13 +305,18 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.string   "location"
     t.string   "material"
     t.string   "bill"
-    t.boolean  "from_set"
     t.boolean  "investigation"
     t.boolean  "teaching"
     t.boolean  "extention"
     t.boolean  "management"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.string   "buy_order"
+    t.date     "adquisition_date"
+    t.boolean  "showable",         default: true
+    t.boolean  "from_set"
+    t.string   "dependency"
   end
 
   create_table "users", force: true do |t|

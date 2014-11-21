@@ -9,3 +9,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( bootlayout.css )
 Rails.application.config.assets.precompile += %w( bootlayout.js )
+Rails.application.config.assets.precompile += %w( jquery-ui-1.10.3.custom.css )

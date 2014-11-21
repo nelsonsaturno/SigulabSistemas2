@@ -60,3 +60,9 @@ gem 'prawn-table'
 
 #Use Carrierwave
 gem 'carrierwave'
+
+# Use for unicode support
+gem 'unicode_utils'
+
+# Use font-awesome-rails
+gem "font-awesome-rails"
