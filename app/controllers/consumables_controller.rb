@@ -1,6 +1,7 @@
 class ConsumablesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_consumable, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /consumables
   # GET /consumables.json
   def index

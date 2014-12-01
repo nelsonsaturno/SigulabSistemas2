@@ -1,4 +1,5 @@
 class ChemicalSubstancesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_chemical_substance, only: [:show, :edit, :update, :destroy, :search, :hide]
 
   # GET /chemical_substances

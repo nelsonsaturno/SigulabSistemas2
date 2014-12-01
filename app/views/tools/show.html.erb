@@ -46,11 +46,14 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>De un juego:</strong></td>
-            <td class="col-xs-7"><%= @tool.from_set %></td>
+            <td class="col-xs-7">
+            <% if @tool.from_set %>
+              <%= 'SÍ' %>
+            <% else %>
+              <%= 'NO' %>
+            <% end %></td>
           </tr>
-     
-
-           <tr>
+          <tr>
             <td class="col-xs-5 text-right"><strong>Uso:</strong></td>
               <td class="col-xs-7">   
               <% if @tool.investigation %>

@@ -8,7 +8,7 @@ class Tool < ActiveRecord::Base
 	before_save :uppercase_fields
 	before_update :uppercase_fields
 	
-	def self.search
+	def self.search(query)
 		query=UnicodeUtils.upcase(query, :es)
 		where("name like ?", "%#{query}%") 
 	end
