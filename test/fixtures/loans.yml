@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaEntrega: 2015-01-13 23:50:59
+  cantidad: 1
+  ubicacion: MyString
+  observaciones: MyString
+  correo: MyString
+
+two:
+  fechaEntrega: 2015-01-13 23:50:59
+  cantidad: 1
+  ubicacion: MyString
+  observaciones: MyString
+  correo: MyString
