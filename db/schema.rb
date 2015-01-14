@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121161335) do
+ActiveRecord::Schema.define(version: 20150114042059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,13 @@ ActiveRecord::Schema.define(version: 20141121161335) do
   create_table "chemical_substances", force: true do |t|
     t.string   "name"
     t.string   "matter_states"
-    t.boolean  "controlled"
+    t.string   "meassure"
     t.string   "cas"
     t.string   "status"
     t.string   "responsible"
     t.string   "location"
     t.date     "expiration_date"
+    t.boolean  "controlled"
     t.boolean  "rI7"
     t.boolean  "rI4"
     t.boolean  "toxic"
@@ -66,7 +67,6 @@ ActiveRecord::Schema.define(version: 20141121161335) do
     t.boolean  "extention"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "meassure"
     t.float    "purity"
     t.float    "quantity"
     t.decimal  "cost"
@@ -266,6 +266,16 @@ ActiveRecord::Schema.define(version: 20141121161335) do
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
+  end
+
+  create_table "loans", force: true do |t|
+    t.datetime "fechaEntrega"
+    t.integer  "cantidad"
+    t.string   "ubicacion"
+    t.string   "observaciones"
+    t.string   "correo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "quotes", force: true do |t|
