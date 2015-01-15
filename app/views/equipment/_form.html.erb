@@ -1,7 +1,7 @@
 <%= form_for(@equipment) do |f| %>
   <% if @equipment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@equipment.errors.count, "error(es") %>) prohíben que este equipo sea guardado:</h2>
+      <h2><%= pluralize(@equipment.errors.count, "error(es") %>) prohiben que este equipo sea guardado:</h2>
 
       <ul>
       <% @equipment.errors.full_messages.each do |message| %>
@@ -122,5 +122,5 @@
     <br>
     
     <br><br>
-  </div>
+  
 <% end %>

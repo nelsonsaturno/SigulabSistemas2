@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :tools
   resources :instruments
   resources :equipment
+  resources :loans
 
   devise_for :users,
               :controllers => {:registrations => "my_devise/registrations"}
