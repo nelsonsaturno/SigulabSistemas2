@@ -1,0 +1,20 @@
+<h1><i class="fa fa-database"></i> Inventario</h1>
+
+<ol class="breadcrumb">
+	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
+	<li class="active"> Inventario </li>
+</ol>
+<div id = "table2">
+</div>
+
+<br>
+
+<div class="btn-group btn-group-justified" role="group">
+	<div class="btn-group" role="group">
+	  <%= link_to '<button type="button" class="btn btn-default"><i class="fa fa-plus-circle"> Agregar/Consultar Inventario</i></button>'.html_safe, inventario_url %>
+	</div>
+	<div class="btn-group" role="group">
+	  <%= link_to '<button type="button" class="btn btn-default"><i class="fa fa-plus-circle"> Solicitar Préstamo/Servicio</i></button>'.html_safe, prestamoServicio_url %>
+	</div>
+
+</div>

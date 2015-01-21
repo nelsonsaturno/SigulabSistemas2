@@ -2,7 +2,7 @@
 <ol class="breadcrumb">
 	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
 	<li> <%=link_to 'Inventario', inventario_url %></li>
-	<li> <%=link_to 'Equipos y mobiliarios', equipment_index_path %></li>
+	<li> <%=link_to 'Equipos y mobiliarios', equipments_path %></li>
 	<li class="active"> Editar </li>
 </ol>
 <div id = "table2">
@@ -13,5 +13,5 @@
 <%= render 'form' %>
 <br>
 <i class="fa fa-plus-circle"></i><%= link_to ' Mostrar', @equipment %> |
-<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipments_path %>
 <br><br><br><br>

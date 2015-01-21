@@ -2,23 +2,18 @@
 
 <ol class="breadcrumb">
 	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
-	<li class="active"> Inventario </li>
+	<li> <%=link_to 'Inventario', menuInventario_url %></li>
+	<li class="active"> Agregar o Consultar </li>
 </ol>
 <div id = "table2">
 </div>
 
 <br>
 
-<div id= 'menuOpciones' class="btn-group btn-group-justified">
-	<a href="#" class="btn btn-default" ><i class="fa fa-plus-circle"> Agregar Ítem</i></a>
-	<a href="#" class="btn btn-default" >Consultar Inventario</a>
-	<a href="#" class="btn btn-default" >Solicitar Préstamo/Servicio</a>
-</div>
-
 <div id= 'categorias'>
 <br>
 	<p align="center">
-	<td><font size = "5"><i class="fa fa-plug"></i><%= link_to ' Equipos y Mobiliarios', equipment_index_url %></td><br><br>
+	<td><font size = "5"><i class="fa fa-plug"></i><%= link_to ' Equipos y Mobiliarios', equipments_url %></td><br><br>
 
 	<td><i class="fa fa-eyedropper"></i><%= link_to ' Instrumentos de Medición', instruments_url %></td><br><br>
 

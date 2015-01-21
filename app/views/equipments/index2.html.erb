@@ -26,7 +26,7 @@
       </style> 
 
 	<div id="search">
-		<%= form_tag(equipment_index_path, :method => "get", id: "search-form") do %>
+		<%= form_tag(equipments_path, :method => "get", id: "search-form") do %>
 			<%= text_field_tag :search, params[:search], placeholder: "Equipo a buscar" %>
 			<%= submit_tag "Buscar", :class => 'btn btn-success btn-sm', :name => nil %>
 		<% end %>
@@ -42,26 +42,11 @@
         <th class="tg-hgcj">Ubicación</th>
         <th class="tg-hgcj">Responsable</th>
         <th class="tg-hgcj">Status</th>
-  <!--   <th class="tg-093g">Brand</th>
-
-        <th class="tg-hgcj">Ultima Calibración</th>
-        <th>Serial</th>
-        <th class="tg-hgcj">Modelo</th>
-        <th>Use</th>
-        <th>Adquisition date</th>
-        <th>Buy order</th>
-        <th>Cost</th>
-        <th>Bill</th>
-        <th>Investigation</th>
-        <th>Teaching</th>
-        <th>Extention</th>
-        <th>Management</th>
-        <th>Calibrated</th> -->
       </tr>
     </thead>
 
     <tbody>
-      <% @equipment.each do |equipment| %>
+      <% @equipments.each do |equipment| %>
         <tr>
       
           <td class="tg-s6z2"><%=  link_to equipment.name, equipment  %></td>
@@ -71,19 +56,6 @@
           <td class="tg-s6z2"><%= equipment.location %></td>
           <td class="tg-qpa3"><%= equipment.responsible %></td>
           <td class="tg-s6z2"><%= equipment.status %></td>
-      <!--       <td class="tg-s6z2"><%= equipment.brand %></td> 
-          <td class="tg-s6z2"><%= equipment.last_calibration %></td>
-          <td class="tg-s6z2"><%= equipment.model %></td>
-          <td><%= equipment.serial %></td>
-          <td><%= equipment.buy_order %></td>
-          <td><%= equipment.cost %></td>
-          <td><%= equipment.bill %></td>
-          <td><%= equipment.adquisition_date %></td>
-          <td><%= equipment.investigation %></td>
-          <td><%= equipment.teaching %></td>
-          <td><%= equipment.extention %></td>
-          <td><%= equipment.management %></td>
-          <td><%= equipment.calibrated %></td> -->
         </tr>
       <% end %>
     </tbody>
@@ -93,10 +65,8 @@
 
 
   <br>
-  <% if can? :create, @equipment %>
-    <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path , 'data-no-turbolink' => true%> |
-  <% end %>
-  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+  
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', prestamoServicio_url %>
   <br><br><br><br><br><br>
   
 </div>
