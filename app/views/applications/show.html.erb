@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecharequerida:</strong>
+  <%= @application.fechaRequerida %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @application.descripcion %>
+</p>
+
+<p>
+  <strong>Uso:</strong>
+  <%= @application.uso %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

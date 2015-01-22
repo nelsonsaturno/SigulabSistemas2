@@ -84,29 +84,6 @@
           <td class="tg-s6z2"><%= chemical_substance.location %></td>
           <td class="tg-qpa3"><%= chemical_substance.responsible %></td>
           
-  <!--     <td class="tg-qpa3"><%= chemical_substance.status %></td>      
-          <td><%= chemical_substance.purity %></td>
-          <td><%= chemical_substance.matter_states %></td>
-          <td><%= chemical_substance.controlled %></td>  
-          <td class="tg-s6z2"><%= chemical_substance.expiration_date %></td> 
-          <td class="tg-s6z2"><%= chemical_substance.cas %></td>
-          <td><%= chemical_substance.quantity %></td>
-          <td><%= chemical_substance.rI7 %></td>
-          <td><%= chemical_substance.rI4 %></td>
-          <td><%= chemical_substance.toxic %></td>
-          <td><%= chemical_substance.oxidant %></td>
-          <td><%= chemical_substance.explosive %></td>
-          <td><%= chemical_substance.irritating %></td>
-          <td><%= chemical_substance.inflamable %></td>
-          <td><%= chemical_substance.corrosive %></td>
-          <td><%= chemical_substance.nocive %></td>
-          <td><%= chemical_substance.investigation %></td>
-          <td><%= chemical_substance.teaching %></td>
-          <td><%= chemical_substance.extention %></td> -->
-
-          
-          
-
           </tr>
         <% end %>
       </tbody>
@@ -118,6 +95,8 @@
     <% if can? :create, @chemical_substance %>
       <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path, 'data-no-turbolink' => true %> | 
     <%end%>
+    <i class="fa fa-exchange"></i><%= link_to ' Solicitar Préstamo ', new_loan_path %> | 
+    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', inventario_url %> | 
     <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
     <br><br><br><br><br><br><br>
     

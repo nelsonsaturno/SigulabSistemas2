@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fechaentrega:</strong>
+  <%= @loan.fechaEntrega %>
+</p>
+
+<p>
+  <strong>Ubicacion:</strong>
+  <%= @loan.ubicacion %>
+</p>
+
+<p>
+  <strong>Fechatope:</strong>
+  <%= @loan.fechaTope %>
+</p>
+
+<p>
+  <strong>Condiciones:</strong>
+  <%= @loan.condiciones %>
+</p>
+
+<p>
+  <strong>Medida:</strong>
+  <%= @loan.medida %>
+</p>
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>

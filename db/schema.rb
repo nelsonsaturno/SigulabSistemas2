@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121145158) do
+ActiveRecord::Schema.define(version: 20150122122138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.string   "specification_id"
   end
 
+  create_table "applications", force: true do |t|
+    t.string   "fechaRequerida"
+    t.string   "descripcion"
+    t.string   "uso"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "checks", force: true do |t|
     t.integer  "execution_id"
     t.string   "check_number"
@@ -46,12 +54,13 @@ ActiveRecord::Schema.define(version: 20141121145158) do
   create_table "chemical_substances", force: true do |t|
     t.string   "name"
     t.string   "matter_states"
-    t.boolean  "controlled"
+    t.string   "meassure"
     t.string   "cas"
     t.string   "status"
     t.string   "responsible"
     t.string   "location"
     t.date     "expiration_date"
+    t.boolean  "controlled"
     t.boolean  "rI7"
     t.boolean  "rI4"
     t.boolean  "toxic"
@@ -66,7 +75,6 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.boolean  "extention"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "meassure"
     t.float    "purity"
     t.float    "quantity"
     t.decimal  "cost"
@@ -75,6 +83,7 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.date     "adquisition_date"
     t.boolean  "showable",         default: true
     t.string   "dependency"
+    t.integer  "numSolicitud"
   end
 
   create_table "commitments", force: true do |t|
@@ -139,7 +148,7 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.boolean  "copia"
     t.boolean  "factura"
     t.boolean  "foto"
-    t.string   "observaciones"
+    t.text     "observaciones"
     t.string   "unidadSolicitante"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -256,6 +265,16 @@ ActiveRecord::Schema.define(version: 20141121145158) do
     t.string "name"
     t.string "sae_code"
     t.string "sae_name"
+  end
+
+  create_table "loans", force: true do |t|
+    t.string   "ubicacion"
+    t.string   "condiciones"
+    t.string   "medida"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "fechaEntrega"
+    t.date     "fechaTope"
   end
 
   create_table "quotes", force: true do |t|
