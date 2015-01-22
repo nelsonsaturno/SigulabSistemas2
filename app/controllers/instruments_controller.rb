@@ -5,24 +5,13 @@ class InstrumentsController < ApplicationController
   # GET /instruments.json
   def index
     @instruments = Instrument.all
-  	if params[:search]
-  		@instruments = Instrument.where(:showable => true).search(params[:search])
-  		@instruments_all = Instrument.search(params[:search])
-  	else
-  		@instruments = Instrument.where(:showable => true).all.order('created_at DESC')
-  		@instruments_all = Instrument.all.order('created_at DESC')
-  	end
-  end
-
-  def index2
-    @instruments = Instrument.all
-    if params[:search]
-      @instruments = Instrument.where(:showable => true).search(params[:search])
-      @instruments_all = Instrument.search(params[:search])
-    else
-      @instruments = Instrument.where(:showable => true).all.order('created_at DESC')
-      @instruments_all = Instrument.all.order('created_at DESC')
-    end
+	if params[:search]
+		@instruments = Instrument.where(:showable => true).search(params[:search])
+		@instruments_all = Instrument.search(params[:search])
+	else
+		@instruments = Instrument.where(:showable => true).all.order('created_at DESC')
+		@instruments_all = Instrument.all.order('created_at DESC')
+	end
   end
 
   # GET /instruments/1

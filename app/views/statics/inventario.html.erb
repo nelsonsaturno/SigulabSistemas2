@@ -2,8 +2,7 @@
 
 <ol class="breadcrumb">
 	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
-	<li> <%=link_to 'Inventario', menuInventario_url %></li>
-	<li class="active"> Agregar o Consultar </li>
+	<li class="active"> Inventario </li>
 </ol>
 <div id = "table2">
 </div>
@@ -13,7 +12,7 @@
 <div id= 'categorias'>
 <br>
 	<p align="center">
-	<td><font size = "5"><i class="fa fa-plug"></i><%= link_to ' Equipos y Mobiliarios', equipments_url %></td><br><br>
+	<td><font size = "5"><i class="fa fa-plug"></i><%= link_to ' Equipos y Mobiliarios', equipment_index_url %></td><br><br>
 
 	<td><i class="fa fa-eyedropper"></i><%= link_to ' Instrumentos de Medición', instruments_url %></td><br><br>
 
@@ -25,6 +24,4 @@
 
 
 	<td><i class="fa fa-fire"></i><%= link_to ' Consumibles y Materiales', consumables_url %></td><br></font><br></p>
-
-</div>
 

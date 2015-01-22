@@ -4,23 +4,13 @@ class ChemicalSubstancesController < ApplicationController
   # GET /chemical_substances
   # GET /chemical_substances.json
   def index
-    if params[:search]
-  		@chemical_substances = ChemicalSubstance.where(:showable => true).search(params[:search])
-      @chemical_substances_all=ChemicalSubstance.search(params[:search],params[:column])
-  	else
-  		@chemical_substances = ChemicalSubstance.where(:showable => true).order('created_at DESC')
-      @chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
-  	end
-  end
-
-  def index2
-    if params[:search]
-      @chemical_substances = ChemicalSubstance.where(:showable => true).search(params[:search])
-      @chemical_substances_all=ChemicalSubstance.search(params[:search],params[:column])
-    else
-      @chemical_substances = ChemicalSubstance.where(:showable => true).order('created_at DESC')
-      @chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
-    end
+  	if params[:search]
+		@chemical_substances = ChemicalSubstance.where(:showable => true).search(params[:search])
+# 		@chemical_substances_all=ChemicalSubstance.search(params[:search],params[:column])
+	else
+		@chemical_substances = ChemicalSubstance.where(:showable => true).order('created_at DESC')
+# 		@chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
+	end
   end
 
   # GET /chemical_substances/1

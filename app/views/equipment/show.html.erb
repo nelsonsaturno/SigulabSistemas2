@@ -2,7 +2,7 @@
 <ol class="breadcrumb">
 	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
 	<li> <%=link_to 'Inventario', inventario_url %></li>
-	<li> <%=link_to 'Equipos y mobiliarios', equipment_path %></li>
+	<li> <%=link_to 'Equipos y mobiliarios', equipment_index_path %></li>
 	<li class="active"> Ver </li>
 </ol>
 
@@ -112,7 +112,7 @@
 <% end %>
 <% if can? :hide, @equipment %>
       <i class="fa fa-times fa-1x"></i><%= link_to ' Ocultar', @equipment, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+<!--       <i class="fa fa-times"></i><%= link_to ' Ocultar', equipment_index_path %> |  -->
 <%end%>
-<i class="fa fa-share"></i><%= link_to ' Solicitud de Préstamo/Servicio', new_loan_path %> |
-<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_path %>
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', equipment_index_path %>
 <br><br><br><br>

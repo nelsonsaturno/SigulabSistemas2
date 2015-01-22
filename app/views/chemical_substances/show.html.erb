@@ -6,6 +6,10 @@
 	<li class="active"> Ver </li>
 </ol>
 
+
+
+
+
     <div class="col-xs-12">
         <table class="table table-striped">
           <tr>
@@ -149,7 +153,6 @@
 <% if can? :hide, @chemical_substance %>
       <i class="fa fa-times fa-1x"></i><%= link_to ' Ocultar', @chemical_substance, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
 <%end%>
-<i class="fa fa-share"></i><%= link_to ' Solicitud de Préstamo/Servicio', new_loan_path %> |
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', chemical_substances_path %>
 <br><br><br><br>
 </div>

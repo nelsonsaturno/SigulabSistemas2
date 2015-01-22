@@ -15,20 +15,6 @@ Rails.application.routes.draw do
 
   get 'informe_recomendacion/index'
 
-  get 'instruments/index'
-
-  get 'instruments/index2'
-
-  get 'equipments/index2'
-
-  get 'equipments/index'
-
-  get 'tools/index2'
-
-  get 'chemical_substances/index2'
-
-  get 'consumables/index2'
-
   resources :invitations
   resources :services
   resources :items
@@ -36,8 +22,7 @@ Rails.application.routes.draw do
   resources :consumables
   resources :tools
   resources :instruments
-  resources :equipments
-  resources :loans
+  resources :equipment
 
   devise_for :users,
               :controllers => {:registrations => "my_devise/registrations"}
@@ -45,10 +30,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   
   get "inventario" => "statics#inventario", :as => "inventario"
-
-  get "prestamoServicio" => "statics#prestamoServicio", :as => "prestamoServicio"
-
-  get "menuInventario" => "statics#menuInventario", :as => "menuInventario"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
