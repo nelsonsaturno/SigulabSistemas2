@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'equipments/index2'
 
+  get 'equipments/index'
+
   get 'tools/index2'
 
   get 'chemical_substances/index2'

@@ -7,6 +7,7 @@ class Equipment < ActiveRecord::Base
 	validates :dependency, :presence => {:message => "no puede ser blanco"}
 	validates :location, :presence => {:message => "no puede ser blanco"}
 	validates :responsible, :presence => {:message => "no puede ser blanco"}
+	belongs_to :loan
 	
 	def self.search(query)
 		query=UnicodeUtils.upcase(query, :es)
