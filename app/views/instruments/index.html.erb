@@ -37,6 +37,7 @@
    <table class="tg">
     <thead>
       <tr>
+        <th></th>
         <th class="tg-093g">Nombre</th>
         <th class="tg-hgcj">Marca</th>
         <th class="tg-hgcj">Número de Bien Nacional</th>
@@ -62,6 +63,7 @@
     <tbody>
       <% @instruments.each do |instrument| %>
         <tr>
+          <td class="tg-s6z2"><input type="checkbox"></td>
           <td class="tg-s6z2"><%= link_to instrument.name, instrument %></td>
           <td class="tg-qpa3"><%= instrument.brand %></td>
           <td class="tg-qpa3"><%= instrument.national_good %></td>
@@ -90,6 +92,8 @@
   <% if can? :create, @instrument %>
     <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Instrumento', new_instrument_path , 'data-no-turbolink' => true %> | 
   <%end%>
+  <i class="fa fa-exchange"></i><%= link_to ' Solicitar Préstamo ', new_loan_path %> | 
+    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', new_application_url %> | 
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br><br><br><br>
   

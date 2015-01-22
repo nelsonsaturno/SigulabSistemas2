@@ -1,5 +1,15 @@
-<h1>New loan</h1>
+<h1>Nueva Solicitud de Préstamo</h1>
+<ol class="breadcrumb">
+	<li> <%=link_to 'Inicio', controller: 'statics'%></li>
+	<li> <%=link_to 'Inventario', inventario_url %></li>
+	<li class="active"> Nuevo Préstamo </li>
+</ol>
+
+<div id = "table2">
+</div>
+<br>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', loans_path %>
+<i class="fa fa-arrow-left"></i><%= link_to ' Atrás', inventario_url %>
+<br><br><br><br>

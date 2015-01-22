@@ -34,6 +34,7 @@
    <table class="tg">
     <thead>
       <tr>
+        <th></th>
         <th class="tg-093g">Nombre</th>
          <th class="tg-hgcj">Cantidad</th>
       <!--  <th class="tg-hgcj">Descripción</th> -->
@@ -55,6 +56,7 @@
     <tbody>
       <% @consumables.each do |consumable| %>
         <tr>
+          <td class="tg-s6z2"><input type="checkbox"></td>
           <td class="tg-s6z2"><%= link_to consumable.name, consumable %></td>
           <td class="tg-qpa3"><%= consumable.quantity %></td>
           <!--  <td class="tg-s6z2"><%= consumable.description %></td> -->
@@ -80,6 +82,8 @@
   <% if can? :create, @consumable %>
     <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo Consumible', new_consumable_path, 'data-no-turbolink' => true %> | 
   <%end%>
+  <i class="fa fa-exchange"></i><%= link_to ' Solicitar Préstamo ', new_loan_path %> | 
+    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', new_application_url %> |
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br>
 </div>

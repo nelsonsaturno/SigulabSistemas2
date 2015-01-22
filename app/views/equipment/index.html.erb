@@ -36,6 +36,7 @@
     <thead>
     <table class="tg">
       <tr>
+        <th></th>
         <th class="tg-093g">Nombre</th>
         <th class="tg-hgcj">Número de Bien Nacional</th>
         
@@ -63,7 +64,7 @@
     <tbody>
       <% @equipment.each do |equipment| %>
         <tr>
-      
+          <td class="tg-s6z2"><input type="checkbox"></td>
           <td class="tg-s6z2"><%=  link_to equipment.name, equipment  %></td>
               <td class="tg-s6z2"><%= equipment.national_good %></td>
        
@@ -96,6 +97,8 @@
   <% if can? :create, @equipment %>
     <i class="fa fa-plus-circle"></i><%= link_to ' Nuevo equipo', new_equipment_path , 'data-no-turbolink' => true%> |
   <% end %>
+  <i class="fa fa-exchange"></i><%= link_to ' Solicitar Préstamo ', new_loan_path %> | 
+    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', new_application_url %> |
   <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
   <br><br><br><br><br><br>
   

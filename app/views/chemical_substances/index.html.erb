@@ -43,6 +43,7 @@
       <thead>
         <table class="tg">
         <tr>
+         <th></th>
           <th class="tg-093g">Nombre</th>
           <th class="tg-093g">Estado de la Materia</th>
           <th class="tg-093g">Cantidad</th>
@@ -77,6 +78,7 @@
       <tbody>
         <% @chemical_substances.each do |chemical_substance| %>
           <tr>
+           <td class="tg-s6z2"><input type="checkbox"></td>
             <td class="tg-s6z2"><%= link_to chemical_substance.name, chemical_substance %></td>
            <td class="tg-s6z2"><%= chemical_substance.matter_states %></td>
            <td class="tg-s6z2"><%= chemical_substance.quantity %></td>
@@ -96,7 +98,7 @@
       <i class="fa fa-plus-circle"></i><%= link_to ' Nueva Sustancia', new_chemical_substance_path, 'data-no-turbolink' => true %> | 
     <%end%>
     <i class="fa fa-exchange"></i><%= link_to ' Solicitar Préstamo ', new_loan_path %> | 
-    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', inventario_url %> | 
+    <i class="fa fa-phone"></i><%= link_to ' Solicitar Servicio ', new_application_url %> | 
     <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
     <br><br><br><br><br><br><br>
     
