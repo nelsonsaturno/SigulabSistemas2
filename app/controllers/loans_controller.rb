@@ -15,6 +15,8 @@ class LoansController < ApplicationController
   # GET /loans/new
   def new
     @loan = Loan.new
+    @equipments = Equipment.all
+    #binding.pry
   end
 
   # GET /loans/1/edit
