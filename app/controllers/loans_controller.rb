@@ -10,6 +10,16 @@ class LoansController < ApplicationController
   # GET /loans/1
   # GET /loans/1.json
   def show
+    @loan = Loan.find(params[:id])
+    @equipos = Equipment.where(:solicitado => true)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = SolicitudPrestamo.new(@loan)
+        send_data pdf.render, filename: 'SolicitudPrestamo.pdf', type: 'application/pdf'
+      end
+    end
+    @equipment = Equipment.update_all(:solicitado => false)
   end
 
   # GET /loans/new
