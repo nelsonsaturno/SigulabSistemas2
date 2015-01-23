@@ -156,7 +156,7 @@ PLATFORMS
 DEPENDENCIES
   cancan
   carrierwave
-  coffee-rails (~> 4.0.0)
+  coffee-rails
   devise
   font-awesome-rails
   hirb

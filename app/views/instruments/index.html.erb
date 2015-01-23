@@ -63,27 +63,14 @@
     <tbody>
       <% @instruments.each do |instrument| %>
         <tr>
-          <td class="tg-s6z2"><input type="checkbox"></td>
+          <td class="tg-s6z2"><%= check_box_tag "instrument[]",instrument.id %></td>
           <td class="tg-s6z2"><%= link_to instrument.name, instrument %></td>
           <td class="tg-qpa3"><%= instrument.brand %></td>
           <td class="tg-qpa3"><%= instrument.national_good %></td>
          
           <td class="tg-qpa3"><%= instrument.location %></td>
          <td class="tg-s6z2"><%= instrument.responsible %></td>
-  <!--         <td><%= instrument.model %></td>
-   <td class="tg-qpa3"><%= instrument.status %></td> 
-          <td><%= instrument.measurement_unit %></td>
-          <td><%= instrument.capacity %></td>
-          <td><%= instrument.material %></td>
-          <td><%= instrument.last_calibration %></td>
-          <td><%= instrument.national_good %></td>
-          <td><%= instrument.investigation %></td>
-          <td><%= instrument.teaching %></td>
-          <td><%= instrument.extention %></td>
-          <td><%= instrument.management %></td> -->
-
-
-        </tr>
+          </tr>
       <% end %>
     </tbody>
   </table>
