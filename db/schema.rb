@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122193843) do
+ActiveRecord::Schema.define(version: 20150122201753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.string   "uso"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "solicitado",     default: false
   end
 
   create_table "checks", force: true do |t|
@@ -85,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.boolean  "showable",         default: true
     t.string   "dependency"
     t.integer  "numSolicitud"
+    t.boolean  "solicitado",       default: false
   end
 
   create_table "commitments", force: true do |t|
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.text     "description"
     t.boolean  "showable",         default: true
     t.string   "dependency"
+    t.boolean  "solicitado",       default: false
   end
 
   create_table "devolutions", force: true do |t|
@@ -188,6 +189,7 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.string   "measurewidth"
     t.boolean  "showable",         default: true
     t.string   "dependency"
+    t.boolean  "solicitado",       default: false
   end
 
   create_table "executions", force: true do |t|
@@ -254,6 +256,7 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.date     "adquisition_date"
     t.boolean  "showable",         default: true
     t.string   "dependency"
+    t.boolean  "solicitado",       default: false
   end
 
   create_table "invitations", force: true do |t|
@@ -296,7 +299,6 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.date     "fechaEntrega"
     t.date     "fechaTope"
     t.string   "unidadMedida"
-    t.boolean  "solicitado",   default: false
   end
 
   create_table "quotes", force: true do |t|
@@ -358,6 +360,7 @@ ActiveRecord::Schema.define(version: 20150122193843) do
     t.boolean  "showable",         default: true
     t.boolean  "from_set"
     t.string   "dependency"
+    t.boolean  "solicitado",       default: false
   end
 
   create_table "users", force: true do |t|

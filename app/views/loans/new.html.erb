@@ -11,5 +11,26 @@
 
 <%= render 'form' %>
 
+<thead>
+    <table class="tg">
+      <tr>
+        <th></th>
+        <th class="tg-093g">Nombre</th>
+        <th class="tg-hgcj">Número de Bien Nacional</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @equipment.each do |equipment| %>
+        <tr>
+          <td class="tg-s6z2"><%=  equipment.name  %></td>
+              <td class="tg-s6z2"><%= equipment.national_good %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', inventario_url %>
 <br><br><br><br>
