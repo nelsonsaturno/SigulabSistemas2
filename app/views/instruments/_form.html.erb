@@ -47,11 +47,7 @@
 
           <tr>
             <td class="col-xs-5 text-right"><strong>Estado:</strong></td>
-<<<<<<< HEAD
-             <td class="col-xs-7"><%= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
-=======
-            <td class="col-xs-7"><%= f.select(:status, [['EN BUEN ESTADO'], ['DAÑADO'], ['EN REPARACIÓN']] ) %></td>
->>>>>>> 830961206bd8fd743b82b2b260d540bb8422d80d
+             <td class="col-xs-7"><%= f.select(:status, [['En buen estado'], ['Dañado'], ['En reparación']] ) %></td>
           </tr> 
 
           <tr>
@@ -86,7 +82,7 @@
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Costo:</strong></td>
-            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp;BS.</td> 
+            <td class="col-xs-7"><%= f.number_field(:cost, min: 0, :step => 'any') %>&nbsp;Bs.</td> 
           </tr>
           <tr>
             <td class="col-xs-5 text-right"><strong>Orden de Compra:</strong></td>
@@ -106,7 +102,7 @@
             <%= f.check_box :extention %>
             <%= 'Extensión' %><br>
             <%= f.check_box :management %>
-            <%= 'Gestión' %></td></tr>
+            <%= 'Apoyo administrativo' %></td></tr>
           
         
            <tr>
