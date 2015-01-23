@@ -1,14 +1,14 @@
 # encoding: utf-8
-class SolicitudPrestamo < Prawn::Document
+class SolicitudServicio < Prawn::Document
 
 def initialize(equipos)
-		super()
-		@equipos = equipos
-		repeat :all do
-			header
-			pie_de_pagina
-		end
-  	titulo
+    super()
+    @@instruments = instruments
+    repeat :all do
+      header
+      pie_de_pagina
+    end
+    titulo
     table_content
   end
  
@@ -41,7 +41,7 @@ end
   def table_content 
     move_down 25
     # Then I set the table column widths
-    table equipos_rows do
+    table instruments_rows do
       row(0).font_style = :bold
       self.header = true
       self.row_colors = ['DDDDDD', 'FFFFFF']
@@ -49,7 +49,7 @@ end
     end
   end
  
-  def equipos_rows
+  def instruments_rows
     [['Nombre','Número de Bien']] 
 end
 
