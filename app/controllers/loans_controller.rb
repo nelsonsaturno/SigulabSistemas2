@@ -5,6 +5,7 @@ class LoansController < ApplicationController
   # GET /loans.json
   def index
     @loans = Loan.all
+    @sumSolicitudes = Loan.all.count
   end
 
   # GET /loans/1

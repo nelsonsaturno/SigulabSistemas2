@@ -1,33 +1,9 @@
-<h1>Listing loans</h1>
+<div class="col-xs-12">
+  <h1>Solicitudes de Préstamo</h1>
+</div><br>
+<div class="col-xs-12">
+  <%= render 'loansTable' %>
+  <i class="fa fa-arrow-left"></i><%= link_to ' Atrás ', inventario_url %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fechaentrega</th>
-      <th>Ubicacion</th>
-      <th>Fechatope</th>
-      <th>Condiciones</th>
-      <th>Medida</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @loans.each do |loan| %>
-      <tr>
-        <td><%= loan.fechaEntrega %></td>
-        <td><%= loan.ubicacion %></td>
-        <td><%= loan.fechaTope %></td>
-        <td><%= loan.condiciones %></td>
-        <td><%= loan.medida %></td>
-        <td><%= link_to 'Show', loan %></td>
-        <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
-        <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Loan', new_loan_path %>
+  <br>
