@@ -10,6 +10,25 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
+    @application = Application.find(params[:id])
+    @equipos = Equipment.where(:solicitados => true)
+    @instruments = Instrument.where(:solicitados => true)
+    @tools = Tool.where(:solicitados => true)
+    @consumables = Consumable.where(:solicitados => true)
+    @sustancias = ChemicalSubstance.where(:solicitados => true)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = SolicitudServicio.new(@application)
+        send_data pdf.render, filename: 'SolicitudServicio.pdf', type: 'application/pdf'
+      end
+    end
+    @equipment = Equipment.update_all(:solicitados => false)
+    @instrumentos = Instrument.update_all(:solicitados => false)
+    @herramientas = Tool.update_all(:solicitados => false)
+    @consumibles = Consumable.update_all(:solicitados => false)
+    @sustanciasqui = ChemicalSubstance.update_all(:solicitados => false)
   end
 
   # GET /applications/new
