@@ -14,7 +14,6 @@ class LoansController < ApplicationController
 
   # GET /loans/new
   def new
-    binding.pry
     @loan = Loan.new
     @equipment = Equipment.where(:solicitado => true).all.order('created_at DESC')
     #binding.pry

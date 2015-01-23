@@ -1,4 +1,4 @@
-class ChangeColumnAgain < ActiveRecord::Migration
+class ChangeTableDefault < ActiveRecord::Migration
   def change
   	change_column :equipment, :solicitado, :boolean, :default => true
   	change_column :instruments, :solicitado, :boolean, :default => true

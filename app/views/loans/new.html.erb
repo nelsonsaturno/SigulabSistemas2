@@ -8,11 +8,13 @@
 <div id = "table2">
 </div>
 <br>
-
-<%= render 'form' %>
-
+<div class="col-xs-12">
+<div class="col-xs-6">
+	<%= render 'form' %>
+</div>
+<div class="col-xs-6">
 <thead>
-    <table class="tg">
+    <table id="itemTable" class="table table-hover">
       <tr>
         <th></th>
         <th class="tg-093g">Nombre</th>
@@ -29,8 +31,13 @@
       <% end %>
     </tbody>
   </table>
-
+  </thead>
+</div>
+</div>
   <br>
-
+<div class="col-xs-12">
 <i class="fa fa-arrow-left"></i><%= link_to ' Atrás', inventario_url %>
+</div>
 <br><br><br><br>
+
+

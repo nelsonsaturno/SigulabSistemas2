@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123023154) do
+ActiveRecord::Schema.define(version: 20150123082149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20150123023154) do
     t.boolean  "showable",         default: true
     t.string   "dependency"
     t.integer  "numSolicitud"
-    t.boolean  "solicitado",       default: false
+    t.boolean  "solicitado",       default: true
   end
 
   create_table "commitments", force: true do |t|
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20150123023154) do
     t.text     "description"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: false
+    t.boolean  "solicitado",       default: true
   end
 
   create_table "devolutions", force: true do |t|
@@ -189,7 +189,7 @@ ActiveRecord::Schema.define(version: 20150123023154) do
     t.string   "measurewidth"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: false
+    t.boolean  "solicitado",       default: true
     t.integer  "numSolicitud"
   end
 
@@ -257,7 +257,7 @@ ActiveRecord::Schema.define(version: 20150123023154) do
     t.date     "adquisition_date"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: false
+    t.boolean  "solicitado",       default: true
   end
 
   create_table "invitations", force: true do |t|
@@ -361,7 +361,7 @@ ActiveRecord::Schema.define(version: 20150123023154) do
     t.boolean  "showable",         default: true
     t.boolean  "from_set"
     t.string   "dependency"
-    t.boolean  "solicitado",       default: false
+    t.boolean  "solicitado",       default: true
   end
 
   create_table "users", force: true do |t|
