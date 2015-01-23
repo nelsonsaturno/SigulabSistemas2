@@ -1,9 +1,9 @@
 # encoding: utf-8
 class SolicitudServicio < Prawn::Document
 
-def initialize(equipos)
+def initialize(instruments)
     super()
-    @@instruments = instruments
+    @instruments = instruments
     repeat :all do
       header
       pie_de_pagina
