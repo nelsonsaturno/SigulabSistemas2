@@ -12,6 +12,11 @@ class LoansController < ApplicationController
   def show
     @loan = Loan.find(params[:id])
     @equipos = Equipment.where(:solicitado => true)
+    @instruments = Instrument.where(:solicitado => true)
+    @tools = Tool.where(:solicitado => true)
+    @consumables = Consumable.where(:solicitado => true)
+    @sustancias = ChemicalSubstance.where(:solicitado => true)
+
     respond_to do |format|
       format.html
       format.pdf do
@@ -20,6 +25,10 @@ class LoansController < ApplicationController
       end
     end
     @equipment = Equipment.update_all(:solicitado => false)
+    @instrumentos = Instrument.update_all(:solicitado => false)
+    @herramientas = Tool.update_all(:solicitado => false)
+    @consumibles = Consumable.update_all(:solicitado => false)
+    @sustanciasqui = ChemicalSubstance.update_all(:solicitado => false)
   end
 
   # GET /loans/new
