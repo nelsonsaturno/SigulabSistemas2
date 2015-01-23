@@ -35,7 +35,10 @@ class LoansController < ApplicationController
   def new
     @loan = Loan.new
     @equipment = Equipment.where(:solicitado => true).all.order('created_at DESC')
-    #binding.pry
+    @instruments = Instrument.where(:solicitado => true).all.order('created_at DESC')
+    @tools = Tool.where(:solicitado => true).all.order('created_at DESC')
+    @consumables = Consumable.where(:solicitado => true).all.order('created_at DESC')
+    @sustancias = ChemicalSubstance.where(:solicitado => true).all.order('created_at DESC')
   end
 
   # GET /loans/1/edit
@@ -49,7 +52,7 @@ class LoansController < ApplicationController
 
     respond_to do |format|
       if @loan.save
-        format.html { redirect_to @loan, notice: 'Loan was successfully created.' }
+        format.html { redirect_to @loan, notice: 'Se ha creado exitosamente la solicitud de préstamo.' }
         format.json { render :show, status: :created, location: @loan }
       else
         format.html { render :new }
@@ -63,7 +66,7 @@ class LoansController < ApplicationController
   def update
     respond_to do |format|
       if @loan.update(loan_params)
-        format.html { redirect_to @loan, notice: 'Loan was successfully updated.' }
+        format.html { redirect_to @loan, notice: 'Se ha actualizado exitosamente la solicitud de préstamo.' }
         format.json { render :show, status: :ok, location: @loan }
       else
         format.html { render :edit }
@@ -77,7 +80,7 @@ class LoansController < ApplicationController
   def destroy
     @loan.destroy
     respond_to do |format|
-      format.html { redirect_to loans_url, notice: 'Loan was successfully destroyed.' }
+      format.html { redirect_to loans_url, notice: 'Se ha eliminado exitosamente la solicitud de préstamo.' }
       format.json { head :no_content }
     end
   end

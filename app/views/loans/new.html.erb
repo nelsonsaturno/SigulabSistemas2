@@ -18,7 +18,7 @@
       <tr>
         <th></th>
         <th class="tg-093g">Nombre</th>
-        <th class="tg-hgcj">Número de Bien Nacional</th>
+        <th class="tg-hgcj">Número de Bien</th>
       </tr>
     </thead>
 
@@ -26,7 +26,31 @@
       <% @equipment.each do |equipment| %>
         <tr>
           <td class="tg-s6z2"><%=  equipment.name  %></td>
-              <td class="tg-s6z2"><%= equipment.national_good %></td>
+              <td class="tg-s6z2"><%= equipment.id %></td>
+        </tr>
+      <% end %>
+      <% @instruments.each do |instrument| %>
+        <tr>
+          <td class="tg-s6z2"><%=  instrument.name  %></td>
+              <td class="tg-s6z2"><%= instrument.id %></td>
+        </tr>
+      <% end %>
+      <% @tools.each do |tool| %>
+        <tr>
+          <td class="tg-s6z2"><%=  tool.name  %></td>
+              <td class="tg-s6z2"><%= tool.id %></td>
+        </tr>
+      <% end %>
+      <% @consumables.each do |consumable| %>
+        <tr>
+          <td class="tg-s6z2"><%=  consumable.name  %></td>
+              <td class="tg-s6z2"><%= consumable.id %></td>
+        </tr>
+      <% end %>
+      <% @sustancias.each do |sustancia| %>
+        <tr>
+          <td class="tg-s6z2"><%=  sustancia.name  %></td>
+              <td class="tg-s6z2"><%= sustancia.id %></td>
         </tr>
       <% end %>
     </tbody>
