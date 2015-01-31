@@ -4,13 +4,14 @@ class ConsumablesController < ApplicationController
   # GET /consumables
   # GET /consumables.json
   def index
-	if params[:search]
-		@consumables = Consumable.where(:showable => true).search(params[:search])
-		@consumables_all = Consumable.search(params[:search])
-	else
-		@consumables = Consumable.where(:showable => true).all.order('created_at DESC')
-		@consumables_all = Consumable.all.order('created_at DESC')
-	end
+  	if params[:search]
+  		@consumables = Consumable.where(:showable => true).search(params[:search])
+  		@consumables_all = Consumable.search(params[:search])
+  	else
+  		@consumables = Consumable.where(:showable => true).all.order('created_at DESC')
+  		@consumables_all = Consumable.all.order('created_at DESC')
+  	end
+    @sum = Consumable.count
   end
 
   # GET /consumables/1
@@ -31,6 +32,8 @@ class ConsumablesController < ApplicationController
   # POST /consumables.json
   def create
     @consumable = Consumable.new(consumable_params)
+    @sum = Consumable.count
+    @consumable.id2 = "CO-" + "#{@sum}"
 
     respond_to do |format|
       if @consumable.save

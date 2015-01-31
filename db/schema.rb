@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123105248) do
+ActiveRecord::Schema.define(version: 20150131200149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.boolean  "showable",         default: true
     t.string   "dependency"
     t.integer  "numSolicitud"
-    t.boolean  "solicitado",       default: true
     t.boolean  "solicitados"
+    t.string   "id2"
   end
 
   create_table "commitments", force: true do |t|
@@ -97,6 +97,9 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sae_code"
+    t.text     "observations"
+    t.integer  "document",     default: 0
   end
 
   create_table "consumables", force: true do |t|
@@ -118,8 +121,8 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.text     "description"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: true
     t.boolean  "solicitados"
+    t.string   "id2"
   end
 
   create_table "devolutions", force: true do |t|
@@ -188,21 +191,36 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.string   "measurewidth"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: true
     t.integer  "numSolicitud"
     t.boolean  "solicitados"
+    t.string   "id2"
   end
 
   create_table "executions", force: true do |t|
     t.integer  "commitment_id"
     t.string   "code"
-    t.float    "amount"
+    t.float    "check_amount"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "document",               default: 0
+    t.string   "check_number"
+    t.datetime "check_elaboration_date"
+    t.datetime "check_sign_date"
+    t.datetime "check_delivery_date"
+    t.integer  "check_delivery_status"
   end
 
   add_index "executions", ["commitment_id"], name: "index_executions_on_commitment_id", using: :btree
+
+  create_table "fecha_entregas", force: true do |t|
+    t.string   "ubicacion"
+    t.string   "fechaTope"
+    t.string   "condiciones"
+    t.string   "medida"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "incomes", force: true do |t|
     t.integer  "lab_id"
@@ -212,9 +230,10 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.datetime "date"
     t.string   "organism"
     t.string   "document"
-    t.string   "financing"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sae_code"
+    t.integer  "financing",   default: 0
   end
 
   create_table "instruments", force: true do |t|
@@ -241,8 +260,8 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.date     "adquisition_date"
     t.boolean  "showable",         default: true
     t.string   "dependency"
-    t.boolean  "solicitado",       default: true
     t.boolean  "solicitados"
+    t.string   "id2"
   end
 
   create_table "invitations", force: true do |t|
@@ -346,8 +365,8 @@ ActiveRecord::Schema.define(version: 20150123105248) do
     t.boolean  "showable",         default: true
     t.boolean  "from_set"
     t.string   "dependency"
-    t.boolean  "solicitado",       default: true
     t.boolean  "solicitados"
+    t.string   "id2"
   end
 
   create_table "users", force: true do |t|

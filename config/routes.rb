@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'informe_recomendacion/index'
 
+  post 'loans/new'
+
   resources :invitations
   resources :services
   resources :items

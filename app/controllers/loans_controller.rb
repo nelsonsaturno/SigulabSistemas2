@@ -1,11 +1,12 @@
 class LoansController < ApplicationController
-  before_action :set_loan, only: [:show, :edit, :update, :destroy]
+  before_action :set_loan, only: [:show, :edit, :update, :destroy, :item_ids]
 
   # GET /loans
   # GET /loans.json
   def index
     @loans = Loan.all
     @sumSolicitudes = Loan.all.count
+    binding.pry
   end
 
   # GET /loans/1
@@ -34,12 +35,13 @@ class LoansController < ApplicationController
 
   # GET /loans/new
   def new
+    binding.pry
     @loan = Loan.new
     @equipment = Equipment.where(:solicitado => true).all.order('created_at DESC')
     @instruments = Instrument.where(:solicitado => true).all.order('created_at DESC')
     @tools = Tool.where(:solicitado => true).all.order('created_at DESC')
     @consumables = Consumable.where(:solicitado => true).all.order('created_at DESC')
-    @sustancias = ChemicalSubstance.where(:solicitado => true).all.order('created_at DESC')
+    @sustancias = ChemicalSubstance.where(id2: params[:item_ids])
   end
 
   # GET /loans/1/edit
@@ -49,6 +51,7 @@ class LoansController < ApplicationController
   # POST /loans
   # POST /loans.json
   def create
+    binding.pry
     @loan = Loan.new(loan_params)
 
     respond_to do |format|
