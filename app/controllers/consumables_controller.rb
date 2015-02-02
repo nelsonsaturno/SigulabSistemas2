@@ -32,8 +32,7 @@ class ConsumablesController < ApplicationController
   # POST /consumables.json
   def create
     @consumable = Consumable.new(consumable_params)
-    @sum = Consumable.count
-    @consumable.id2 = "CO-" + "#{@sum}"
+    @consumable.id2 = "CO-" + "#{@consumable.id}00"
 
     respond_to do |format|
       if @consumable.save
@@ -44,6 +43,8 @@ class ConsumablesController < ApplicationController
         format.json { render json: @consumable.errors, status: :unprocessable_entity }
       end
     end
+    @consumable.id2 = "CO-" + "#{@consumable.id}"
+    @consumable.save
   end
 
   # PATCH/PUT /consumables/1

@@ -13,12 +13,6 @@ class LoansController < ApplicationController
   # GET /loans/1.json
   def show
     @loan = Loan.find(params[:id])
-    @equipos = Equipment.where(:solicitado => true)
-    @instruments = Instrument.where(:solicitado => true)
-    @tools = Tool.where(:solicitado => true)
-    @consumables = Consumable.where(:solicitado => true)
-    @sustancias = ChemicalSubstance.where(:solicitado => true)
-
     respond_to do |format|
       format.html
       format.pdf do
@@ -37,10 +31,10 @@ class LoansController < ApplicationController
   def new
     binding.pry
     @loan = Loan.new
-    @equipment = Equipment.where(:solicitado => true).all.order('created_at DESC')
-    @instruments = Instrument.where(:solicitado => true).all.order('created_at DESC')
-    @tools = Tool.where(:solicitado => true).all.order('created_at DESC')
-    @consumables = Consumable.where(:solicitado => true).all.order('created_at DESC')
+    @equipment = Equipment.where(id2: params[:item_ids])
+    @instruments = Instrument.where(id2: params[:item_ids])
+    @tools = Tool.where(id2: params[:item_ids])
+    @consumables = Consumable.where(id2: params[:item_ids])
     @sustancias = ChemicalSubstance.where(id2: params[:item_ids])
   end
 
