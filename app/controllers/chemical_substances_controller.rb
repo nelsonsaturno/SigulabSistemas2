@@ -12,6 +12,7 @@ class ChemicalSubstancesController < ApplicationController
    		@chemical_substances_all=ChemicalSubstance.all.order('created_at DESC')
   	end
     @sum = ChemicalSubstance.count
+    @items = params[:item_ids]
   end
 
   # GET /chemical_substances/1

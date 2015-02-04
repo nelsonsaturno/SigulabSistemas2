@@ -34,12 +34,14 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
+    binding.pry
+    @lista
     @application = Application.new
     @equipment = Equipment.where(:solicitados => true).all.order('created_at DESC')
     @instruments = Instrument.where(:solicitados => true).all.order('created_at DESC')
     @tools = Tool.where(:solicitados => true).all.order('created_at DESC')
     @consumables = Consumable.where(:solicitados => true).all.order('created_at DESC')
-    @sustancias = ChemicalSubstance.where(:solicitados => true).all.order('created_at DESC')
+    @sustancias = ChemicalSubstance.where(id2: params[:item_ids])
   end
 
   # GET /applications/1/edit
